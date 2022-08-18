@@ -1,0 +1,24 @@
+# Environment 'development', 'test', or 'production'
+ENV=development
+
+# Cron Interval Settings
+# (optional) second (0 - 59)
+SECOND=*
+# minute (0 - 59)
+MINUTE=*
+# hour (0 - 23)
+HOUR=*
+# day of month (1 - 31)
+DAY=*
+# month (1 - 12, JAN-DEC)
+MONTH=*
+# day of week (0 - 6, SUN-Mon)
+# (0 to 6 are Sunday to Saturday; 7 is Sunday, the same as 0)
+DAY_OF_WEEK=*
+
+# DTS
+DIMS_ENDPOINT=https://ltsds-cloud-dev-1.lib.harvard.edu:10580
+
+# Dropbox
+DROPBOX_PATH=/home/appuser/dropbox
+DROPBOX_NAME=/epadd_secure
