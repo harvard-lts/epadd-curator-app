@@ -1,12 +1,17 @@
 #!/usr/bin/python3
-
+import json
 import logging
 import os
 import re
 import sys
 import traceback
-from datetime import datetime
+from datetime import datetime, timedelta
+import jwt
+import hashlib
+import jcs
 
+import boto3
+import requests
 from requests import exceptions, get, HTTPError
 
 DATEFORMAT = '%Y-%m-%d %H:%M:%S'
@@ -17,71 +22,130 @@ logging.basicConfig(filename=logname_template.format(datetime.today().strftime("
                     level=logging.DEBUG)
 
 dims_endpoint = os.environ.get('DIMS_ENDPOINT')
-dropbox_root_dir = os.environ.get('DROPBOX_PATH')
-dropbox_name = os.environ.get('DROPBOX_NAME')
+aws_access_key = os.environ.get('NEXTCLOUD_AWS_ACCESS_KEY')
+aws_secret_key = os.environ.get('NEXTCLOUD_AWS_SECRET_KEY')
+epadd_bucket_name = os.environ.get('EPADD_BUCKET_NAME')
+jwt_private_key_path = os.environ.get('JWT_PRIVATE_KEY_PATH')
+jwt_expiration = int(os.environ.get('JWT_EXPIRATION'))
 
 logging.debug("Executing monitor_epadd_exports.py")
 
 
-def collect_loadreports():
-    loadreport_files = []
-    loadreport_dir = dropbox_root_dir + "/lts_load_reports" + dropbox_name + "/incoming"
-    logging.debug("Checking for load reports in dropbox loc: " + loadreport_dir)
+def call_dims_ingest(s3_resource, manifest_object_key):
+    with open(jwt_private_key_path) as jwt_private_key_file:
+        jwt_private_key = jwt_private_key_file.read()
 
-    for root, dirs, files in os.walk(loadreport_dir):
-        for name in files:
-            if re.match("LOADREPORT", name):
-                loadreport_files.append(name)
+    # TODO: Get metadata info from sidecar files
+    payload_data = {"package_id": "test",
+                    "s3_path": "test",
+                    "s3_bucket_name": "test",
+                    "admin_metadata":
+                        {"accessFlag": "N",
+                         "contentModel": "opaque",
+                         "depositingSystem": "Harvard Dataverse",
+                         "firstGenerationInDrs": "unspecified",
+                         "objectRole": "CG:DATASET",
+                         "usageClass": "LOWUSE",
+                         "storageClass": "AR",
+                         "ownerCode": "123",
+                         "billingCode": "456",
+                         "resourceNamePattern": "pattern",
+                         "urnAuthorityPath": "path",
+                         "depositAgent": "789",
+                         "depositAgentEmail": "someone@mailinator.com",
+                         "successEmail": "winner@mailinator.com",
+                         "failureEmail": "loser@mailinator.com",
+                         "successMethod": "method",
+                         "adminCategory": "root"}
+                    }
 
-    return loadreport_files
+    payload_data_json = json.dumps(payload_data)
 
+    # calculate iat and exp values
+    current_datetime = datetime.now()
+    current_epoch = int(current_datetime.timestamp())
+    expiration = current_datetime + timedelta(seconds=jwt_expiration)
 
-def notify_dts_loadreports(filename):
-    logging.debug("Calling DTS /loadreport for file: " + filename)
+    # get request_body hash
+    request_body = jcs.canonicalize(payload_data_json).decode("utf-8")
+    bodySHA256Hash = hashlib.sha256(request_body.encode()).hexdigest()
+
+    # generate JWT token
+    jwt_token = jwt.encode(
+        payload={'iss': 'ePADD', 'iat': current_epoch, 'exp': int(expiration.timestamp()),
+                 'bodySHA256Hash': bodySHA256Hash},
+        key=jwt_private_key,
+        algorithm='RS256',
+        headers={"alg": "RS256", "typ": "JWT", "kid": "defaultEpadd"}
+    )
+
+    # print(jwt_token)
+
+    headers = {"Authorization": "Bearer " + jwt_token}
+
+    logging.debug("Calling ingest at: " + dims_endpoint + "/ingest " + "with request body: " + payload_data_json)
+
+    # Call DIMS ingest
     try:
-        response = get(dims_endpoint + '/loadreport?filename=' + filename, verify=False)
-        logging.debug("Response status code for '/loadreport?filename='" + filename + ": " + str(response.status_code))
-        response.raise_for_status()
+        ingest_epadd_export = requests.post(
+            dims_endpoint + '/ingest',
+            headers=headers,
+            json=payload_data,
+            verify=False)
     except (exceptions.ConnectionError, HTTPError) as e:
-        logging.error("Error when calling DTS /loadreport for file: " + str(e))
+        logging.error("Error when calling DIMS /ingest: " + str(e))
+
+    json_ingest_response = ingest_epadd_export.json()
+    logging.debug(json_ingest_response)
+    print(json_ingest_response)
+
+    manifest_parent_prefix = get_parent_prefix(manifest_object_key)
+    if json_ingest_response["status"] == "failure":
+        s3_resource.meta.client.upload_file('resources/ingest.txt.failed', epadd_bucket_name,
+                                            manifest_parent_prefix + "ingest.txt.failed")
+    else:
+        s3_resource.meta.client.upload_file('resources/ingest.txt', epadd_bucket_name,
+                                            manifest_parent_prefix + "ingest.txt")
 
 
-def collect_failed_batch():
-    failed_batch = []
-    failed_batch_dir = dropbox_root_dir + dropbox_name + "/incoming"
-    logging.debug("Checking failed batches in loc: " + failed_batch_dir)
-
-    for root, dirs, files in os.walk(failed_batch_dir):
-        for name in files:
-            if re.match("batch.xml.failed", name):
-                split_path = root.split("/")
-                failed_batch.append(split_path.pop())
-
-    return failed_batch
-
-
-def notify_dts_failed_batch(batch_name):
-    logging.debug("Calling DTS for failed batch: " + batch_name)
-    try:
-        response = get(dims_endpoint + '/failedBatch?batchName=' + batch_name, verify=False)
-        logging.debug("Response status code for '/failedBatch?batchName='" + batch_name + ": " + str(response.status_code))
-        response.raise_for_status()
-    except (exceptions.ConnectionError, HTTPError) as e:
-        logging.error("Error when calling DTS /loadreport for file: " + str(e))
+def get_parent_prefix(prefix):
+    split_key = prefix.split('/')
+    parent_prefix = ""
+    for i in range(0, len(split_key) - 1):
+        parent_prefix = parent_prefix + split_key[i] + "/"
+    return parent_prefix
 
 
 def main():
-    # Collect successful ingests
-    loadreport_list = collect_loadreports()
-    logging.debug("Load report files returned: " + str(loadreport_list))
-    for loadreport in loadreport_list:
-        notify_dts_loadreports(loadreport)
+    export_object_keys = []
 
-    # Collect failed ingests
-    failed_batch_list = collect_failed_batch()
-    logging.debug("Failed batch files returned: " + str(failed_batch_list))
-    for failed_batch in failed_batch_list:
-        notify_dts_failed_batch(failed_batch)
+    # Search for manifest file
+    logging.debug("Connect to S3 bucket")
+
+    # Change session code
+    session = boto3.Session(
+        aws_access_key_id=aws_access_key,
+        aws_secret_access_key=aws_secret_key)
+
+    # Then use the session to get the resource
+    s3 = session.resource('s3')
+
+    epadd_bucket = s3.Bucket(epadd_bucket_name)
+    logging.debug("Connected to S3 bucket: " + epadd_bucket_name)
+
+    logging.debug("Search for manifest-<algorithm>.txt file in bucket: " + epadd_bucket_name)
+
+    epadd_bucket_objects = epadd_bucket.objects.all()
+    for epadd_bucket_object in epadd_bucket_objects:
+        if re.search('manifest(-md5|-sha256)?.txt', epadd_bucket_object.key, re.IGNORECASE):
+            if (get_parent_prefix(epadd_bucket_object.key) + "ingest.txt" not in epadd_bucket_objects and
+                    get_parent_prefix(epadd_bucket_object.key) + "ingest.txt.failed" not in epadd_bucket_objects):
+                export_object_keys.append(epadd_bucket_object.key)
+                logging.debug("Object key added: " + epadd_bucket_object.key)
+
+    # Make ingest/ call to DIMS
+    for key in export_object_keys:
+        call_dims_ingest(s3, key)
 
 
 try:
