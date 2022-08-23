@@ -59,15 +59,13 @@ def call_dims_ingest(s3_resource, manifest_object_key):
                          "adminCategory": "root"}
                     }
 
-    payload_data_json = json.dumps(payload_data)
-
     # calculate iat and exp values
     current_datetime = datetime.now()
     current_epoch = int(current_datetime.timestamp())
     expiration = current_datetime + timedelta(seconds=jwt_expiration)
 
     # get request_body hash
-    request_body = jcs.canonicalize(payload_data_json).decode("utf-8")
+    request_body = jcs.canonicalize(payload_data).decode()
     bodySHA256Hash = hashlib.sha256(request_body.encode()).hexdigest()
 
     # generate JWT token
@@ -79,11 +77,9 @@ def call_dims_ingest(s3_resource, manifest_object_key):
         headers={"alg": "RS256", "typ": "JWT", "kid": "defaultEpadd"}
     )
 
-    # print(jwt_token)
-
     headers = {"Authorization": "Bearer " + jwt_token}
 
-    logging.debug("Calling ingest at: " + dims_endpoint + "/ingest " + "with request body: " + payload_data_json)
+    logging.debug("Calling ingest at: " + dims_endpoint + "/ingest " + "with request body: " + str(payload_data))
 
     # Call DIMS ingest
     try:
@@ -97,15 +93,15 @@ def call_dims_ingest(s3_resource, manifest_object_key):
 
     json_ingest_response = ingest_epadd_export.json()
     logging.debug(json_ingest_response)
-    print(json_ingest_response)
 
     manifest_parent_prefix = get_parent_prefix(manifest_object_key)
     if json_ingest_response["status"] == "failure":
-        s3_resource.meta.client.upload_file('resources/ingest.txt.failed', epadd_bucket_name,
-                                            manifest_parent_prefix + "ingest.txt.failed")
+        logging.debug("Putting ingest.txt.failed at prefix: " + manifest_parent_prefix)
+        content = ""
+        s3_resource.Object(epadd_bucket_name, manifest_parent_prefix + "ingest.txt.failed").put(Body=content)
     else:
-        s3_resource.meta.client.upload_file('resources/ingest.txt', epadd_bucket_name,
-                                            manifest_parent_prefix + "ingest.txt")
+        content = "Pending ingest.."
+        s3_resource.Object(epadd_bucket_name, manifest_parent_prefix + "ingest.txt").put(Body=content)
 
 
 def get_parent_prefix(prefix):
