@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import json
 import logging
 import os
 import re
@@ -12,7 +11,7 @@ import jcs
 
 import boto3
 import requests
-from requests import exceptions, get, HTTPError
+from requests import exceptions, HTTPError
 
 DATEFORMAT = '%Y-%m-%d %H:%M:%S'
 relative_dir = os.path.dirname(os.path.realpath(__file__))
@@ -32,19 +31,26 @@ logging.debug("Executing monitor_epadd_exports.py")
 
 
 def call_dims_ingest(s3_resource, manifest_object_key):
-    with open(jwt_private_key_path) as jwt_private_key_file:
-        jwt_private_key = jwt_private_key_file.read()
+    logging.debug("Preparing to call DIMS")
+    # get parent prefix of manifest file
+    manifest_parent_prefix = get_parent_prefix(manifest_object_key)
+
+    try:
+        with open(jwt_private_key_path) as jwt_private_key_file:
+            jwt_private_key = jwt_private_key_file.read()
+    except:
+        logging.error("Error opening private jwt token at path: " + jwt_private_key_path)
 
     # TODO: Get metadata info from sidecar files
-    payload_data = {"package_id": "test",
-                    "s3_path": "test",
-                    "s3_bucket_name": "test",
+    payload_data = {"package_id": "test_" + str(int(datetime.now().timestamp())),
+                    "s3_path": manifest_parent_prefix,
+                    "s3_bucket_name": epadd_bucket_name,
                     "admin_metadata":
                         {"accessFlag": "N",
                          "contentModel": "opaque",
-                         "depositingSystem": "Harvard Dataverse",
+                         "depositingSystem": "ePADD",
                          "firstGenerationInDrs": "unspecified",
-                         "objectRole": "CG:DATASET",
+                         "objectRole": "CG:EMAIL",
                          "usageClass": "LOWUSE",
                          "storageClass": "AR",
                          "ownerCode": "123",
@@ -82,6 +88,7 @@ def call_dims_ingest(s3_resource, manifest_object_key):
     logging.debug("Calling ingest at: " + dims_endpoint + "/ingest " + "with request body: " + str(payload_data))
 
     # Call DIMS ingest
+    ingest_epadd_export = None
     try:
         ingest_epadd_export = requests.post(
             dims_endpoint + '/ingest',
@@ -94,12 +101,12 @@ def call_dims_ingest(s3_resource, manifest_object_key):
     json_ingest_response = ingest_epadd_export.json()
     logging.debug(json_ingest_response)
 
-    manifest_parent_prefix = get_parent_prefix(manifest_object_key)
     if json_ingest_response["status"] == "failure":
         logging.debug("Putting ingest.txt.failed at prefix: " + manifest_parent_prefix)
         content = ""
         s3_resource.Object(epadd_bucket_name, manifest_parent_prefix + "ingest.txt.failed").put(Body=content)
     else:
+        logging.debug("Putting ingest.txt at prefix: " + manifest_parent_prefix)
         content = "Pending ingest.."
         s3_resource.Object(epadd_bucket_name, manifest_parent_prefix + "ingest.txt").put(Body=content)
 
@@ -132,14 +139,20 @@ def main():
     logging.debug("Search for manifest-<algorithm>.txt file in bucket: " + epadd_bucket_name)
 
     epadd_bucket_objects = epadd_bucket.objects.all()
+
     for epadd_bucket_object in epadd_bucket_objects:
         if re.search('manifest(-md5|-sha256)?.txt', epadd_bucket_object.key, re.IGNORECASE):
-            if (get_parent_prefix(epadd_bucket_object.key) + "ingest.txt" not in epadd_bucket_objects and
-                    get_parent_prefix(epadd_bucket_object.key) + "ingest.txt.failed" not in epadd_bucket_objects):
+            if not (any([obj.key == get_parent_prefix(epadd_bucket_object.key) + "ingest.txt" for obj in
+                         epadd_bucket_objects])
+                    or any([obj.key == get_parent_prefix(epadd_bucket_object.key) + "ingest.txt.failed" for obj in
+                            epadd_bucket_objects])):
                 export_object_keys.append(epadd_bucket_object.key)
                 logging.debug("Object key added: " + epadd_bucket_object.key)
 
     # Make ingest/ call to DIMS
+    logging.debug("Calling DIMS /ingest for following objects: " + str(export_object_keys))
+    print(str(export_object_keys))
+
     for key in export_object_keys:
         call_dims_ingest(s3, key)
 
