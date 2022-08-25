@@ -20,7 +20,9 @@ RUN chown appuser:appuser -R /home/appuser && \
 USER appuser
 
 RUN npm install && \
+    python3 -m pip install -U pip && \
     python3 -m pip install -r requirements.txt && \
-    chmod +x /home/appuser/epadd-curator-app/monitor_epadd_exports.py
+    chmod +x /home/appuser/epadd-curator-app/scripts/monitor_epadd_exports.py && \
+    chmod +x /home/appuser/epadd-curator-app/scripts/test_export.py
 
-CMD ["node", "./cron.js"]
+CMD ["npm", "start"]

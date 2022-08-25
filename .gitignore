@@ -122,3 +122,4 @@ pdfstorerdaemon.pid
 
 .idea
 keys/
+.DS_store

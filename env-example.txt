@@ -5,7 +5,7 @@ ENV=development
 # (optional) second (0 - 59)
 SECOND=*
 # minute (0 - 59)
-MINUTE=*
+MINUTE=*/5
 # hour (0 - 23)
 HOUR=*
 # day of month (1 - 31)
@@ -25,3 +25,7 @@ JWT_EXPIRATION=1800
 EPADD_BUCKET_NAME=epadd-export-dev
 NEXTCLOUD_AWS_ACCESS_KEY=
 NEXTCLOUD_AWS_SECRET_KEY=
+
+# Integration Test
+TEST_EXPORT_FILE_PATH=/home/appuser/epadd-curator-app/test_export
+TEST_PREFIX=test/

@@ -6,12 +6,8 @@ services:
       context: "."
       dockerfile: "Dockerfile"
     env_file: .env
+    ports:
+      - "10586:8443"
     volumes:
       - ./logs:/home/appuser/epadd-curator-app/logs
       - ./keys:/home/appuser/epadd-curator-app/keys
-    networks:
-      - drsts-net
-
-networks:
-  drsts-net:
-    name: "drsts-net"

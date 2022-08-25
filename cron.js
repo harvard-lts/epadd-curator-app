@@ -26,7 +26,7 @@ Cron(interval, {}, ()=> {
   console.log("checking for epadd exports in Nextcloud buckets");
 
   try {
-    subprocess = spawn("/home/appuser/epadd-curator-app/monitor_epadd_exports.py")
+    subprocess = spawn("/home/appuser/epadd-curator-app/scripts/monitor_epadd_exports.py")
     subprocess.stdout.on('data', (data) => { console.log(data.toString()) });
     subprocess.stderr.on('data', (data) => { console.log("ERR: " + data) });
   }
