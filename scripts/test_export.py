@@ -55,9 +55,6 @@ def main():
 
     # Place test export in s3
     test_export_filename = test_export_file_path.split('/')[-1]
-    # with open(test_export_file_path, "rb") as f:
-    #     test_export_file = f.read()
-
     epadd_bucket.upload_file(test_export_file_path, test_prefix + test_export_filename)
 
     # This file triggers the curator app to include a "testing" field in request body to DIMS
