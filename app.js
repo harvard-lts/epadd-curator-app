@@ -5,7 +5,7 @@ const app = express();
 const port = 8443
 
 app.listen(port, () => {
-   console.log(`Server running on port: ${port}`);
+   console.log('Server running on port: ${port}');
 });
 
 app.use('/', require('./routes/healthcheck.js'));
