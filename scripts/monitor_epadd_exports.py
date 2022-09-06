@@ -90,6 +90,7 @@ def call_dims_ingest(manifest_object_key):
     json_ingest_response = ingest_epadd_export.json()
     logging.debug(json_ingest_response)
 
+    # Put file to indicate ingest status of export
     if json_ingest_response["status"] == "failure":
         logging.debug("Putting ingest.txt.failed at prefix: " + manifest_parent_prefix)
         content = ""
@@ -98,6 +99,9 @@ def call_dims_ingest(manifest_object_key):
         logging.debug("Putting ingest.txt at prefix: " + manifest_parent_prefix)
         content = "Pending ingest.."
         s3_resource.Object(epadd_bucket_name, manifest_parent_prefix + "ingest.txt").put(Body=content)
+
+    # Remove loading file
+    s3_resource.Object(epadd_bucket_name, manifest_parent_prefix + "LOADING").delete()
 
 
 def construct_payload_body(manifest_object_key):
@@ -191,8 +195,12 @@ def collect_exports():
     epadd_bucket_objects = epadd_bucket.objects.all()
     for epadd_bucket_object in epadd_bucket_objects:
         if re.search('manifest(-md5|-sha256)?.txt', epadd_bucket_object.key, re.IGNORECASE):
-            if not (key_exists(get_parent_prefix(epadd_bucket_object.key) + "ingest.txt")
-                    or key_exists(get_parent_prefix(epadd_bucket_object.key) + "ingest.txt.failed")):
+            manifest_parent_prefix = get_parent_prefix(epadd_bucket_object.key)
+            if not (key_exists(manifest_parent_prefix + "ingest.txt")
+                    or key_exists(manifest_parent_prefix + "ingest.txt.failed")
+                    or key_exists(manifest_parent_prefix + "LOADING")):
+                logging.debug("Putting LOADING file at prefix: " + manifest_parent_prefix)
+                s3_resource.Object(epadd_bucket_name, manifest_parent_prefix + "LOADING").put(Body="")
                 manifest_object_keys.append(epadd_bucket_object.key)
                 logging.debug("Object key added: " + epadd_bucket_object.key)
 
