@@ -7,6 +7,7 @@ RUN DEBIAN_FRONTEND=non-interactive && \
     apt-get -y update && \
     apt-get -y install software-properties-common gcc && \
     apt-get -y install python3 python3-pip python3-distutils python3-apt && \
+     apt-get -y install curl && \
     groupadd -r -g 55020 appuser && \
     useradd -u 55020 -g 55020 --create-home appuser
 
