@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  epadd-curator-app:
+    container_name: "epadd-curator-app"
+    build:
+      context: "."
+      dockerfile: "Dockerfile"
+    env_file: .env
+    ports:
+      - "10586:8443"
+    volumes:
+      - ./logs:/home/appuser/epadd-curator-app/logs
+      - ./keys:/home/appuser/epadd-curator-app/keys
