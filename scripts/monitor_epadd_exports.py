@@ -117,24 +117,25 @@ def construct_payload_body(manifest_object_key):
     payload_data = {"package_id": "test_" + str(int(datetime.now().timestamp())),
                     "s3_path": manifest_parent_prefix,
                     "s3_bucket_name": epadd_bucket_name,
-                    "admin_metadata":
-                        {"accessFlag": "N",
-                         "contentModel": "opaque",
-                         "depositingSystem": "ePADD",
-                         "firstGenerationInDrs": "unspecified",
-                         "objectRole": "CG:EMAIL",
-                         "usageClass": "LOWUSE",
-                         "storageClass": "AR",
-                         "ownerCode": "123",
-                         "billingCode": "456",
-                         "resourceNamePattern": "pattern",
-                         "urnAuthorityPath": "path",
-                         "depositAgent": "789",
-                         "depositAgentEmail": "someone@mailinator.com",
-                         "successEmail": "winner@mailinator.com",
-                         "failureEmail": "loser@mailinator.com",
-                         "successMethod": "method",
-                         "adminCategory": "root"}
+                    "admin_metadata": {
+                        "accessFlag": "N",
+                        "contentModel": "opaque",
+                        "depositingSystem": "ePADD",
+                        "firstGenerationInDrs": "unspecified",
+                        "objectRole": "CG:EMAIL",
+                        "usageClass": "LOWUSE",
+                        "storageClass": "AR",
+                        "ownerCode": "123",
+                        "billingCode": "456",
+                        "resourceNamePattern": "pattern",
+                        "urnAuthorityPath": "path",
+                        "depositAgent": "789",
+                        "depositAgentEmail": "someone@mailinator.com",
+                        "successEmail": "winner@mailinator.com",
+                        "failureEmail": "loser@mailinator.com",
+                        "successMethod": "method",
+                        "adminCategory": "root"
+                    }
                     }
 
     logging.debug("Including TESTTRIGGER")
@@ -208,7 +209,6 @@ def collect_exports():
 
 
 def main():
-
     # Connect to s3 bucket
     logging.debug("Connect to S3 bucket")
     connect_to_bucket()
