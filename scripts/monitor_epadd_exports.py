@@ -118,7 +118,7 @@ def construct_payload_body(manifest_object_key):
     data = obj.get()['Body'].read().decode('utf-8')
     logging.debug("Retrieved sidecar metadata from " + manifest_parent_prefix + " containing: " + data)
 
-    metadata = data.split('\n')
+    metadata = data.split(',')
     metadata_dict = {}
     for val in metadata:
         split_val = val.split('=')
