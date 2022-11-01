@@ -118,11 +118,14 @@ def construct_payload_body(manifest_object_key):
     data = obj.get()['Body'].read().decode('utf-8')
     logging.debug("Retrieved sidecar metadata from " + manifest_parent_prefix + " containing: " + data)
 
-    metadata = data.split(',')
+    metadata = data.split('\n')
+    logging.debug("Split data: " + str(metadata))
     metadata_dict = {}
     for val in metadata:
-        split_val = val.split('=')
-        metadata_dict[split_val[0]] = split_val[1]
+        if len(val) > 0:
+            split_val = val.split('=')
+            metadata_dict[split_val[0]] = split_val[1]
+    logging.debug("Metadata dictionary: " + str(metadata_dict))
 
     payload_data = {"package_id": "test_" + str(int(datetime.now().timestamp())),
                     "s3_path": manifest_parent_prefix,
