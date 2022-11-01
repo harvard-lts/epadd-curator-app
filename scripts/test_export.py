@@ -57,6 +57,9 @@ def main():
     test_export_filename = test_export_file_path.split('/')[-1]
     epadd_bucket.upload_file(test_export_file_path, test_prefix + test_export_filename)
 
+    # Place drsConfig.txt sidecar file in s3
+    epadd_bucket.upload_file("/home/appuser/epadd-curator-app/resources/drsConfig.txt", test_prefix + "drsConfig.txt")
+
     # This file triggers the curator app to include a "testing" field in request body to DIMS
     s3_resource.Object(epadd_bucket_name, test_prefix + "TESTTRIGGER").put()
 
