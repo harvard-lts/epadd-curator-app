@@ -20,6 +20,7 @@ aws_secret_key = os.environ.get('NEXTCLOUD_AWS_SECRET_KEY')
 epadd_bucket_name = os.environ.get('EPADD_BUCKET_NAME')
 test_export_file_path = os.environ.get('TEST_EXPORT_FILE_PATH')
 test_prefix = os.environ.get('TEST_PREFIX')
+test_sidecar_file_path = os.environ.get('TEST_SIDECAR_FILE_PATH')
 
 logging.debug("Executing test_export.py")
 
@@ -56,6 +57,9 @@ def main():
     # Place test export in s3
     test_export_filename = test_export_file_path.split('/')[-1]
     epadd_bucket.upload_file(test_export_file_path, test_prefix + test_export_filename)
+
+    # Place drsConfig.txt sidecar file in s3
+    epadd_bucket.upload_file(test_sidecar_file_path, test_prefix + "drsConfig.txt")
 
     # This file triggers the curator app to include a "testing" field in request body to DIMS
     s3_resource.Object(epadd_bucket_name, test_prefix + "TESTTRIGGER").put()

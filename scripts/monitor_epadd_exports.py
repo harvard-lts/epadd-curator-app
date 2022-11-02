@@ -113,33 +113,47 @@ def construct_payload_body(manifest_object_key):
     # get parent prefix of manifest file
     manifest_parent_prefix = get_parent_prefix(manifest_object_key)
 
-    # TODO: Update values based on sidecar file
+    # get contents of drsConfig.txt
+    obj = s3_resource.Object(epadd_bucket_name, manifest_parent_prefix + "drsConfig.txt")
+    data = obj.get()['Body'].read().decode('utf-8')
+    logging.debug("Retrieved sidecar metadata from " + manifest_parent_prefix + " containing: " + data)
+
+    metadata = data.split('\n')
+    logging.debug("Split data: " + str(metadata))
+    metadata_dict = {}
+    for val in metadata:
+        if len(val) > 0:
+            split_val = val.split('=')
+            metadata_dict[split_val[0]] = split_val[1]
+    logging.debug("Metadata dictionary: " + str(metadata_dict))
+
     payload_data = {"package_id": "test_" + str(int(datetime.now().timestamp())),
                     "s3_path": manifest_parent_prefix,
                     "s3_bucket_name": epadd_bucket_name,
-                    "admin_metadata":
-                        {"accessFlag": "N",
-                         "contentModel": "opaque",
-                         "depositingSystem": "ePADD",
-                         "firstGenerationInDrs": "unspecified",
-                         "objectRole": "CG:EMAIL",
-                         "usageClass": "LOWUSE",
-                         "storageClass": "AR",
-                         "ownerCode": "123",
-                         "billingCode": "456",
-                         "resourceNamePattern": "pattern",
-                         "urnAuthorityPath": "path",
-                         "depositAgent": "789",
-                         "depositAgentEmail": "someone@mailinator.com",
-                         "successEmail": "winner@mailinator.com",
-                         "failureEmail": "loser@mailinator.com",
-                         "successMethod": "method",
-                         "adminCategory": "root"}
+                    "admin_metadata": {
+                        "accessFlag": metadata_dict["accessFlag"],
+                        "contentModel": metadata_dict["contentModel"],
+                        "depositingSystem": metadata_dict["depositingSystem"],
+                        "firstGenerationInDrs": metadata_dict["firstGenerationInDrs"],
+                        "objectRole": metadata_dict["objectRole"],
+                        "usageClass": metadata_dict["usageClass"],
+                        "storageClass": metadata_dict["storageClass"],
+                        "ownerCode": metadata_dict["ownerCode"],
+                        "billingCode": metadata_dict["billingCode"],
+                        "resourceNamePattern": metadata_dict["resourceNamePattern"],
+                        "urnAuthorityPath": metadata_dict["urnAuthorityPath"],
+                        "depositAgent": metadata_dict["depositAgent"],
+                        "depositAgentEmail": metadata_dict["depositAgentEmail"],
+                        "successEmail": metadata_dict["successEmail"],
+                        "failureEmail": metadata_dict["failureEmail"],
+                        "successMethod": metadata_dict["successMethod"],
+                        "adminCategory": metadata_dict["adminCategory"]
+                    }
                     }
 
     logging.debug("Including TESTTRIGGER")
     if key_exists(manifest_parent_prefix + "TESTTRIGGER"):
-        payload_data["testing"] = "true"
+        payload_data["dry_run"] = "true"
 
     return payload_data
 
@@ -208,7 +222,6 @@ def collect_exports():
 
 
 def main():
-
     # Connect to s3 bucket
     logging.debug("Connect to S3 bucket")
     connect_to_bucket()

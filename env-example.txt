@@ -29,3 +29,4 @@ NEXTCLOUD_AWS_SECRET_KEY=
 # Integration Test
 TEST_EXPORT_FILE_PATH=/home/appuser/epadd-curator-app/test_export
 TEST_PREFIX=test/
+TEST_SIDECAR_FILE_PATH=/home/appuser/epadd-curator-app/resources/drsConfig.txt
