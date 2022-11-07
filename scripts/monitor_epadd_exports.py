@@ -151,9 +151,9 @@ def construct_payload_body(manifest_object_key):
                     }
                     }
 
-    logging.debug("Including TESTTRIGGER")
-    if key_exists(manifest_parent_prefix + "TESTTRIGGER"):
-        payload_data["dry_run"] = "true"
+    # logging.debug("Including TESTTRIGGER")
+    # if key_exists(manifest_parent_prefix + "TESTTRIGGER"):
+    #     payload_data["dry_run"] = "true"
 
     return payload_data
 
