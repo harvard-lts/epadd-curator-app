@@ -147,7 +147,9 @@ def construct_payload_body(manifest_object_key):
                         "successEmail": metadata_dict["successEmail"],
                         "failureEmail": metadata_dict["failureEmail"],
                         "successMethod": metadata_dict["successMethod"],
-                        "adminCategory": metadata_dict["adminCategory"]
+                        "adminCategory": metadata_dict["adminCategory"],
+                        "original_queue": "/queue/transfer_ready",
+                        "retry_count": 1
                     }
                     }
 
