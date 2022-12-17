@@ -210,6 +210,9 @@ def collect_exports():
 
     epadd_bucket_objects = epadd_bucket.objects.all()
     for epadd_bucket_object in epadd_bucket_objects:
+        #skip user dir
+        if re.search('user/', epadd_bucket_object.key, re.IGNORECASE):
+            continue
         if re.search('manifest(-md5|-sha256)?.txt', epadd_bucket_object.key, re.IGNORECASE):
             manifest_parent_prefix = get_parent_prefix(epadd_bucket_object.key)
             if not (key_exists(manifest_parent_prefix + "ingest.txt")
