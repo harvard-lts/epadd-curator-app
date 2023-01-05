@@ -33,7 +33,9 @@ class MockEpaddBucketObjects:
         self.files.append( MockEpaddBucketObject("test/manifest-sha256.txt/msdos.txt") )
         self.files.append( MockEpaddBucketObject("test/manifest-md5.txt/index.html") )
         self.files.append( MockEpaddBucketObject("user/readme.txt") )
-        self.files.append( MockEpaddBucketObject("user/") )    
+        self.files.append( MockEpaddBucketObject("user/") )   
+        self.files.append( MockEpaddBucketObject("user") )
+        self.files.append( MockEpaddBucketObject("test/user") )   
 
     def all(self):
         return self.files
