@@ -210,7 +210,10 @@ def collect_exports():
 
     epadd_bucket_objects = epadd_bucket.objects.all()
     for epadd_bucket_object in epadd_bucket_objects:
-        if re.search('manifest(-md5|-sha256)?.txt', epadd_bucket_object.key, re.IGNORECASE):
+        #skip user dir
+        if re.search('user[/]?', epadd_bucket_object.key, re.IGNORECASE):
+            pass
+        elif re.search('manifest(-md5|-sha256)?.txt', epadd_bucket_object.key, re.IGNORECASE):
             manifest_parent_prefix = get_parent_prefix(epadd_bucket_object.key)
             if not (key_exists(manifest_parent_prefix + "ingest.txt")
                     or key_exists(manifest_parent_prefix + "ingest.txt.failed")
@@ -237,10 +240,10 @@ def main():
     for key in export_object_keys:
         call_dims_ingest(key)
 
-
-try:
-    main()
-    sys.exit(0)
-except Exception as e:
-    traceback.print_exc()
-    sys.exit(1)
+if __name__ == '__main__':
+    try:
+        main()
+        sys.exit(0)
+    except Exception as e:
+        traceback.print_exc()
+        sys.exit(1)
