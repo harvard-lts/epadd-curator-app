@@ -252,7 +252,7 @@ def retrieve_export(zip_path, manifest_parent_prefix):
                 os.makedirs(os.path.dirname(local_file))
             else if obj.key[-1] == '/':
                 continue
-            bucket.download_file(obj.key, local_file)
+            epadd_bucket.download_file(obj.key, local_file)
 
         zip_local_dir = zip_path + "/" + manifest_parent_prefix
         return zip_local_dir
