@@ -12,6 +12,7 @@ import jcs
 import boto3
 import requests
 from requests import exceptions, HTTPError
+import py7zr
 
 DATEFORMAT = '%Y-%m-%d %H:%M:%S'
 relative_dir = os.path.dirname(os.path.realpath(__file__))
@@ -26,6 +27,7 @@ aws_secret_key = os.environ.get('NEXTCLOUD_AWS_SECRET_KEY')
 epadd_bucket_name = os.environ.get('EPADD_BUCKET_NAME')
 jwt_private_key_path = os.environ.get('JWT_PRIVATE_KEY_PATH')
 jwt_expiration = int(os.environ.get('JWT_EXPIRATION'))
+zip_path = os.environ.get('ZIP_PATH')
 
 logging.debug("Executing monitor_epadd_exports.py")
 
@@ -52,6 +54,19 @@ def call_dims_ingest(manifest_object_key):
         logging.error("Error opening private jwt token at path: " + jwt_private_key_path)
 
     payload_data = construct_payload_body(manifest_object_key)
+
+    #delete drs config file, since we already have the payload data
+    drsConfig_file = s3_resource.Object(epadd_bucket_name, manifest_parent_prefix + "drsConfig.txt")
+    drsConfig_file.delete()
+
+    #pull down directory for 7zip
+    zip_dir = retrieve_export(zip_path, manifest_parent_prefix)
+
+    #7zip up directory
+    zip_file = zip_export(zip_dir, manifest_parent_prefix)
+
+    #upload zip file back to manifest directory (manifest_parent_prefix)
+    upload_zip_export(zip_file, manifest_parent_prefix)
 
     # calculate iat and exp values
     current_datetime = datetime.now()
@@ -225,6 +240,51 @@ def collect_exports():
 
     return manifest_object_keys
 
+
+def retrieve_export(zip_path, manifest_parent_prefix):
+    """
+        pull down the export to local storage prior to zip (7zip)
+    """
+    try:
+        for obj in epadd_bucket.objects.filter(Prefix=manifest_parent_prefix):
+            local_file = os.path.join(zip_path, manifest_parent_prefix, obj.key)
+            if not os.path.exists(os.path.dirname(local_file)):
+                os.makedirs(os.path.dirname(local_file))
+            else if obj.key[-1] == '/':
+                continue
+            bucket.download_file(obj.key, local_file)
+
+        zip_local_dir = zip_path + "/" + manifest_parent_prefix
+        return zip_local_dir
+    except:
+        return False
+
+
+def zip_export(zip_path, manifest_parent_prefix):
+    """
+        zip up export in 7zip format
+    """
+    try:
+        zip_filename = manifest_parent_prefix[:-1] + ".7z"
+        with py7zr.SevenZipFile(zip_filename, 'w') as archive:
+            archive.writeall(zip_path)
+        return zip_path + zip_filename
+    except:
+        logging.error("Error zipping up export: " + manifest_parent_prefix)
+        return False
+
+
+def upload_zip_export(zip_path, manifest_parent_prefix):
+    """
+        upload zipped export back to s3
+    """
+    try:
+        zip_file = os.path.basename(zip_path)
+        epadd_bucket.upload_file(zip_path, manifest_parent_prefix + zip_file)
+        return True
+    except:
+        logging.error("Error uploading zip archive: " + zip_path)
+        return False
 
 def main():
     # Connect to s3 bucket
