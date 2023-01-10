@@ -3,5 +3,6 @@ pytest==6.2.2
 botocore==1.27.55
 boto3==1.24.55
 PyJWT==2.4.0
+py7zr=0.20.2
 cryptography==37.0.2
 jcs==0.2.0
