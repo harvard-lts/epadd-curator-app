@@ -60,8 +60,8 @@ class TestZipUnitCases(unittest.TestCase):
 
     def setUpClass():
         # create download and zip dirs if they don't exist
-        download_export_path = "./download_exports/"
-        zip_export_path = "./zip_exports/"
+        download_export_path = "../download_exports/"
+        zip_export_path = "../zip_exports/"
         if (not os.path.exists(download_export_path)):
             os.makedirs(download_export_path, exist_ok = True)
         if (not os.path.exists(zip_export_path)):
@@ -69,7 +69,7 @@ class TestZipUnitCases(unittest.TestCase):
 
     def test_retrieve_export_1(self): #test download from S3
         manifest_parent_prefix = "integration_test/"
-        download_export_path = "./download_exports"
+        download_export_path = "../download_exports"
         monitor_epadd_exports.connect_to_bucket()
         zip_local_dir = monitor_epadd_exports.retrieve_export(download_export_path, manifest_parent_prefix)
         file_exists = os.path.exists(zip_local_dir)
@@ -81,15 +81,15 @@ class TestZipUnitCases(unittest.TestCase):
         self.assertEqual(True, dir_has_items)
 
     def test_retrieve_export_2(self): #test zip of export
-        zip_export_path = "./zip_exports/"
-        download_export_path = "./download_exports/"
+        zip_export_path = "../zip_exports/"
+        download_export_path = "../download_exports/"
         manifest_parent_prefix = "integration_test/"
         file_path = monitor_epadd_exports.zip_export(zip_export_path, download_export_path, manifest_parent_prefix)
         file_exists = os.path.exists(file_path)
         self.assertEqual(True, file_exists)
     
     def test_retrieve_export_3(self): #test upload of export
-        zip_path = "./zip_exports/integration_test.7z"
+        zip_path = "../zip_exports/integration_test.7z"
         manifest_parent_prefix = "integration_test/"
         success = monitor_epadd_exports.upload_zip_export(zip_path, manifest_parent_prefix)
         self.assertEqual(True, success)
