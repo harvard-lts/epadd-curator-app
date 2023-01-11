@@ -11,3 +11,5 @@ services:
     volumes:
       - ./logs:/home/appuser/epadd-curator-app/logs
       - ./keys:/home/appuser/epadd-curator-app/keys
+      - ./zip_exports:/home/appuser/epadd-curator-app/zip_exports
+      - ./download_exports:/home/appuser/epadd-curator-app/download_exports
