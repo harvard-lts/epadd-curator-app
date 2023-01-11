@@ -57,9 +57,10 @@ def call_dims_ingest(manifest_object_key):
     payload_data = construct_payload_body(manifest_object_key)
 
     # delete drs config file, since we already have the payload data
-    drsConfig_file = s3_resource.Object(epadd_bucket_name, manifest_parent_prefix + "drsConfig.txt")
-    if (drsConfig_file != None):
-        drsConfig_file.delete()
+    try:
+        drsConfig_file = s3_resource.Object(epadd_bucket_name, manifest_parent_prefix + "drsConfig.txt")
+    except:
+        logging.error("Error while deleting drs config file from S3: " + manifest_parent_prefix + "drsConfig.txt")
 
     # pull down directory for 7zip
     zip_dir = retrieve_export(zip_path, manifest_parent_prefix)
@@ -68,13 +69,19 @@ def call_dims_ingest(manifest_object_key):
     zip_file = zip_export(zip_dir, manifest_parent_prefix)
 
     # delete contents of s3 export folder
-    epadd_bucket.objects.filter(Prefix=manifest_parent_prefix).delete()
+    try:
+        epadd_bucket.objects.filter(Prefix=manifest_parent_prefix).delete()
+    except:
+        logging.error("Error while deleting original export from S3 folder: " + manifest_parent_prefix)
 
     # upload zip file back to manifest directory (manifest_parent_prefix)
     upload_zip_export(zip_file, manifest_parent_prefix)
 
     # delete downloaded export
-    os.remove(zip_file)
+    try:
+        os.remove(zip_file)
+    except:
+        logging.error("Error while deleting zipped export: " + zip_file)
 
     # calculate iat and exp values
     current_datetime = datetime.now()
@@ -276,7 +283,7 @@ def zip_export(zip_path, download_export_path, manifest_parent_prefix):
     try:
         zip_filename = zip_path + manifest_parent_prefix[:-1] + ".7z"
         with py7zr.SevenZipFile(zip_filename, 'w') as archive:
-            archive.writeall(download_export_path + manifest_parent_prefix)
+            archive.writeall(download_export_path + manifest_parent_prefix, manifest_parent_prefix[:-1])
         return zip_filename
     except:
         logging.error("Error zipping up export: " + manifest_parent_prefix)
