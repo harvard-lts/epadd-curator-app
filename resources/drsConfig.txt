@@ -13,5 +13,4 @@ depositAgent=dimsdts1
 depositAgentEmail=DTS@HU.onmicrosoft.com
 successEmail=DTS@HU.onmicrosoft.com
 failureEmail=DTS@HU.onmicrosoft.com
-successMethod=method
-adminCategory=root
+successMethod=all
