@@ -14,3 +14,4 @@ depositAgentEmail=DTS@HU.onmicrosoft.com
 successEmail=DTS@HU.onmicrosoft.com
 failureEmail=DTS@HU.onmicrosoft.com
 successMethod=all
+adminCategory=http://idtest.lib.harvard.edu:10020/wordshack/adminCategory/27186
