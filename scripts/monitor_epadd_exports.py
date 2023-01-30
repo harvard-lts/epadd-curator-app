@@ -56,12 +56,15 @@ def call_dims_ingest(manifest_object_key):
 
     payload_data = construct_payload_body(manifest_object_key)
 
-    # delete drs config file, since we already have the payload data
-    try:
-        drsConfig_file = s3_resource.Object(epadd_bucket_name, manifest_parent_prefix + "drsConfig.txt")
-    except:
-        logging.error("Error while deleting drs config file from S3: " + manifest_parent_prefix + "drsConfig.txt")
+    logging.debug("Payload data extracted")
 
+    # delete drs config file, since we already have the payload data
+    # try:
+    #     drsConfig_file = s3_resource.Object(epadd_bucket_name, manifest_parent_prefix + "drsConfig.txt")
+    # except:
+    #     logging.error("Error while deleting drs config file from S3: " + manifest_parent_prefix + "drsConfig.txt")
+
+    '''
     # pull down directory for 7zip
     zip_dir = retrieve_export(zip_path, manifest_parent_prefix)
 
@@ -82,6 +85,7 @@ def call_dims_ingest(manifest_object_key):
         os.remove(zip_file)
     except:
         logging.error("Error while deleting zipped export: " + zip_file)
+    '''
 
     # calculate iat and exp values
     current_datetime = datetime.now()
