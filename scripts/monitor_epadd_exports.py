@@ -64,7 +64,6 @@ def call_dims_ingest(manifest_object_key):
     except:
         logging.error("Error while deleting drs config file from S3: " + manifest_parent_prefix + "drsConfig.txt")
 
-    '''
     # pull down directory for 7zip
     zip_dir = retrieve_export(zip_path, manifest_parent_prefix)
 
@@ -85,7 +84,6 @@ def call_dims_ingest(manifest_object_key):
         os.remove(zip_file)
     except:
         logging.error("Error while deleting zipped export: " + zip_file)
-    '''
 
     # calculate iat and exp values
     current_datetime = datetime.now()
