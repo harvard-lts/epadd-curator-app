@@ -56,13 +56,7 @@ def call_dims_ingest(manifest_object_key):
 
     payload_data = construct_payload_body(manifest_object_key)
 
-    logging.debug("Payload data extracted")
-
-    # delete drs config file, since we already have the payload data
-    # try:
-    #     drsConfig_file = s3_resource.Object(epadd_bucket_name, manifest_parent_prefix + "drsConfig.txt")
-    # except:
-    #     logging.error("Error while deleting drs config file from S3: " + manifest_parent_prefix + "drsConfig.txt")
+    logging.debug("Payload data extracted for {}".format(manifest_object_key))
 
     '''
     # pull down directory for 7zip
@@ -186,10 +180,6 @@ def construct_payload_body(manifest_object_key):
                         "retry_count": 1
                     }
                     }
-
-    # logging.debug("Including TESTTRIGGER")
-    # if key_exists(manifest_parent_prefix + "TESTTRIGGER"):
-    #     payload_data["dry_run"] = "true"
 
     return payload_data
 
