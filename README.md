@@ -56,3 +56,19 @@ This command stops and removes all containers specified in the docker-compose-lo
 ```
 docker-compose -f docker-compose-local.yml down
 ```
+
+## Running tests
+
+### 1: Setup Local Environment using instructions from above
+
+### 2: Exec into the container
+
+```
+docker exec -it epadd-curator-app bash
+```
+
+### 3: Run the tests
+
+```
+python3 -m unittest scripts/unit_tests.py 
+```

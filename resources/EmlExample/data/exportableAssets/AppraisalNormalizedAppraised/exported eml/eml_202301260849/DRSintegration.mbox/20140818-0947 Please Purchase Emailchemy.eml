@@ -1,0 +1,262 @@
+Subject: Please Purchase Emailchemy
+From: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Sender: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Date: Mon, 18 Aug 2014 09:47:36 -0400
+To: "Wetherill, Julie M." <julie_wetherill@harvard.edu>
+Message-ID: <cb34dd5e0bc9455abb3b2c776c5e4099@BLUPR0701MB769.namprd07.prod.outlook.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_NextPart_000_0080_01D8856F.B2E3D790"
+X-ePADD-Folder: C:\Users\jmw922\Documents\ePADD-related\JWEASFolderMBOX\mbox-DRSintegration\DRSintegration.mbox
+X-ePADD-Labels: 
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQHPuur4XVqBoV6OJkKBKvOT0EGiEg==
+Content-Language: en-us
+x-ms-exchange-organization-authas: Internal
+x-ms-exchange-organization-authsource: BLUPR0701MB769.namprd07.prod.outlook.com
+acceptlanguage: en-US
+x-originating-ip: [128.103.151.151]
+x-ms-exchange-organization-authmechanism: 03
+
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0080_01D8856F.B2E3D790
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+
+
+From: Gogel, Wendy M.
+Sent: Thursday, August 14, 2014 2:14 PM
+To: Kendall, Skip; Wetherill, Julie M.
+Cc: Reilly, Grainne; emap-admin@hulmail.harvard.edu
+Subject: EAS Best Practices
+
+
+
+Dear Skip and Julie, et al.
+
+
+
+
+
+Grainne and I were reviewing the default behavior of EAS related to DRS
+secure storage restrictions and realized that in the context of
+archivists processing activities, having an association of multiple, and
+potentially contradictory, rights blocks is possible. This is not
+technically a problem, since the presence of one or more "secure storage
+required" rights blocks, even contradictory ones, results in secure
+storage for the associated content. However, this can result in metadata
+that will be confusing to the archivists.
+
+
+
+Therefore, we have described what happens below so that you can include
+your recommendations for best practices in your documentation:
+
+
+
+
+
+Once pushed to DRS, all content with a rights block related to secure
+storage (required:unconfirmed or required:confirmed) is stored in DRS
+secure storage. Archivists need to note that the rights restriction of
+"secure storage: required:unconfirmed" is set by default by EAS when the
+packet is imported. If archivists also add a rights block as part of the
+metadata for the packet when they submit it to EAS, there will be  two
+rights blocks associated with every item in the packet. They will either
+be consistent or contradictory. Regardless, any content deposited in DRS
+with the secure storage rights block (confirmed or unconfirmed) will be
+stored in secure storage. If Archivists want the secure storage metadata
+associated with the content to be accurate, they need to review, verify
+the accuracy of the secure storage designation, and potentially modify
+it after the default set by EAS at import. This includes removing rights
+blocks with secure storage rights restrictions if the content does not
+require DRS secure storage.
+
+
+
+Yours,
+
+
+
+Grainne and Wendy
+
+Wendy Marcus Gogel
+
+Manager of Digital Content and Projects
+
+Harvard Library Preservation and Digital Imaging
+
+90 Mount Auburn Street, Room 317
+
+Cambridge, MA 02138
+
+42=C2=B0 22' 20.6436"N, 71=C2=B0 7' 11.1324"W
+
+T: 617-495-3724
+
+wendy_gogel@harvard.edu <mailto:wendy_gogel@harvard.edu>
+
+http://lib.harvard.edu
+
+http://lib.harvard.edu/preservation-services
+
+
+
+------=_NextPart_000_0080_01D8856F.B2E3D790
+Content-Type: text/html;charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<META HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; charset=3Diso-8859-=
+1">
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40"><head><meta name=3DGenerator content=3D"Microso=
+ft Word 12 (filtered medium)"><style><!--
+/* Font Definitions */
+@font-face
+=09{font-family:"Cambria Math";
+=09panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+=09{font-family:Cambria;
+=09panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+=09{font-family:Calibri;
+=09panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+=09{font-family:Tahoma;
+=09panose-1:2 11 6 4 3 5 4 4 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+=09{margin:0in;
+=09margin-bottom:.0001pt;
+=09font-size:12.0pt;
+=09font-family:"Times New Roman","serif";}
+a:link, span.MsoHyperlink
+=09{mso-style-priority:99;
+=09color:blue;
+=09text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+=09{mso-style-priority:99;
+=09color:purple;
+=09text-decoration:underline;}
+span.apple-style-span
+=09{mso-style-name:apple-style-span;}
+span.EmailStyle18
+=09{mso-style-type:personal-reply;
+=09font-family:"Calibri","sans-serif";
+=09color:#1F497D;}
+.MsoChpDefault
+=09{mso-style-type:export-only;
+=09font-size:10.0pt;}
+@page WordSection1
+=09{size:8.5in 11.0in;
+=09margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+=09{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]--></head><body lang=3DEN-US link=3Dblue vli=
+nk=3Dpurple><div class=3DWordSection1><p class=3DMsoNormal><span style=3D'f=
+ont-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'><o:p>&nbs=
+p;</o:p></span></p><p class=3DMsoNormal><span style=3D'font-size:11.0pt;fon=
+t-family:"Calibri","sans-serif";color:#1F497D'><o:p>&nbsp;</o:p></span></p>=
+<div><div style=3D'border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt=
+ 0in 0in 0in'><p class=3DMsoNormal><b><span style=3D'font-size:10.0pt;font-=
+family:"Tahoma","sans-serif"'>From:</span></b><span style=3D'font-size:10.0=
+pt;font-family:"Tahoma","sans-serif"'> Gogel, Wendy M. <br><b>Sent:</b> Thu=
+rsday, August 14, 2014 2:14 PM<br><b>To:</b> Kendall, Skip; Wetherill, Juli=
+e M.<br><b>Cc:</b> Reilly, Grainne; emap-admin@hulmail.harvard.edu<br><b>Su=
+bject:</b> EAS Best Practices<o:p></o:p></span></p></div></div><p class=3DM=
+soNormal><o:p>&nbsp;</o:p></p><div><div><div><p class=3DMsoNormal><span sty=
+le=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color:black'>Dear=
+ Skip and Julie, et al.<o:p></o:p></span></p></div><div><p class=3DMsoNorma=
+l><span style=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color:=
+black'><o:p>&nbsp;</o:p></span></p></div><div><p class=3DMsoNormal><span st=
+yle=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color:black'><o:=
+p>&nbsp;</o:p></span></p></div><div><div><p class=3DMsoNormal><span style=
+=3D'font-size:10.5pt;font-family:"Cambria","serif";color:black'>Grainne and=
+ I were reviewing the default behavior of EAS related to DRS secure storage=
+ restrictions and realized that in the context of archivists processing act=
+ivities, having an association of multiple, and potentially contradictory, =
+rights blocks is possible. This is not technically a problem, since the pre=
+sence of one or more &quot;secure storage required&quot; rights blocks, eve=
+n contradictory ones, results in secure storage for the associated content.=
+ H<span class=3Dapple-style-span>owever, this can result in metadata that w=
+ill be confusing to the archivists.&nbsp;</span></span><span style=3D'font-=
+size:10.5pt;font-family:"Calibri","sans-serif";color:black'><o:p></o:p></sp=
+an></p></div><div><p class=3DMsoNormal><span style=3D'font-size:10.5pt;font=
+-family:"Calibri","sans-serif";color:black'><o:p>&nbsp;</o:p></span></p></d=
+iv><div><p class=3DMsoNormal><span class=3Dapple-style-span><span style=3D'=
+font-size:10.5pt;font-family:"Cambria","serif";color:black'>Therefore, we h=
+ave described what happens below so that you can include your recommendatio=
+ns for best practices in your documentation:</span></span><span style=3D'fo=
+nt-size:10.5pt;font-family:"Calibri","sans-serif";color:black'><o:p></o:p><=
+/span></p></div><div><p class=3DMsoNormal><span style=3D'font-size:10.5pt;f=
+ont-family:"Calibri","sans-serif";color:black'><o:p>&nbsp;</o:p></span></p>=
+</div><div><p class=3DMsoNormal><span style=3D'font-size:10.5pt;font-family=
+:"Calibri","sans-serif";color:black'><o:p>&nbsp;</o:p></span></p></div><div=
+><p class=3DMsoNormal><span style=3D'font-size:10.5pt;font-family:"Cambria"=
+,"serif";color:black'>Once pushed to DRS, all content with a rights block r=
+elated to&nbsp;<span class=3Dapple-style-span>secure storage (required:unco=
+nfirmed or&nbsp;required:confirmed) is stored in DRS secure storage.&nbsp;A=
+rchivists need to note that the rights restriction of &quot;secure storage:=
+ required:unconfirmed&quot; is set by default by EAS when the packet is imp=
+orted. If archivists also add a rights block as part of the metadata for th=
+e packet when they submit it to EAS, there will be&nbsp;&nbsp;two rights bl=
+ocks associated with every item in the packet. They will either be consiste=
+nt or contradictory. Regardless, any content deposited in DRS with the secu=
+re storage rights block (confirmed or unconfirmed) will be stored in secure=
+ storage. If Archivists want the secure storage metadata associated with th=
+e content to be accurate, they need to review, verify the accuracy of the s=
+ecure storage designation, and potentially modify it after the default set =
+by EAS at import. This includes removing rights blocks with secure storage =
+rights restrictions if the content does not require DRS secure storage. &nb=
+sp; &nbsp; &nbsp;</span></span><span style=3D'font-size:10.5pt;font-family:=
+"Calibri","sans-serif";color:black'><o:p></o:p></span></p></div></div><div>=
+<p class=3DMsoNormal><span style=3D'font-size:10.5pt;font-family:"Calibri",=
+"sans-serif";color:black'>&nbsp;<o:p></o:p></span></p></div><div><p class=
+=3DMsoNormal><span style=3D'font-size:10.5pt;font-family:"Calibri","sans-se=
+rif";color:black'>Yours,<o:p></o:p></span></p></div><div><p class=3DMsoNorm=
+al><span style=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color=
+:black'><o:p>&nbsp;</o:p></span></p></div><div><p class=3DMsoNormal><span s=
+tyle=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color:black'>Gr=
+ainne and Wendy<o:p></o:p></span></p></div><div><div><div><div><div><p clas=
+s=3DMsoNormal><span style=3D'font-size:10.5pt;font-family:"Calibri","sans-s=
+erif";color:black'>Wendy Marcus Gogel<o:p></o:p></span></p></div><div><p cl=
+ass=3DMsoNormal><span style=3D'font-size:10.5pt;font-family:"Calibri","sans=
+-serif";color:black'>Manager of Digital Content and Projects<o:p></o:p></sp=
+an></p></div><div><p class=3DMsoNormal><span style=3D'font-size:10.5pt;font=
+-family:"Calibri","sans-serif";color:black'>Harvard Library Preservation an=
+d Digital Imaging<o:p></o:p></span></p></div><div><p class=3DMsoNormal><spa=
+n style=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color:black'=
+>90 Mount Auburn Street, Room 317<o:p></o:p></span></p></div><div><p class=
+=3DMsoNormal><span style=3D'font-size:10.5pt;font-family:"Calibri","sans-se=
+rif";color:black'>Cambridge, MA 02138<o:p></o:p></span></p></div><div><p cl=
+ass=3DMsoNormal><span class=3Dapple-style-span><span style=3D'font-size:10.=
+5pt;font-family:"Calibri","sans-serif";color:black'>42=C2=B0 22' 20.6436&qu=
+ot;N, 71=C2=B0 7' 11.1324&quot;W</span></span><span style=3D'font-size:10.5=
+pt;font-family:"Calibri","sans-serif";color:black'><o:p></o:p></span></p></=
+div><div><p class=3DMsoNormal><span class=3Dapple-style-span><span style=3D=
+'font-size:10.5pt;font-family:"Calibri","sans-serif";color:black'>T: 617-49=
+5-3724</span></span><span style=3D'font-size:10.5pt;font-family:"Calibri","=
+sans-serif";color:black'><o:p></o:p></span></p></div></div><div><p class=3D=
+MsoNormal><span style=3D'font-size:10.5pt;font-family:"Calibri","sans-serif=
+";color:black'><a href=3D"mailto:wendy_gogel@harvard.edu">wendy_gogel@harva=
+rd.edu</a><o:p></o:p></span></p></div><div><p class=3DMsoNormal><span style=
+=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color:black'><a hre=
+f=3D"http://lib.harvard.edu">http://lib.harvard.edu</a><o:p></o:p></span></=
+p></div><div><p class=3DMsoNormal><span style=3D'font-size:10.5pt;font-fami=
+ly:"Calibri","sans-serif";color:black'><a href=3D"http://lib.harvard.edu/pr=
+eservation-services">http://lib.harvard.edu/preservation-services</a><o:p><=
+/o:p></span></p></div></div></div></div></div></div></div></body></html>
+------=_NextPart_000_0080_01D8856F.B2E3D790--
+
+

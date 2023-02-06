@@ -1,0 +1,1514 @@
+From grainne_reilly@harvard.edu Mon Apr 28 16:58:02 2014
+From: "Reilly, Grainne" <grainne_reilly@harvard.edu>
+Sender: "Reilly, Grainne" <grainne_reilly@harvard.edu>
+To: "Wetherill, Julie M." <julie_wetherill@harvard.edu>
+Subject: EAS secure dropboxes
+Date: Mon, 28 Apr 2014 12:58:00 -0400
+Message-ID: <CF8400D5.DA2B%grainne_reilly@harvard.edu>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_0034_01D8856F.B26A88E0"
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQHPYwMDQerZArefI0KHNmyMx1T+dQ==
+Content-Language: en-us
+x-ms-exchange-organization-authas: Internal
+x-ms-exchange-organization-authsource: SN2PR07MB064.namprd07.prod.outlook.com
+acceptlanguage: en-US
+x-originating-ip: [128.103.151.66]
+x-ms-exchange-organization-authmechanism: 04
+
+This is a multipart message in MIME format.
+
+------=_NextPart_000_0034_01D8856F.B26A88E0
+Content-Type: text/plain;
+	charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+
+Hi Julie,
+
+Now that we are setting up the new QA DRS2 secure environment, I just
+want to confirm something regarding the secure DRS2 drop boxes. 
+
+For EAS we have several drop boxes (all secure):
+easgsdftp
+
+eashmsftp
+
+eashuamftp
+
+eashularchftp
+
+eashulftest
+
+easradftp
+For DRS2 the proposal is to have one dropbox for use by all EAS users:
+/drs2qa/secure/dropboxes/eastest_secure
+Does this sound right to you?
+Thanks,
+Grainne
+
+
+------=_NextPart_000_0034_01D8856F.B26A88E0
+Content-Type: text/html;
+	charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; =
+charset=3Dus-ascii"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; -webkit-line-break: after-white-space; "><div =
+style=3D"color: rgb(0, 0, 0); font-size: 14px; font-family: Calibri, =
+sans-serif; ">Hi Julie,</div><div style=3D"color: rgb(0, 0, 0); =
+font-size: 14px; font-family: Calibri, sans-serif; "><br></div><div =
+style=3D"color: rgb(0, 0, 0); font-size: 14px; font-family: Calibri, =
+sans-serif; ">Now that we are setting up the new QA DRS2 secure =
+environment, I just want to confirm something regarding the secure DRS2 =
+drop boxes.&nbsp;</div><div style=3D"color: rgb(0, 0, 0); font-size: =
+14px; font-family: Calibri, sans-serif; "><br></div><div style=3D"color: =
+rgb(0, 0, 0); font-size: 14px; font-family: Calibri, sans-serif; ">For =
+EAS we have several drop boxes (all secure):</div><div><pre =
+id=3D"comment_text_12" style=3D"color: rgb(0, 0, 0); font-size: 14px; =
+font-family: Calibri, sans-serif; ">easgsdftp
+eashmsftp
+eashuamftp
+eashularchftp
+eashulftest
+easradftp
+</pre><pre id=3D"comment_text_12"><font face=3D"Calibri" style=3D"color: =
+rgb(0, 0, 0); font-size: 14px; ">For DRS2 the proposal is to have one =
+dropbox for use by all EAS users</font><font face=3D"Calibri"><span =
+style=3D"font-size: 14px;">:</span></font></pre><pre =
+id=3D"comment_text_12">/drs2qa/secure/dropboxes/eastest_secure</pre><pre =
+id=3D"comment_text_12"><font face=3D"Calibri">Does this sound right to =
+you?</font></pre><pre id=3D"comment_text_12"><font =
+face=3D"Calibri">Thanks,</font></pre><pre id=3D"comment_text_12"><font =
+face=3D"Calibri">Grainne</font></pre><pre id=3D"comment_text_12" =
+style=3D"color: rgb(0, 0, 0); font-size: 14px; font-family: Calibri, =
+sans-serif; "><br></pre></div></body></html>
+
+------=_NextPart_000_0034_01D8856F.B26A88E0--
+
+From patti_fucci@harvard.edu Thu Nov 19 12:11:20 2015
+From: "Fucci, Patti" <patti_fucci@harvard.edu>
+Sender: "Fucci, Patti" <patti_fucci@harvard.edu>
+To: "Wetherill, Julie M." <julie_wetherill@harvard.edu>
+References: <CO1PR07MB9268E08CB9808844E92DD5D8A1E0@CO1PR07MB926.namprd07.prod.outlook.com> <CO1PR07MB878B1161343333D77EC286F881E0@CO1PR07MB878.namprd07.prod.outlook.com> <CO1PR07MB9263E5A9D7AD823D0AEFD8E8A1C0@CO1PR07MB926.namprd07.prod.outlook.com> <CO1PR07MB87827D8CB15ACF5B58B732A881C0@CO1PR07MB878.namprd07.prod.outlook.com>
+In-Reply-To: <CO1PR07MB87827D8CB15ACF5B58B732A881C0@CO1PR07MB878.namprd07.prod.outlook.com>
+Subject: FW: EAS QA dropboxes?
+Date: Thu, 19 Nov 2015 08:11:17 -0400
+Message-ID: <BY1PR0701MB12706579B0645301FDC13C25871B0@BY1PR0701MB1270.namprd07.prod.outlook.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_0038_01D8856F.B26F1CC0"
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AdEgeO81DtkI2TA3TSyv664s3r2vxwAFKSEQAF2t7PAABefAoAAp3Pzg
+Content-Language: en-us
+x-ms-exchange-organization-authas: Internal
+x-ms-exchange-organization-authsource: BY1PR0701MB1270.namprd07.prod.outlook.com
+acceptlanguage: en-US
+x-originating-ip: [128.103.151.27]
+x-ms-exchange-organization-authmechanism: 03
+
+This is a multipart message in MIME format.
+
+------=_NextPart_000_0038_01D8856F.B26F1CC0
+Content-Type: text/plain;
+	charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+
+FYI
+
+ 
+
+From: Johnston, Paul A. 
+Sent: Wednesday, November 18, 2015 11:21 AM
+To: Fucci, Patti
+Subject: RE: EAS QA dropboxes?
+
+ 
+
+Hey Patti,
+
+ 
+
+The new password for the  'eashuamftp"  dropbox account is:
+
+ 
+
+ArtR00lz
+
+ 
+
+(Those are zero's, not o's.)
+
+ 
+
+Thanks,
+
+pj
+
+ 
+
+ 
+
+From: Wetherill, Julie M. 
+Sent: Wednesday, November 18, 2015 8:27 AM
+To: Johnston, Paul A.
+Cc: Fucci, Patti
+Subject: RE: EAS QA dropboxes?
+
+ 
+
+Hi Paul,
+
+ 
+
+I don't know password to the the HUAM EAS QA dropbox. Can you reset and
+let me know the new password ASAP? Since I'm in a class all day today,
+can you communicate the password to Patti Fucci? 
+
+ 
+
+Patti - once you get it, please pass it on to Amy Benson by phone. Also
+please let her know that address of EAS QA dropboxes is:
+
+ 
+
+easdrop-secure-qa.hul.harvard.edu 
+
+ 
+
+Thanks!  --julie
+
+ 
+
+From: Johnston, Paul A. 
+Sent: Monday, November 16, 2015 11:45 AM
+To: Wetherill, Julie M.
+Subject: RE: EAS QA dropboxes?
+
+ 
+
+Actually their EAS dropbox account on the QA host, haldeman, has the
+same name and password as on the prod host, tomlinson:  'eashuamftp'.
+Nearly all the QA accounts for EAS are set up the same way, don't know
+why.  Let me know if they need their password reset.
+
+ 
+
+--pj
+
+ 
+
+ 
+
+From: Wetherill, Julie M. [mailto:julie_wetherill@harvard.edu] 
+Sent: Monday, November 16, 2015 9:13 AM
+To: unix-help@hulmail.harvard.edu <mailto:unix-help@hulmail.harvard.edu>
+
+Subject: EAS QA dropboxes?
+
+ 
+
+Howdy,
+
+ 
+
+Another EAS-related thing. Schlesinger staff need a QA EAS dropbox ASAP.
+At one point we had QA dropboxes for project participants, but I suspect
+these were blown away when EAS went to prod.  Their prod dropbox is
+'eashuamftp' and I think the QA name pattern would be 'eashuamftest'?
+
+ 
+
+Thanks. --julie
+
+
+------=_NextPart_000_0038_01D8856F.B26F1CC0
+Content-Type: text/html;
+	charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" =
+xmlns:o=3D"urn:schemas-microsoft-com:office:office" =
+xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =
+xmlns=3D"http://www.w3.org/TR/REC-html40"><head><META =
+HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
+charset=3Dus-ascii"><meta name=3DGenerator content=3D"Microsoft Word 14 =
+(filtered medium)"><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-priority:99;
+	mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-priority:99;
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma","sans-serif";}
+span.EmailStyle19
+	{mso-style-type:personal;
+	font-family:"Calibri","sans-serif";
+	color:windowtext;}
+span.EmailStyle20
+	{mso-style-type:personal;
+	font-family:"Calibri","sans-serif";
+	color:#1F497D;}
+span.EmailStyle21
+	{mso-style-type:personal;
+	font-family:"Calibri","sans-serif";
+	color:#1F497D;}
+span.EmailStyle22
+	{mso-style-type:personal;
+	font-family:"Calibri","sans-serif";
+	color:#1F497D;}
+span.EmailStyle23
+	{mso-style-type:personal-reply;
+	font-family:"Calibri","sans-serif";
+	color:#1F497D;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]--></head><body lang=3DEN-US link=3Dblue =
+vlink=3Dpurple><div class=3DWordSection1><p class=3DMsoNormal><span =
+style=3D'color:#1F497D'>FYI<o:p></o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'color:#1F497D'><o:p>&nbsp;</o:p></span></p><div><div =
+style=3D'border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0in =
+0in 0in'><p class=3DMsoNormal><b><span =
+style=3D'font-size:10.0pt;font-family:"Tahoma","sans-serif"'>From:</span>=
+</b><span style=3D'font-size:10.0pt;font-family:"Tahoma","sans-serif"'> =
+Johnston, Paul A. <br><b>Sent:</b> Wednesday, November 18, 2015 11:21 =
+AM<br><b>To:</b> Fucci, Patti<br><b>Subject:</b> RE: EAS QA =
+dropboxes?<o:p></o:p></span></p></div></div><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal><span =
+style=3D'font-size:12.0pt;color:#1F497D'>Hey =
+Patti,<o:p></o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-size:12.0pt;color:#1F497D'><o:p>&nbsp;</o:p></span></p><p =
+class=3DMsoNormal><span style=3D'font-size:12.0pt;color:#1F497D'>The new =
+password for the&nbsp; 'eashuamftp&quot;&nbsp; dropbox account =
+is:<o:p></o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-size:12.0pt;color:#1F497D'><o:p>&nbsp;</o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'font-family:Consolas;color:#1F497D'>ArtR00lz<o:p></o:p></span></=
+p><p class=3DMsoNormal><span =
+style=3D'font-size:12.0pt;color:#1F497D'><o:p>&nbsp;</o:p></span></p><p =
+class=3DMsoNormal><span style=3D'font-size:12.0pt;color:#1F497D'>(Those =
+are zero's, not o's.)<o:p></o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-size:12.0pt;color:#1F497D'><o:p>&nbsp;</o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'font-size:12.0pt;color:#1F497D'>Thanks,<o:p></o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'font-size:12.0pt;color:#1F497D'>pj<o:p></o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'font-size:12.0pt;color:#1F497D'><o:p>&nbsp;</o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'font-size:12.0pt;color:#1F497D'><o:p>&nbsp;</o:p></span></p><div=
+ style=3D'border:none;border-left:solid blue 1.5pt;padding:0in 0in 0in =
+4.0pt'><div><div style=3D'border:none;border-top:solid #B5C4DF =
+1.0pt;padding:3.0pt 0in 0in 0in'><p class=3DMsoNormal><b><span =
+style=3D'font-size:10.0pt;font-family:"Tahoma","sans-serif"'>From:</span>=
+</b><span style=3D'font-size:10.0pt;font-family:"Tahoma","sans-serif"'> =
+Wetherill, Julie M. <br><b>Sent:</b> Wednesday, November 18, 2015 8:27 =
+AM<br><b>To:</b> Johnston, Paul A.<br><b>Cc:</b> Fucci, =
+Patti<br><b>Subject:</b> RE: EAS QA =
+dropboxes?<o:p></o:p></span></p></div></div><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal><span =
+style=3D'color:#1F497D'>Hi Paul,<o:p></o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'color:#1F497D'><o:p>&nbsp;</o:p></span></p><p =
+class=3DMsoNormal><span style=3D'color:#1F497D'>I don&#8217;t know =
+password to the the HUAM EAS QA dropbox. Can you reset and let me know =
+the new password ASAP? Since I&#8217;m in a class all day today, can you =
+communicate the password to Patti Fucci? <o:p></o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'color:#1F497D'><o:p>&nbsp;</o:p></span></p><p =
+class=3DMsoNormal><span style=3D'color:#1F497D'>Patti &#8211; once you =
+get it, please pass it on to Amy Benson by phone. Also please let her =
+know that address of EAS QA dropboxes is:<o:p></o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'color:#1F497D'><o:p>&nbsp;</o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'color:#1F497D'>easdrop-secure-qa.hul.harvard.edu =
+<o:p></o:p></span></p><p class=3DMsoNormal><span =
+style=3D'color:#1F497D'><o:p>&nbsp;</o:p></span></p><p =
+class=3DMsoNormal><span style=3D'color:#1F497D'>Thanks!&nbsp; =
+--julie<o:p></o:p></span></p><p class=3DMsoNormal><span =
+style=3D'color:#1F497D'><o:p>&nbsp;</o:p></span></p><div><div =
+style=3D'border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0in =
+0in 0in'><p class=3DMsoNormal><b><span =
+style=3D'font-size:10.0pt;font-family:"Tahoma","sans-serif"'>From:</span>=
+</b><span style=3D'font-size:10.0pt;font-family:"Tahoma","sans-serif"'> =
+Johnston, Paul A. <br><b>Sent:</b> Monday, November 16, 2015 11:45 =
+AM<br><b>To:</b> Wetherill, Julie M.<br><b>Subject:</b> RE: EAS QA =
+dropboxes?<o:p></o:p></span></p></div></div><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal><span =
+style=3D'color:#1F497D'>Actually their EAS dropbox account on the QA =
+host, haldeman, has the same name and password as on the prod host, =
+tomlinson:&nbsp; &#8216;eashuamftp&#8217;.&nbsp; Nearly all the QA =
+accounts for EAS are set up the same way, don't know why.&nbsp; Let me =
+know if they need their password reset.<o:p></o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'color:#1F497D'><o:p>&nbsp;</o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'color:#1F497D'>--pj<o:p></o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'color:#1F497D'><o:p>&nbsp;</o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'color:#1F497D'><o:p>&nbsp;</o:p></span></p><div =
+style=3D'border:none;border-left:solid blue 1.5pt;padding:0in 0in 0in =
+4.0pt'><div><div style=3D'border:none;border-top:solid #B5C4DF =
+1.0pt;padding:3.0pt 0in 0in 0in'><p class=3DMsoNormal><b><span =
+style=3D'font-size:10.0pt;font-family:"Tahoma","sans-serif"'>From:</span>=
+</b><span style=3D'font-size:10.0pt;font-family:"Tahoma","sans-serif"'> =
+Wetherill, Julie M. [<a =
+href=3D"mailto:julie_wetherill@harvard.edu">mailto:julie_wetherill@harvar=
+d.edu</a>] <br><b>Sent:</b> Monday, November 16, 2015 9:13 =
+AM<br><b>To:</b> <a =
+href=3D"mailto:unix-help@hulmail.harvard.edu">unix-help@hulmail.harvard.e=
+du</a><br><b>Subject:</b> EAS QA =
+dropboxes?<o:p></o:p></span></p></div></div><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal>Howdy,<o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>Another =
+EAS-related thing. Schlesinger staff need a QA EAS dropbox ASAP. At one =
+point we had QA dropboxes for project participants, but I suspect these =
+were blown away when EAS went to prod. &nbsp;Their prod dropbox is =
+&#8216;eashuamftp&#8217; and I think the QA name pattern would be =
+&#8216;eashuamftest&#8217;?<o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>Thanks. =
+--julie<o:p></o:p></p></div></div></div></body></html>
+------=_NextPart_000_0038_01D8856F.B26F1CC0--
+
+From abigail_cramer@harvard.edu Wed Jun  1 19:10:28 2022
+From: "Cramer, Abby" <abigail_cramer@harvard.edu>
+Sender: "Cramer, Abby" <abigail_cramer@harvard.edu>
+To: "Schwenke, Megan" <megan_schwenke@harvard.edu>,
+	"Wetherill, Julie M." <julie_wetherill@harvard.edu>,
+	"Kendall, Skip" <skip_kendall@harvard.edu>
+References: <SJ0PR07MB858203DCA27771530C55AF8D8ADF9@SJ0PR07MB8582.namprd07.prod.outlook.com> <BL0PR07MB5507F3BDA2B6B67C83B27BB0EFDF9@BL0PR07MB5507.namprd07.prod.outlook.com>
+In-Reply-To: <BL0PR07MB5507F3BDA2B6B67C83B27BB0EFDF9@BL0PR07MB5507.namprd07.prod.outlook.com>
+Subject: RE: EAS system: disposition of dropbox leftovers?
+Date: Wed, 1 Jun 2022 15:10:27 -0400
+Message-ID: <MN2PR07MB6493779DF4679CCACE95B09FE6DF9@MN2PR07MB6493.namprd07.prod.outlook.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_003C_01D8856F.B273FEC0"
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: Adh1xXmkW207F3tbSC2akPZ8mjflJAAEj2nAAATVCiA=
+Content-Language: en-us
+x-ms-exchange-organization-authas: Internal
+x-ms-exchange-organization-authsource: MN2PR07MB6493.namprd07.prod.outlook.com
+acceptlanguage: en-US
+x-ms-exchange-organization-authmechanism: 04
+x-ms-exchange-organization-originalclientipaddress: 67.253.48.16
+x-ms-exchange-organization-originalserveripaddress: 2603:10b6:208:161::30
+x-ms-publictraffictype: Email
+x-ms-has-attach: 
+x-ms-traffictypediagnostic: DS7PR07MB7783:EE_
+x-ms-exchange-crosstenant-originalarrivaltime: 01 Jun 2022 19:10:27.5296 (UTC)
+x-ms-exchange-crosstenant-fromentityheader: Hosted
+x-ms-exchange-crosstenant-id: 6ffa22f4-4568-4105-ad43-2e3ad4726957
+x-ms-exchange-transport-crosstenantheadersstamped: DS7PR07MB7783
+x-ms-exchange-transport-endtoendlatency: 00:00:00.8965283
+x-ms-exchange-crosstenant-network-message-id: c86a97bb-13cc-4ce6-2dea-08da4402637a
+authentication-results: dkim=none (message not signed) header.d=none;dmarc=none action=none header.from=harvard.edu;
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:-1;SRV:;IPV:NLI;SFV:SKI;H:MN2PR07MB6493.namprd07.prod.outlook.com;PTR:;CAT:NONE;SFS:;DIR:INB;
+x-ms-office365-filtering-correlation-id: c86a97bb-13cc-4ce6-2dea-08da4402637a
+x-microsoft-antispam: BCL:0;
+x-ms-exchange-crosstenant-authas: Internal
+x-ms-exchange-crosstenant-authsource: MN2PR07MB6493.namprd07.prod.outlook.com
+x-ms-exchange-crosstenant-mailboxtype: HOSTED
+x-ms-exchange-crosstenant-userprincipalname: afhDquid6ItmTz7jcNI16Ha2o15X5RPg+fh+LscNHHqpcgRDUNq33JY9apBPM+FMuMAmHIuwTDGhviy8RhITbq86Gfe0bLntovTb0QFW5yo=
+x-ms-exchange-processed-by-bccfoldering: 15.20.5293.019
+
+This is a multipart message in MIME format.
+
+------=_NextPart_000_003C_01D8856F.B273FEC0
+Content-Type: text/plain;
+	charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+
+Hi Julie,
+
+ 
+
+I can confirm that the packets on the HUAM.MUSE drop box can be
+discarded. I cannot speak to the HUL.ARCH drop box, as I have never had
+access to that.
+
+ 
+
+Best,
+Abby
+
+ 
+
+Abigail Cramer
+
+Digital Asset Manager/Digital Archivist
+
+Harvard Art Museums
+
+ <http://www.harvardartmuseums.org> www.harvardartmuseums.org
+
+ 
+
+From: Schwenke, Megan <megan_schwenke@harvard.edu> 
+Sent: Wednesday, June 1, 2022 12:59 PM
+To: Wetherill, Julie M. <julie_wetherill@harvard.edu>; Kendall, Skip
+<skip_kendall@harvard.edu>
+Cc: Cramer, Abby <abigail_cramer@harvard.edu>
+Subject: RE: EAS system: disposition of dropbox leftovers?
+
+ 
+
+Hi Julie, copying in Abby Cramer who manages this aspect of email
+archiving for the Art Museums.
+
+ 
+
+Thanks,
+
+Megan
+
+ 
+
+From: Wetherill, Julie M. <julie_wetherill@harvard.edu
+<mailto:julie_wetherill@harvard.edu> > 
+Sent: Wednesday, June 01, 2022 12:47 PM
+To: Schwenke, Megan <megan_schwenke@harvard.edu
+<mailto:megan_schwenke@harvard.edu> >; Kendall, Skip
+<skip_kendall@harvard.edu <mailto:skip_kendall@harvard.edu> >
+Cc: Wetherill, Julie M. <julie_wetherill@harvard.edu
+<mailto:julie_wetherill@harvard.edu> >
+Subject: EAS system: disposition of dropbox leftovers?
+
+ 
+
+Hi Megan and Skip, 
+
+ 
+
+I hope this message finds you well. As you know, the EAS email archiving
+system is on a trajectory to retirement and replacement by a new
+ePadd-based system (latest estimate is in early 2023). Although the EAS
+system is still running, it has been "un-plugged" from the DRS and
+within a few weeks, HUIT needs to retire the hardware on which EAS
+dropboxes run. 
+
+ 
+
+I'm contacting you as representatives of Art Museums and HU Archives
+Records Management to discuss the disposition of email content still in
+your respective dropboxes. 
+
+ 
+
+The HUAM.MUSE dropbox still holds these packets: 
+
+*	HUAM_RECORDS_2019_46_arnold-biucchi
+*	HUAM_RECORDS_2019_58_greenidge
+*	HUAM_RECORDS_2019_72_lasser
+*	HUAM_RECORDS_2020_01_bruno
+*	HUAM_RECORDS_2020_02_barcus
+*	HUAM_RECORDS_2020_03_atkinson
+
+ 
+
+The HUL.ARCH dropbox still holds these packets:
+
+*	Crimson_2013
+*	NancyCline
+
+ 
+
+If you could import this dropbox content into EAS, it can stay on the
+EAS file system for the time being. But I suspect you would have already
+done this if you could. Is this data still needed? Thanks in advance for
+your assistance!
+
+ 
+
+Regards. -julie
+
+ 
+
+Julie Wetherill
+
+HUIT Library Technology Services
+
+
+------=_NextPart_000_003C_01D8856F.B273FEC0
+Content-Type: text/html;
+	charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" =
+xmlns:o=3D"urn:schemas-microsoft-com:office:office" =
+xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =
+xmlns=3D"http://www.w3.org/TR/REC-html40"><head><meta =
+http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dus-ascii"><meta name=3DGenerator content=3D"Microsoft Word 15 =
+(filtered medium)"><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.EmailStyle21
+	{mso-style-type:personal-reply;
+	font-family:"Calibri",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+/* List Definitions */
+@list l0
+	{mso-list-id:620457070;
+	mso-list-template-ids:269364856;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:863326029;
+	mso-list-template-ids:28229702;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:1370181732;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1542963720 67698689 67698691 67698693 67698689 =
+67698691 67698693 67698689 67698691 67698693;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]--></head><body lang=3DEN-US =
+link=3D"#0563C1" vlink=3D"#954F72" style=3D'word-wrap:break-word'><div =
+class=3DWordSection1><p class=3DMsoNormal>Hi Julie,<o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>I can =
+confirm that the packets on the HUAM.MUSE drop box can be discarded. I =
+cannot speak to the HUL.ARCH drop box, as I have never had access to =
+that.<o:p></o:p></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal>Best,<br>Abby<o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><div><p =
+class=3DMsoNormal><b><span style=3D'font-size:10.0pt'>Abigail =
+Cramer<o:p></o:p></span></b></p><p class=3DMsoNormal><span =
+style=3D'font-size:10.0pt'>Digital Asset Manager/Digital =
+Archivist<o:p></o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-size:10.0pt'>Harvard Art Museums<o:p></o:p></span></p><p =
+class=3DMsoNormal><span style=3D'font-size:10.0pt'><a =
+href=3D"http://www.harvardartmuseums.org"><span =
+style=3D'color:#0563C1'>www.harvardartmuseums.org</span></a><o:p></o:p></=
+span></p></div><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><div><div =
+style=3D'border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in =
+0in 0in'><p class=3DMsoNormal><b>From:</b> Schwenke, Megan =
+&lt;megan_schwenke@harvard.edu&gt; <br><b>Sent:</b> Wednesday, June 1, =
+2022 12:59 PM<br><b>To:</b> Wetherill, Julie M. =
+&lt;julie_wetherill@harvard.edu&gt;; Kendall, Skip =
+&lt;skip_kendall@harvard.edu&gt;<br><b>Cc:</b> Cramer, Abby =
+&lt;abigail_cramer@harvard.edu&gt;<br><b>Subject:</b> RE: EAS system: =
+disposition of dropbox leftovers?<o:p></o:p></p></div></div><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>Hi Julie, =
+copying in Abby Cramer who manages this aspect of email archiving for =
+the Art Museums.<o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal>Thanks,<o:p></o:p></p><p =
+class=3DMsoNormal>Megan<o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><div><div =
+style=3D'border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in =
+0in 0in'><p class=3DMsoNormal><b>From:</b> Wetherill, Julie M. &lt;<a =
+href=3D"mailto:julie_wetherill@harvard.edu">julie_wetherill@harvard.edu</=
+a>&gt; <br><b>Sent:</b> Wednesday, June 01, 2022 12:47 PM<br><b>To:</b> =
+Schwenke, Megan &lt;<a =
+href=3D"mailto:megan_schwenke@harvard.edu">megan_schwenke@harvard.edu</a>=
+&gt;; Kendall, Skip &lt;<a =
+href=3D"mailto:skip_kendall@harvard.edu">skip_kendall@harvard.edu</a>&gt;=
+<br><b>Cc:</b> Wetherill, Julie M. &lt;<a =
+href=3D"mailto:julie_wetherill@harvard.edu">julie_wetherill@harvard.edu</=
+a>&gt;<br><b>Subject:</b> EAS system: disposition of dropbox =
+leftovers?<o:p></o:p></p></div></div><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>Hi Megan and =
+Skip, <o:p></o:p></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal>I hope this message finds you well. As you know, the =
+EAS email archiving system is on a trajectory to retirement and =
+replacement by a new ePadd-based system (latest estimate is in early =
+2023). Although the EAS system is still running, it has been =
+&#8220;un-plugged&#8221; from the DRS and within a few weeks, HUIT needs =
+to retire the hardware on which EAS dropboxes run. <o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>I&#8217;m =
+contacting you as representatives of Art Museums and HU Archives Records =
+Management to discuss the disposition of email content still in your =
+respective dropboxes. <o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>The =
+HUAM.MUSE dropbox still holds these packets: <o:p></o:p></p><ul =
+style=3D'margin-top:0in' type=3Ddisc><li class=3DMsoListParagraph =
+style=3D'margin-left:0in;mso-list:l2 level1 =
+lfo3'>HUAM_RECORDS_2019_46_arnold-biucchi<o:p></o:p></li><li =
+class=3DMsoListParagraph style=3D'margin-left:0in;mso-list:l2 level1 =
+lfo3'>HUAM_RECORDS_2019_58_greenidge<o:p></o:p></li><li =
+class=3DMsoListParagraph style=3D'margin-left:0in;mso-list:l2 level1 =
+lfo3'>HUAM_RECORDS_2019_72_lasser<o:p></o:p></li><li =
+class=3DMsoListParagraph style=3D'margin-left:0in;mso-list:l2 level1 =
+lfo3'>HUAM_RECORDS_2020_01_bruno<o:p></o:p></li><li =
+class=3DMsoListParagraph style=3D'margin-left:0in;mso-list:l2 level1 =
+lfo3'>HUAM_RECORDS_2020_02_barcus<o:p></o:p></li><li =
+class=3DMsoListParagraph style=3D'margin-left:0in;mso-list:l2 level1 =
+lfo3'>HUAM_RECORDS_2020_03_atkinson<o:p></o:p></li></ul><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>The HUL.ARCH =
+dropbox still holds these packets:<o:p></o:p></p><ul =
+style=3D'margin-top:0in' type=3Ddisc><li class=3DMsoListParagraph =
+style=3D'margin-left:0in;mso-list:l2 level1 =
+lfo3'>Crimson_2013<o:p></o:p></li><li class=3DMsoListParagraph =
+style=3D'margin-left:0in;mso-list:l2 level1 =
+lfo3'>NancyCline<o:p></o:p></li></ul><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>If you could =
+import this dropbox content into EAS, it can stay on the EAS file system =
+for the time being. But I suspect you would have already done this if =
+you could. Is this data still needed? Thanks in advance for your =
+assistance!<o:p></o:p></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal>Regards. &#8211;julie<o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>Julie =
+Wetherill<o:p></o:p></p><p class=3DMsoNormal>HUIT Library Technology =
+Services<o:p></o:p></p></div></body></html>
+------=_NextPart_000_003C_01D8856F.B273FEC0--
+
+From skip_kendall@harvard.edu Mon Jun  6 12:50:00 2022
+From: "Kendall, Skip" <skip_kendall@harvard.edu>
+Sender: "Kendall, Skip" <skip_kendall@harvard.edu>
+To: "Cramer, Abby" <abigail_cramer@harvard.edu>,
+	"Schwenke, Megan" <megan_schwenke@harvard.edu>,
+	"Wetherill, Julie M." <julie_wetherill@harvard.edu>
+References: <SJ0PR07MB858203DCA27771530C55AF8D8ADF9@SJ0PR07MB8582.namprd07.prod.outlook.com> <BL0PR07MB5507F3BDA2B6B67C83B27BB0EFDF9@BL0PR07MB5507.namprd07.prod.outlook.com> <MN2PR07MB6493779DF4679CCACE95B09FE6DF9@MN2PR07MB6493.namprd07.prod.outlook.com>
+In-Reply-To: <MN2PR07MB6493779DF4679CCACE95B09FE6DF9@MN2PR07MB6493.namprd07.prod.outlook.com>
+Subject: RE: EAS system: disposition of dropbox leftovers?
+Date: Mon, 6 Jun 2022 08:49:57 -0400
+Message-ID: <MN2PR07MB7056C7B632B09E8078D9CAACE1A29@MN2PR07MB7056.namprd07.prod.outlook.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_0040_01D8856F.B279A410"
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: Adh1xXmkW207F3tbSC2akPZ8mjflJAAEj2nAAATVCiAA7hmSIA==
+Content-Language: en-us
+x-ms-exchange-organization-authas: Internal
+x-ms-exchange-organization-authsource: MN2PR07MB7056.namprd07.prod.outlook.com
+acceptlanguage: en-US
+x-ms-exchange-organization-authmechanism: 04
+x-ms-exchange-organization-originalclientipaddress: 24.91.65.114
+x-ms-exchange-organization-originalserveripaddress: 2603:10b6:208:1af::13
+x-ms-publictraffictype: Email
+x-ms-has-attach: 
+x-ms-traffictypediagnostic: SJ0PR07MB7534:EE_
+x-ms-exchange-crosstenant-originalarrivaltime: 06 Jun 2022 12:49:57.4732 (UTC)
+x-ms-exchange-crosstenant-fromentityheader: Hosted
+x-ms-exchange-crosstenant-id: 6ffa22f4-4568-4105-ad43-2e3ad4726957
+x-ms-exchange-transport-crosstenantheadersstamped: SJ0PR07MB7534
+x-ms-exchange-transport-endtoendlatency: 00:00:02.3568967
+x-ms-exchange-crosstenant-network-message-id: f58fc664-0b7e-4287-a0b5-08da47bb0fbd
+authentication-results: dkim=none (message not signed) header.d=none;dmarc=none action=none header.from=harvard.edu;
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:-1;SRV:;IPV:NLI;SFV:SKI;H:MN2PR07MB7056.namprd07.prod.outlook.com;PTR:;CAT:NONE;SFS:;DIR:INB;
+x-ms-office365-filtering-correlation-id: f58fc664-0b7e-4287-a0b5-08da47bb0fbd
+x-microsoft-antispam: BCL:0;
+x-ms-exchange-crosstenant-authas: Internal
+x-ms-exchange-crosstenant-authsource: MN2PR07MB7056.namprd07.prod.outlook.com
+x-ms-exchange-crosstenant-mailboxtype: HOSTED
+x-ms-exchange-crosstenant-userprincipalname: BCHsasIZ5IKr4SHYv8j4d2163OilQvqQBtR8Lus7eSJ2pioe5Gq3xy5K/qVwevAWS0/qAHAZq8Tmw2Gs98Bx/1BaWs0NjKp9nt+U12upjlg=
+x-ms-exchange-processed-by-bccfoldering: 15.20.5314.019
+
+This is a multipart message in MIME format.
+
+------=_NextPart_000_0040_01D8856F.B279A410
+Content-Type: text/plain;
+	charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+
+Julie,
+
+ 
+
+You can discard them as we have copies of both packets. At least one of
+them failed ingest to EAS, so I won't bother trying to ingest them now.
+They can wait.
+
+ 
+
+Thanks,
+
+Skip
+
+ 
+
+Skip Kendall (he/him/his)
+
+Senior Collection Development and Electronic Records Archivist
+
+ <http://archives.harvard.edu/> Harvard University Archives
+
+ 
+
+From: Cramer, Abby <abigail_cramer@harvard.edu> 
+Sent: Wednesday, June 1, 2022 3:10 PM
+To: Schwenke, Megan <megan_schwenke@harvard.edu>; Wetherill, Julie M.
+<julie_wetherill@harvard.edu>; Kendall, Skip <skip_kendall@harvard.edu>
+Subject: RE: EAS system: disposition of dropbox leftovers?
+
+ 
+
+Hi Julie,
+
+ 
+
+I can confirm that the packets on the HUAM.MUSE drop box can be
+discarded. I cannot speak to the HUL.ARCH drop box, as I have never had
+access to that.
+
+ 
+
+Best,
+Abby 
+
+ 
+
+From: Schwenke, Megan <megan_schwenke@harvard.edu
+<mailto:megan_schwenke@harvard.edu> > 
+Sent: Wednesday, June 1, 2022 12:59 PM
+To: Wetherill, Julie M. <julie_wetherill@harvard.edu
+<mailto:julie_wetherill@harvard.edu> >; Kendall, Skip
+<skip_kendall@harvard.edu <mailto:skip_kendall@harvard.edu> >
+Cc: Cramer, Abby <abigail_cramer@harvard.edu
+<mailto:abigail_cramer@harvard.edu> >
+Subject: RE: EAS system: disposition of dropbox leftovers?
+
+ 
+
+Hi Julie, copying in Abby Cramer who manages this aspect of email
+archiving for the Art Museums.
+
+ 
+
+Thanks,
+
+Megan
+
+ 
+
+From: Wetherill, Julie M. <julie_wetherill@harvard.edu
+<mailto:julie_wetherill@harvard.edu> > 
+Sent: Wednesday, June 01, 2022 12:47 PM
+To: Schwenke, Megan <megan_schwenke@harvard.edu
+<mailto:megan_schwenke@harvard.edu> >; Kendall, Skip
+<skip_kendall@harvard.edu <mailto:skip_kendall@harvard.edu> >
+Cc: Wetherill, Julie M. <julie_wetherill@harvard.edu
+<mailto:julie_wetherill@harvard.edu> >
+Subject: EAS system: disposition of dropbox leftovers?
+
+ 
+
+Hi Megan and Skip, 
+
+ 
+
+I hope this message finds you well. As you know, the EAS email archiving
+system is on a trajectory to retirement and replacement by a new
+ePadd-based system (latest estimate is in early 2023). Although the EAS
+system is still running, it has been "un-plugged" from the DRS and
+within a few weeks, HUIT needs to retire the hardware on which EAS
+dropboxes run. 
+
+ 
+
+I'm contacting you as representatives of Art Museums and HU Archives
+Records Management to discuss the disposition of email content still in
+your respective dropboxes. 
+
+ 
+
+The HUAM.MUSE dropbox still holds these packets: 
+
+*	HUAM_RECORDS_2019_46_arnold-biucchi
+*	HUAM_RECORDS_2019_58_greenidge
+*	HUAM_RECORDS_2019_72_lasser
+*	HUAM_RECORDS_2020_01_bruno
+*	HUAM_RECORDS_2020_02_barcus
+*	HUAM_RECORDS_2020_03_atkinson
+
+ 
+
+The HUL.ARCH dropbox still holds these packets:
+
+*	Crimson_2013
+*	NancyCline
+
+ 
+
+If you could import this dropbox content into EAS, it can stay on the
+EAS file system for the time being. But I suspect you would have already
+done this if you could. Is this data still needed? Thanks in advance for
+your assistance!
+
+ 
+
+Regards. -julie
+
+
+------=_NextPart_000_0040_01D8856F.B279A410
+Content-Type: text/html;
+	charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" =
+xmlns:o=3D"urn:schemas-microsoft-com:office:office" =
+xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =
+xmlns=3D"http://www.w3.org/TR/REC-html40"><head><META =
+HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
+charset=3Dus-ascii"><meta name=3DGenerator content=3D"Microsoft Word 15 =
+(filtered medium)"><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.EmailStyle21
+	{mso-style-type:personal-reply;
+	font-family:"Calibri",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+/* List Definitions */
+@list l0
+	{mso-list-id:282464838;
+	mso-list-template-ids:1955758492;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:992876637;
+	mso-list-template-ids:-1158754862;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:1370181732;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1542963720 67698689 67698691 67698693 67698689 =
+67698691 67698693 67698689 67698691 67698693;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]--></head><body lang=3DEN-US =
+link=3D"#0563C1" vlink=3D"#954F72" style=3D'word-wrap:break-word'><div =
+class=3DWordSection1><p class=3DMsoNormal>Julie,<o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>You can =
+discard them as we have copies of both packets. At least one of them =
+failed ingest to EAS, so I won&#8217;t bother trying to ingest them now. =
+They can wait.<o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal>Thanks,<o:p></o:p></p><p =
+class=3DMsoNormal>Skip<o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><div><p class=3DMsoNormal>Skip =
+Kendall (he/him/his)<o:p></o:p></p><p class=3DMsoNormal>Senior =
+Collection Development and Electronic Records Archivist<o:p></o:p></p><p =
+class=3DMsoNormal><a href=3D"http://archives.harvard.edu/"><span =
+style=3D'color:windowtext;text-decoration:none'>Harvard University =
+Archives</span></a><o:p></o:p></p></div><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><div><div =
+style=3D'border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in =
+0in 0in'><p class=3DMsoNormal><b>From:</b> Cramer, Abby =
+&lt;abigail_cramer@harvard.edu&gt; <br><b>Sent:</b> Wednesday, June 1, =
+2022 3:10 PM<br><b>To:</b> Schwenke, Megan =
+&lt;megan_schwenke@harvard.edu&gt;; Wetherill, Julie M. =
+&lt;julie_wetherill@harvard.edu&gt;; Kendall, Skip =
+&lt;skip_kendall@harvard.edu&gt;<br><b>Subject:</b> RE: EAS system: =
+disposition of dropbox leftovers?<o:p></o:p></p></div></div><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>Hi =
+Julie,<o:p></o:p></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal>I can confirm that the packets on the HUAM.MUSE drop =
+box can be discarded. I cannot speak to the HUL.ARCH drop box, as I have =
+never had access to that.<o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal>Best,<br>Abby<span style=3D'font-size:10.0pt'> =
+<o:p></o:p></span></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><div><div =
+style=3D'border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in =
+0in 0in'><p class=3DMsoNormal><b>From:</b> Schwenke, Megan &lt;<a =
+href=3D"mailto:megan_schwenke@harvard.edu">megan_schwenke@harvard.edu</a>=
+&gt; <br><b>Sent:</b> Wednesday, June 1, 2022 12:59 PM<br><b>To:</b> =
+Wetherill, Julie M. &lt;<a =
+href=3D"mailto:julie_wetherill@harvard.edu">julie_wetherill@harvard.edu</=
+a>&gt;; Kendall, Skip &lt;<a =
+href=3D"mailto:skip_kendall@harvard.edu">skip_kendall@harvard.edu</a>&gt;=
+<br><b>Cc:</b> Cramer, Abby &lt;<a =
+href=3D"mailto:abigail_cramer@harvard.edu">abigail_cramer@harvard.edu</a>=
+&gt;<br><b>Subject:</b> RE: EAS system: disposition of dropbox =
+leftovers?<o:p></o:p></p></div></div><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>Hi Julie, =
+copying in Abby Cramer who manages this aspect of email archiving for =
+the Art Museums.<o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal>Thanks,<o:p></o:p></p><p =
+class=3DMsoNormal>Megan<o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><div><div =
+style=3D'border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in =
+0in 0in'><p class=3DMsoNormal><b>From:</b> Wetherill, Julie M. &lt;<a =
+href=3D"mailto:julie_wetherill@harvard.edu">julie_wetherill@harvard.edu</=
+a>&gt; <br><b>Sent:</b> Wednesday, June 01, 2022 12:47 PM<br><b>To:</b> =
+Schwenke, Megan &lt;<a =
+href=3D"mailto:megan_schwenke@harvard.edu">megan_schwenke@harvard.edu</a>=
+&gt;; Kendall, Skip &lt;<a =
+href=3D"mailto:skip_kendall@harvard.edu">skip_kendall@harvard.edu</a>&gt;=
+<br><b>Cc:</b> Wetherill, Julie M. &lt;<a =
+href=3D"mailto:julie_wetherill@harvard.edu">julie_wetherill@harvard.edu</=
+a>&gt;<br><b>Subject:</b> EAS system: disposition of dropbox =
+leftovers?<o:p></o:p></p></div></div><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>Hi Megan and =
+Skip, <o:p></o:p></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal>I hope this message finds you well. As you know, the =
+EAS email archiving system is on a trajectory to retirement and =
+replacement by a new ePadd-based system (latest estimate is in early =
+2023). Although the EAS system is still running, it has been =
+&#8220;un-plugged&#8221; from the DRS and within a few weeks, HUIT needs =
+to retire the hardware on which EAS dropboxes run. <o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>I&#8217;m =
+contacting you as representatives of Art Museums and HU Archives Records =
+Management to discuss the disposition of email content still in your =
+respective dropboxes. <o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>The =
+HUAM.MUSE dropbox still holds these packets: <o:p></o:p></p><ul =
+style=3D'margin-top:0in' type=3Ddisc><li class=3DMsoListParagraph =
+style=3D'margin-left:0in;mso-list:l2 level1 =
+lfo3'>HUAM_RECORDS_2019_46_arnold-biucchi<o:p></o:p></li><li =
+class=3DMsoListParagraph style=3D'margin-left:0in;mso-list:l2 level1 =
+lfo3'>HUAM_RECORDS_2019_58_greenidge<o:p></o:p></li><li =
+class=3DMsoListParagraph style=3D'margin-left:0in;mso-list:l2 level1 =
+lfo3'>HUAM_RECORDS_2019_72_lasser<o:p></o:p></li><li =
+class=3DMsoListParagraph style=3D'margin-left:0in;mso-list:l2 level1 =
+lfo3'>HUAM_RECORDS_2020_01_bruno<o:p></o:p></li><li =
+class=3DMsoListParagraph style=3D'margin-left:0in;mso-list:l2 level1 =
+lfo3'>HUAM_RECORDS_2020_02_barcus<o:p></o:p></li><li =
+class=3DMsoListParagraph style=3D'margin-left:0in;mso-list:l2 level1 =
+lfo3'>HUAM_RECORDS_2020_03_atkinson<o:p></o:p></li></ul><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>The HUL.ARCH =
+dropbox still holds these packets:<o:p></o:p></p><ul =
+style=3D'margin-top:0in' type=3Ddisc><li class=3DMsoListParagraph =
+style=3D'margin-left:0in;mso-list:l2 level1 =
+lfo3'>Crimson_2013<o:p></o:p></li><li class=3DMsoListParagraph =
+style=3D'margin-left:0in;mso-list:l2 level1 =
+lfo3'>NancyCline<o:p></o:p></li></ul><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>If you could =
+import this dropbox content into EAS, it can stay on the EAS file system =
+for the time being. But I suspect you would have already done this if =
+you could. Is this data still needed? Thanks in advance for your =
+assistance!<o:p></o:p></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal>Regards. =
+&#8211;julie<o:p></o:p></p></div></body></html>
+------=_NextPart_000_0040_01D8856F.B279A410--
+

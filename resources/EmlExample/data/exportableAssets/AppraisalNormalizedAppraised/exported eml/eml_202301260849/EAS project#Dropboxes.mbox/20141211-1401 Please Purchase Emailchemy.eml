@@ -1,0 +1,89 @@
+Subject: Please Purchase Emailchemy
+From: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Sender: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Date: Thu, 11 Dec 2014 14:01:17 -0500
+To: "Wetherill, Julie M." <julie_wetherill@harvard.edu>
+Message-ID: <CF8400D5.DA2B%grainne_reilly@harvard.edu>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_NextPart_000_0034_01D8856F.B26A88E0"
+X-ePADD-Folder: C:\Users\jmw922\Documents\ePADD-related\JWEASFolderMBOX\EAS project#Dropboxes.mbox
+X-ePADD-Labels: 
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQHPYwMDQerZArefI0KHNmyMx1T+dQ==
+Content-Language: en-us
+x-ms-exchange-organization-authas: Internal
+x-ms-exchange-organization-authsource: SN2PR07MB064.namprd07.prod.outlook.com
+acceptlanguage: en-US
+x-originating-ip: [128.103.151.66]
+x-ms-exchange-organization-authmechanism: 04
+
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0034_01D8856F.B26A88E0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Julie,
+
+Now that we are setting up the new QA DRS2 secure environment, I just
+want to confirm something regarding the secure DRS2 drop boxes.=20
+
+For EAS we have several drop boxes (all secure):
+easgsdftp
+
+eashmsftp
+
+eashuamftp
+
+eashularchftp
+
+eashulftest
+
+easradftp
+For DRS2 the proposal is to have one dropbox for use by all EAS users:
+/drs2qa/secure/dropboxes/eastest_secure
+Does this sound right to you?
+Thanks,
+Grainne
+
+
+
+------=_NextPart_000_0034_01D8856F.B26A88E0
+Content-Type: text/html;charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+></head><body style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; -we=
+bkit-line-break: after-white-space; "><div style=3D"color: rgb(0, 0, 0); fo=
+nt-size: 14px; font-family: Calibri, sans-serif; ">Hi Julie,</div><div styl=
+e=3D"color: rgb(0, 0, 0); font-size: 14px; font-family: Calibri, sans-serif=
+; "><br></div><div style=3D"color: rgb(0, 0, 0); font-size: 14px; font-fami=
+ly: Calibri, sans-serif; ">Now that we are setting up the new QA DRS2 secur=
+e environment, I just want to confirm something regarding the secure DRS2 d=
+rop boxes.&nbsp;</div><div style=3D"color: rgb(0, 0, 0); font-size: 14px; f=
+ont-family: Calibri, sans-serif; "><br></div><div style=3D"color: rgb(0, 0,=
+ 0); font-size: 14px; font-family: Calibri, sans-serif; ">For EAS we have s=
+everal drop boxes (all secure):</div><div><pre id=3D"comment_text_12" style=
+=3D"color: rgb(0, 0, 0); font-size: 14px; font-family: Calibri, sans-serif;=
+ ">easgsdftp
+eashmsftp
+eashuamftp
+eashularchftp
+eashulftest
+easradftp
+</pre><pre id=3D"comment_text_12"><font face=3D"Calibri" style=3D"color: rg=
+b(0, 0, 0); font-size: 14px; ">For DRS2 the proposal is to have one dropbox=
+ for use by all EAS users</font><font face=3D"Calibri"><span style=3D"font-=
+size: 14px;">:</span></font></pre><pre id=3D"comment_text_12">/drs2qa/secur=
+e/dropboxes/eastest_secure</pre><pre id=3D"comment_text_12"><font face=3D"C=
+alibri">Does this sound right to you?</font></pre><pre id=3D"comment_text_1=
+2"><font face=3D"Calibri">Thanks,</font></pre><pre id=3D"comment_text_12"><=
+font face=3D"Calibri">Grainne</font></pre><pre id=3D"comment_text_12" style=
+=3D"color: rgb(0, 0, 0); font-size: 14px; font-family: Calibri, sans-serif;=
+ "><br></pre></div></body></html>
+
+------=_NextPart_000_0034_01D8856F.B26A88E0--
+
+

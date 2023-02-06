@@ -1,0 +1,199 @@
+Subject: Please Purchase Emailchemy
+From: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Sender: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Date: Tue, 26 Aug 2014 13:28:17 -0400
+To: "Vicary, Chris" <chris_vicary@harvard.edu>
+CC: "Gogel, Wendy M." <wendy_gogel@harvard.edu>,
+   "Goethals, Andrea" <andrea_goethals@harvard.edu>,
+   "Stern, Randy" <randy_stern@harvard.edu>,
+   "Wetherill, Julie M." <julie_wetherill@harvard.edu>
+Message-ID: <D0223AF0.112B1%grainne_reilly@harvard.edu>
+In-Reply-To: <D020E22A.110A7%grainne_reilly@harvard.edu>
+References: <D020E22A.110A7%grainne_reilly@harvard.edu>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_NextPart_000_008C_01D8856F.B2F19330"
+X-ePADD-Folder: C:\Users\jmw922\Documents\ePADD-related\JWEASFolderMBOX\mbox-DRSintegration\DRSintegration.mbox
+X-ePADD-Labels: 
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQHPwIUI/c3cdj+oZUW6BM5bb+FqkZvi4iIA
+Content-Language: en-us
+x-ms-exchange-organization-authas: Internal
+x-ms-exchange-organization-authsource: SN2PR07MB064.namprd07.prod.outlook.com
+acceptlanguage: en-US
+x-originating-ip: [128.103.224.79]
+x-ms-exchange-organization-authmechanism: 04
+
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_008C_01D8856F.B2F19330
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+Hi Chris,
+
+I forgot one other jira issue which affects EAS and which is still in
+the backlog:
+
+5. Object created via Object Ingest Service call not available during
+subsequent Batch upload
+https://jira.huit.harvard.edu/browse/LIBDRS-1223
+This issue caused EAS batches to fail initially, but they could be
+loaded by later renaming batch.xml.failed to batch.xml and recreating
+the loading file.
+
+Thanks,
+Grainne
+
+
+
+
+From: <Reilly>, "Reilly, Grainne" <grainne_reilly@harvard.edu
+<mailto:grainne_reilly@harvard.edu> >
+Date: Monday, August 25, 2014 12:52 PM
+To: "Vicary, Chris" <chris_vicary@harvard.edu
+<mailto:chris_vicary@harvard.edu> >
+Cc: "Gogel, Wendy M." <wendy_gogel@harvard.edu
+<mailto:wendy_gogel@harvard.edu> >, "Goethals, Andrea"
+<andrea_goethals@harvard.edu <mailto:andrea_goethals@harvard.edu> >,
+"Stern, Randy" <randy_stern@harvard.edu <mailto:randy_stern@harvard.edu>
+>, "Wetherill, Julie M." <julie_wetherill@harvard.edu
+<mailto:julie_wetherill@harvard.edu> >
+Subject: EAS dependencies on DRS2
+
+
+Hi Chris,
+
+We  are currently planning on having a meeting with the EAS stakeholders
+on the morning of Monday September 15th =C2=96 where we normally have a dem=
+o
+of EAS in QA which should have been well tested in QA previously.
+Unfortunately during testing of EAS we uncovered various issues, some of
+which need to be included in DRS in order for the EAS push to DRS to
+work.  These issues have either been fixed and tested in DRS2 DEV or
+soon will be.
+
+We are hoping that you can do a QA release of DRS before September 15th
+so that EAS QA can be properly tested and released to the EAS users on
+September 15th.
+
+Here are the current known issues which EAS needs to be released to DRS2
+QA and PROD before EAS can be released to the users in either of those
+environments:
+
+1. Ingested Review Date/Note overwritten in DRS2 Web Admin
+https://jira.huit.harvard.edu/browse/LIBDRS-1203
+Without this change review dates are not stored correctly in DRS and
+will be overwritten if a review date is added via DRS Web Admin.
+
+2. OTS needs to accept a wildcard for mime subtype
+https://jira.huit.harvard.edu/browse/LIBDRS-1266
+Without this change items from eudora and outlook mailboxes will be
+rejected by DRS when pushed from EAS to DRS
+
+3. OTS: allow objects to have multiple rights blocks with a secure
+storage restriction
+https://jira.huit.harvard.edu/browse/LIBDRS-1191
+Without this change items with multiple rights blocks with a secure
+storage restriction will be rejected by DRS when pushed from EAS to DRS
+This version of OTS is due to to "released" by end of day tomorrow
+(Tuesday)
+
+4. Update FITS code in Github
+https://jira.huit.harvard.edu/browse/LIBDRS-1189
+Note that EAS will use FITS 0.8.2 when generating the descriptors for
+pushing to DRS.  This version of FITS contains a fix to a threading
+issue which affects EAS.  It also includes some other changes used in
+DRS migration. This version of FITS is due to be officially released by
+end of day tomorrow (Tuesday).
+
+Will it be possible to do a release of DRS2 to QA earlier than you had
+scheduled?
+
+Thanks,
+Grainne
+
+
+
+
+
+------=_NextPart_000_008C_01D8856F.B2F19330
+Content-Type: text/html;charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1"></head><body style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; -=
+webkit-line-break: after-white-space; color: rgb(0, 0, 0); font-size: 14px;=
+ font-family: Calibri, sans-serif; "><div><br></div><div>Hi Chris,</div><di=
+v><br></div><div>I forgot one other jira issue which affects EAS and which =
+is still in the backlog:</div><div><br></div><div>5.&nbsp;Object created vi=
+a Object Ingest Service call not available during subsequent Batch upload</=
+div><div><a href=3D"https://jira.huit.harvard.edu/browse/LIBDRS-1223">https=
+://jira.huit.harvard.edu/browse/LIBDRS-1223</a></div><div>This issue caused=
+ EAS batches to fail initially, but they could be loaded by later renaming =
+batch.xml.failed to batch.xml and recreating the loading file.</div><div><b=
+r></div><div>Thanks,</div><div>Grainne</div><div><br></div><div><br></div><=
+div><br></div><div><br></div><span id=3D"OLK_SRC_BODY_SECTION"><div style=
+=3D"font-family:Calibri; font-size:11pt; text-align:left; color:black; BORD=
+ER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: 0in; PADD=
+ING-LEFT: 0in; PADDING-RIGHT: 0in; BORDER-TOP: #b5c4df 1pt solid; BORDER-RI=
+GHT: medium none; PADDING-TOP: 3pt"><span style=3D"font-weight:bold">From: =
+</span> &lt;Reilly&gt;, &quot;Reilly, Grainne&quot; &lt;<a href=3D"mailto:g=
+rainne_reilly@harvard.edu">grainne_reilly@harvard.edu</a>&gt;<br><span styl=
+e=3D"font-weight:bold">Date: </span> Monday, August 25, 2014 12:52 PM<br><s=
+pan style=3D"font-weight:bold">To: </span> &quot;Vicary, Chris&quot; &lt;<a=
+ href=3D"mailto:chris_vicary@harvard.edu">chris_vicary@harvard.edu</a>&gt;<=
+br><span style=3D"font-weight:bold">Cc: </span> &quot;Gogel, Wendy M.&quot;=
+ &lt;<a href=3D"mailto:wendy_gogel@harvard.edu">wendy_gogel@harvard.edu</a>=
+&gt;, &quot;Goethals, Andrea&quot; &lt;<a href=3D"mailto:andrea_goethals@ha=
+rvard.edu">andrea_goethals@harvard.edu</a>&gt;, &quot;Stern, Randy&quot; &l=
+t;<a href=3D"mailto:randy_stern@harvard.edu">randy_stern@harvard.edu</a>&gt=
+;, &quot;Wetherill, Julie M.&quot; &lt;<a href=3D"mailto:julie_wetherill@ha=
+rvard.edu">julie_wetherill@harvard.edu</a>&gt;<br><span style=3D"font-weigh=
+t:bold">Subject: </span> EAS dependencies on DRS2<br></div><div><br></div><=
+div><div style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-=
+line-break: after-white-space; color: rgb(0, 0, 0); font-family: Calibri, s=
+ans-serif; "><div>Hi Chris,</div><div><br></div><div>We &nbsp;are currently=
+ planning on having a meeting with the EAS stakeholders on the morning of M=
+onday September 15th &#8211; where we normally have a demo of EAS in QA whi=
+ch should have been well tested in QA previously. &nbsp;Unfortunately durin=
+g testing of EAS we uncovered
+ various issues, some of which need to be included in DRS in order for the =
+EAS push to DRS to work. &nbsp;These issues have either been fixed and test=
+ed in DRS2 DEV or soon will be.</div><div><br></div><div>We are hoping that=
+ you can do a QA release of DRS before September 15th so that EAS QA can be=
+ properly tested and released to the EAS users on September 15th.</div><div=
+><br></div><div>Here are the current known issues which EAS needs to be rel=
+eased to DRS2 QA and PROD before EAS can be released to the users in either=
+ of those environments:&nbsp;</div><div><br></div><div>1. Ingested Review D=
+ate/Note overwritten in DRS2 Web Admin</div><div><a href=3D"https://jira.hu=
+it.harvard.edu/browse/LIBDRS-1203">https://jira.huit.harvard.edu/browse/LIB=
+DRS-1203</a></div><div>Without this change review dates are not stored corr=
+ectly in DRS and will be overwritten if a review date is added via DRS Web =
+Admin.</div><div><br></div><div>2. OTS needs to accept a wildcard for mime =
+subtype</div><div><a href=3D"https://jira.huit.harvard.edu/browse/LIBDRS-12=
+66">https://jira.huit.harvard.edu/browse/LIBDRS-1266</a></div><div>Without =
+this change items from eudora and outlook mailboxes will be rejected by DRS=
+ when pushed from EAS to DRS</div><div><br></div><div>3. OTS: allow objects=
+ to have multiple rights blocks with a secure storage restriction</div><div=
+><a href=3D"https://jira.huit.harvard.edu/browse/LIBDRS-1191">https://jira.=
+huit.harvard.edu/browse/LIBDRS-1191</a></div><div>Without this change items=
+ with multiple rights blocks with a secure storage restriction will be reje=
+cted by DRS when pushed from EAS to DRS</div><div>This version of OTS is du=
+e to to &quot;released&quot; by end of day tomorrow (Tuesday)</div><div><br=
+></div><div>4. Update FITS code in Github</div><div><a href=3D"https://jira=
+.huit.harvard.edu/browse/LIBDRS-1189">https://jira.huit.harvard.edu/browse/=
+LIBDRS-1189</a></div><div>Note that EAS will use FITS 0.8.2 when generating=
+ the descriptors for pushing to DRS. &nbsp;This version of FITS contains a =
+fix to a threading issue which affects EAS. &nbsp;It also includes some oth=
+er changes used in DRS migration. This version of FITS is due to
+ be officially released by end of day tomorrow (Tuesday).</div><div><br></d=
+iv><div>Will it be possible to do a release of DRS2 to QA earlier than you =
+had scheduled?</div><div><br></div><div>Thanks,</div><div>Grainne</div><div=
+><br></div><div><br></div><div><br></div></div></div></span></body></html>
+
+------=_NextPart_000_008C_01D8856F.B2F19330--
+
+

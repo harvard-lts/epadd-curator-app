@@ -1,0 +1,60 @@
+{"institution":"Harvard University","repository":
+  "HUIT Library Technology Services","collectionTitle":"EAS Project Email",
+  "collectionID":"EPE001","findingAidLink":
+  "https://id.lib.harvard.edu/ead/trc00032/catalog","catalogRecordLink":
+  "http://id.lib.harvard.edu/aleph/008177698/catalog","contactEmail":
+  "julie_wetherill@harvard.edu","rights":
+  "This is a Rights and Conditions note at collection level of EAS collection. ",
+  "notes":"This is a NOTES field at collection level of EAS collection. ",
+  "scopeAndContent":
+  "This is a Scope and Content field at collection level of EAS collection. ",
+  "shortTitle":"EAS","shortDescription":
+  "Short description: Email among EAS project participants","timestamp":
+  1674656886808,"tz":"America/New_York","firstDateTS":1362768721000,
+  "lastDateTS":1654519797000,"ingestionLocaleTag":"en-US","nDocs":50,
+  "nIncomingMessages":44,"nOutgoingMessages":15,"nHackyDates":0,"nBlobs":
+  12,"nUniqueBlobs":10,"nImageBlobs":0,"nDocBlobs":12,"nOtherBlobs":0,
+  "ownerName":"Julie M Wetherill","about":
+  "This is an \u0027About\u0027 note at collection level of EAS collection.",
+  "entityCounts":{"0":8,"3":0,"2":0,"4":0,"5":0,"9":0,"10":0,"17":0,"18":1,
+    "19":0,"25":0,"31":0,"33":1,"35":0,"11":1,"1":0,"7":3,"13":0,"20":0,"22":
+    0,"27":0,"32":0,"34":0,"36":0,"37":0,"38":0},
+  "numPotentiallySensitiveMessages":-1,"fileMetadatas":[{"fileID":
+      "Collection/File/0000","filename":"","fileFormat":"MBOX","notes":""},{
+      "fileID":"Collection/File/0001","filename":"","fileFormat":"MBOX",
+      "notes":""},{"fileID":"Collection/File/0002","filename":"",
+      "fileFormat":"MBOX","notes":""},{"fileID":"Collection/File/0003",
+      "filename":"","fileFormat":"MBOX","notes":""},{"fileID":
+      "Collection/File/0004","filename":"","fileFormat":"MBOX","notes":""},{
+      "fileID":"Collection/File/0005","filename":"","fileFormat":"MBOX",
+      "notes":""},{"fileID":"Collection/File/0006","filename":"",
+      "fileFormat":"MBOX","notes":""},{"fileID":"Collection/File/0007",
+      "filename":"","fileFormat":"MBOX","notes":""}],"renamedFiles":0,
+  "normalizedFiles":0,"archivalHistory":
+  "\u0027Archival History\u0027 field under EAD tab of Edit Metadata.",
+  "description":
+  "\u0027Description (Scope / Content)\u0027 field under EAD tab of Edit Metadata.",
+  "access":"Not Accessible","embargoReviewDate":"2023-01-25",
+  "embargoStartDate":"2023-01-25","embargoDuration":"10 years",
+  "embargoEndDate":"","sensitivityReview":"Reviewed","processingNote":
+  "\u0027Processing Note\u0027 field under EAD tab of Edit Metadata.",
+  "preservationLevelRole":"Requirement","preservationLevelRationale":
+  "Preservation Policy","environmentCharacteristic":"Unspecified",
+  "relatedEnvironmentPurpose":"Search","environmentNote":
+  "This is an \u0027Environment Note\u0027 under PREMIS tab of Edit Metadata (@ collection level).",
+  "softwareName":
+  "This is \u0027Software Name\u0027 under PREMIS tab of Edit Metadata (@ collection level).",
+  "softwareVersion":
+  "This is \u0027Software Version\u0027 under PREMIS tab of Edit Metadata (@ collection level).",
+  "rightsStatementIdentifierType":
+  "This is \u0027Rights Statement Identifier Type\u0027 under PREMIS tab of Edit Metadata (@ collection level).",
+  "rightsStatementIdentifierValue":
+  "This is \u0027Rights Statement Identifier Value\u0027 under PREMIS tab of Edit Metadata (@ collection level).",
+  "statuteJurisdiction":
+  "This is \u0027Statute Jurisdiction\u0027 under PREMIS tab of Edit Metadata (@ collection level).",
+  "statuteDocumentationIdentifierType":
+  "This is \u0027Statute Documentation Identifier Type\u0027 under PREMIS tab of Edit Metadata (@ collection level).",
+  "statuteDocumentationIdentifierValue":
+  "This is \u0027Statute Documentation Identifier Value\u0027 under PREMIS tab of Edit Metadata (@ collection level).",
+  "statuteDocumentationRole":
+  "This is \u0027Statute Documentation Role\u0027 under PREMIS tab of Edit Metadata (@ collection level)."}

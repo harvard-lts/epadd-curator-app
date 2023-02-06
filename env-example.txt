@@ -1,6 +1,8 @@
 # Environment 'development', 'test', or 'production'
 ENV=development
 
+LOG_DIR=/home/appuser/epadd-curator-app/logs
+
 # Cron Interval Settings
 # (optional) second (0 - 59)
 SECOND=*
@@ -32,3 +34,6 @@ TEST_PREFIX=test/
 TEST_SIDECAR_FILE_PATH=/home/appuser/epadd-curator-app/resources/drsConfig.txt
 ZIPPED_EXPORT_PATH=/home/appuser/epadd-curator-app/zip_exports/
 DOWNLOAD_EXPORT_PATH=/home/appuser/epadd-curator-app/download_exports/
+
+# Set to True if DIMS should not be called, False otherwise
+TESTING=True

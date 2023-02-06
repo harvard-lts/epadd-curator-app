@@ -1,0 +1,223 @@
+Subject: Please Purchase Emailchemy
+From: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Sender: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Date: Thu, 08 Oct 2015 10:47:22 -0400
+To: "Wetherill, Julie M." <julie_wetherill@harvard.edu>,
+   "Reilly, Grainne" <grainne_reilly@harvard.edu>
+Message-ID: <DM2PR0701MB779901EF427BB625F90C45A97350@DM2PR0701MB779.namprd07.prod.outlook.com>
+In-Reply-To: <BLUPR0701MB769EFD087A2D09A08AB25D38A360@BLUPR0701MB769.namprd07.prod.outlook.com>
+References: <BLUPR0701MB769EFD087A2D09A08AB25D38A360@BLUPR0701MB769.namprd07.prod.outlook.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_NextPart_000_00CC_01D8856F.B34B4BF0"
+X-ePADD-Folder: C:\Users\jmw922\Documents\ePADD-related\JWEASFolderMBOX\EAS project#olm (Mac Outlook) support.mbox
+X-ePADD-Labels: 
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQHRAS63X7EPshw4ykmEW6vh6XFJUZ5hrbhA
+Content-Language: en-us
+x-ms-exchange-organization-authas: Internal
+x-ms-exchange-organization-authsource: DM2PR0701MB779.namprd07.prod.outlook.com
+acceptlanguage: en-US
+x-originating-ip: [140.247.85.103]
+x-ms-exchange-organization-authmechanism: 04
+
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_00CC_01D8856F.B34B4BF0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Julie and Grainne,=20
+
+=20
+
+Do you have a sense of what size account would be useful for testing?
+Is it okay if there just a few hundred messages and calendar events and
+contacts?  Or do you want a really big account of stuff?  I'm asking
+because I am going to sanitize a copy of my own email account for you.
+
+=20
+
+Julie
+
+=20
+
+From: Wetherill, Julie M.=20
+Sent: Wednesday, October 07, 2015 2:49 PM
+To: Swierczek, Julie; Kendall, Skip
+Cc: Wetherill, Julie M.; Reilly, Grainne
+Subject: EAS: support of .olm (Exported Outlook for Mac files)
+
+=20
+
+Hi Julie and Skip,
+
+=20
+
+It appears that LTS and the Library have decided to fast-track
+development on .olm support in EAS. Since your units have asked about
+Outlook Mac support, I have a few questions for you (to help get this
+effort started).
+
+=20
+
+#1 What version of Outlook Mac are the files you want to process?
+
+#2 Can you provide a *clean* sample of .olm data for LTS testing?
+
+#3 Do you know a way to export to .olm selectively by mail folder?
+
+=20
+
+The task in question #3 (how to selectively archive to .olm format)
+might be harder than it looks. I know you can archive an entire mail
+account to .olm, but there is no evidence you can limit archiving to a
+single folder. You can filter archiving by "category" so I suppose an
+Outlook Mac user could define a fake category and assign it to a subset
+of messages, then archive on the category.
+
+=20
+
+We need *clean* data only, so ability to cherry-pick out any sensitive
+data is important.
+
+=20
+
+Thanks for your help. --julie
+
+=20
+
+Julie Wetherill
+
+Library Technology Services
+
+=20
+
+=20
+
+
+
+------=_NextPart_000_00CC_01D8856F.B34B4BF0
+Content-Type: text/html;charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40"><head><META HTTP-EQUIV=3D"Content-Type" CONTENT=
+=3D"text/html; charset=3Dus-ascii"><meta name=3DGenerator content=3D"Micros=
+oft Word 14 (filtered medium)"><style><!--
+/* Font Definitions */
+@font-face
+=09{font-family:Calibri;
+=09panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+=09{font-family:Tahoma;
+=09panose-1:2 11 6 4 3 5 4 4 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+=09{margin:0in;
+=09margin-bottom:.0001pt;
+=09font-size:12.0pt;
+=09font-family:"Times New Roman","serif";}
+a:link, span.MsoHyperlink
+=09{mso-style-priority:99;
+=09color:blue;
+=09text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+=09{mso-style-priority:99;
+=09color:purple;
+=09text-decoration:underline;}
+p
+=09{mso-style-priority:99;
+=09margin:0in;
+=09margin-bottom:.0001pt;
+=09font-size:12.0pt;
+=09font-family:"Times New Roman","serif";}
+span.EmailStyle18
+=09{mso-style-type:personal-reply;
+=09font-family:"Calibri","sans-serif";
+=09color:#1F497D;}
+.MsoChpDefault
+=09{mso-style-type:export-only;
+=09font-size:10.0pt;}
+@page WordSection1
+=09{size:8.5in 11.0in;
+=09margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+=09{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]--></head><body lang=3DEN-US link=3Dblue vli=
+nk=3Dpurple><div class=3DWordSection1><p class=3DMsoNormal><span style=3D'f=
+ont-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'>Julie and=
+ Grainne, <o:p></o:p></span></p><p class=3DMsoNormal><span style=3D'font-si=
+ze:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'><o:p>&nbsp;</o:=
+p></span></p><p class=3DMsoNormal><span style=3D'font-size:11.0pt;font-fami=
+ly:"Calibri","sans-serif";color:#1F497D'>Do you have a sense of what size a=
+ccount would be useful for testing?&nbsp; Is it okay if there just a few hu=
+ndred messages and calendar events and contacts?&nbsp; Or do you want a rea=
+lly big account of stuff?&nbsp; I&#8217;m asking because I am going to sani=
+tize a copy of my own email account for you.<o:p></o:p></span></p><p class=
+=3DMsoNormal><span style=3D'font-size:11.0pt;font-family:"Calibri","sans-se=
+rif";color:#1F497D'><o:p>&nbsp;</o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'=
+>Julie<o:p></o:p></span></p><p class=3DMsoNormal><span style=3D'font-size:1=
+1.0pt;font-family:"Calibri","sans-serif";color:#1F497D'><o:p>&nbsp;</o:p></=
+span></p><div><div style=3D'border:none;border-top:solid #B5C4DF 1.0pt;padd=
+ing:3.0pt 0in 0in 0in'><p class=3DMsoNormal><b><span style=3D'font-size:10.=
+0pt;font-family:"Tahoma","sans-serif"'>From:</span></b><span style=3D'font-=
+size:10.0pt;font-family:"Tahoma","sans-serif"'> Wetherill, Julie M. <br><b>=
+Sent:</b> Wednesday, October 07, 2015 2:49 PM<br><b>To:</b> Swierczek, Juli=
+e; Kendall, Skip<br><b>Cc:</b> Wetherill, Julie M.; Reilly, Grainne<br><b>S=
+ubject:</b> EAS: support of .olm (Exported Outlook for Mac files)<o:p></o:p=
+></span></p></div></div><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><div id=
+=3Ddivtagdefaultwrapper><p style=3D'background:white'><span style=3D'font-f=
+amily:"Calibri","sans-serif";color:black'>Hi Julie and Skip,<o:p></o:p></sp=
+an></p><p style=3D'background:white'><span style=3D'font-family:"Calibri","=
+sans-serif";color:black'><o:p>&nbsp;</o:p></span></p><p style=3D'background=
+:white'><span style=3D'font-family:"Calibri","sans-serif";color:black'>It a=
+ppears that LTS and the Library have decided to&nbsp;fast-track development=
+ on .olm support in EAS. Since your units have asked about Outlook Mac supp=
+ort, I have a few questions for you (to help get this effort started).<o:p>=
+</o:p></span></p><p style=3D'background:white'><span style=3D'font-family:"=
+Calibri","sans-serif";color:black'><o:p>&nbsp;</o:p></span></p><p style=3D'=
+background:white'><span style=3D'font-family:"Calibri","sans-serif";color:b=
+lack'>#1 What version of Outlook Mac are the files you want to process?<o:p=
+></o:p></span></p><p style=3D'background:white'><span style=3D'font-family:=
+"Calibri","sans-serif";color:black'>#2 Can&nbsp;you provide a *clean* sampl=
+e of .olm&nbsp;data for LTS testing?<o:p></o:p></span></p><p style=3D'backg=
+round:white'><span style=3D'font-family:"Calibri","sans-serif";color:black'=
+>#3 Do you know a way to export to .olm&nbsp;selectively by mail folder?<o:=
+p></o:p></span></p><p style=3D'background:white'><span style=3D'font-family=
+:"Calibri","sans-serif";color:black'><o:p>&nbsp;</o:p></span></p><p style=
+=3D'background:white'><span style=3D'font-family:"Calibri","sans-serif";col=
+or:black'>The task in question #3 (how to selectively archive to .olm forma=
+t) might be harder than it looks. I know you can archive an entire mail acc=
+ount to .olm, but there is no evidence you can limit&nbsp;archiving to a si=
+ngle folder. You can filter archiving by &quot;category&quot; so I suppose =
+an Outlook Mac user could define a fake category and assign it to a subset =
+of messages, then archive on the category.<o:p></o:p></span></p><p style=3D=
+'background:white'><span style=3D'font-family:"Calibri","sans-serif";color:=
+black'><o:p>&nbsp;</o:p></span></p><p style=3D'background:white'><span styl=
+e=3D'font-family:"Calibri","sans-serif";color:black'>We need *clean* data o=
+nly, so ability to&nbsp;cherry-pick out&nbsp;any sensitive data is importan=
+t.<o:p></o:p></span></p><p style=3D'background:white'><span style=3D'font-f=
+amily:"Calibri","sans-serif";color:black'><o:p>&nbsp;</o:p></span></p><p st=
+yle=3D'background:white'><span style=3D'font-family:"Calibri","sans-serif";=
+color:black'>Thanks for your help. --julie<o:p></o:p></span></p><p style=3D=
+'background:white'><span style=3D'font-family:"Calibri","sans-serif";color:=
+black'><o:p>&nbsp;</o:p></span></p><p style=3D'background:white'><span styl=
+e=3D'font-family:"Calibri","sans-serif";color:black'>Julie Wetherill<o:p></=
+o:p></span></p><p style=3D'background:white'><span style=3D'font-family:"Ca=
+libri","sans-serif";color:black'>Library Technology Services<o:p></o:p></sp=
+an></p><p style=3D'background:white'><span style=3D'font-family:"Calibri","=
+sans-serif";color:black'><o:p>&nbsp;</o:p></span></p><p style=3D'background=
+:white'><span style=3D'font-family:"Calibri","sans-serif";color:black'>&nbs=
+p;<o:p></o:p></span></p></div></div></body></html>
+------=_NextPart_000_00CC_01D8856F.B34B4BF0--
+
+

@@ -1,0 +1,187 @@
+Subject: Please Purchase Emailchemy
+From: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Sender: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Date: Thu, 11 Dec 2014 14:01:17 -0500
+To: <emap-testers@hulmail.harvard.edu>, <emap-admin@hulmail.harvard.edu>,
+   <emap-core@hulmail.harvard.edu>, <emap-review@hulmail.harvard.edu>
+CC: <easi-support@hulmail.harvard.edu>
+Message-ID: <BLUPR0701MB76957BB22231A27AA8392AE8A630@BLUPR0701MB769.namprd07.prod.outlook.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_NextPart_000_0023_01D8856F.B24D8B00"
+X-ePADD-Folder: C:\Users\jmw922\Documents\ePADD-related\JWEASFolderMBOX\mbox-access\AccessVPN.mbox
+X-ePADD-Labels: 
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AdAVdNdLZtZWpwlOSoaNkxmQ1Ot4NQ==
+Content-Language: en-us
+x-ms-exchange-organization-authas: Anonymous
+x-ms-exchange-organization-authsource: ENTWEDGE0000001.university.harvard.edu
+acceptlanguage: en-US
+x-originating-ip: [128.103.24.203]
+received-spf: None (protection.outlook.com: hulmail.harvard.edu does not designate permitted sender hosts)
+x-proofpoint-virus-version: vendor=fsecure engine=2.50.10432:5.13.68,1.0.33,0.0.0000 definitions=2014-12-11_05:2014-12-11,2014-12-11,1970-01-01 signatures=0
+
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0023_01D8856F.B24D8B00
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+To EAS users,=20
+
+=20
+
+Thanks once again for a great round of beta testing. One issue uncovered
+during testing was the questionable reliability and security of allowing
+differently-administered VPN tunnels access to the EAS environment. The
+project team has decided that in production, all EAS users will connect
+thru a single VPN tunnel administered by LTS.=20
+
+=20
+
+Countway users already have accounts in this new tunnel -- called "SDRS"
+(secure DRS) -- and we have requested accounts for all other registered
+EAS users at HU Archives, Schlesinger and the Art Museums. Some users
+may have already received an email notification from
+VPN-Admin@harvard.edu <mailto:VPN-Admin@harvard.edu>  about their new
+SDRS account.=20
+
+=20
+
+Instructions in the notification say to download the VPN client and
+connect. But if you already have a VPN account and connect to
+vpn5.harvard.edu, I think you can use the your existing VPN client but
+log in with your new account (YOUR_HUID@sdrs). If you need assistance,
+send a message via the EAS feedback form:
+<http://nrs.harvard.edu/urn-3:hul.ois:easihelp>
+http://nrs.harvard.edu/urn-3:hul.ois:easihelp.=20
+
+=20
+
+Going forward, you should use only the SDRS tunnel to access EAS (other
+tunnels will be unregistered). This doesn't mean you can't use other VPN
+tunnels if your work requires it, just that the SDRS tunnel is required
+for access to the EAS dropbox and the EASi administrative interface.=20
+
+=20
+
+That is all for now. Regards. -julie
+
+=20
+
+Julie Wetherill
+
+Library Technology Services
+
+=20
+
+=20
+
+=20
+
+=20
+
+
+
+------=_NextPart_000_0023_01D8856F.B24D8B00
+Content-Type: text/html;charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+<meta name=3D"Generator" content=3D"Microsoft Word 12 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+=09{font-family:"Cambria Math";
+=09panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+=09{font-family:Calibri;
+=09panose-1:2 15 5 2 2 2 4 3 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+=09{margin:0in;
+=09margin-bottom:.0001pt;
+=09font-size:11.0pt;
+=09font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+=09{mso-style-priority:99;
+=09color:blue;
+=09text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+=09{mso-style-priority:99;
+=09color:purple;
+=09text-decoration:underline;}
+span.EmailStyle17
+=09{mso-style-type:personal-compose;
+=09font-family:"Calibri","sans-serif";
+=09color:windowtext;}
+.MsoChpDefault
+=09{mso-style-type:export-only;
+=09font-size:10.0pt;}
+@page WordSection1
+=09{size:8.5in 11.0in;
+=09margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+=09{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal">To EAS users, <o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Thanks once again for a great round of beta testing.=
+ One issue uncovered during testing was the questionable reliability and se=
+curity of allowing differently-administered VPN tunnels access to the EAS e=
+nvironment. The project team has decided
+ that in production, all EAS users will connect thru a single VPN tunnel ad=
+ministered by LTS.
+<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Countway users already have accounts in this new tun=
+nel -- called &#8220;SDRS&#8221; (secure DRS) -- and we have requested acco=
+unts for all other registered EAS users at HU Archives, Schlesinger and the=
+ Art Museums. Some users may have already received
+ an email notification from <a href=3D"mailto:VPN-Admin@harvard.edu">VPN-Ad=
+min@harvard.edu</a> about their new SDRS account.
+<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Instructions in the notification say to download the=
+ VPN client and connect. But if you already have a VPN account and connect =
+to vpn5.harvard.edu, I think you can use the your existing VPN client but l=
+og in with your new account (YOUR_HUID@sdrs).
+ If you need assistance, send a message via the EAS feedback form:&nbsp; <a=
+ href=3D"http://nrs.harvard.edu/urn-3:hul.ois:easihelp">
+http://nrs.harvard.edu/urn-3:hul.ois:easihelp</a>. <o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Going forward, you should use only the SDRS tunnel t=
+o access EAS (other tunnels will be unregistered). This doesn&#8217;t mean =
+you can&#8217;t use other VPN tunnels if your work requires it, just that t=
+he SDRS tunnel is required for access to the EAS
+ dropbox and the EASi administrative interface. <o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">That is all for now. Regards. &#8211;julie<o:p></o:p=
+></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Julie Wetherill<o:p></o:p></p>
+<p class=3D"MsoNormal">Library Technology Services<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+</body>
+</html>
+
+------=_NextPart_000_0023_01D8856F.B24D8B00--
+
+

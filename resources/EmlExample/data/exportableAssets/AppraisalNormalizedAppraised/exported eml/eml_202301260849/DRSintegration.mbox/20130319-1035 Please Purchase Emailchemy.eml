@@ -1,0 +1,463 @@
+Subject: Please Purchase Emailchemy
+From: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Sender: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Date: Tue, 19 Mar 2013 10:35:58 -0400
+To: "Vicary, Chris" <chris_vicary@harvard.edu>,
+   <emap-admin@hulmail.harvard.edu>
+Message-ID: <342ED5C6C153634389AB2B9CB924668212A7395E@ENTWEXMB0000003.university.harvard.edu>
+In-Reply-To: <0D7ACEFD894AEE4FA3880DDEEDDBF1720317AADF@ENTWEXMB0000011.university.harvard.edu>
+References: <CD5F9D7C.6A19%grainne_reilly@harvard.edu> <0D7ACEFD894AEE4FA3880DDEEDDBF1720317AADF@ENTWEXMB0000011.university.harvard.edu>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_NextPart_000_004D_01D8856F.B28CB6E0"
+X-ePADD-Folder: C:\Users\jmw922\Documents\ePADD-related\JWEASFolderMBOX\mbox-DRSintegration\DRSintegration.mbox
+X-ePADD-Labels: 
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQHOHC4EMA5Vaw0EVEuwFSrTQk/d95icKmNwgBD6vMA=
+Content-Language: en-us
+x-ms-exchange-organization-authas: Anonymous
+x-ms-exchange-organization-authsource: ENTWEDGE0000004.university.harvard.edu
+acceptlanguage: en-US
+x-originating-ip: [128.103.151.128]
+
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_004D_01D8856F.B28CB6E0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Even after having read it all, I'm reluctant to dive into the complexity=20
+of this issue.  However, I think the key thing for guidance is Chris' last=
+=20
+sentence.  That will be the common case so there's no need to add in a lot=
+=20
+of complexity to make the unusual case (and it will probably be pretty=20
+unusual) easy.
+
+
+
+Skip
+
+
+
+Skip Kendall
+
+Senior Electronic Records Analyst/Archivist
+
+ <http://archives.harvard.edu/> Harvard University Archives
+
+
+
+From: Vicary, Chris [mailto:chris_vicary@harvard.edu]
+Sent: Friday, March 08, 2013 3:11 PM
+To: emap-admin@hulmail.harvard.edu
+Subject: RE: Packets, Collections and Billing Codes
+
+
+
+Basically, it seems to me that the ability to override item-level billing=
+=20
+code and the actions specified in 3 and 4 are at odds.
+
+
+
+My reading of the requirement does not imply 3 or 4. If we were to take 3=
+=20
+and 4 as new requirements, the general effect is synchronization of the=20
+billing code of items and the billing code of the collection to which they=
+=20
+belong. If synchronization is really what you want, then it could be=20
+argued that item billing code should always be derived from the=20
+collection.
+
+
+
+Alternatively, if it is truly necessary to override item-level billing=20
+codes, then I don=E2=80=99t see why it should also be overwritten when movi=
+ng=20
+between collections, or when the collection billing code changes. If=20
+someone takes the time to overwrite the billing codes for items within a=20
+collection, and then changes the billing code for the collection, all=20
+those previous overwrites will be lost and may have to be redone.
+
+
+
+There is a certain amount of user knowledge that is required whether or=20
+not 3 & 4 are implemented. If automatic synchronization is not performed,=
+=20
+users still have the ability to do it manually, as well as assign any=20
+billing code combination to any arbitrary group of objects. In other=20
+words, they can still get their jobs done without 3 & 4. In certain=20
+scenarios (when users really do want to override item-level billing=20
+codes), 3 & 4 can actually make the user=E2=80=99s job more difficult. I wo=
+uld=20
+wait to label them as requirements until there is real-world user demand=20
+for them, if ever. Since 3 & 4 also apply to items and collections already=
+=20
+in DRS, they may create new requirements for DRS as well, compounding the=
+=20
+effort to implement them. If so, DRS owners also need to agree they are=20
+valid DRS requirements.
+
+
+
+As for the extra validation check on the submit package page, there is=20
+another option: assign billing codes based on the hierarchy=20
+collection->packet->item. If the collection is present, use its billing=20
+code for the packet and items. If it=E2=80=99s not present, use the packet=
+=E2=80=99s=20
+billing code for the items. Having a checkbox to know whether to apply=20
+billing codes to items seems clunky to me. It would seem that the common=20
+case is that collection, packet, and items will all have the same billing=
+=20
+code for their lifetimes, so it should be optimized.
+
+
+
+Chris
+
+
+
+
+
+
+
+From: Reilly, Grainne [mailto:grainne_reilly@harvard.edu]
+Sent: Friday, March 08, 2013 1:52 PM
+To: emap-admin@hulmail.harvard.edu <mailto:emap-admin@hulmail.harvard.edu>
+Subject: Packets, Collections and Billing Codes
+
+
+
+While working with Robin on the new packet descriptor (so packets can be=20
+ingested into DRS)  the whole question of Billing Codes arose.  It appears=
+=20
+that billing codes are required for all objects in DRS and so it seems to=
+=20
+make sense to make the billing code mandatory at packet submit time in=20
+EASi.
+
+
+
+Currently the billing code entered at packet submit time is only applied=20
+to the items in the packet and not the packet itself.  There should now be=
+=20
+the ability to apply the billing code to the packet itself with the option=
+=20
+to also apply it to the items in the packet.
+
+
+
+While discussing the topic of billing codes with Wendy we uncovered a=20
+discrepancy in our understanding of a requirement in the EASi Functional=20
+Requirements for UI Screens.  This pertains to how the collection billing=
+=20
+code is used in the system.
+
+
+
+I have attached a document containing my thoughts on how to approach the=20
+handling of billing codes in EAS and would appreciate your feedback,=20
+especially on the compromise I suggested.
+
+
+
+Thanks,
+
+Grainne.
+
+
+
+
+
+
+
+------=_NextPart_000_004D_01D8856F.B28CB6E0
+Content-Type: text/html;charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"Generator" content=3D"Microsoft Word 12 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+=09{font-family:"Cambria Math";
+=09panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+=09{font-family:Calibri;
+=09panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+=09{font-family:Tahoma;
+=09panose-1:2 11 6 4 3 5 4 4 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+=09{margin:0in;
+=09margin-bottom:.0001pt;
+=09font-size:12.0pt;
+=09font-family:"Times New Roman","serif";}
+a:link, span.MsoHyperlink
+=09{mso-style-priority:99;
+=09color:blue;
+=09text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+=09{mso-style-priority:99;
+=09color:purple;
+=09text-decoration:underline;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+=09{mso-style-priority:99;
+=09mso-style-link:"Balloon Text Char";
+=09margin:0in;
+=09margin-bottom:.0001pt;
+=09font-size:8.0pt;
+=09font-family:"Tahoma","sans-serif";}
+span.EmailStyle17
+=09{mso-style-type:personal;
+=09font-family:"Calibri","sans-serif";
+=09color:#1F497D;}
+span.EmailStyle18
+=09{mso-style-type:personal-reply;
+=09font-family:"Calibri","sans-serif";
+=09color:#1F497D;}
+span.BalloonTextChar
+=09{mso-style-name:"Balloon Text Char";
+=09mso-style-priority:99;
+=09mso-style-link:"Balloon Text";
+=09font-family:"Tahoma","sans-serif";}
+.MsoChpDefault
+=09{mso-style-type:export-only;
+=09font-size:10.0pt;}
+@page WordSection1
+=09{size:8.5in 11.0in;
+=09margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+=09{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">Even after having read it=
+ all, I'm reluctant to dive into the complexity of this issue.&nbsp; Howeve=
+r, I think the key thing for guidance is Chris' last sentence.&nbsp;
+ That will be the common case so there's no need to add in a lot of complex=
+ity to make the unusual case (and it will probably be pretty unusual) easy.=
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span><=
+/p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">Skip<o:p></o:p></span></p=
+>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span><=
+/p>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">Skip Kendall<o:p></o:p></=
+span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">Senior Electronic Records=
+ Analyst/Archivist<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D"><a href=3D"http://archive=
+s.harvard.edu/"><span style=3D"color:blue">Harvard University Archives</spa=
+n></a><o:p></o:p></span></p>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span><=
+/p>
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Vicary, =
+Chris [mailto:chris_vicary@harvard.edu]
+<br>
+<b>Sent:</b> Friday, March 08, 2013 3:11 PM<br>
+<b>To:</b> emap-admin@hulmail.harvard.edu<br>
+<b>Subject:</b> RE: Packets, Collections and Billing Codes<o:p></o:p></span=
+></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Calibri&quot;,&quot=
+;sans-serif&quot;;color:#1F497D">Basically, it seems to me that the ability=
+ to override item-level billing code and the actions specified in 3 and 4 a=
+re at odds.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Calibri&quot;,&quot=
+;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Calibri&quot;,&quot=
+;sans-serif&quot;;color:#1F497D">My reading of the requirement does not imp=
+ly 3 or 4. If we were to take 3 and 4 as new requirements, the general effe=
+ct is synchronization of the billing code of items and the
+ billing code of the collection to which they belong. If synchronization is=
+ really what you want, then it could be argued that item billing code shoul=
+d always be derived from the collection.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Calibri&quot;,&quot=
+;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Calibri&quot;,&quot=
+;sans-serif&quot;;color:#1F497D">Alternatively, if it is truly necessary to=
+ override item-level billing codes, then I don=E2=80=99t see why it should =
+also be overwritten when moving between collections, or when the
+ collection billing code changes. If someone takes the time to overwrite th=
+e billing codes for items within a collection, and then changes the billing=
+ code for the collection, all those previous overwrites will be lost and ma=
+y have to be redone.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Calibri&quot;,&quot=
+;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Calibri&quot;,&quot=
+;sans-serif&quot;;color:#1F497D">There is a certain amount of user knowledg=
+e that is required whether or not 3 &amp; 4 are implemented. If automatic s=
+ynchronization is not performed, users still have the ability
+ to do it manually, as well as assign any billing code combination to any a=
+rbitrary group of objects. In other words, they can still get their jobs do=
+ne without 3 &amp; 4. In certain scenarios (when users really do want to ov=
+erride item-level billing codes), 3
+ &amp; 4 can actually make the user=E2=80=99s job more difficult. I would w=
+ait to label them as requirements until there is real-world user demand for=
+ them, if ever. Since 3 &amp; 4 also apply to items and collections already=
+ in DRS, they may create new requirements for DRS
+ as well, compounding the effort to implement them. If so, DRS owners also =
+need to agree they are valid DRS requirements.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Calibri&quot;,&quot=
+;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Calibri&quot;,&quot=
+;sans-serif&quot;;color:#1F497D">As for the extra validation check on the s=
+ubmit package page, there is another option: assign billing codes based on =
+the hierarchy collection-&gt;packet-&gt;item. If the collection
+ is present, use its billing code for the packet and items. If it=E2=80=99s=
+ not present, use the packet=E2=80=99s billing code for the items. Having a=
+ checkbox to know whether to apply billing codes to items seems clunky to m=
+e. It would seem that the common case is that collection,
+ packet, and items will all have the same billing code for their lifetimes,=
+ so it should be optimized.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Calibri&quot;,&quot=
+;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Calibri&quot;,&quot=
+;sans-serif&quot;;color:#1F497D">Chris<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Calibri&quot;,&quot=
+;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Calibri&quot;,&quot=
+;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Calibri&quot;,&quot=
+;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<div style=3D"border:none;border-left:solid blue 1.5pt;padding:0in 0in 0in =
+4.0pt">
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Reilly, =
+Grainne [<a href=3D"mailto:grainne_reilly@harvard.edu">mailto:grainne_reill=
+y@harvard.edu</a>]
+<br>
+<b>Sent:</b> Friday, March 08, 2013 1:52 PM<br>
+<b>To:</b> <a href=3D"mailto:emap-admin@hulmail.harvard.edu">emap-admin@hul=
+mail.harvard.edu</a><br>
+<b>Subject:</b> Packets, Collections and Billing Codes<o:p></o:p></span></p=
+>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">While working with Robin on=
+ the new packet descriptor (so packets can be ingested into DRS) &nbsp;the =
+whole question of Billing Codes arose. &nbsp;It appears that billing
+ codes are required for all objects in DRS and so it seems to make sense to=
+ make the billing code mandatory at packet submit time in EASi.<o:p></o:p><=
+/span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><o:p>&nbsp;</o:p></span></p=
+>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">Currently the billing code =
+entered at packet submit time is only applied to the items in the packet an=
+d not the packet itself. &nbsp;There should now be the ability
+ to apply the billing code to the packet itself with the option to also app=
+ly it to the items in the packet.<o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><o:p>&nbsp;</o:p></span></p=
+>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">While discussing the topic =
+of billing codes with Wendy we uncovered a discrepancy in our understanding=
+ of a requirement in the EASi Functional Requirements for
+ UI Screens. &nbsp;This pertains to how the collection billing code is used=
+ in the system. &nbsp;&nbsp;<o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><o:p>&nbsp;</o:p></span></p=
+>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">I have attached a document =
+containing my thoughts on how to approach the handling of billing codes in =
+EAS and would appreciate your feedback, especially on the
+ compromise I suggested.<o:p></o:p></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><o:p>&nbsp;</o:p></span></p=
+>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">Thanks,<o:p></o:p></span></=
+p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">Grainne.<o:p></o:p></span><=
+/p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><o:p>&nbsp;</o:p></span></p=
+>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><o:p>&nbsp;</o:p></span></p=
+>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+------=_NextPart_000_004D_01D8856F.B28CB6E0--
+
+

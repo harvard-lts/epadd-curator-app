@@ -1,0 +1,191 @@
+Subject: Please Purchase Emailchemy
+From: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Sender: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Date: Thu, 21 Aug 2014 18:55:14 -0400
+To: <emap-admin@hulmail.harvard.edu>,
+   "Zakuta, Vitaly" <vitaly_zakuta@harvard.edu>
+Message-ID: <D01BF10D.3D7D3%wendy_gogel@harvard.edu>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_NextPart_000_0084_01D8856F.B2E89280"
+X-ePADD-Folder: C:\Users\jmw922\Documents\ePADD-related\JWEASFolderMBOX\mbox-DRSintegration\DRSintegration.mbox
+X-ePADD-Labels: 
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQHPvZL4GKmm0wzokEmLjbFF9XTA+g==
+Content-Language: en-us
+x-ms-exchange-organization-authas: Anonymous
+x-ms-exchange-organization-authsource: ENTWEDGE0000000.university.harvard.edu
+acceptlanguage: en-US
+x-originating-ip: [128.103.151.99]
+user-agent: Microsoft-MacOutlook/14.3.9.131030
+received-spf: None (protection.outlook.com: hulmail.harvard.edu does not designate permitted sender hosts)
+
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0084_01D8856F.B2E89280
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi, Robin and Andrea:
+
+I have two questions for you:
+
+1) I am trying to figure out if searching by email address in DRS is
+supported. I think that once in DRS, full-text of email will not be
+searchable (Andrea could you confirm that this is true for both secure
+and standard storage). If it is true, is it that way because it is
+governed by the content model or because the file extension "eml"
+dictates it? In addition, in the DRS descriptors, all of the
+correspondents (To, from, CC, and BCC) are represented only by Wordshack
+(WS) URIs for people and only after they have been manually related to
+email addresses (or vice versa) in WS.
+
+To search by email address in DRS, would one need to have a related
+person in WS and then search on the person in DRS? What field would they
+search in? Does this mean that there is no searching by email address if
+no relationship has been created to a person in WS?
+
+2) Is the requirement for metadata about the attachment in the
+descriptor to put the file name of the attachment in the descriptor, or
+to put the subject line from the email in the descriptor? We have
+differing recollections on this one.
+
+At this point, I am just trying to figure out what the real behavior is
+before trying to assess the implications.
+
+Thank you.
+
+Yours,
+
+Wendy
+
+Wendy Marcus Gogel
+Manager of Digital Content and Projects
+Harvard Library Preservation and Digital Imaging
+90 Mount Auburn Street, Room 317
+Cambridge, MA 02138
+42=C2=B0 22' 20.6436"N, 71=C2=B0 7' 11.1324"W
+T: 617-495-3724
+wendy_gogel@harvard.edu <mailto:wendy_gogel@harvard.edu>
+http://lib.harvard.edu
+http://lib.harvard.edu/preservation-services
+
+
+------=_NextPart_000_0084_01D8856F.B2E89280
+Content-Type: text/html;charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+</head>
+<body style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-lin=
+e-break: after-white-space; color: rgb(0, 0, 0); font-size: 14px; font-fami=
+ly: Calibri, sans-serif; ">
+<div>
+<div><span class=3D"Apple-style-span" style=3D"font-family: Calibri, sans-s=
+erif; ">
+<div>Hi, Robin and Andrea:</div>
+<div><br>
+</div>
+<div>I have two questions for you:</div>
+<div><br>
+</div>
+</span>1) I am trying to figure out if searching by email address in DRS is=
+ supported.&nbsp;I think that once in DRS, full-text of email will not be s=
+earchable (Andrea could you confirm that this is true for both secure and s=
+tandard storage). If it is true, is it
+ that way because it is governed by the content model or because the file e=
+xtension &quot;eml&quot; dictates it? In addition, in the DRS descriptors, =
+all of the correspondents (To, from, CC, and BCC) are represented only by W=
+ordshack (WS) URIs for people and only after
+ they have been manually related to email addresses (or vice versa) in WS.<=
+span class=3D"Apple-style-span" style=3D"font-family: Calibri, sans-serif; =
+">
+<div><br>
+</div>
+</span><span class=3D"Apple-style-span" style=3D"font-family: Calibri, sans=
+-serif; ">
+<div>To search by email address in DRS, would one need to have a related pe=
+rson in WS and then search on the person in DRS? What field would they sear=
+ch in? Does this mean that there is no searching by email address if no rel=
+ationship has been created to a
+ person in WS?&nbsp;</div>
+<div><br>
+</div>
+<div>2) Is the requirement for metadata about the attachment in the descrip=
+tor to put the file name of the attachment in the descriptor, or to put the=
+ subject line from the email in the descriptor? We have differing recollect=
+ions on this one. &nbsp;&nbsp;</div>
+<div><br>
+</div>
+<div>At this point, I am just trying to figure out what the real behavior i=
+s before trying to assess the implications.</div>
+<div><br>
+</div>
+<div>Thank you.</div>
+<div><br>
+</div>
+<div>Yours,</div>
+<div><br>
+</div>
+<div>Wendy</div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"color: rgb(0, 0, 0); font-family: Calibri, =
+sans-serif; ">
+<span class=3D"Apple-style-span" style=3D"font-size: 19px; "><font class=3D=
+"Apple-style-span" face=3D"Calibri"></font></span></p>
+<p class=3D"MsoNormal" style=3D"font-family: Calibri, sans-serif; color: rg=
+b(0, 0, 0); ">
+<font class=3D"Apple-style-span" face=3D"Calibri"><span class=3D"Apple-styl=
+e-span" style=3D"font-size: 12px; font-family: Consolas, monospace; "></spa=
+n></font></p>
+<div></div>
+</div>
+</div>
+</div>
+</span>
+<div style=3D"font-family: Calibri, sans-serif; "><span class=3D"Apple-styl=
+e-span" style=3D"font-family: Calibri; ">Wendy Marcus Gogel</span></div>
+<div>
+<div>
+<div>
+<div>
+<div style=3D"font-family: Calibri, sans-serif; "><font class=3D"Apple-styl=
+e-span" face=3D"Calibri">Manager of Digital Content and Projects</font></di=
+v>
+<div style=3D"font-family: Calibri, sans-serif; "><font class=3D"Apple-styl=
+e-span" face=3D"Calibri">Harvard Library Preservation and Digital Imaging</=
+font></div>
+<div style=3D"font-family: Calibri, sans-serif; "><font class=3D"Apple-styl=
+e-span" face=3D"Calibri">90 Mount Auburn Street, Room 317</font></div>
+<div style=3D"font-family: Calibri, sans-serif; "><font class=3D"Apple-styl=
+e-span" face=3D"Calibri">Cambridge, MA 02138</font></div>
+<div style=3D"font-family: Calibri, sans-serif; "><span class=3D"Apple-styl=
+e-span" style=3D"font-family: Calibri, sans-serif; ">42=C2=B0 22' 20.6436&q=
+uot;N, 71=C2=B0 7' 11.1324&quot;W</span></div>
+<div style=3D"font-family: Calibri, sans-serif; "><span class=3D"Apple-styl=
+e-span" style=3D"font-family: Calibri; ">T: 617-495-3724</span></div>
+</div>
+<div style=3D"font-family: Calibri, sans-serif; "><font class=3D"Apple-styl=
+e-span" face=3D"Calibri"><a href=3D"mailto:wendy_gogel@harvard.edu">wendy_g=
+ogel@harvard.edu</a></font></div>
+<div style=3D"font-family: Calibri, sans-serif; "><font class=3D"Apple-styl=
+e-span" face=3D"Calibri"><a href=3D"http://lib.harvard.edu">http://lib.harv=
+ard.edu</a></font></div>
+<div style=3D"font-family: Calibri, sans-serif; "><font class=3D"Apple-styl=
+e-span" face=3D"Calibri"><a href=3D"http://lib.harvard.edu/preservation-ser=
+vices">http://lib.harvard.edu/preservation-services</a></font></div>
+</div>
+<!--EndFragment--></div>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+------=_NextPart_000_0084_01D8856F.B2E89280--
+
+

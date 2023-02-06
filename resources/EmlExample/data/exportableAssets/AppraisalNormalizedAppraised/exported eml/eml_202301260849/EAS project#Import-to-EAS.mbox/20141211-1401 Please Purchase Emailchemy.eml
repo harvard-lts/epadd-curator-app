@@ -1,0 +1,366 @@
+Subject: Please Purchase Emailchemy
+From: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Sender: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Date: Thu, 11 Dec 2014 14:01:17 -0500
+To: "Wetherill, Julie M." <julie_wetherill@harvard.edu>,
+   "Gaudreau, Luke F." <luke_gaudreau@harvard.edu>
+Message-ID: <D2838FF6.226C4%grainne_reilly@harvard.edu>
+In-Reply-To: <CO1PR07MB92661AC43CC875F4900CABE8A0F0@CO1PR07MB926.namprd07.prod.outlook.com>
+References: <FP0Ewi8YYMCzwlsEfnPg6F02L1i6M.44.41@harvard.edu> <BN3PR0701MB1268E00C71EC7E3A83CA980D860F0@BN3PR0701MB1268.namprd07.prod.outlook.com> <CO1PR07MB92661AC43CC875F4900CABE8A0F0@CO1PR07MB926.namprd07.prod.outlook.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_NextPart_000_00B8_01D8856F.B331F790"
+X-ePADD-Folder: C:\Users\jmw922\Documents\ePADD-related\JWEASFolderMBOX\EAS project#Import-to-EAS.mbox
+X-ePADD-Labels: 
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQHRLHjgt+68xmine0W+JDXDCwJC4J62pJrAgAASmhf//7ZtAA==
+Content-Language: en-us
+x-ms-exchange-organization-authas: Internal
+x-ms-exchange-organization-authsource: BY2PR07MB597.namprd07.prod.outlook.com
+acceptlanguage: en-US
+x-originating-ip: [128.103.224.203]
+x-ms-exchange-organization-authmechanism: 04
+
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_00B8_01D8856F.B331F790
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+I think that it would be best not to combine them into a single PST file,=
+=20
+rather to upload all three PSTs as a single packet.
+
+The directory name will maintain the original order e.g.
+PST1.pst/=E2=80=8BOutlook Data File/=E2=80=8BTop of Outlook data file/=E2=
+=80=8BInbox
+PST2.pst/=E2=80=8BOutlook Data File/=E2=80=8BTop of Outlook data file/=E2=
+=80=8BInbox
+PST3.pst/=E2=80=8BOutlook Data File/=E2=80=8BTop of Outlook data file/=E2=
+=80=8BInbox
+
+ -- Grainne
+
+From: <Wetherill>, "Julie M." <julie_wetherill@harvard.edu=20
+<mailto:julie_wetherill@harvard.edu> >
+Date: Tuesday, December 1, 2015 5:36 PM
+To: "Gaudreau, Luke F." <luke_gaudreau@harvard.edu=20
+<mailto:luke_gaudreau@harvard.edu> >
+Cc: "Reilly, Grainne" <grainne_reilly@harvard.edu=20
+<mailto:grainne_reilly@harvard.edu> >
+Subject: Re: EASi: multiple PST files? ISSUE=3D41 PROJ=3D44
+
+
+
+Hi Luke,
+
+
+
+
+It's possible to deposit multiple packets at the same time (each in its=20
+own staging directory). It's also possible to upload in a single packet=20
+the entire contents of a single Outlook directory, which can have multiple=
+=20
+PST files in it.
+
+
+
+
+But if Julie S. wants to upload multiple PST files that weren't originally=
+=20
+part of same Outlook directory, I'm not sure about that.
+
+
+
+
+CC'ing Grainne for her opinion. -julie
+
+
+
+  _____
+
+From: Gaudreau, Luke F.
+Sent: Tuesday, December 1, 2015 4:27 PM
+To: Wetherill, Julie M.
+Subject: FW: EASi: multiple PST files? ISSUE=3D41 PROJ=3D44
+
+
+Hi Julie,
+
+Since this is our first functional support request, I want to run it by=20
+you before answering:
+
+It sounds like Julie wants to upload a packet containing multiple PST=20
+files. It looks to me according to the documentation that this is fine.=20
+The example given here
+
+http://hul.harvard.edu/ois/systems/eas/eas-submission-outlook.pdf
+
+
+Uploading Email to EAS: MS Outlook - Harvard Library=20
+<http://hul.harvard.edu/ois/systems/eas/eas-submission-outlook.pdf>
+hul.harvard.edu
+HUIT Library Technology Services (LTS) Page 1 of 6 Uploading Email to EAS:=
+=20
+MS Outlook Last updated: October 7, 2014 This document describes how to=20
+prepare a packet of ...
+
+
+shows a directory containing multiple PST files being uploaded.
+
+
+
+Is that right? Are there any caveats?
+
+Thanks,
+Luke
+
+
+
+From: fp@hulmail.harvard.edu <mailto:fp@hulmail.harvard.edu>=20
+[mailto:fp@hulmail.harvard.edu]
+Sent: Tuesday, December 01, 2015 3:41 PM
+To: Gaudreau, Luke F.
+Subject: EASi: multiple PST files? ISSUE=3D41 PROJ=3D44
+
+
+
+When replying, type your text above this line.
+
+  _____
+
+EASi: multiple PST files? Issue=3D41 Project=3D44
+Click here to view Ticket in Browser=20
+<https://hulhelp.harvard.edu/MRcgi/MRlogin.pl?DL=3D41DA44>
+
+
+Category: easi
+
+Status: Open
+
+
+Assigned to: Patti Fucci, Luke Gaudreau, Maureen O'Drisceoil
+
+CC:
+
+
+Contact: Julie Swierczek
+
+julie_swierczek@harvard.edu <mailto:julie_swierczek@harvard.edu>
+
+Internal Note:
+Entered on 2015-12-01 at 15:41:27 by Maureen O'Drisceoil :
+
+Patti, Luke,
+is this for you?
+Request says "I have a user I want to add to EAS, . . . "
+
+Not sure if that means she wants to add/register a user for EASi.
+Thanks,
+Maurene
+
+Description:
+Entered on 12/01/2015 at 11:24:03 EST (GMT-0500) by=20
+<mailto:julie_swierczek@harvard.edu> julie_swierczek@harvard.edu:
+I have a user I want to add to EAS, but her email was supplied as three=20
+PST files. Can I upload those as a single packet? Or do I need to first=20
+combine them into one PST file before upload? Thanks.
+=3D=3D=3D=3D=3D=3D
+Additional information from the submitter:
+
+----
+Request header details:
+Submitter's IP address: 140.247.85.103
+Submitted through host: feedback.lib.harvard.edu
+Submitted using agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0)=20
+Gecko/20100101 Firefox/38.0
+Referring URL:  <http://hul.harvard.edu/ois/support/>=20
+http://hul.harvard.edu/ois/support/
+
+[Feedback (5.8.11)]
+
+Ticket Changes:
+Changed Status to Open from Request, Set Internal Note, Added Assignee :=20
+Maureen O'Drisceoil Patti Fucci Luke Gaudreau.
+At 15:41:27 on 12/01/2015
+
+
+
+------=_NextPart_000_00B8_01D8856F.B331F790
+Content-Type: text/html;charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"></=
+head><body style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; -webki=
+t-line-break: after-white-space; color: rgb(0, 0, 0); font-size: 14px; font=
+-family: Calibri, sans-serif; "><div>I think that it would be best not to c=
+ombine them into a single PST file, rather to upload all three PSTs as a si=
+ngle packet. &nbsp;</div><div><br></div><div>The directory name will mainta=
+in the original order e.g.&nbsp;</div><div>PST1.pst/=E2=80=8BOutlook Data F=
+ile/=E2=80=8BTop of Outlook data file/=E2=80=8BInbox</div><div><div>PST2.ps=
+t/=E2=80=8BOutlook Data File/=E2=80=8BTop of Outlook data file/=E2=80=8BInb=
+ox</div></div><div><div>PST3.pst/=E2=80=8BOutlook Data File/=E2=80=8BTop of=
+ Outlook data file/=E2=80=8BInbox</div></div><div><br></div><div>&nbsp;-- G=
+rainne</div><div><br></div><span id=3D"OLK_SRC_BODY_SECTION"><div style=3D"=
+font-family:Calibri; font-size:11pt; text-align:left; color:black; BORDER-B=
+OTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: 0in; PADDING-=
+LEFT: 0in; PADDING-RIGHT: 0in; BORDER-TOP: #b5c4df 1pt solid; BORDER-RIGHT:=
+ medium none; PADDING-TOP: 3pt"><span style=3D"font-weight:bold">From: </sp=
+an> &lt;Wetherill&gt;, &quot;Julie M.&quot; &lt;<a href=3D"mailto:julie_wet=
+herill@harvard.edu">julie_wetherill@harvard.edu</a>&gt;<br><span style=3D"f=
+ont-weight:bold">Date: </span> Tuesday, December 1, 2015 5:36 PM<br><span s=
+tyle=3D"font-weight:bold">To: </span> &quot;Gaudreau, Luke F.&quot; &lt;<a =
+href=3D"mailto:luke_gaudreau@harvard.edu">luke_gaudreau@harvard.edu</a>&gt;=
+<br><span style=3D"font-weight:bold">Cc: </span> &quot;Reilly, Grainne&quot=
+; &lt;<a href=3D"mailto:grainne_reilly@harvard.edu">grainne_reilly@harvard.=
+edu</a>&gt;<br><span style=3D"font-weight:bold">Subject: </span> Re: EASi: =
+multiple PST files? ISSUE=3D41 PROJ=3D44<br></div><div><br></div><div><styl=
+e type=3D"text/css" style=3D"display:none;"><!-- P {margin-top:0;margin-bot=
+tom:0;} --></style><div dir=3D"ltr"><div id=3D"divtagdefaultwrapper" style=
+=3D"font-size:12pt;color:#000000;background-color:#FFFFFF;font-family:Calib=
+ri,Arial,Helvetica,sans-serif;"><p>Hi Luke,</p><p><br></p><p>It's possible =
+to deposit multiple packets at the same time (each in its own staging direc=
+tory). It's also possible to upload in a single packet the entire contents =
+of a single Outlook directory, which can have multiple PST files in it.&nbs=
+p;</p><p><br></p><p>But if Julie S.&nbsp;wants to upload multiple PST files=
+ that weren't originally part of same Outlook directory, I'm not sure about=
+ that.&nbsp;</p><p><br></p><p>CC'ing&nbsp;Grainne for her opinion. -julie</=
+p><br><br><div style=3D"color: rgb(0, 0, 0);"><hr tabindex=3D"-1" style=3D"=
+display:inline-block; width:98%"><div id=3D"divRplyFwdMsg" dir=3D"ltr"><fon=
+t face=3D"Calibri,sans-serif" color=3D"#000000" style=3D"font-size:11pt"><b=
+>From:</b> Gaudreau, Luke F.<br><b>Sent:</b> Tuesday, December 1, 2015 4:27=
+ PM<br><b>To:</b> Wetherill, Julie M.<br><b>Subject:</b> FW: EASi: multiple=
+ PST files? ISSUE=3D41 PROJ=3D44</font><div>&nbsp;</div></div><div><div><p =
+style=3D"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: 'Times New=
+ Roman', serif;"><span style=3D"font-size: 11pt; font-family: Calibri, sans=
+-serif; color: rgb(31, 73, 125); ">Hi Julie,</span></p><p style=3D"margin: =
+0in 0in 0.0001pt; font-size: 12pt; font-family: 'Times New Roman', serif;">=
+<span style=3D"font-size: 11pt; font-family: Calibri, sans-serif; color: rg=
+b(31, 73, 125); ">Since this is our first functional support request, I wan=
+t to run it by you before answering:</span></p><p style=3D"margin: 0in 0in =
+0.0001pt; font-size: 12pt; font-family: 'Times New Roman', serif;"><span st=
+yle=3D"font-size: 11pt; font-family: Calibri, sans-serif; color: rgb(31, 73=
+, 125); ">It sounds like Julie wants to upload a packet containing multiple=
+ PST files. It looks to me according to the documentation that this is fine=
+. The example given here</span></p><p style=3D"margin: 0in 0in 0.0001pt; fo=
+nt-size: 12pt; font-family: 'Times New Roman', serif;"><span style=3D"font-=
+size: 11pt; font-family: Calibri, sans-serif; color: rgb(31, 73, 125); "><a=
+ href=3D"http://hul.harvard.edu/ois/systems/eas/eas-submission-outlook.pdf"=
+ style=3D"color: blue; text-decoration: underline;" id=3D"LPlnk176699">http=
+://hul.harvard.edu/ois/systems/eas/eas-submission-outlook.pdf</a></span></p=
+><div id=3D"LPBorder_GT_14490091144510.4563996021170169" style=3D"margin-bo=
+ttom: 20px; overflow: auto; width: 100%;"><table id=3D"LPContainer_14490091=
+144450.9966632253490388" cellspacing=3D"0" style=3D"width: 90%; position: r=
+elative; overflow: auto; padding-top: 20px; padding-bottom: 20px; margin-to=
+p: 20px; border-top-width: 1px; border-top-style: dotted; border-top-color:=
+ rgb(200, 200, 200); border-bottom-width: 1px; border-bottom-style: dotted;=
+ border-bottom-color: rgb(200, 200, 200); background-color: rgb(255, 255, 2=
+55);"><tbody><tr valign=3D"top" style=3D"border-spacing: 0px;"><td id=3D"Te=
+xtCell_14490091144480.7982053305022418" colspan=3D"2" style=3D"vertical-ali=
+gn: top; position: relative; padding: 0px; display: table-cell;"><div id=3D=
+"LPRemovePreviewContainer_14490091144480.8655308964662254"></div><div id=3D=
+"LPTitle_14490091144480.6225803578272462" style=3D"top: 0px; color: rgb(30,=
+ 30, 30); font-weight: normal; font-size: 21px; font-family: wf_segoe-ui_li=
+ght, 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Ar=
+ial, sans-serif; line-height: 21px;"><a id=3D"LPUrlAnchor_14490091144490.24=
+46786325890571" href=3D"http://hul.harvard.edu/ois/systems/eas/eas-submissi=
+on-outlook.pdf" target=3D"_blank" style=3D"text-decoration: none;">Uploadin=
+g Email to EAS: MS Outlook - Harvard Library</a></div><div id=3D"LPMetadata=
+_14490091144490.6558110634796321" style=3D"margin: 10px 0px 16px; color: rg=
+b(102, 102, 102); font-weight: normal; font-family: wf_segoe-ui_normal, 'Se=
+goe UI', 'Segoe WP', Tahoma, Arial, sans-serif; font-size: 14px; line-heigh=
+t: 14px;">
+hul.harvard.edu</div><div id=3D"LPDescription_14490091144500.27645226940512=
+657" style=3D"display: block; color: rgb(102, 102, 102); font-weight: norma=
+l; font-family: wf_segoe-ui_normal, 'Segoe UI', 'Segoe WP', Tahoma, Arial, =
+sans-serif; font-size: 14px; line-height: 20px; max-height: 100px; overflow=
+: hidden;">
+HUIT Library Technology Services (LTS) Page 1 of 6 Uploading Email to EAS: =
+MS Outlook Last updated: October 7, 2014 This document describes how to pre=
+pare a packet of ...</div></td></tr></tbody></table></div><br><p></p><p sty=
+le=3D"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: 'Times New Ro=
+man', serif;"><span style=3D"font-size: 11pt; font-family: Calibri, sans-se=
+rif; color: rgb(31, 73, 125); ">shows a directory containing multiple PST f=
+iles being uploaded.</span></p><p style=3D"margin: 0in 0in 0.0001pt; font-s=
+ize: 12pt; font-family: 'Times New Roman', serif;"><span style=3D"font-size=
+: 11pt; font-family: Calibri, sans-serif; color: rgb(31, 73, 125); ">&nbsp;=
+</span></p><p style=3D"margin: 0in 0in 0.0001pt; font-size: 12pt; font-fami=
+ly: 'Times New Roman', serif;"><span style=3D"font-size: 11pt; font-family:=
+ Calibri, sans-serif; color: rgb(31, 73, 125); ">Is that right? Are there a=
+ny caveats?</span></p><p style=3D"margin: 0in 0in 0.0001pt; font-size: 12pt=
+; font-family: 'Times New Roman', serif;"><span style=3D"font-size: 11pt; f=
+ont-family: Calibri, sans-serif; color: rgb(31, 73, 125); ">Thanks,<br>
+Luke</span></p><p style=3D"margin: 0in 0in 0.0001pt; font-size: 12pt; font-=
+family: 'Times New Roman', serif;"><span style=3D"font-size: 11pt; font-fam=
+ily: Calibri, sans-serif; color: rgb(31, 73, 125); ">&nbsp;</span></p><div>=
+<div style=3D"border:none; border-top:solid #B5C4DF 1.0pt; padding:3.0pt 0i=
+n 0in 0in"><p style=3D"margin: 0in 0in 0.0001pt; font-size: 12pt; font-fami=
+ly: 'Times New Roman', serif;"><b><span style=3D"font-size: 10pt; font-fami=
+ly: Tahoma, sans-serif; ">From:</span></b><span style=3D"font-size: 10pt; f=
+ont-family: Tahoma, sans-serif; "> <a href=3D"mailto:fp@hulmail.harvard.edu=
+">fp@hulmail.harvard.edu</a> [<a href=3D"mailto:fp@hulmail.harvard.edu">mai=
+lto:fp@hulmail.harvard.edu</a>]
+<br><b>Sent:</b> Tuesday, December 01, 2015 3:41 PM<br><b>To:</b> Gaudreau,=
+ Luke F.<br><b>Subject:</b> EASi: multiple PST files? ISSUE=3D41 PROJ=3D44<=
+/span></p></div></div><p style=3D"margin: 0in 0in 0.0001pt; font-size: 12pt=
+; font-family: 'Times New Roman', serif;">
+&nbsp;</p><p><em>When replying, type your text above this line.</em> </p><d=
+iv align=3D"center" style=3D"text-align: center; margin: 0in 0in 0.0001pt; =
+font-size: 12pt; font-family: 'Times New Roman', serif;"><hr size=3D"2" wid=
+th=3D"100%" align=3D"center"></div><p><strong>EASi:</strong> multiple PST f=
+iles? Issue=3D41 Project=3D44 <br><a href=3D"https://hulhelp.harvard.edu/MR=
+cgi/MRlogin.pl?DL=3D41DA44" style=3D"color: blue; text-decoration: underlin=
+e;">Click here to view Ticket in Browser</a></p><table class=3D"MsoNormalTa=
+ble" border=3D"0" cellpadding=3D"0"><tbody><tr><td style=3D"padding:.75pt .=
+75pt .75pt .75pt"><p style=3D"margin: 0in 0in 0.0001pt; font-size: 12pt; fo=
+nt-family: 'Times New Roman', serif;"><strong>Category:</strong> easi</p></=
+td><td style=3D"padding:.75pt .75pt .75pt .75pt"><p style=3D"margin: 0in 0i=
+n 0.0001pt; font-size: 12pt; font-family: 'Times New Roman', serif;"><stron=
+g>Status:</strong> Open</p></td></tr><tr><td style=3D"padding:.75pt .75pt .=
+75pt .75pt"><p style=3D"margin: 0in 0in 0.0001pt; font-size: 12pt; font-fam=
+ily: 'Times New Roman', serif;"><strong>Assigned to:</strong> Patti Fucci, =
+Luke Gaudreau, Maureen O'Drisceoil</p></td><td style=3D"padding:.75pt .75pt=
+ .75pt .75pt"><p style=3D"margin: 0in 0in 0.0001pt; font-size: 12pt; font-f=
+amily: 'Times New Roman', serif;"><strong>CC:</strong> </p></td></tr><tr><t=
+d style=3D"padding:.75pt .75pt .75pt .75pt"><p style=3D"margin: 0in 0in 0.0=
+001pt; font-size: 12pt; font-family: 'Times New Roman', serif;"><strong>Con=
+tact:</strong> Julie Swierczek</p></td><td style=3D"padding:.75pt .75pt .75=
+pt .75pt"><p style=3D"margin: 0in 0in 0.0001pt; font-size: 12pt; font-famil=
+y: 'Times New Roman', serif;"><a href=3D"mailto:julie_swierczek@harvard.edu=
+" style=3D"color: blue; text-decoration: underline;">julie_swierczek@harvar=
+d.edu</a></p></td></tr></tbody></table><p><strong>Internal Note:</strong><b=
+r>
+Entered on 2015-12-01 at 15:41:27 by Maureen O'Drisceoil :<br><br>
+Patti, Luke,<br>
+is this for you?<br>
+Request says &quot;I have a user I want to add to EAS, . . . &quot;<br><br>
+Not sure if that means she wants to add/register a user for EASi.<br>
+Thanks,<br>
+Maurene </p><p><strong>Description:</strong><br><i>Entered on 12/01/2015 at=
+ 11:24:03 EST (GMT-0500) by <a href=3D"mailto:julie_swierczek@harvard.edu" =
+style=3D"color: blue; text-decoration: underline;">
+julie_swierczek@harvard.edu</a>:</i><br>
+I have a user I want to add to EAS, but her email was supplied as three PST=
+ files. Can I upload those as a single packet? Or do I need to first combin=
+e them into one PST file before upload? Thanks.<br>
+=3D=3D=3D=3D=3D=3D<br>
+Additional information from the submitter: <br><br>
+----<br>
+Request header details:<br>
+Submitter's IP address: 140.247.85.103<br>
+Submitted through host: feedback.lib.harvard.edu<br>
+Submitted using agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/2=
+0100101 Firefox/38.0<br>
+Referring URL: <a href=3D"http://hul.harvard.edu/ois/support/" style=3D"col=
+or: blue; text-decoration: underline;">
+http://hul.harvard.edu/ois/support/</a><br><br>
+[Feedback (5.8.11)] </p><p><strong>Ticket Changes:</strong><br>
+Changed Status to Open from Request, Set Internal Note, Added Assignee : Ma=
+ureen O'Drisceoil Patti Fucci Luke Gaudreau.<br>
+At <em>15:41:27</em> on <em>12/01/2015</em> </p></div></div></div></div></d=
+iv></div></span></body></html>
+
+------=_NextPart_000_00B8_01D8856F.B331F790--
+
+

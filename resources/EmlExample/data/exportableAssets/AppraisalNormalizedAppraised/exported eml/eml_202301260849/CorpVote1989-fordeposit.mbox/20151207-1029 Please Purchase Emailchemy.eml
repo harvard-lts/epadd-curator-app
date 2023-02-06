@@ -1,0 +1,617 @@
+Subject: Please Purchase Emailchemy
+From: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Sender: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Date: Mon, 07 Dec 2015 10:29:48 -0500
+To: "Kendall, Skip" <skip_kendall@harvard.edu>
+CC: "Pelose, Jennifer" <jennifer_pelose@harvard.edu>,
+   "Wetherill, Julie M." <julie_wetherill@harvard.edu>
+Message-ID: <CO1PR07MB9269C0212A87E77F90A0A7D8A090@CO1PR07MB926.namprd07.prod.outlook.com>
+In-Reply-To: <SN1PR0701MB18856F454A55A352A0C9D763E1090@SN1PR0701MB1885.namprd07.prod.outlook.com>
+References: <CO1PR07MB926549FAB1163C1D3CD0EB58A0F0@CO1PR07MB926.namprd07.prod.outlook.com> <SN1PR0701MB188536F6F375FEEB1427F1D7E10C0@SN1PR0701MB1885.namprd07.prod.outlook.com> <CO1PR07MB926D46B3A09329696F2FC3B8A090@CO1PR07MB926.namprd07.prod.outlook.com> <SN1PR0701MB18856F454A55A352A0C9D763E1090@SN1PR0701MB1885.namprd07.prod.outlook.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_NextPart_000_0030_01D8856F.B2650AA0"
+X-ePADD-Folder: C:\Users\jmw922\Documents\ePADD-related\JWEASFolderMBOX\mbox-CorpVote\CorpVote1989-fordeposit.mbox
+X-ePADD-Labels: 
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQHRLF7M6jkZ5cfEGEefoH4VForb5Z67MdSggARp1VCAAAm1sIAAB6XQ
+Content-Language: en-us
+x-ms-exchange-organization-authas: Internal
+x-ms-exchange-organization-authsource: CO1PR07MB926.namprd07.prod.outlook.com
+acceptlanguage: en-US
+x-originating-ip: [128.103.151.151]
+x-ms-exchange-organization-authmechanism: 03
+
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0030_01D8856F.B2650AA0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Skip,
+
+=20
+
+I talked to Robin about linking the 2 docs and she pointed me to a DRS2
+rights specification document where this specific use case is described.
+
+
+=20
+
+Essentially, the framers of the spec were expecting there would be a
+single CorpVote1989 document and the rights metadata added to the
+embargoed content would point to this single doc and indicate the
+context (50 or 80 yr rule) in a licenseTerm element. Here is the sample
+PREMIS rights block from the spec doc with licenseTerm highlighted:
+
+=20
+
+<pr:rights>
+    <pr:rightsStatement>
+        <pr:rightsBasis>Harvard policy</pr:rightsBasis>
+        <pr:licenseInformation>
+            <!-- Pointer to License Object -->
+            <pr:licenseIdentifier>
+=20
+<pr:licenseIdentifierType>HUL_DRS_OBJECT</pr:licenseIdentifierType>
+=20
+<pr:licenseIdentifierValue>urn-3:HUL.DRS.OBJECT:6789</pr:licenseIdentifi
+erValue>
+            </pr:licenseIdentifier>
+            <pr:licenseTerms>Duration: 80 years</pr:licenseTerms>
+        </pr:licenseInformation>
+        <pr:rightsGranted>
+
+        <!-- Embargo -->
+            <pr:act>deliver</pr:act>
+            <pr:restriction>embargo</pr:restriction>
+            <pr:termOfGrant>
+                <pr:startDate>20110101</pr:startDate>
+                <pr:endDate>20910101</pr:endDate>
+            </pr:termOfGrant>
+        </pr:rightsGranted>
+    </pr:rightsStatement>
+</pr:rights>
+
+=20
+
+Robin would prefer we follow this approach, but won't lose sleep over it
+if you have reasons to prefer the duplicate doc model. Your thoughts?
+--julie
+
+=20
+
+From: Kendall, Skip=20
+Sent: Monday, December 07, 2015 9:55 AM
+To: Wetherill, Julie M.
+Cc: Pelose, Jennifer
+Subject: RE: EAS/DRS2: need your advice re: metadata for 50/80 yr rule
+docs?
+
+=20
+
+It looks good.  The only thing I don't see is something that links the
+two documents (other than having the same name).  However, I think
+that's the least important bit of metadata here and I don't know how
+we'd do it.
+
+=20
+
+Thanks,
+
+Skip=20
+
+=20
+
+From: Wetherill, Julie M.=20
+Sent: Monday, December 07, 2015 9:22 AM
+To: Kendall, Skip
+Cc: Pelose, Jennifer; Wetherill, Julie M.
+Subject: RE: EAS/DRS2: need your advice re: metadata for 50/80 yr rule
+docs?
+
+=20
+
+Hi Skip,
+
+=20
+
+Below are links to the 50/80yr docs in DRS2 prod. Could you quickly
+review the metadata in case something is missing? Thx. --julie
+
+=20
+
+50yr:
+
+https://drs2.lib.harvard.edu:9400/drs2_webadmin/object?objectId=3D41857105
+2
+
+http://nrs.harvard.edu/urn-3:H.LIB:23853765=20
+
+=20
+
+80yr:
+
+https://drs2.lib.harvard.edu:9400/drs2_webadmin/object?objectId=3D41857105
+5
+
+http://nrs.harvard.edu/urn-3:H.LIB:23853767=20
+
+=20
+
+From: Kendall, Skip=20
+Sent: Friday, December 04, 2015 2:12 PM
+To: Wetherill, Julie M.
+Cc: Pelose, Jennifer
+Subject: RE: EAS/DRS2: need your advice re: metadata for 50/80 yr rule
+docs?
+
+=20
+
+Julie,
+
+=20
+
+Here's what we came up with:
+
+=20
+
+Title: Vote of the Harvard Corporation of March 13, 1989
+
+Name (author): Harvard University. Corporation.=20
+
+Origin info:  This seems like the best place for a link to the Archives.
+Our authorized name is "Harvard University. Archives"
+
+Abstract: "This is a vote of the Harvard Corporation of March 13, 1989
+that governs use of material in the Library comprising archives of the
+University and manuscripts other than Harvard archives, including the
+length of time such material is restricted from public access."
+
+Classification/Identifier: This seems unnecessary in this case.
+
+=20
+
+I don't know how it would be done, but an association between these
+documents seems like a good thing.  They are, of course, exactly the
+same document, duplicated to make it easier to associate DRS records
+with the right aspect of the document.  So, the two aspects are
+associated with one another.
+
+=20
+
+Using the filenames as owner-supplied names is perfect.
+
+=20
+
+Feel free to suggest alterations to this as we're really just figuring
+this out.
+
+=20
+
+Skip=20
+
+=20
+
+From: Wetherill, Julie M.=20
+Sent: Tuesday, December 01, 2015 12:41 PM
+To: Kendall, Skip
+Cc: Wetherill, Julie M.
+Subject: EAS/DRS2: need your advice re: metadata for 50/80 yr rule docs?
+
+=20
+
+Hi Skip,
+
+=20
+
+I'm getting ready to deposit the 50 and 80 year rule PDF docs. What kind
+of descriptive metadata do you want for these? Once deposited, will be
+hard to add/update this, so we should get it right at deposit if
+possible. Any suggestions for:
+
+=20
+
+Title
+
+Name (author)
+
+Origin info
+
+Abstract
+
+Classification/Identifier
+
+=20
+
+I'd prefer that object metadata include some hint that HU Archives
+supports these docs. We could use the Wordshack "Producer" for this or
+include it somewhere in MODS.  Or in non public note or methodology? Not
+sure.
+
+=20
+
+I will use the file names (CorpVote1989_50YearRule,
+CorpVote1989_80YearRule) as owner supplied name.
+
+=20
+
+Do I need to establish an associative relationship between these docs?
+Not sure that is a valid use but we can wait on this since can be done
+post-deposit.
+
+=20
+
+Thanks. --julie
+
+=20
+
+Julie Wetherill / LTS
+
+=20
+
+=20
+
+
+
+------=_NextPart_000_0030_01D8856F.B2650AA0
+Content-Type: text/html;charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40"><head><meta http-equiv=3DContent-Type content=
+=3D"text/html; charset=3Dus-ascii"><meta name=3DGenerator content=3D"Micros=
+oft Word 12 (filtered medium)"><style><!--
+/* Font Definitions */
+@font-face
+=09{font-family:"Cambria Math";
+=09panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+=09{font-family:Calibri;
+=09panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+=09{font-family:Tahoma;
+=09panose-1:2 11 6 4 3 5 4 4 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+=09{margin:0in;
+=09margin-bottom:.0001pt;
+=09font-size:12.0pt;
+=09font-family:"Times New Roman","serif";}
+a:link, span.MsoHyperlink
+=09{mso-style-priority:99;
+=09color:blue;
+=09text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+=09{mso-style-priority:99;
+=09color:purple;
+=09text-decoration:underline;}
+p
+=09{mso-style-priority:99;
+=09margin:0in;
+=09margin-bottom:.0001pt;
+=09font-size:12.0pt;
+=09font-family:"Times New Roman","serif";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+=09{mso-style-priority:99;
+=09mso-style-link:"Balloon Text Char";
+=09margin:0in;
+=09margin-bottom:.0001pt;
+=09font-size:8.0pt;
+=09font-family:"Tahoma","sans-serif";}
+span.BalloonTextChar
+=09{mso-style-name:"Balloon Text Char";
+=09mso-style-priority:99;
+=09mso-style-link:"Balloon Text";
+=09font-family:"Tahoma","sans-serif";}
+span.EmailStyle20
+=09{mso-style-type:personal;
+=09font-family:"Calibri","sans-serif";
+=09color:#1F497D;}
+span.EmailStyle21
+=09{mso-style-type:personal;
+=09font-family:"Calibri","sans-serif";
+=09color:#1F497D;}
+span.EmailStyle22
+=09{mso-style-type:personal;
+=09font-family:"Calibri","sans-serif";
+=09color:#1F497D;}
+span.EmailStyle23
+=09{mso-style-type:personal-reply;
+=09font-family:"Calibri","sans-serif";
+=09color:#1F497D;}
+span.Style12ptCustomColorRGB01000
+=09{mso-style-name:"Style 12 pt Custom Color\(RGB\(01000\)\)";
+=09color:darkgreen;}
+.MsoChpDefault
+=09{mso-style-type:export-only;
+=09font-size:10.0pt;}
+@page WordSection1
+=09{size:8.5in 11.0in;
+=09margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+=09{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]--></head><body lang=3DEN-US link=3Dblue vli=
+nk=3Dpurple><div class=3DWordSection1><p class=3DMsoNormal><span style=3D'f=
+ont-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'>Hi Skip,<=
+o:p></o:p></span></p><p class=3DMsoNormal><span style=3D'font-size:11.0pt;f=
+ont-family:"Calibri","sans-serif";color:#1F497D'><o:p>&nbsp;</o:p></span></=
+p><p class=3DMsoNormal><span style=3D'font-size:11.0pt;font-family:"Calibri=
+","sans-serif";color:#1F497D'>I talked to Robin about linking the 2 docs an=
+d she pointed me to a DRS2 rights specification document where this specifi=
+c use case is described. <o:p></o:p></span></p><p class=3DMsoNormal><span s=
+tyle=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'>=
+<o:p>&nbsp;</o:p></span></p><p class=3DMsoNormal><span style=3D'font-size:1=
+1.0pt;font-family:"Calibri","sans-serif";color:#1F497D'>Essentially, the fr=
+amers of the spec were expecting there would be a single CorpVote1989 docum=
+ent and the rights metadata added to the embargoed content would point to t=
+his single doc and indicate the context (50 or 80 yr rule) in a licenseTerm=
+ element. Here is the sample PREMIS rights block from the spec doc with lic=
+enseTerm highlighted:<o:p></o:p></span></p><p class=3DMsoNormal><span style=
+=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'><o:p=
+>&nbsp;</o:p></span></p><p class=3DMsoNormal><span style=3D'font-size:10.0p=
+t;color:#000096'>&lt;pr:rights&gt;</span><span style=3D'font-size:10.0pt;co=
+lor:black'><br>&nbsp;&nbsp;&nbsp; </span><span style=3D'font-size:10.0pt;co=
+lor:#000096'>&lt;pr:rightsStatement&gt;</span><span style=3D'font-size:10.0=
+pt;color:black'><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span=
+ style=3D'font-size:10.0pt;color:#000096'>&lt;pr:rightsBasis&gt;</span><spa=
+n style=3D'font-size:10.0pt;color:black'>Harvard policy</span><span style=
+=3D'font-size:10.0pt;color:#000096'>&lt;/pr:rightsBasis&gt;</span><span sty=
+le=3D'font-size:10.0pt;color:black'><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp; </span><span style=3D'font-size:10.0pt;color:#000096'>&lt;pr:licens=
+eInformation&gt;</span><span style=3D'font-size:10.0pt;color:black'><br>&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><spa=
+n style=3D'font-size:10.0pt;color:darkgreen'>&lt;!-- </span><span lang=3DFR=
+ style=3D'font-size:10.0pt;color:darkgreen'>Pointer to License Object --&gt=
+;</span><span lang=3DFR style=3D'font-size:10.0pt;color:black'><br>&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lan=
+g=3DFR style=3D'font-size:10.0pt;color:#000096'>&lt;pr:licenseIdentifier&gt=
+;</span><span lang=3DFR style=3D'font-size:10.0pt;color:black'><br>&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp; </span><span lang=3DFR style=3D'font-size:10.0pt;color:#000096'>&lt=
+;pr:licenseIdentifierType&gt;</span><span lang=3DFR style=3D'font-size:10.0=
+pt;color:black'>HUL_DRS_OBJECT</span><span lang=3DFR style=3D'font-size:10.=
+0pt;color:#000096'>&lt;/pr:licenseIdentifierType&gt;</span><span lang=3DFR =
+style=3D'font-size:10.0pt;color:black'><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lan=
+g=3DFR style=3D'font-size:10.0pt;color:#000096'>&lt;pr:licenseIdentifierVal=
+ue&gt;</span><span lang=3DFR style=3D'font-size:10.0pt;color:black'>urn-3:H=
+UL.DRS.OBJECT:6789</span><span lang=3DFR style=3D'font-size:10.0pt;color:#0=
+00096'>&lt;/pr:licenseIdentifierValue&gt;</span><span lang=3DFR style=3D'fo=
+nt-size:10.0pt;color:black'><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=3DFR style=3D'font-size:10.0pt;co=
+lor:#000096'>&lt;/pr:licenseIdentifier&gt;</span><span lang=3DFR style=3D'f=
+ont-size:10.0pt;color:black'><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=3DFR style=3D'font-size:10.0pt;c=
+olor:#000096;background:yellow;mso-highlight:yellow'>&lt;pr:licenseTerms&gt=
+;</span><span lang=3DFR style=3D'font-size:10.0pt;background:yellow;mso-hig=
+hlight:yellow'>Duration: 80 years<span style=3D'color:#000096'>&lt;/pr:lice=
+nseTerms&gt;</span></span><span lang=3DFR style=3D'font-size:10.0pt;color:b=
+lack'><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=3DFR=
+ style=3D'font-size:10.0pt;color:#000096'>&lt;/pr:licenseInformation&gt;</s=
+pan><span lang=3DFR style=3D'font-size:10.0pt;color:black'><br>&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=3DFR style=3D'font-size:10=
+.0pt;color:#000096'>&lt;pr:rightsGranted&gt;<o:p></o:p></span></p><p class=
+=3DMsoNormal><span lang=3DFR style=3D'font-size:10.0pt;color:black'>&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class=3DStyle12ptCustomCol=
+orRGB01000><span lang=3DFR style=3D'font-size:10.0pt'>&lt;!-- Embargo --&gt=
+;</span></span><span lang=3DFR style=3D'font-size:10.0pt;color:black'><br>&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><s=
+pan lang=3DFR style=3D'font-size:10.0pt;color:#000096'>&lt;pr:act&gt;</span=
+><span lang=3DFR style=3D'font-size:10.0pt;color:black'>deliver</span><span=
+ lang=3DFR style=3D'font-size:10.0pt;color:#000096'>&lt;/pr:act&gt;</span><=
+span lang=3DFR style=3D'font-size:10.0pt;color:black'><br>&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=3DFR st=
+yle=3D'font-size:10.0pt;color:#000096'>&lt;pr:restriction&gt;</span><span l=
+ang=3DFR style=3D'font-size:10.0pt;color:black'>embargo</span><span lang=3D=
+FR style=3D'font-size:10.0pt;color:#000096'>&lt;/pr:restriction&gt;</span><=
+span lang=3DFR style=3D'font-size:10.0pt;color:black'><br>&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=3DFR st=
+yle=3D'font-size:10.0pt;color:#000096'>&lt;pr:termOfGrant&gt;</span><span l=
+ang=3DFR style=3D'font-size:10.0pt;color:black'><br>&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>=
+<span lang=3DFR style=3D'font-size:10.0pt;color:#000096'>&lt;pr:startDate&g=
+t;</span><span lang=3DFR style=3D'font-size:10.0pt;color:black'>20110101</s=
+pan><span lang=3DFR style=3D'font-size:10.0pt;color:#000096'>&lt;/pr:startD=
+ate&gt;</span><span lang=3DFR style=3D'font-size:10.0pt;color:black'><br>&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp; </span><span lang=3DFR style=3D'font-size:10.0pt;color:#00009=
+6'>&lt;pr:endDate&gt;</span><span lang=3DFR style=3D'font-size:10.0pt;color=
+:black'>20910101</span><span lang=3DFR style=3D'font-size:10.0pt;color:#000=
+096'>&lt;/pr:endDate&gt;</span><span lang=3DFR style=3D'font-size:10.0pt;co=
+lor:black'><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp; </span><span lang=3DFR style=3D'font-size:10.0pt;color:#000096'>&lt;=
+/pr:termOfGrant&gt;</span><span lang=3DFR style=3D'font-size:10.0pt;color:b=
+lack'><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span lang=3DFR=
+ style=3D'font-size:10.0pt;color:#000096'>&lt;/pr:rightsGranted&gt;</span><=
+span lang=3DFR style=3D'font-size:10.0pt;color:black'><br>&nbsp;&nbsp;&nbsp=
+; </span><span lang=3DFR style=3D'font-size:10.0pt;color:#000096'>&lt;/pr:r=
+ightsStatement&gt;</span><span lang=3DFR style=3D'font-size:10.0pt;color:bl=
+ack'><br></span><span lang=3DFR style=3D'font-size:10.0pt;color:#000096'>&l=
+t;/pr:rights&gt;</span><span style=3D'font-size:11.0pt;font-family:"Calibri=
+","sans-serif";color:#1F497D'><o:p></o:p></span></p><p class=3DMsoNormal><s=
+pan style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F4=
+97D'><o:p>&nbsp;</o:p></span></p><p class=3DMsoNormal><span style=3D'font-s=
+ize:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'>Robin would pr=
+efer we follow this approach, but won&#8217;t lose sleep over it if you hav=
+e reasons to prefer the duplicate doc model. Your thoughts?&nbsp; --julie<o=
+:p></o:p></span></p><p class=3DMsoNormal><span style=3D'font-size:11.0pt;fo=
+nt-family:"Calibri","sans-serif";color:#1F497D'><o:p>&nbsp;</o:p></span></p=
+><div><div style=3D'border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0p=
+t 0in 0in 0in'><p class=3DMsoNormal><b><span style=3D'font-size:10.0pt;font=
+-family:"Tahoma","sans-serif"'>From:</span></b><span style=3D'font-size:10.=
+0pt;font-family:"Tahoma","sans-serif"'> Kendall, Skip <br><b>Sent:</b> Mond=
+ay, December 07, 2015 9:55 AM<br><b>To:</b> Wetherill, Julie M.<br><b>Cc:</=
+b> Pelose, Jennifer<br><b>Subject:</b> RE: EAS/DRS2: need your advice re: m=
+etadata for 50/80 yr rule docs?<o:p></o:p></span></p></div></div><p class=
+=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal><span style=3D'font-=
+size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'>It looks good=
+.&nbsp; The only thing I don't see is something that links the two document=
+s (other than having the same name).&nbsp; However, I think that's the leas=
+t important bit of metadata here and I don't know how we'd do it.<o:p></o:p=
+></span></p><p class=3DMsoNormal><span style=3D'font-size:11.0pt;font-famil=
+y:"Calibri","sans-serif";color:#1F497D'><o:p>&nbsp;</o:p></span></p><p clas=
+s=3DMsoNormal><span style=3D'font-size:11.0pt;font-family:"Calibri","sans-s=
+erif";color:#1F497D'>Thanks,<o:p></o:p></span></p><p class=3DMsoNormal><spa=
+n style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497=
+D'>Skip <o:p></o:p></span></p><p class=3DMsoNormal><span style=3D'font-size=
+:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'><o:p>&nbsp;</o:p>=
+</span></p><div><div style=3D'border:none;border-top:solid #B5C4DF 1.0pt;pa=
+dding:3.0pt 0in 0in 0in'><p class=3DMsoNormal><b><span style=3D'font-size:1=
+0.0pt;font-family:"Tahoma","sans-serif"'>From:</span></b><span style=3D'fon=
+t-size:10.0pt;font-family:"Tahoma","sans-serif"'> Wetherill, Julie M. <br><=
+b>Sent:</b> Monday, December 07, 2015 9:22 AM<br><b>To:</b> Kendall, Skip<b=
+r><b>Cc:</b> Pelose, Jennifer; Wetherill, Julie M.<br><b>Subject:</b> RE: E=
+AS/DRS2: need your advice re: metadata for 50/80 yr rule docs?<o:p></o:p></=
+span></p></div></div><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DM=
+soNormal><span style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif"=
+;color:#1F497D'>Hi Skip,<o:p></o:p></span></p><p class=3DMsoNormal><span st=
+yle=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'><=
+o:p>&nbsp;</o:p></span></p><p class=3DMsoNormal><span style=3D'font-size:11=
+.0pt;font-family:"Calibri","sans-serif";color:#1F497D'>Below are links to t=
+he 50/80yr docs in DRS2 prod. Could you quickly review the metadata in case=
+ something is missing? Thx. --julie<o:p></o:p></span></p><p class=3DMsoNorm=
+al><span style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color=
+:#1F497D'><o:p>&nbsp;</o:p></span></p><p class=3DMsoNormal><span style=3D'f=
+ont-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'>50yr:<o:p=
+></o:p></span></p><p class=3DMsoNormal><span style=3D'font-size:11.0pt;font=
+-family:"Calibri","sans-serif";color:#1F497D'><a href=3D"https://drs2.lib.h=
+arvard.edu:9400/drs2_webadmin/object?objectId=3D418571052">https://drs2.lib=
+.harvard.edu:9400/drs2_webadmin/object?objectId=3D418571052</a><o:p></o:p><=
+/span></p><p class=3DMsoNormal><span style=3D'font-size:11.0pt;font-family:=
+"Calibri","sans-serif";color:#1F497D'><a href=3D"http://nrs.harvard.edu/urn=
+-3:H.LIB:23853765">http://nrs.harvard.edu/urn-3:H.LIB:23853765</a> <o:p></o=
+:p></span></p><p class=3DMsoNormal><span style=3D'font-size:11.0pt;font-fam=
+ily:"Calibri","sans-serif";color:#1F497D'><o:p>&nbsp;</o:p></span></p><p cl=
+ass=3DMsoNormal><span style=3D'font-size:11.0pt;font-family:"Calibri","sans=
+-serif";color:#1F497D'>80yr:<o:p></o:p></span></p><p class=3DMsoNormal><spa=
+n style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497=
+D'><a href=3D"https://drs2.lib.harvard.edu:9400/drs2_webadmin/object?object=
+Id=3D418571055">https://drs2.lib.harvard.edu:9400/drs2_webadmin/object?obje=
+ctId=3D418571055</a><o:p></o:p></span></p><p class=3DMsoNormal><span style=
+=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'><a h=
+ref=3D"http://nrs.harvard.edu/urn-3:H.LIB:23853767">http://nrs.harvard.edu/=
+urn-3:H.LIB:23853767</a> <o:p></o:p></span></p><p class=3DMsoNormal><span s=
+tyle=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'>=
+<o:p>&nbsp;</o:p></span></p><div><div style=3D'border:none;border-top:solid=
+ #B5C4DF 1.0pt;padding:3.0pt 0in 0in 0in'><p class=3DMsoNormal><b><span sty=
+le=3D'font-size:10.0pt;font-family:"Tahoma","sans-serif"'>From:</span></b><=
+span style=3D'font-size:10.0pt;font-family:"Tahoma","sans-serif"'> Kendall,=
+ Skip <br><b>Sent:</b> Friday, December 04, 2015 2:12 PM<br><b>To:</b> Weth=
+erill, Julie M.<br><b>Cc:</b> Pelose, Jennifer<br><b>Subject:</b> RE: EAS/D=
+RS2: need your advice re: metadata for 50/80 yr rule docs?<o:p></o:p></span=
+></p></div></div><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNo=
+rmal><span style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";col=
+or:#1F497D'>Julie,<o:p></o:p></span></p><p class=3DMsoNormal><span style=3D=
+'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'><o:p>&n=
+bsp;</o:p></span></p><p class=3DMsoNormal><span style=3D'font-size:11.0pt;f=
+ont-family:"Calibri","sans-serif";color:#1F497D'>Here's what we came up wit=
+h:<o:p></o:p></span></p><p class=3DMsoNormal><span style=3D'font-size:11.0p=
+t;font-family:"Calibri","sans-serif";color:#1F497D'><o:p>&nbsp;</o:p></span=
+></p><p class=3DMsoNormal><b><span style=3D'font-size:11.0pt;font-family:"C=
+alibri","sans-serif";color:#1F497D'>Title</span></b><span style=3D'font-siz=
+e:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'>: Vote of the Ha=
+rvard Corporation of March 13, 1989<o:p></o:p></span></p><p class=3DMsoNorm=
+al><b><span style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";co=
+lor:#1F497D'>Name (author):</span></b><span style=3D'font-size:11.0pt;font-=
+family:"Calibri","sans-serif";color:#1F497D'> Harvard University. Corporati=
+on. <o:p></o:p></span></p><p class=3DMsoNormal><b><span style=3D'font-size:=
+11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'>Origin info:</span=
+></b><span style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";col=
+or:#1F497D'>&nbsp; This seems like the best place for a link to the Archive=
+s.&nbsp; Our authorized name is &quot;Harvard University. Archives&quot;<o:=
+p></o:p></span></p><p class=3DMsoNormal><b><span style=3D'font-size:11.0pt;=
+font-family:"Calibri","sans-serif";color:#1F497D'>Abstract:</span></b><span=
+ style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D=
+'> &quot;This is a vote of the Harvard Corporation of March 13, 1989 that g=
+overns use of material in the Library comprising archives of the University=
+ and manuscripts other than Harvard archives, including the length of time =
+such material is restricted from public access.&quot;<o:p></o:p></span></p>=
+<p class=3DMsoNormal><b><span style=3D'font-size:11.0pt;font-family:"Calibr=
+i","sans-serif";color:#1F497D'>Classification/Identifier:</span></b><span s=
+tyle=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'>=
+ This seems unnecessary in this case.<o:p></o:p></span></p><p class=3DMsoNo=
+rmal><span style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";col=
+or:#1F497D'><o:p>&nbsp;</o:p></span></p><p class=3DMsoNormal><span style=3D=
+'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'>I don't=
+ know how it would be done, but an association between these documents seem=
+s like a good thing.&nbsp; They are, of course, exactly the same document, =
+duplicated to make it easier to associate DRS records with the right aspect=
+ of the document.&nbsp; So, the two aspects are associated with one another=
+.<o:p></o:p></span></p><p class=3DMsoNormal><span style=3D'font-size:11.0pt=
+;font-family:"Calibri","sans-serif";color:#1F497D'><o:p>&nbsp;</o:p></span>=
+</p><p class=3DMsoNormal><span style=3D'font-size:11.0pt;font-family:"Calib=
+ri","sans-serif";color:#1F497D'>Using the filenames as owner-supplied names=
+ is perfect.<o:p></o:p></span></p><p class=3DMsoNormal><span style=3D'font-=
+size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'><o:p>&nbsp;</=
+o:p></span></p><p class=3DMsoNormal><span style=3D'font-size:11.0pt;font-fa=
+mily:"Calibri","sans-serif";color:#1F497D'>Feel free to suggest alterations=
+ to this as we're really just figuring this out.<o:p></o:p></span></p><p cl=
+ass=3DMsoNormal><span style=3D'font-size:11.0pt;font-family:"Calibri","sans=
+-serif";color:#1F497D'><o:p>&nbsp;</o:p></span></p><p class=3DMsoNormal><sp=
+an style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F49=
+7D'>Skip <o:p></o:p></span></p><p class=3DMsoNormal><span style=3D'font-siz=
+e:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'><o:p>&nbsp;</o:p=
+></span></p><div><div style=3D'border:none;border-top:solid #B5C4DF 1.0pt;p=
+adding:3.0pt 0in 0in 0in'><p class=3DMsoNormal><b><span style=3D'font-size:=
+10.0pt;font-family:"Tahoma","sans-serif"'>From:</span></b><span style=3D'fo=
+nt-size:10.0pt;font-family:"Tahoma","sans-serif"'> Wetherill, Julie M. <br>=
+<b>Sent:</b> Tuesday, December 01, 2015 12:41 PM<br><b>To:</b> Kendall, Ski=
+p<br><b>Cc:</b> Wetherill, Julie M.<br><b>Subject:</b> EAS/DRS2: need your =
+advice re: metadata for 50/80 yr rule docs?<o:p></o:p></span></p></div></di=
+v><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><div id=3Ddivtagdefaultwrapper>=
+<p style=3D'background:white'><span style=3D'font-family:"Calibri","sans-se=
+rif";color:black'>Hi Skip,<o:p></o:p></span></p><p style=3D'background:whit=
+e'><span style=3D'font-family:"Calibri","sans-serif";color:black'><o:p>&nbs=
+p;</o:p></span></p><p style=3D'background:white'><span style=3D'font-family=
+:"Calibri","sans-serif";color:black'>I'm getting ready&nbsp;to deposit the =
+50 and 80 year rule PDF docs. What kind of descriptive metadata do you want=
+ for these? Once deposited, will be hard to add/update this, so we should g=
+et it right at deposit if possible. Any suggestions for:<o:p></o:p></span><=
+/p><p style=3D'background:white'><span style=3D'font-family:"Calibri","sans=
+-serif";color:black'><o:p>&nbsp;</o:p></span></p><p style=3D'background:whi=
+te'><span style=3D'font-family:"Calibri","sans-serif";color:black'>Title<o:=
+p></o:p></span></p><p style=3D'background:white'><span style=3D'font-family=
+:"Calibri","sans-serif";color:black'>Name (author)<o:p></o:p></span></p><p =
+style=3D'background:white'><span style=3D'font-family:"Calibri","sans-serif=
+";color:black'>Origin info<o:p></o:p></span></p><p style=3D'background:whit=
+e'><span style=3D'font-family:"Calibri","sans-serif";color:black'>Abstract<=
+o:p></o:p></span></p><p style=3D'background:white'><span style=3D'font-fami=
+ly:"Calibri","sans-serif";color:black'>Classification/Identifier<o:p></o:p>=
+</span></p><p style=3D'background:white'><span style=3D'font-family:"Calibr=
+i","sans-serif";color:black'><o:p>&nbsp;</o:p></span></p><p style=3D'backgr=
+ound:white'><span style=3D'font-family:"Calibri","sans-serif";color:black'>=
+I'd prefer that object metadata include some hint that HU Archives supports=
+ these docs. We could use the Wordshack &quot;Producer&quot; for this or in=
+clude it somewhere in MODS. &nbsp;Or in non public note or methodology? Not=
+ sure.<o:p></o:p></span></p><p style=3D'background:white'><span style=3D'fo=
+nt-family:"Calibri","sans-serif";color:black'><o:p>&nbsp;</o:p></span></p><=
+p style=3D'background:white'><span style=3D'font-family:"Calibri","sans-ser=
+if";color:black'>I will use the file names (CorpVote1989_50YearRule, CorpVo=
+te1989_80YearRule) as owner supplied name.<o:p></o:p></span></p><p style=3D=
+'background:white'><span style=3D'font-family:"Calibri","sans-serif";color:=
+black'><o:p>&nbsp;</o:p></span></p><p style=3D'background:white'><span styl=
+e=3D'font-family:"Calibri","sans-serif";color:black'>Do I need to establish=
+ an associative relationship between these docs? Not sure that is a valid u=
+se but we can wait on this since can be done post-deposit.<o:p></o:p></span=
+></p><p style=3D'background:white'><span style=3D'font-family:"Calibri","sa=
+ns-serif";color:black'><o:p>&nbsp;</o:p></span></p><p style=3D'background:w=
+hite'><span style=3D'font-family:"Calibri","sans-serif";color:black'>Thanks=
+. --julie<o:p></o:p></span></p><p style=3D'background:white'><span style=3D=
+'font-family:"Calibri","sans-serif";color:black'><o:p>&nbsp;</o:p></span></=
+p><p style=3D'background:white'><span style=3D'font-family:"Calibri","sans-=
+serif";color:black'>Julie Wetherill / LTS<o:p></o:p></span></p><p style=3D'=
+background:white'><span style=3D'font-family:"Calibri","sans-serif";color:b=
+lack'><o:p>&nbsp;</o:p></span></p><p style=3D'background:white'><span style=
+=3D'font-family:"Calibri","sans-serif";color:black'><o:p>&nbsp;</o:p></span=
+></p></div></div></body></html>
+------=_NextPart_000_0030_01D8856F.B2650AA0--
+
+

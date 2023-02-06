@@ -1,0 +1,345 @@
+Subject: Please Purchase Emailchemy
+From: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Sender: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Date: Fri, 26 Sep 2014 11:43:44 -0400
+To: <emap-admin@hulmail.harvard.edu>, <emap-core@hulmail.harvard.edu>,
+   <emap-review@hulmail.harvard.edu>, <emap-testers@hulmail.harvard.edu>
+Message-ID: <1411746227748.82934@harvard.edu>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_NextPart_000_009C_01D8856F.B3051B30"
+X-ePADD-Folder: C:\Users\jmw922\Documents\ePADD-related\JWEASFolderMBOX\mbox-DRSintegration\DRSintegration.mbox
+X-ePADD-Labels: 
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQHP2Z/cFNb7KZU+KEeYnrW4RtC81g==
+Content-Language: en-us
+x-ms-exchange-organization-authas: Anonymous
+x-ms-exchange-organization-authsource: ENTWEDGE0000004.university.harvard.edu
+acceptlanguage: en-US
+x-originating-ip: [128.103.24.79]
+received-spf: None (protection.outlook.com: hulmail.harvard.edu does not designate permitted sender hosts)
+
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_009C_01D8856F.B3051B30
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Dear EAS testers,
+
+
+
+
+This message contains beta test instructions. And for just the liaison
+in each partner unit, see at end some questions for you about production
+EAS planning. Please send your planning responses to
+easi-support@hulmail.harvard.edu. =20
+
+
+
+
+To beta testers: If you have any problems accessing your dropbox, qa
+EASi, or the instructions below, let Julie know right away (reply to
+this message).=20
+
+
+
+
+Thanks very much.  --julie
+
+
+
+
+
+......
+
+
+
+
+EAS prototype #11 is ready for testing. The end date for testing is
+Wednesday October 8, 2014. In the next week, please reserve a few hours
+to test this prototype.
+
+=20
+
+All data from previous testing has been deleted, so your first step will
+be to submit packets. Submission is a 4-step process: create a local
+staging directory, copy email content to this directory (this is your
+packet), FTP it to your EAS dropbox, and submit the packet in EASi.
+Details are in the testing instructions:
+
+=20
+
+Testing instructions:
+
+ <http://hul.harvard.edu/ois/systems/eas/proto11-instructions.pdf>
+http://hul.harvard.edu/ois/systems/eas/proto11-instructions.pdf
+
+=20
+
+EASi User Guide
+
+ <http://hul.harvard.edu/ois/systems/easi/easi-userguide/>
+http://hul.harvard.edu/ois/systems/easi/easi-userguide/
+
+=20
+
+If you need your EAS dropbox login or assistance getting started, let me
+know.
+
+
+
+
+Also... some planning questions for each EMAP partner liaison:??
+
+
+=20
+
+
+1. Help us track EAS performance (e.g., approximate time it takes to
+make bulk updates to metadata and to push email to DRS). During your
+beta test, note any perceived slowness.
+
+2. Predictions and estimates for first 2 years of EAS processing:
+
+    a. What email formats will you be handling (creator clients and
+versions)?
+
+    b. Storage needs: Byte size estimate of email content you will need
+to deposit.
+
+        - For standard storage?
+
+        - For secure storage?
+
+
+
+
+
+
+
+Thanks for your help. Regards. --julie
+
+=20
+
+Julie Wetherill
+
+Library Technology Services?
+
+
+
+
+
+
+------=_NextPart_000_009C_01D8856F.B3051B30
+Content-Type: text/html;charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style type=3D"text/css" style=3D"display:none"><!-- p { margin-top: 0px; m=
+argin-bottom: 0px; }--></style>
+</head>
+<body dir=3D"ltr" style=3D"font-size:12pt;color:#000000;background-color:#F=
+FFFFF;font-family:Calibri,Arial,Helvetica,sans-serif;">
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-size: 15.55555629=
+73022px; font-family: 'Times New Roman', serif; background-color: rgb(255, =
+255, 255);">
+<span style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-siz=
+e: 11pt;">Dear EAS testers,</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<br style=3D"font-size: 11pt;">
+</p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">This message contains beta test instructio=
+ns. And for just the liaison in each partner unit, see at end&nbsp;some que=
+stions for you about production EAS planning. Please send your planning res=
+ponses to easi-support@hulmail.harvard.edu.
+ &nbsp;</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;"><br>
+</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">To beta testers:&nbsp;If you have any prob=
+lems accessing your dropbox, qa EASi, or the instructions below, let Julie =
+know right away (reply to this message).&nbsp;</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;"><br>
+</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">Thanks very much. &nbsp;--julie<br>
+</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;"><br>
+</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">......</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;"><br>
+</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;"></span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">EAS prototype #11&nbsp;is ready for testin=
+g. The end date for testing is&nbsp;<strong style=3D"text-decoration: under=
+line;">Wednesday October 8, 2014</strong>. In the next week, please reserve=
+ a few hours to test this prototype.</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">&nbsp;</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">All data from previous testing has been de=
+leted, so your first step will be to submit packets. Submission is a 4-step=
+ process: create a local staging directory, copy email content to this dire=
+ctory (this is your packet), FTP it
+ to your EAS dropbox, and submit the packet in EASi. Details are in the tes=
+ting instructions:</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">&nbsp;</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">Testing instructions:</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;"><a href=3D"http://hul.harvard.edu/ois/syst=
+ems/eas/proto11-instructions.pdf" target=3D"_blank" id=3D"lnk158257"><span =
+style=3D"font-size: 11pt;">http://hul.harvard.edu/ois/systems/eas/proto11-i=
+nstructions.pdf</span></a></span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">&nbsp;</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">EASi User Guide</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;"><a href=3D"http://hul.harvard.edu/ois/syst=
+ems/easi/easi-userguide/" target=3D"_blank"><span style=3D"font-size: 11pt;=
+">http://hul.harvard.edu/ois/systems/easi/easi-userguide/</span></a></span>=
+</p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">&nbsp;</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">If you need your EAS dropbox login or assi=
+stance getting started, let me know.</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;"><br>
+</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;"><strong>Also... some planning&nbsp;questio=
+ns for each&nbsp;EMAP partner liaison:&#8203;&#8203;</strong><br>
+</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">&nbsp;<br>
+</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">1. Help us&nbsp;track EAS&nbsp;performance=
+ (e.g., approximate&nbsp;time it takes to make&nbsp;bulk updates to metadat=
+a and to push&nbsp;email to DRS). During your beta test,&nbsp;note any perc=
+eived slowness.</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">2. Predictions and estimates for first 2 y=
+ears of EAS processing:</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">&nbsp; &nbsp; a. What email&nbsp;formats w=
+ill you be handling (creator clients and versions)?</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">&nbsp; &nbsp; b. Storage needs:&nbsp;Byte =
+size estimate of email content you will need to deposit.</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">&nbsp; &nbsp; &nbsp; &nbsp; - For standard=
+ storage?</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">&nbsp; &nbsp; &nbsp; &nbsp; - For secure s=
+torage?</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;"><br>
+</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<br style=3D"font-size: 11pt;">
+</p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">Thanks for your help. Regards. --julie</sp=
+an></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">&nbsp;</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">Julie Wetherill</span></p>
+<p class=3D"MsoNormal" style=3D"margin: 0in 0in 0pt; font-family: Calibri, =
+Arial, Helvetica, sans-serif; font-size: 15.5555562973022px; background-col=
+or: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt;">Library Technology Services&#8203;</span><=
+/p>
+<p><br>
+</p>
+</body>
+</html>
+
+------=_NextPart_000_009C_01D8856F.B3051B30--
+
+
