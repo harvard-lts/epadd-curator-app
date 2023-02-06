@@ -4,6 +4,7 @@ import os
 import sys
 import traceback
 from datetime import datetime, timedelta
+import shutil
 
 import boto3
 
@@ -49,7 +50,7 @@ def connect_to_bucket():
     logging.debug("Connected to S3 bucket: " + epadd_bucket_name)
 
 
-def main():
+def main(argv):
     # Connect to s3 bucket
     logging.debug("Connect to S3 bucket")
     connect_to_bucket()
@@ -59,7 +60,35 @@ def main():
     epadd_bucket.upload_file(test_export_file_path, test_prefix + test_export_filename)
 
     # Place drsConfig.txt sidecar file in s3
-    epadd_bucket.upload_file(test_sidecar_file_path, test_prefix + "drsConfig.txt")
+    if argv[0] != "":
+        logging.debug("arguments: " + str(argv))
+
+        # Create empty copy file
+        copy_path = os.path.join(os.path.dirname(test_sidecar_file_path), "copy_sidecar.txt")
+        logging.debug("copy_path: " + copy_path)
+
+        with open(copy_path, 'w+'): pass
+
+        logging.debug("getting osn line")
+        # Get first line (OSN line)
+        with open(test_sidecar_file_path, "r") as org_file:
+            osn_line = org_file.readline().strip()
+            logging.debug("OSN line: " + osn_line)
+
+        with open(copy_path, 'w') as copy_file:
+            # Write updated osn to copy file
+            copy_file.write(osn_line + argv[0] + "\n")
+            logging.debug("New OSN line: " + osn_line + argv[0])
+
+        with open(test_sidecar_file_path, "r") as org_file:
+            with open(copy_path, 'w') as copy_file:
+                shutil.copyfileobj(org_file, copy_file)
+
+        epadd_bucket.upload_file(copy_path, test_prefix + "drsConfig.txt")
+        os.remove(copy_path)
+
+    else:
+        epadd_bucket.upload_file(test_sidecar_file_path, test_prefix + "drsConfig.txt")
 
     # This file triggers the curator app to include a "testing" field in request body to DIMS
     s3_resource.Object(epadd_bucket_name, test_prefix + "TESTTRIGGER").put()
@@ -70,7 +99,7 @@ def main():
 
 
 try:
-    main()
+    main(sys.argv[1:])
     sys.exit(0)
 except Exception as e:
     traceback.print_exc()
