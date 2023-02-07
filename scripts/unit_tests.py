@@ -2,7 +2,7 @@
 
 import unittest, os, os.path
 import unittest.mock as mock
-import sys, traceback
+import sys, traceback, shutil
 from dotenv import load_dotenv
 load_dotenv()
 sys.path.insert(0, '/home/appuser/epadd-curator-app/app')
@@ -61,25 +61,36 @@ class TestMonitorUnitCases(unittest.TestCase):
 
 class TestZipUnitCases(unittest.TestCase):
 
+        
     def setUpClass():
         # create download and zip dirs if they don't exist
-        download_export_path = "../download_exports/"
-        zip_export_path = "../zip_exports/"
+        download_export_path = "/home/appuser/epadd-curator-app/download_exports"
+        zip_export_path = "/home/appuser/epadd-curator-app/zip_exports"
         if (not os.path.exists(download_export_path)):
             os.makedirs(download_export_path, exist_ok = True)
         if (not os.path.exists(zip_export_path)):
             os.makedirs(zip_export_path, exist_ok = True)
+            
+    def tearDownClass():
+        download_export_path = "/home/appuser/epadd-curator-app/download_exports"
+        zip_export_path = "/home/appuser/epadd-curator-app/zip_exports"
+        zip_file = os.path.join(zip_export_path, "integration_test.7z")
+        loading_file = os.path.join(download_export_path, "integration_testLOADING")
+        os.remove(zip_file)
+        os.remove(loading_file)
+        download_path = os.path.join(download_export_path, "integration_test")
+        shutil.rmtree(download_path)
 
     def test_retrieve_export_1(self): #test download from S3
         try:
-            manifest_parent_prefix = "integration_test/"
-            download_export_path = "../download_exports"
+            download_export_path = "/home/appuser/epadd-curator-app/download_exports"
+            manifest_parent_prefix = "integration_test"
             monitor_epadd_exports.connect_to_bucket()
-            zip_local_dir = monitor_epadd_exports.retrieve_export(download_export_path, manifest_parent_prefix)
-            file_exists = os.path.exists(zip_local_dir)
+            download_local_dir = monitor_epadd_exports.retrieve_export(download_export_path, manifest_parent_prefix)
+            file_exists = os.path.exists(download_local_dir)
             dir_has_items = False
-            if file_exists and not os.path.isfile(zip_local_dir):
-                if os.listdir(zip_local_dir):
+            if file_exists and not os.path.isfile(download_local_dir):
+                if os.listdir(download_local_dir):
                     dir_has_items = True
         except:
             traceback.print_stack()
@@ -87,30 +98,52 @@ class TestZipUnitCases(unittest.TestCase):
         self.assertEqual(True, dir_has_items)
 
     def test_retrieve_export_2(self): #test zip of export
-        zip_export_path = "../zip_exports/"
-        download_export_path = "../download_exports/"
-        manifest_parent_prefix = "integration_test/"
-        file_path = monitor_epadd_exports.zip_export(zip_export_path, download_export_path, manifest_parent_prefix)
+        download_export_path = "/home/appuser/epadd-curator-app/download_exports/integration_test"
+        zip_export_path = "/home/appuser/epadd-curator-app/zip_exports"
+        file_path = monitor_epadd_exports.zip_export(zip_export_path, download_export_path)
         file_exists = os.path.exists(file_path)
         self.assertEqual(True, file_exists)
     
     def test_retrieve_export_3(self): #test upload of export
-        zip_path = "../zip_exports/integration_test.7z"
-        manifest_parent_prefix = "integration_test/"
+        zip_path = "/home/appuser/epadd-curator-app/zip_exports/integration_test.7z"
+        manifest_parent_prefix = "integration_test"
         success = monitor_epadd_exports.upload_zip_export(zip_path, manifest_parent_prefix)
         self.assertEqual(True, success)
 
 class TestConstructPayload(unittest.TestCase):
 
-    def setUpClass():
-        # create download and zip dirs if they don't exist
-        zip_export_path = "../zip_exports/"
-        if (not os.path.exists(zip_export_path)):
-            os.makedirs(zip_export_path, exist_ok = True)
-
     def test_construct_payload(self):
         payload = monitor_epadd_exports.construct_payload_body("/home/appuser/epadd-curator-app/resources/EmlExample")
         self.assertTrue(payload, "Payload returned was empty")
+        
+class TestZipEpaddExports(unittest.TestCase):
+
+        
+    def setUpClass():
+        resources_path = os.getenv("DATA_PATH", "/home/appuser/epadd-curator-app/resources")
+        zip_export_path = os.getenv("ZIPPED_EXPORT_PATH", "/home/appuser/epadd-curator-app/zip_exports")
+    
+        # create download and zip dirs if they don't exist
+        if (not os.path.exists(resources_path)):
+            os.makedirs(resources_path, exist_ok = True)
+        if (not os.path.exists(zip_export_path)):
+            os.makedirs(zip_export_path, exist_ok = True)
+            
+    def tearDownClass():
+        zip_export_path = os.getenv("ZIPPED_EXPORT_PATH", "/home/appuser/epadd-curator-app/zip_exports")
+        zip_file = os.path.join(zip_export_path, "EmlExample.7z")
+        os.remove(zip_file)
+
+    def test_zip_eml(self): #zip an eml export
+        resources_path = os.getenv("DATA_PATH", "/home/appuser/epadd-curator-app/resources")
+        zip_export_path = os.getenv("ZIPPED_EXPORT_PATH", "/home/appuser/epadd-curator-app/zip_exports")
+        zip_path = os.path.join(zip_export_path, "EmlExample.7z")
+        eml_path = os.path.join(resources_path, "EmlExample")
+        print("Zip path: " + zip_path)
+        print("Eml path: " + eml_path)
+        success = monitor_epadd_exports.zip_export(zip_export_path, eml_path)
+        self.assertTrue(success, "Eml zip failed")
+        self.assertTrue(os.path.isfile(zip_path))
 
 if __name__ == '__main__':
     unittest.main()

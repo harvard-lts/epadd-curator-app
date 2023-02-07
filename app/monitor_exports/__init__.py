@@ -46,7 +46,7 @@ def call_dims_ingest(manifest_object_key):
     """
     logging.debug("Preparing to call DIMS")
     # get parent prefix of manifest file
-    manifest_parent_prefix = get_parent_prefix(manifest_object_key)
+    manifest_parent_prefix = os.path.basename(os.path.dirname(manifest_object_key))
 
     try:
         with open(jwt_private_key_path) as jwt_private_key_file:
@@ -55,22 +55,16 @@ def call_dims_ingest(manifest_object_key):
         logging.error("Error opening private jwt token at path: " + jwt_private_key_path)
 
     
-    # delete drs config file, since we already have the payload data
-    #try:
-    #    drsConfig_file = s3_resource.Object(epadd_bucket_name, manifest_parent_prefix + "drsConfig.txt")
-    #except:
-    #    logging.error("Error while deleting drs config file from S3: " + manifest_parent_prefix + "drsConfig.txt")
-
-    # pull down directory for 7zip
-    zip_dir = retrieve_export(zip_path, manifest_parent_prefix)
+    download_dir = retrieve_export(download_export_path, manifest_parent_prefix)
     
-    payload_data = construct_payload_body(zip_dir)
+    payload_data = construct_payload_body(download_dir)
 
     logging.debug("Payload data extracted for {}".format(manifest_object_key))
 
 
+    dir_to_zip = os.path.join(download_dir, manifest_parent_prefix)
     # 7zip up directory
-    zip_file = zip_export(zip_dir, manifest_parent_prefix)
+    zip_file = zip_export(zip_dir, dir_to_zip)
 
     # delete contents of s3 export folder
     try:
@@ -128,43 +122,35 @@ def call_dims_ingest(manifest_object_key):
     if json_ingest_response["status"] == "failure":
         logging.debug("Putting ingest.txt.failed at prefix: " + manifest_parent_prefix)
         content = ""
-        s3_resource.Object(epadd_bucket_name, manifest_parent_prefix + "ingest.txt.failed").put(Body=content)
+        s3_resource.Object(epadd_bucket_name, os.path.join(manifest_parent_prefix, "ingest.txt.failed")).put(Body=content)
     else:
         logging.debug("Putting ingest.txt at prefix: " + manifest_parent_prefix)
         content = "Pending ingest.."
-        s3_resource.Object(epadd_bucket_name, manifest_parent_prefix + "ingest.txt").put(Body=content)
+        s3_resource.Object(epadd_bucket_name, os.path.join(manifest_parent_prefix, "ingest.txt")).put(Body=content)
 
     # Remove loading file
-    s3_resource.Object(epadd_bucket_name, manifest_parent_prefix + "LOADING").delete()
+    s3_resource.Object(epadd_bucket_name, os.path.join(manifest_parent_prefix, "LOADING")).delete()
 
 
-def construct_payload_body(zip_dir):
+def construct_payload_body(download_dir):
     """
         Construct the request body with appropriate metadata. A "testing" field is added
         if a TESTTRIGGER file exists in the export
     """
     logging.debug("Constructing request body")
-    # get parent prefix of manifest file
-    #manifest_parent_prefix = get_parent_prefix(manifest_object_key)
-
+    
     drsconfig = None
-    drsconfig_list = glob.glob(os.path.join(zip_dir, "**", "drsConfig.txt") ,recursive = True)
+    drsconfig_list = glob.glob(os.path.join(download_dir, "**", "drsConfig.txt") ,recursive = True)
                                
     if drsconfig_list:
         drsconfig = drsconfig_list[0]
     else:
-        raise Exception("drsConfig.txt not found in export {}".format(zip_dir))
+        raise Exception("drsConfig.txt not found in export {}".format(download_dir))
         
         
-    # get contents of drsConfig.txt
-    #obj = s3_resource.Object(epadd_bucket_name, manifest_parent_prefix + "drsConfig.txt")
-    #data = obj.get()['Body'].read().decode('utf-8')
     logging.debug("Retrieved sidecar metadata from " + drsconfig)
 
-    #metadata = data.split('\n')
-    #logging.debug("Split data: " + str(metadata))
     metadata_dict = {}
-    #for val in metadata:
     with open(drsconfig) as drs_config_file:
         for line in drs_config_file:
             if len(line) > 0:
@@ -173,7 +159,7 @@ def construct_payload_body(zip_dir):
     logging.debug("Metadata dictionary: " + str(metadata_dict))
 
     payload_data = {"package_id": "test_" + str(int(datetime.now().timestamp())),
-                    "s3_path": os.path.basename(zip_dir),
+                    "s3_path": os.path.basename(download_dir),
                     "s3_bucket_name": epadd_bucket_name,
                     "admin_metadata": {
                         "accessFlag": metadata_dict["accessFlag"],
@@ -199,17 +185,6 @@ def construct_payload_body(zip_dir):
                     }
 
     return payload_data
-
-
-def get_parent_prefix(prefix):
-    """
-        Returns the parent prefix path of the given prefix
-    """
-    split_key = prefix.split('/')
-    parent_prefix = ""
-    for i in range(0, len(split_key) - 1):
-        parent_prefix = parent_prefix + split_key[i] + "/"
-    return parent_prefix
 
 
 def key_exists(key):
@@ -255,49 +230,53 @@ def collect_exports():
         if re.search('user[/]?', epadd_bucket_object.key, re.IGNORECASE):
             pass
         elif re.search('manifest(-md5|-sha256)?.txt', epadd_bucket_object.key, re.IGNORECASE):
-            manifest_parent_prefix = get_parent_prefix(epadd_bucket_object.key)
-            if not (key_exists(manifest_parent_prefix + "ingest.txt")
-                    or key_exists(manifest_parent_prefix + "ingest.txt.failed")
-                    or key_exists(manifest_parent_prefix + "LOADING")):
+            manifest_parent_prefix = os.path.basename(os.path.dirname(epadd_bucket_object.key))
+            if not (key_exists(os.path.join(manifest_parent_prefix, "ingest.txt"))
+                    or key_exists(os.path.join(manifest_parent_prefix, "ingest.txt.failed"))
+                    or key_exists(os.path.join(manifest_parent_prefix,"LOADING"))):
                 logging.debug("Putting LOADING file at prefix: " + manifest_parent_prefix)
-                s3_resource.Object(epadd_bucket_name, manifest_parent_prefix + "LOADING").put(Body="")
+                s3_resource.Object(epadd_bucket_name, os.path.join(manifest_parent_prefix, "LOADING")).put(Body="")
                 manifest_object_keys.append(epadd_bucket_object.key)
                 logging.debug("Object key added: " + epadd_bucket_object.key)
 
     return manifest_object_keys
 
 
-def retrieve_export(zip_path, manifest_parent_prefix):
+def retrieve_export(download_path, manifest_parent_prefix):
     """
         pull down the export to local storage prior to zip (7zip)
     """
     try:
         for obj in epadd_bucket.objects.filter(Prefix=manifest_parent_prefix):
-            local_file = os.path.join(zip_path, obj.key)
+            local_file = os.path.join(download_path, obj.key)
             if not os.path.exists(os.path.dirname(local_file)):
                 os.makedirs(os.path.dirname(local_file))
             elif (obj.key[-1] == "/"):
                 continue
             epadd_bucket.download_file(obj.key, local_file)
 
-        zip_local_dir = zip_path + "/" + manifest_parent_prefix
-        return zip_local_dir
+        download_local_dir = os.path.join(download_path, manifest_parent_prefix)
+        return download_local_dir
     except Exception as err:
-        #print(f"Unexpected {err=}, {type(err)=}")
+        traceback.print_stack()
         return False
 
 
-def zip_export(zip_path, download_export_path, manifest_parent_prefix):
+def zip_export(zip_path, directory_to_zip):
     """
         zip up export in 7zip format
     """
     try:
-        zip_filename = zip_path + manifest_parent_prefix[:-1] + ".7z"
+        manifest_parent_prefix = os.path.basename(directory_to_zip)
+        zip_filename = os.path.join(zip_path, manifest_parent_prefix + ".7z")
+        logging.debug("Zipping directory {} into {} ".format(directory_to_zip, zip_filename))
         with py7zr.SevenZipFile(zip_filename, 'w') as archive:
-            archive.writeall(download_export_path + manifest_parent_prefix, manifest_parent_prefix[:-1])
+            archive.writeall(directory_to_zip)
         return zip_filename
-    except:
+    except Exception as err:
+        traceback.print_stack()
         logging.error("Error zipping up export: " + manifest_parent_prefix)
+        logging.error(err)
         return False
 
 
@@ -307,9 +286,10 @@ def upload_zip_export(zip_path, manifest_parent_prefix):
     """
     try:
         zip_file = os.path.basename(zip_path)
-        epadd_bucket.upload_file(zip_path, manifest_parent_prefix + zip_file)
+        epadd_bucket.upload_file(zip_path, os.path.join(manifest_parent_prefix, zip_file))
         return True
     except:
+        traceback.print_stack()
         logging.error("Error uploading zip archive: " + zip_path)
         return False
 
