@@ -69,20 +69,20 @@ def main(argv):
 
         with open(copy_path, 'w+'): pass
 
-        logging.debug("getting osn line")
-        # Get first line (OSN line)
+        logging.debug("Getting original file lines")
+        # Get original lines
         with open(test_sidecar_file_path, "r") as org_file:
-            osn_line = org_file.readline().strip()
-            logging.debug("OSN line: " + osn_line)
+            lines = org_file.readlines()
+            logging.debug("Original lines: " + str(lines))
+
+        # Update OSN to new OSN
+        lines[0] = lines[0].strip() + argv[0] + "\n"
+        logging.debug("New OSN line: " + lines[0])
 
         with open(copy_path, 'w') as copy_file:
-            # Write updated osn to copy file
-            copy_file.write(osn_line + argv[0] + "\n")
-            logging.debug("New OSN line: " + osn_line + argv[0])
-
-        with open(test_sidecar_file_path, "r") as org_file:
-            with open(copy_path, 'w') as copy_file:
-                shutil.copyfileobj(org_file, copy_file)
+            # Write updated lines to copy file
+            for line in lines:
+                copy_file.write(line)
 
         epadd_bucket.upload_file(copy_path, test_prefix + "drsConfig.txt")
         os.remove(copy_path)
