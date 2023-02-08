@@ -159,7 +159,12 @@ def construct_payload_body(manifest_object_key):
             metadata_dict[split_val[0]] = split_val[1]
     logging.debug("Metadata dictionary: " + str(metadata_dict))
 
-    payload_data = {"package_id": "test_" + str(int(datetime.now().timestamp())),
+    if key_exists(manifest_parent_prefix + "TESTTRIGGER") and metadata_dict["ownerSuppliedName"] == "":
+        unique_osn = "test_" + str(int(datetime.now().timestamp()))
+    else:
+        unique_osn = metadata_dict["ownerSuppliedName"]
+
+    payload_data = {"package_id": unique_osn,
                     "s3_path": manifest_parent_prefix,
                     "s3_bucket_name": epadd_bucket_name,
                     "admin_metadata": {
@@ -184,6 +189,8 @@ def construct_payload_body(manifest_object_key):
                         "retry_count": 1
                     }
                     }
+
+    logging.debug("Payload data: " + str(payload_data))
 
     return payload_data
 
