@@ -61,10 +61,10 @@ def call_dims_ingest(manifest_object_key):
 
     logging.debug("Payload data extracted for {}".format(manifest_object_key))
 
-
-    dir_to_zip = os.path.join(download_dir, manifest_parent_prefix)
     # 7zip up directory
-    zip_file = zip_export(zip_dir, dir_to_zip)
+    zip_file = zip_export(zip_path, download_dir)
+    if not zip_file:
+        raise Exception("{} did not zip properly to {}".format(download_dir, zip_path))
 
     # delete contents of s3 export folder
     try:
@@ -258,7 +258,7 @@ def retrieve_export(download_path, manifest_parent_prefix):
         download_local_dir = os.path.join(download_path, manifest_parent_prefix)
         return download_local_dir
     except Exception as err:
-        traceback.print_stack()
+        logging.error(traceback.format_exc())
         return False
 
 
@@ -274,7 +274,7 @@ def zip_export(zip_path, directory_to_zip):
             archive.writeall(directory_to_zip)
         return zip_filename
     except Exception as err:
-        traceback.print_stack()
+        logging.error(traceback.format_exc())
         logging.error("Error zipping up export: " + manifest_parent_prefix)
         logging.error(err)
         return False
@@ -289,7 +289,7 @@ def upload_zip_export(zip_path, manifest_parent_prefix):
         epadd_bucket.upload_file(zip_path, os.path.join(manifest_parent_prefix, zip_file))
         return True
     except:
-        traceback.print_stack()
+        logging.error(traceback.format_exc())
         logging.error("Error uploading zip archive: " + zip_path)
         return False
 

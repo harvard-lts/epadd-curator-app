@@ -28,6 +28,9 @@ EPADD_BUCKET_NAME=epadd-export-dev
 NEXTCLOUD_AWS_ACCESS_KEY=
 NEXTCLOUD_AWS_SECRET_KEY=
 
+# BatchBuilder Admin Category
+BB_ADMIN_CATEGORY=http://idtest.lib.harvard.edu:10020/wordshack/adminCategory/27186
+
 # Integration Test
 TEST_EXPORT_FILE_PATH=/home/appuser/epadd-curator-app/test_export
 TEST_PREFIX=test/
