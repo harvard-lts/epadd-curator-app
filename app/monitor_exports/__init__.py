@@ -157,8 +157,13 @@ def construct_payload_body(download_dir):
                 split_val = line.split('=')
                 metadata_dict[split_val[0]] = split_val[1]
     logging.debug("Metadata dictionary: " + str(metadata_dict))
+    
+    if key_exists(manifest_parent_prefix + "TESTTRIGGER") and metadata_dict["ownerSuppliedName"] == "":
+        unique_osn = "test_" + str(int(datetime.now().timestamp()))
+    else:
+        unique_osn = metadata_dict["ownerSuppliedName"]
 
-    payload_data = {"package_id": "test_" + str(int(datetime.now().timestamp())),
+    payload_data = {"package_id": unique_osn,
                     "s3_path": os.path.basename(download_dir),
                     "s3_bucket_name": epadd_bucket_name,
                     "admin_metadata": {
