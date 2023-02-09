@@ -3,10 +3,10 @@ const app = express();
 const router = express.Router();
 const {spawn} = require("child_process");
 
-router.get('/testExport/:testOSN?', (request, response) => {
+router.get('/testExport/:testOSN', (request, response) => {
       console.log("Calling test export script");
       var testOSN = "";
-      if(request.params.testOSN){
+      if(request.params.testOSN !== undefined){
         testOSN = request.params.testOSN;
       }
 
