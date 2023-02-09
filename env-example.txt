@@ -34,7 +34,7 @@ BB_ADMIN_CATEGORY=http://idtest.lib.harvard.edu:10020/wordshack/adminCategory/27
 # Integration Test
 TEST_EXPORT_FILE_PATH=/home/appuser/epadd-curator-app/test_export
 TEST_PREFIX=test/
-TEST_SIDECAR_FILE_PATH=/home/appuser/epadd-curator-app/resources/drsConfig.txt
+TEST_SIDECAR_FILE_PATH=/home/appuser/epadd-curator-app/test_files/drsConfig.txt
 ZIPPED_EXPORT_PATH=/home/appuser/epadd-curator-app/zip_exports/
 DOWNLOAD_EXPORT_PATH=/home/appuser/epadd-curator-app/download_exports/
 DATA_PATH=/home/appuser/epadd-curator-app/resources

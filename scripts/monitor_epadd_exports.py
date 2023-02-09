@@ -7,6 +7,7 @@ import monitor_exports
 
 is_testing = os.getenv("TESTING", "False")
 
+
 def main():
     # Connect to s3 bucket
     #This wil pollute the logs if we are only testing.
