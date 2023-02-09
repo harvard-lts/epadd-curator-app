@@ -16,7 +16,7 @@ Docker Compose
 ## Local Development Environment Setup Instructions
 
 ### 1: Clone the repository to a local directory
-```git clone git@github.com:harvard-lts/epadd-curator-app.git```
+`git clone git@github.com:harvard-lts/epadd-curator-app.git`
 
 ### 2: Create app config
 
@@ -27,7 +27,11 @@ Docker Compose
 
 *Note: The config file .env is specifically excluded in .gitignore and .dockerignore, since it contains credentials it should NOT ever be committed to any repository.*
 
-### 3: Start
+### 3: Create drsConfig.txt
+
+- Copy drsConfig.txt.template to the resources directory and name it drsConfig.txt
+
+### 4: Start
 
 ##### START
 
@@ -37,7 +41,7 @@ This command builds all images and runs all containers specified in the docker-c
 docker-compose -f docker-compose-local.yml up -d --build --force-recreate
 ```
 
-### 4: SSH into Container (optional)
+### 5: SSH into Container (optional)
 
 ##### Run docker exec to execute a shell in the container by name
 
