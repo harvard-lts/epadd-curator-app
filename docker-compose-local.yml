@@ -16,4 +16,3 @@ services:
       - ./zip_exports:/home/appuser/epadd-curator-app/zip_exports
       - ./download_exports:/home/appuser/epadd-curator-app/download_exports
       - ./resources:/home/appuser/epadd-curator-app/resources
-
