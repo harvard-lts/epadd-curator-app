@@ -1,3 +1,5 @@
+# `docker-compose -f docker-compose-local.yml up -d --build --force-recreate`
+
 version: '3.8'
 services:
   epadd-curator-app:
@@ -14,3 +16,7 @@ services:
       - ./zip_exports:/home/appuser/epadd-curator-app/zip_exports
       - ./download_exports:/home/appuser/epadd-curator-app/download_exports
       - ./resources:/home/appuser/epadd-curator-app/resources
+<<<<<<< HEAD
+
+=======
+>>>>>>> refs/heads/main
