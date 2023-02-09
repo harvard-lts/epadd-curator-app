@@ -158,8 +158,11 @@ def construct_payload_body(download_dir):
                 metadata_dict[split_val[0]] = split_val[1]
     logging.debug("Metadata dictionary: " + str(metadata_dict))
     
-    if key_exists(manifest_parent_prefix + "TESTTRIGGER") and metadata_dict["ownerSuppliedName"] == "":
+    if key_exists(os.path.basename(download_dir) + "TESTTRIGGER") and metadata_dict["ownerSuppliedName"] == "":
         unique_osn = "test_" + str(int(datetime.now().timestamp()))
+    elif metadata_dict["ownerSuppliedName"] == "":
+        logging.warn("ownerSuppliedName was not provided in drsConfig.txt for {}".format(os.path.basename(download_dir)))
+        unique_osn = "osn_" + str(int(datetime.now().timestamp()))
     else:
         unique_osn = metadata_dict["ownerSuppliedName"]
 
