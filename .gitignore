@@ -122,4 +122,8 @@ pdfstorerdaemon.pid
 
 .idea
 keys/
-.DS_store
+.DS_Store
+.project
+.pydevproject
+
+drsConfig.txt

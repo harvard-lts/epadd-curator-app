@@ -1,0 +1,154 @@
+a3e3f681a44aaeed00482f5b80f4ed0b  data/blobs/9.EAS_release_planning_February_19_2014.docx
+3e43d625e9b45b5ad619bb5d2a76428f  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/EASproject.mbox/20140404-1634 Please Purchase Emailchemy.eml
+cfe2d5460be0e0d1e22b77ed21abd9c9  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/EAS project#olm (Mac Outlook) support.mbox/20151008-1005 Please Purchase Emailchemy.eml
+660d8699be791c75fa3472cd8ff0f9a2  data/sessions/default.archive.v2
+933661e0fff3fafd62d6e1e81410f65c  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/EAS project#olm (Mac Outlook) support.mbox/20151008-1047 Please Purchase Emailchemy.eml
+c88700a63cd384705ab9d383efaf1eda  data/lexicons/Persona.microbiologist.UIUC.english.lex.txt
+745a65ef336fe5e5cab67bd636d987c3  data/indexes/emails/_8.cfs
+4c35c51ca9b485cdbe1342671a9e1b4b  data/blobs/2.BillingCodesinEAS.docx
+d0a5c5ee1debd17d53c4218060852006  data/blobs/8.EAS_SecurityBestPractices.docx
+24c5325028fbf6b7a927e42b6ea4cda6  data/sessions/CorrespondentAuthorities/ConfirmedCorrespondentAuthorities.csv
+1509d5f1b2f301275a4bb9397130b282  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20130806-0952 Please Purchase Emailchemy.eml
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/Road/EntityBook
+69869470788510ab677f72dd5e069dd1  data/blobs/4.EASiAdmin03202013-outcome.docx
+d41d8cd98f00b204e9800998ecf8427e  data/indexes/attachments/write.lock
+62c0c939478354bd2da56732b07c9a67  data/lexicons/sensitive-ccca-german.german.lex.txt
+505497b2533d3aeca59f7ce1620a9f76  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/EASproject.mbox/20140218-1806 Please Purchase Emailchemy.eml
+cb10ca00740831d0a100a38ab2bd4804  data/indexes/emails/_c.cfs
+131c1011416d8b4171c320c3926941ec  data/sessions/EntityBooks/Museum/EntityBook
+13146f21787eeba134a5224bff2aaad2  data/exportableAssets/AppraisalCanonicalAcquisitioned/untouched imported mbox files/EAS project#Go live.mbox
+ab369e11a293d59c84f521bab92c8c5c  data/lexicons/Persona.academic.administrator.sensitive.duke.english.lex.txt
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/River/EntityBook
+53651754ebfb73f5f24a4385be60eddb  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/EAS project#Dropboxes.mbox/20141211-1401 Please Purchase Emailchemy.eml
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/Government Agency/EntityBook
+eb0c6d367255b7529f6ff98e5397f2af  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/EASproject.mbox/20190814-0928 Please Purchase Emailchemy.eml
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/Place/EntityBook
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/Airline/EntityBook
+a3173eeb33b468a00182309d59f63e3c  data/sessions/collection-metadata.json
+4c35c51ca9b485cdbe1342671a9e1b4b  data/blobs/1.BillingCodesinEAS.docx
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/Company/EntityBook
+f19c8851522e846a240e2e0e02b0ecb6  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/EASproject.mbox/20201207-1642 Please Purchase Emailchemy.eml
+5cc4ba1d2a199528761cd7120ffc4bc7  data/lexicons/regex.english.lex.txt
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/Disease/EntityBook
+d361ada4d46acab1e368a1cc3c2008e9  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20130409-1535 Please Purchase Emailchemy.eml
+caaf033a6cef7f255487a0ef6b841141  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/EASproject.mbox/20201207-1609 Please Purchase Emailchemy.eml
+9b79bd83a728291adaa4ef074b806a58  data/sessions/EntityBooks/Person/EntityBook
+28ba6e608253439d402da525effb1d34  data/blobs/10.EAS_dataflow_text_20140405.docx
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/Theatre/EntityBook
+f942fe12290e6e31e948b5fca05791ff  data/indexes/emails/_a.cfs
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/Building/EntityBook
+db39ddf9fbb2dec955cd65041e3e979d  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/EASproject.mbox/20181213-0806 Please Purchase Emailchemy.eml
+01068500c32a66558a26db91dba63d35  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20140812-1746 Please Purchase Emailchemy.eml
+c4cb7325d96610de21cdddfae1426318  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20140926-1228 Please Purchase Emailchemy.eml
+688e7b034af24dc70aaa429a6ae0b4ea  data/lexicons/Persona.composer.NYPL.english.lex.txt
+360079bcc4a111381494827dbdfe6ef0  data/blobs/5.EASiAdmin04092013-outcome.docx
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/Legislature/EntityBook
+e434ff1e2bb98167d921a2822c3ffb27  data/sessions/LabelMapper/docidmap.csv
+e6f5240da1f1b7594c49138ee7a00401  data/indexes/emails/_f.cfs
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/Hospital/EntityBook
+18f5a4c89c014c1f2609c0848198ade1  data/lexicons/Persona.author.princeton.english.lex.txt
+a285cd7a1505f10244c973d051447589  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20130409-1230 Please Purchase Emailchemy.eml
+4eeb48e62b812d9105a8d1121233327f  data/sessions/Annotations.csv
+ae15eba98aa41341f3b1823e14a9a251  data/lexicons/Persona.writer.theater.NYPL.english.lex.txt
+87acc29f0049ff434f59418544a51c60  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20130326-1834 Please Purchase Emailchemy.eml
+b0690557deb1dca0c48fab5781d3e804  data/exportableAssets/AppraisalNormalizedAcquisitioned/untouched imported mbox files/EAS project#olm (Mac Outlook) support.mbox
+6fbef2eede4b769eb16938718b1dbc67  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20140918-1608 Please Purchase Emailchemy.eml
+a1049b241d6afb3a1871ac8b6a29095f  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20140929-0904 Please Purchase Emailchemy.eml
+d06d4903600940f83d6f39ef846136af  data/indexes/attachments/segments_1
+4346250f613d6e3fbdfa862a625e58d0  data/indexes/emails/_h.si
+cad49dcde77e71885b4421bb13819175  data/exportableAssets/AppraisalNormalizedAcquisitioned/untouched imported mbox files/EASproject.mbox
+1407e37850e95bd55e1991bbd77da5ee  data/indexes/emails/_h.cfs
+41166c6d0b20baa7cc37858eaca4109b  data/sessions/LabelMapper/label-info.json
+0eb9103815e531dfc28f2d6812270e03  data/blobs/7.EAS_work_data_flows20140812.docx
+9b878b690b79b44ec676e5fad257d42c  data/blobs/2.EASiAdmin03202013.docx
+12fb474d4a5c7536fa5078d12f0e4428  data/exportableAssets/AppraisalNormalizedAcquisitioned/untouched imported mbox files/DRSintegration.mbox
+956ea6e7dcca7d3c9f15d198f5f9ab21  data/epaddPremis.xml
+a5094b2cdb4f6bf97458867dc26582a1  data/blobs/5.EasPushToDrsSpec.docx
+0f27b4c7dfe297770f263916d2cb88b3  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/EAS project#olm (Mac Outlook) support.mbox/20151008-1028 Please Purchase Emailchemy.eml
+7d67e878640cd7bd5e07079bfc1997d7  data/exportableAssets/AppraisalNormalizedAcquisitioned/untouched imported mbox files/EAS project#Dropboxes.mbox
+eadc5fc0bd589b2eb3731398207be0b4  data/indexes/emails/_d.cfs
+a256fe33c06a517c37a9dd77e3cd4d90  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20140818-0947 Please Purchase Emailchemy.eml
+2fdb654a07aba709924547533acf1939  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/EASproject.mbox/20141202-1025 Please Purchase Emailchemy.eml
+8a281509028e4831e0fc158d4979a266  data/lexicons/Persona.journalist.activist.politics.and.travel.UCB.english.lex.txt
+12fb474d4a5c7536fa5078d12f0e4428  data/exportableAssets/AppraisalCanonicalAcquisitioned/untouched imported mbox files/DRSintegration.mbox
+83e94ecb1cafc4d137fa8325fff90f9a  data/indexes/emails/_h.cfe
+8a4007e3c1c8e590453f8d2f1af776fb  data/exportableAssets/AppraisalNormalizedAcquisitioned/untouched imported mbox files/EAS project#Import-to-EAS.mbox
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/Event/EntityBook
+e7721172b09a7c1d53359b073fbcbf3f  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/EAS project#Go live.mbox/20150520-0921 Please Purchase Emailchemy.eml
+4e12eb05fd6dfa4d264f33b38ef1e3ab  data/lexicons/Persona.environmental.artist.projects.stanford.english.lex.txt
+9a1ae79db0ea93d29bf4d6d2965da403  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20140821-1855 Please Purchase Emailchemy.eml
+b0690557deb1dca0c48fab5781d3e804  data/exportableAssets/AppraisalCanonicalAcquisitioned/untouched imported mbox files/EAS project#olm (Mac Outlook) support.mbox
+3eff19bf5f0f0519a5328c19d3ac5755  data/sessions/EntityBooks/Organisation/EntityBook
+13146f21787eeba134a5224bff2aaad2  data/exportableAssets/AppraisalNormalizedAcquisitioned/untouched imported mbox files/EAS project#Go live.mbox
+360079bcc4a111381494827dbdfe6ef0  data/blobs/4.EASiAdmin04092013-outcome.docx
+904966f166eea3af3f0a65ce9be63d2d  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/EAS project#Dropboxes.mbox/20151119-0711 Please Purchase Emailchemy.eml
+f4315af317e2c35c98322facdf842262  data/exportableAssets/AppraisalNormalizedAcquisitioned/untouched imported mbox files/CorpVote1989-fordeposit.mbox
+e10d469db087b2cb6f1b51e7683777d6  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/EASproject.mbox/20130726-1520 Please Purchase Emailchemy.eml
+f50ef9307217263e153a6a53901a58ac  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20140825-1253 Please Purchase Emailchemy.eml
+7d67e878640cd7bd5e07079bfc1997d7  data/exportableAssets/AppraisalCanonicalAcquisitioned/untouched imported mbox files/EAS project#Dropboxes.mbox
+7e04a91d95eadfdc36f32e9b876c6c7e  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20140826-1328 Please Purchase Emailchemy.eml
+fa05058d3cc18d00047ad11a65548f44  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/EAS project#Dropboxes.mbox/20220606-0849 Please Purchase Emailchemy.eml
+b7a9d43f049e7aa8c60223c3ddf22772  data/lexicons/sentiments.english.lex.txt
+a7e369203ac2bedffcda72eeed11b1e3  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/EAS project#Dropboxes.mbox/20220601-1510 Please Purchase Emailchemy.eml
+2499a3573db2e9f396f2dbd4018ff6e2  data/blobs/sidecarfiles/drsConfig.txt
+b4996d30265a98e61fb05309b346f33a  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20140811-1902 Please Purchase Emailchemy.eml
+0080f269580c6023ef85c9b564716b07  data/indexes/emails/_b.cfs
+5a38655cde32e38cbfb057080ddea330  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20130802-1355 Please Purchase Emailchemy.eml
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/Mountain/EntityBook
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/Monument/EntityBook
+a3e3f681a44aaeed00482f5b80f4ed0b  data/blobs/8.EAS_release_planning_February_19_2014.docx
+43cc4db89592eec482fcf41d054377b5  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/EAS project#Import-to-EAS.mbox/20141211-1401 Please Purchase Emailchemy.eml
+f0e5096bffb108d38be27f9adf5815cc  data/lexicons/Persona.faculty.UCI.english.lex.txt
+a41a54100463f52cf1a7db3c9534bfde  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20140428-1313 Please Purchase Emailchemy.eml
+291e6198ef3524bfb6f8eb13dc25e40b  data/lexicons/sensitive.english.lex.txt
+f4315af317e2c35c98322facdf842262  data/exportableAssets/AppraisalCanonicalAcquisitioned/untouched imported mbox files/CorpVote1989-fordeposit.mbox
+40204c27316abd1a5133c4645a4d5d6b  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20130308-1352 Please Purchase Emailchemy.eml
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/Airport/EntityBook
+1ea5bc6fcedac376c447d778a9741c9e  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20130308-1510 Please Purchase Emailchemy.eml
+28ba6e608253439d402da525effb1d34  data/blobs/9.EAS_dataflow_text_20140405.docx
+dd3d3e22608fbce625ccf723d17ea54a  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20140926-1143 Please Purchase Emailchemy.eml
+95edf5005c585b72e5977b7166590229  data/blobs/0.CorpVote1989_50YearRule.pdf
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/Periodical Literature/EntityBook
+71b6a9f0cd9fe9f6273c0d1118519168  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20130320-0008 Please Purchase Emailchemy.eml
+24df46f6bb2ee5eb280a5c6ba271d70c  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/EAS project#olm (Mac Outlook) support.mbox/20151008-1011 Please Purchase Emailchemy.eml
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/Law firm/EntityBook
+d4724731dd4f9f6f2d2eb6bccf0c1a5b  data/sessions/AddressBook
+006f851d61516eee3453576ab061cb6f  data/indexes/emails/_9.cfs
+0ada25187a50a18c47b093498aba6eb1  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/CorpVote1989-fordeposit.mbox/20151207-1013 Please Purchase Emailchemy.eml
+2d5f88973b07224af123a3e66dc2180f  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/AccessVPN.mbox/20141211-1401 Please Purchase Emailchemy.eml
+04f3f8b783c91f371de12a0d342021c9  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20140912-1810 Please Purchase Emailchemy.eml
+db7a7c08760e6efeed0996780829d828  data/indexes/emails/segments_i
+d0a5c5ee1debd17d53c4218060852006  data/blobs/7.EAS_SecurityBestPractices.docx
+0374264518c2c3ca1833e4d49061db4c  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/CorpVote1989-fordeposit.mbox/20151106-0919 Please Purchase Emailchemy.eml
+9b878b690b79b44ec676e5fad257d42c  data/blobs/3.EASiAdmin03202013.docx
+52e2b7d17a27c96accfa2f19afec504e  data/lexicons/sensitive-cca-french.french.lex.txt
+297eafebe13352659ea906098114e07a  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/EAS project#olm (Mac Outlook) support.mbox/20141211-1401 Please Purchase Emailchemy.eml
+d41d8cd98f00b204e9800998ecf8427e  data/indexes/emails/write.lock
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/Other/EntityBook
+832b8d80156424871c4e9a75698d7e39  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20130319-1035 Please Purchase Emailchemy.eml
+cfe191c3f296dfd21dfd93ddcd7e0939  data/exportableAssets/AppraisalCanonicalAcquisitioned/untouched imported mbox files/AccessVPN.mbox
+8a4007e3c1c8e590453f8d2f1af776fb  data/exportableAssets/AppraisalCanonicalAcquisitioned/untouched imported mbox files/EAS project#Import-to-EAS.mbox
+cad49dcde77e71885b4421bb13819175  data/exportableAssets/AppraisalCanonicalAcquisitioned/untouched imported mbox files/EASproject.mbox
+a5094b2cdb4f6bf97458867dc26582a1  data/blobs/6.EasPushToDrsSpec.docx
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/Bridge/EntityBook
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/Island/EntityBook
+3da9904649d717d37a551d6fa77cc532  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/CorpVote1989-fordeposit.mbox/20151207-1029 Please Purchase Emailchemy.eml
+e51ca743101e6e8ca5d7293c523f3aaa  data/indexes/emails/_g.cfs
+2267c3d67a08b222ddb18b48a21922c2  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20150430-1205 Please Purchase Emailchemy.eml
+95edf5005c585b72e5977b7166590229  data/blobs/0.CorpVote1989_80YearRule.pdf
+0eb9103815e531dfc28f2d6812270e03  data/blobs/6.EAS_work_data_flows20140812.docx
+7634b2988b82fc64cde87b91a30da794  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20130320-1534 Please Purchase Emailchemy.eml
+2d8ef60d9b475fed047055a913079a8a  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20141023-1437 Please Purchase Emailchemy.eml
+69869470788510ab677f72dd5e069dd1  data/blobs/3.EASiAdmin03202013-outcome.docx
+97a465c3f1e6217f7a00710f062ff681  data/epaddPremis.json
+95edf5005c585b72e5977b7166590229  data/blobs/1.CorpVote1989_80YearRule.pdf
+2932cb82c2f0229cd78d4b2925e84669  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20141023-1446 Please Purchase Emailchemy.eml
+cfe191c3f296dfd21dfd93ddcd7e0939  data/exportableAssets/AppraisalNormalizedAcquisitioned/untouched imported mbox files/AccessVPN.mbox
+2fa70b8edbd0397a6f1a96f44ff891c7  data/indexes/emails/_e.cfs
+f13fc6a61274e152daa4c34ce0dfe75b  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/DRSintegration.mbox/20140826-1646 Please Purchase Emailchemy.eml
+8d741c15ab9a9aed644ef50272e0c191  data/exportableAssets/AppraisalNormalizedAppraised/exported eml/eml_202301260849/EASproject.mbox/20190725-1047 Please Purchase Emailchemy.eml
+f85d42c739aed9684a27ad98f1a60dd2  data/premisobject.ser
+36418acd7349016be234e40142a00224  data/sessions/EntityBooks/Library/EntityBook
+d41d8cd98f00b204e9800998ecf8427e  data/sessions/EntityBooks/Award/EntityBook
+1ed23673b11ede7eb4279a28c6980806  data/sessions/CorrespondentAuthorities/CandidateCorrespondentAuthorities.csv
+ee70c45eb6cc91eb68c3978cf965b951  data/sessions/EntityBooks/University/EntityBook

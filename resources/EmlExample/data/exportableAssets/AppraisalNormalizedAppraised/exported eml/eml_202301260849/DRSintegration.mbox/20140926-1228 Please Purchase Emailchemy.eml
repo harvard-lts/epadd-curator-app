@@ -1,0 +1,216 @@
+Subject: Please Purchase Emailchemy
+From: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Sender: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Date: Fri, 26 Sep 2014 12:28:10 -0400
+To: "Kendall, Skip" <skip_kendall@harvard.edu>,
+   "Gogel, Wendy M." <wendy_gogel@harvard.edu>
+CC: "Wetherill, Julie M." <julie_wetherill@harvard.edu>,
+   "Goethals, Andrea" <andrea_goethals@harvard.edu>
+Message-ID: <D04B0C52.11FD6%grainne_reilly@harvard.edu>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_NextPart_000_00A0_01D8856F.B30A2440"
+X-ePADD-Folder: C:\Users\jmw922\Documents\ePADD-related\JWEASFolderMBOX\mbox-DRSintegration\DRSintegration.mbox
+X-ePADD-Labels: 
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQHP2abcPzAMXlguB0e1r7tBbWmNkw==
+Content-Language: en-us
+x-ms-exchange-organization-authas: Internal
+x-ms-exchange-organization-authsource: SN2PR07MB064.namprd07.prod.outlook.com
+acceptlanguage: en-US
+x-originating-ip: [128.103.224.79]
+x-ms-exchange-organization-authmechanism: 04
+
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_00A0_01D8856F.B30A2440
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Skip, Wendy,
+
+Julie, Andrea and I have had some back and forth regarding the "creator
+client" drop down list in EASi.
+
+The current list is:
+
+Eudora for Windows/6.2
+
+Mac OS X Mail/2.x
+
+Mailman/2.0.5
+
+Outlook for Windows/unknown
+
+
+Thunderbird/2.0.0.23
+
+
+
+We are proposing changing this list to something along the lines of:
+
+Eudora for Windows/6.2
+
+Eudora for Windows/(unknown version)
+
+Mac OS X Mail/2.x
+
+Mailman/2.0.5
+
+Outlook for Windows/(unknown version)
+
+Thunderbird/2.0.0.23
+
+Thunderbird/(unknown version)
+
+
+
+Julie is inclined towards "(version unknown)" instead of "(unknown
+version)".  Also, if the parentheses cause any technical issues, I would
+like to remove them.
+
+With this list curators could pick a specific version when they know it
+or pick "unknown version" if they don=C2=92t know the specific version.
+
+I could add/modify the entries in time for this release to production if
+you agree.
+
+Andrea was hoping that if the curators know the version of the email,
+but it is not listed as an option, they could ask us to add it to the
+EAS list and WordShack.  Currently it involves a change to the EAS code
+to add a new "creator client" version =C2=96 and so a new release to
+production.  The EAS code could be changed to be more flexible and to
+recognize clients which Emailchemy can process regardless of specific
+versions.  In that case it could be implemented so that it would be a
+simple configuration change not requiring a release to production and so
+there would be a quick turnaround when curators want to add a specific
+version for one of these creator clients.  This, however, can not be
+implemented in time for this release.  I could create a story for it in
+jira and put it in the backlog for a future release.
+
+Please let me know what you think?  I'd like to change the drop down
+list in QA as soon as possible if you agree with the new list (so that
+local EAS preferred values won't be out of synch with Wordshack
+preferred values).
+
+Thanks,
+Grainne.
+
+
+
+
+
+
+
+------=_NextPart_000_00A0_01D8856F.B30A2440
+Content-Type: text/html;charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1"></head><body style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; -=
+webkit-line-break: after-white-space; font-family: Calibri, sans-serif; "><=
+div style=3D"color: rgb(0, 0, 0); font-size: 14px; ">Hi Skip, Wendy,</div><=
+div style=3D"color: rgb(0, 0, 0); font-size: 14px; "><br></div><div style=
+=3D"color: rgb(0, 0, 0); font-size: 14px; ">Julie, Andrea and I have had so=
+me back and forth regarding the &quot;creator client&quot; drop down list i=
+n EASi.</div><div style=3D"color: rgb(0, 0, 0); font-size: 14px; "><br></di=
+v><div style=3D"color: rgb(0, 0, 0); font-size: 14px; ">The current list is=
+:</div><div><p style=3D"color: rgb(33, 33, 33); font-size: 16px; margin-top=
+: 0px; margin-bottom: 0px; font-family: Calibri, Arial, Helvetica, sans-ser=
+if; background-color: white; "><span style=3D"font-family: Calibri, sans-se=
+rif; color: black; ">Eudora for Windows/6.2</span><span style=3D"font-famil=
+y: Calibri, sans-serif; "></span></p><p style=3D"color: rgb(33, 33, 33); fo=
+nt-size: 16px; margin-top: 0px; margin-bottom: 0px; font-family: Calibri, A=
+rial, Helvetica, sans-serif; background-color: white; "><span style=3D"colo=
+r: rgb(0, 0, 0); font-family: Calibri, sans-serif; ">Mac OS X Mail/2.x</spa=
+n></p><p style=3D"color: rgb(33, 33, 33); font-size: 16px; margin-top: 0px;=
+ margin-bottom: 0px; font-family: Calibri, Arial, Helvetica, sans-serif; ba=
+ckground-color: white; "><span style=3D"background-color: white; color: bla=
+ck; font-family: Calibri, sans-serif; ">Mailman/2.0.5</span></p><p style=3D=
+"color: rgb(33, 33, 33); font-size: 16px; margin-top: 0px; margin-bottom: 0=
+px; font-family: Calibri, Arial, Helvetica, sans-serif; background-color: w=
+hite; "><span style=3D"background-color: white; color: black; font-family: =
+Calibri, sans-serif; ">Outlook for Windows/unknown</span></p><p style=3D"co=
+lor: rgb(33, 33, 33); font-size: 16px; margin-top: 0px; margin-bottom: 0px;=
+ font-family: Calibri, Arial, Helvetica, sans-serif; background-color: whit=
+e; "><span style=3D"font-family: Calibri, sans-serif; "></span></p><p style=
+=3D"margin-top: 0px; margin-bottom: 0px; font-family: Calibri, Arial, Helve=
+tica, sans-serif; "><p style=3D"background-color: white; color: rgb(33, 33,=
+ 33); font-size: 16px; margin-top: 0px; margin-bottom: 0px; "><span style=
+=3D"font-family: Calibri, sans-serif; color: black; ">Thunderbird/2.0.0.23<=
+/span><span style=3D"font-family: Calibri, sans-serif; "></span></p><div st=
+yle=3D"background-color: white; color: rgb(33, 33, 33); font-size: 16px; ">=
+<span style=3D"font-family: Calibri, sans-serif; color: black; "><br></span=
+></div><div style=3D"background-color: white; color: rgb(33, 33, 33); ">We =
+are proposing changing this list to something along the lines of:</div><div=
+><div style=3D"font-family: Calibri, sans-serif; "><p style=3D"background-c=
+olor: white; color: rgb(33, 33, 33); font-size: 16px; margin-top: 0px; marg=
+in-bottom: 0px; font-family: Calibri, Arial, Helvetica, sans-serif; "><span=
+ style=3D"font-family: Calibri, sans-serif; color: black; ">Eudora for Wind=
+ows/6.2</span></p><p style=3D"font-size: 16px; margin-top: 0px; margin-bott=
+om: 0px; font-family: Calibri, Arial, Helvetica, sans-serif; "><span style=
+=3D"font-family: Calibri, sans-serif; background-color: rgb(0, 255, 0); ">E=
+udora for Windows/(unknown version)</span></p><p style=3D"background-color:=
+ white; color: rgb(33, 33, 33); font-size: 16px; margin-top: 0px; margin-bo=
+ttom: 0px; font-family: Calibri, Arial, Helvetica, sans-serif; "><span styl=
+e=3D"font-family: Calibri, sans-serif; color: black; ">Mac OS X Mail/2.x</s=
+pan></p><p style=3D"background-color: white; color: rgb(33, 33, 33); font-s=
+ize: 16px; margin-top: 0px; margin-bottom: 0px; font-family: Calibri, Arial=
+, Helvetica, sans-serif; "><span style=3D"font-family: Calibri, sans-serif;=
+ color: black; ">Mailman/2.0.5</span></p><p style=3D"color: rgb(33, 33, 33)=
+; font-size: 16px; margin-top: 0px; margin-bottom: 0px; font-family: Calibr=
+i, Arial, Helvetica, sans-serif; "><span style=3D"font-family: Calibri, san=
+s-serif; color: black; "><span style=3D"background-color: white;">Outlook f=
+or Windows/</span><span style=3D"background-color: rgb(0, 255, 0);">(unknow=
+n version)</span></span></p><p class=3D"MsoNormal" style=3D"background-colo=
+r: white; color: rgb(33, 33, 33); font-size: 16px; margin: 0in 0in 0.0001pt=
+; font-family: 'Times New Roman', serif; "><span style=3D"font-family: Cali=
+bri, sans-serif; color: black; ">Thunderbird/2.0.0.23</span></p><p class=3D=
+"MsoNormal" style=3D"color: rgb(33, 33, 33); font-size: 16px; margin: 0in 0=
+in 0.0001pt; font-family: 'Times New Roman', serif; "><span style=3D"font-f=
+amily: Calibri, sans-serif; color: black; background-color: rgb(0, 255, 0);=
+ ">Thunderbird/(unknown version)</span></p><div style=3D"background-color: =
+white; color: rgb(0, 0, 0); font-size: 14px; "><span style=3D"font-family: =
+Calibri, sans-serif; color: black; "><br></span></div><div style=3D"backgro=
+und-color: white; color: rgb(0, 0, 0); font-size: 14px; ">Julie is inclined=
+ towards &quot;(version unknown)&quot; instead of &quot;(unknown version)&q=
+uot;. &nbsp;Also, if the parentheses cause any technical issues, I would li=
+ke to remove them.</div><div style=3D"background-color: white; color: rgb(0=
+, 0, 0); font-size: 14px; "><br></div><div style=3D"background-color: white=
+; color: rgb(0, 0, 0); ">With this list curators could pick a specific vers=
+ion when they know it or pick &quot;unknown version&quot; if they don&#8217=
+;t know the specific version.</div><div style=3D"background-color: white; c=
+olor: rgb(0, 0, 0); "><br></div><div style=3D"background-color: white; colo=
+r: rgb(0, 0, 0); ">I could add/modify the entries in time for this release =
+to production if you agree.</div><div style=3D"background-color: white; col=
+or: rgb(0, 0, 0); "><br></div><div style=3D"background-color: white; color:=
+ rgb(0, 0, 0); ">Andrea was hoping that if the curators know the version of=
+ the email, but it is not listed as an option, they could ask us to add it =
+to the EAS list and WordShack. &nbsp;Currently it involves a change to the =
+EAS code to add a new &quot;creator client&quot; version &#8211; and so a n=
+ew release to production. &nbsp;The EAS code could be changed to be more fl=
+exible and to recognize clients which Emailchemy can process regardless of =
+specific versions. &nbsp;In that case it could be implemented so that it wo=
+uld be a simple configuration change not requiring a release to production =
+and so there would be a quick turnaround when curators want to add a specif=
+ic version for one of these creator clients. &nbsp;This, however, can not b=
+e implemented in time for this release. &nbsp;I could create a story for it=
+ in jira and put it in the backlog for a future release.</div><div style=3D=
+"background-color: white; color: rgb(0, 0, 0); "><br></div><div style=3D"ba=
+ckground-color: white; color: rgb(0, 0, 0); ">Please let me know what you t=
+hink? &nbsp;I'd like to change the drop down list in QA as soon as possible=
+ if you agree with the new list (so that local EAS preferred values won't b=
+e out of synch with Wordshack preferred values).</div><div style=3D"backgro=
+und-color: white; color: rgb(0, 0, 0); "><br></div><div style=3D"background=
+-color: white; color: rgb(0, 0, 0); ">Thanks,</div><div style=3D"background=
+-color: white; color: rgb(0, 0, 0); ">Grainne.</div><div style=3D"backgroun=
+d-color: white; color: rgb(0, 0, 0); "><br></div><div style=3D"background-c=
+olor: white; color: rgb(0, 0, 0); "><br></div><div style=3D"background-colo=
+r: white; color: rgb(0, 0, 0); "><br></div><div style=3D"background-color: =
+white; color: rgb(0, 0, 0); "><br></div></div></div></p></div></body></html=
+>
+
+------=_NextPart_000_00A0_01D8856F.B30A2440--
+
+

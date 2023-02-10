@@ -1,0 +1,34 @@
+{"0":{"labType":"RESTRICTION","labId":"0","labName":"Do not Transfer",
+    "description":"Do not Transfer this message","isSysLabel":true,
+    "restrictionType":"OTHER","restrictedUntilTime":0,"restrictedForYears":
+    0},"-1":{"labType":"RESTRICTION","labId":"-1","labName":
+    "Transfer to Delivery Only","description":
+    "Transfer this message to Delivery only","isSysLabel":true,
+    "restrictionType":"OTHER","restrictedUntilTime":0,"restrictedForYears":
+    0},"1":{"labType":"GENERAL","labId":"1","labName":"Reviewed",
+    "description":"This message was reviewed","isSysLabel":false,
+    "restrictionType":"OTHER","restrictedUntilTime":0,"restrictedForYears":
+    0},"2":{"labType":"GENERAL","labId":"2","labName":
+    "Cleared for Release","description":
+    "This message is ready to be released to the next phase","isSysLabel":
+    true,"restrictionType":"OTHER","restrictedUntilTime":0,
+    "restrictedForYears":0},"3":{"labType":"GENERAL","labId":"3","labName":
+    "No Date","description":"No date found/extracted for this message",
+    "isSysLabel":true,"restrictionType":"OTHER","restrictedUntilTime":0,
+    "restrictedForYears":0},"4":{"labType":"GENERAL","labId":"4","labName":
+    "Possibly Bad date","description":
+    "Date on this message is possibly corrupted","isSysLabel":true,
+    "restrictionType":"OTHER","restrictedUntilTime":0,"restrictedForYears":
+    0},"5":{"labType":"GENERAL","labId":"5","labName":
+    "Error in Attachments","description":
+    "Either this message has attachment(s) without file name or the parser is not able to fetch it.",
+    "isSysLabel":true,"restrictionType":"OTHER","restrictedUntilTime":0,
+    "restrictedForYears":0},"6":{"labType":"GENERAL","labId":"6","labName":
+    "Other error while Parsing","description":
+    "This message had errors while parsing the body","isSysLabel":true,
+    "restrictionType":"OTHER","restrictedUntilTime":0,"restrictedForYears":
+    0},"7":{"labType":"GENERAL","labId":"7","labName":
+    "Error in Correspondents","description":
+    "This message has missing correspondents","isSysLabel":true,
+    "restrictionType":"OTHER","restrictedUntilTime":0,"restrictedForYears":
+    0}}

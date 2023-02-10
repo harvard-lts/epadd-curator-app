@@ -1,0 +1,776 @@
+Subject: Please Purchase Emailchemy
+From: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Sender: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Date: Fri, 02 Aug 2013 13:55:54 -0400
+To: "Wetherill, Julie M." <julie_wetherill@harvard.edu>
+Message-ID: <CE21697D.8DCE%grainne_reilly@harvard.edu>
+In-Reply-To: <96A4F01CF140994DB6D59D04B207D70B02CB9451@ENTWEXMB0000011.university.harvard.edu>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_NextPart_000_006A_01D8856F.B2C07110"
+X-ePADD-Folder: C:\Users\jmw922\Documents\ePADD-related\JWEASFolderMBOX\mbox-DRSintegration\DRSintegration.mbox
+X-ePADD-Labels: 
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: Ac6BqkOmGy7byCxNRS25fPqK1zpz4AAhbXEAAy7oFXAALSWqgAAAuvwAAAGatAA=
+Content-Language: en-us
+x-ms-exchange-organization-authas: Internal
+x-ms-exchange-organization-authsource: ENTWHUBT0000006.university.harvard.edu
+acceptlanguage: en-US
+x-originating-ip: [10.1.79.51]
+x-ms-exchange-organization-authmechanism: 04
+
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_006A_01D8856F.B2C07110
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Julie,
+
+Keeping you in the loop on how moving DRS 2 and Wordshack to PROD is
+affecting EAS QA.
+
+EAS QA is currently pointing to the  Wordshack "PROD" instance and will
+need to be changed back to point to the QA instance of Wordshack.
+
+Once we know when the snapshot of the Wordshack "PROD" database is to
+take place, we will need to notify the users not to use EAS QA from that
+point until further notice (otherwise the two systems will be out of
+synch).
+
+Thanks,
+Grainne.
+
+From: "Stern, Randall" <randy_stern@harvard.edu
+<mailto:randy_stern@harvard.edu> >
+Date: Fri, 2 Aug 2013 13:11:47 -0400
+To: "Reilly, Grainne" <grainne_reilly@harvard.edu
+<mailto:grainne_reilly@harvard.edu> >
+Cc: "Fox, Bobbi" <bobbi_fox@harvard.edu <mailto:bobbi_fox@harvard.edu>
+>, "Bayer, Sharon Boland" <sharon_bayer@harvard.edu
+<mailto:sharon_bayer@harvard.edu> >
+Subject: RE: Prod releases of DRS2 compatible applications
+
+
+
+I believe that some time on the week of August 12, the Dev/Ops group
+will copy the data from the Wordshack prod database to the Wordshack QA
+database, and then clear the Wordshack prod database. We=E2=80=99ll keep yo=
+u
+posted as the schedule firms up.
+
+
+
+Randy
+
+
+
+From: Reilly, Grainne
+Sent: Friday, August 02, 2013 12:49 PM
+To: Stern, Randall
+Cc: Fox, Bobbi; Bayer, Sharon Boland
+Subject: Re: Prod releases of DRS2 compatible applications
+
+
+
+
+
+Hi Randy,
+
+
+
+EAS beta testers are currently testing EAS which accesses Wordshack
+"Prod".  Email addresses are being populated into Wordshack "Prod" by
+EAS and terms are being pulled from Wordshack "Prod" and stored locally
+for use in EAS.
+
+
+
+To avoid inconsistencies between what is stored in EAS QA and what
+exists in Wordshack QA I need to know when the Wordshack "Prod" and "QA"
+instances split and request users not to use the system from that time
+until I point EAS QA to Wordshack QA and release that version of EAS to
+QA.
+
+
+
+Do you have any idea of when this split is to take place?
+
+
+
+Thanks,
+
+Grainne.
+
+
+
+
+
+From: "Stern, Randall" <randy_stern@harvard.edu
+<mailto:randy_stern@harvard.edu> >
+Date: Thu, 1 Aug 2013 15:23:12 -0400
+To: "McEwen, Spencer" <spencer_mcewen@harvard.edu
+<mailto:spencer_mcewen@harvard.edu> >, "Vicary, Chris"
+<chris_vicary@harvard.edu <mailto:chris_vicary@harvard.edu> >, "Fox,
+Bobbi" <bobbi_fox@harvard.edu <mailto:bobbi_fox@harvard.edu> >,
+"Vandermillen, Michael" <michael_vandermillen@harvard.edu
+<mailto:michael_vandermillen@harvard.edu> >, "Goines, Chip"
+<chip_goines@harvard.edu <mailto:chip_goines@harvard.edu> >, "Crema,
+Valdeva" <valdeva_crema@harvard.edu <mailto:valdeva_crema@harvard.edu> >
+Cc: "Siegel, David E." <dave_siegel@harvard.edu
+<mailto:dave_siegel@harvard.edu> >, "Reilly, Grainne"
+<grainne_reilly@harvard.edu <mailto:grainne_reilly@harvard.edu> >,
+"Bayer, Sharon Boland" <sharon_bayer@harvard.edu
+<mailto:sharon_bayer@harvard.edu> >
+Subject: RE: Prod releases of DRS2 compatible applications
+
+
+
+Just a reminder to all that you need to release the non-DRS2 apps below
+to prod with DRS2 compatibility before 8/12, if they are not already in
+prod with DRS2 support. Please check your apps and make sure the prod
+version is DRS2 compatible. And please schedule a mov2prod
+
+
+
+Spencer, is the prod DRS2 services URL of
+=E2=80=9Cdrs2-services.lib.harvard.edu=E2=80=9D already in the global
+config-prod.properties files so people can build and deploy at their
+convenience?
+
+
+
+-          Randy
+
+
+
+Chip - Release PDS to prod
+
+Chip - Release IDS to prod
+
+Bobbi - Release SDS to prod
+
+Spencer - Release FTS to prod
+
+Chris - Release OLIVIA servlet to prod
+
+Michael - Release VIA to prod
+
+Dee Dee - Release ACORN to prod
+
+Michael - Release id.lib to prod
+
+Spencer - Release BatchBuilder with prod wordshack and prod PRESTO
+default
+
+Spencer - Release prod configured DRS loader
+
+Bobbi - Release prod configured Wordshack
+
+Spencer - Release prod configured DRS Web Admin
+
+Spencer - Release prod configured DRS Services
+
+Grainne - Release  EASi QA pointing back to QA Wordshack and QA DRS
+Services
+
+
+
+
+
+From: McEwen, Spencer
+Sent: Tuesday, July 16, 2013 10:23 AM
+To: Stern, Randall; Vicary, Chris; Fox, Bobbi; Vandermillen, Michael;
+Goines, Chip; Crema, Valdeva
+Cc: Siegel, David E.; Reilly, Grainne; Bayer, Sharon Boland
+Subject: Re: Prod releases of DRS2 compatible applications
+
+
+
+The decision for the starting sequence for DRS2 is independent of all
+delivery applications.  All delivery apps have been compatible with DRS2
+for years at this point.  Versions that support DRS2 are already in
+production and have been for quite some time.  They should all already
+be first checking for file IDs in DRS1 and if not found check DRS2.
+Once migration is designed and planned another change will likely need
+to be made so that if an ID is found in DRS1 but that has been migrated,
+look to DRS2 for metadata instead.
+
+
+
+For the initial production rollout all you should need to do is
+configure the application to point to the prod DRS2 services URL.  This
+property will be in the global config-prod.properties files, so all that
+will need to be done done is to invoke 'ant config' and release the app.
+This can be done ahead of time, after we configure the PROD DRS2
+environment but before we start accepting real content from depositors.
+
+
+
+Spencer
+
+
+
+From: <Stern>, Randall <randy_stern@harvard.edu
+<mailto:randy_stern@harvard.edu> >
+Date: Monday, July 15, 2013 6:25 PM
+To: "McEwen, Spencer" <spencer_mcewen@harvard.edu
+<mailto:spencer_mcewen@harvard.edu> >, "Vicary, Chris"
+<chris_vicary@harvard.edu <mailto:chris_vicary@harvard.edu> >, "Fox,
+Bobbi" <bobbi_fox@harvard.edu <mailto:bobbi_fox@harvard.edu> >,
+"Vandermillen, Michael" <michael_vandermillen@harvard.edu
+<mailto:michael_vandermillen@harvard.edu> >, "Goines, Chip"
+<chip_goines@harvard.edu <mailto:chip_goines@harvard.edu> >, "Crema,
+Valdeva" <valdeva_crema@harvard.edu <mailto:valdeva_crema@harvard.edu> >
+Cc: "Siegel, David E." <dave_siegel@harvard.edu
+<mailto:dave_siegel@harvard.edu> >, "Reilly, Grainne"
+<grainne_reilly@harvard.edu <mailto:grainne_reilly@harvard.edu> >,
+"Bayer, Sharon Boland" <sharon_bayer@harvard.edu
+<mailto:sharon_bayer@harvard.edu> >
+Subject: Prod releases of DRS2 compatible applications
+
+
+
+Hi all,
+
+
+
+For planning purposes =E2=80=93 and a reminder if you are making any
+experimental code changes =E2=80=93 in order to release DRS2 to production =
+by
+the end of August, we are going to also have to release DRS2 compatible
+versions of a number of other applications in early August. The list of
+apps I have is shown below. This will probably be planned no later than
+sprint 19 (starting 8/5/13). At some point in the future we=E2=80=99ll need=
+ to
+add HGL and WAX too (and EASi of course).
+
+
+
+Before you can release, Spencer will need to make some decisions about
+the threshold for identifying DRS1 vs DRS2 files, and possibly specify
+other configuration settings. Here is the list I have, and who would
+nominally be responsible for each app:
+
+
+
+Chip - Release PDS to prod
+
+Chip - Release IDS to prod
+
+Bobbi - Release SDS to prod
+
+Spencer - Release FTS to prod
+
+Chris - Release OLIVIA servlet to prod
+
+Michael - Release VIA to prod
+
+Dee Dee - Release ACORN to prod
+
+Michael - Release id.lib to prod
+
+Spencer - Release BatchBuilder with prod wordshack and prod PRESTO
+default
+
+Spencer - Release prod configured DRS loader
+
+Bobbi - Release prod configured Wordshack
+
+Spencer - Release prod configured DRS Web Admin
+
+Spencer - Release prod configured DRS Services
+
+Grainne - Release  EASi QA pointing back to QA Wordshack and QA DRS
+Services
+
+
+
+Please let me know if anything is missing=E2=80=A6
+
+
+
+And Spencer =E2=80=93 what guidelines will you need to provide?
+
+
+
+-          Randy
+
+
+
+------=_NextPart_000_006A_01D8856F.B2C07110
+Content-Type: text/html;charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DWindows-1=
+252"></head><body style=3D"word-wrap: break-word; -webkit-nbsp-mode: space;=
+ -webkit-line-break: after-white-space; color: rgb(0, 0, 0); font-size: 14p=
+x; font-family: Calibri, sans-serif; "><div>Hi Julie,</div><div><br></div><=
+div>Keeping you in the loop on how moving DRS 2 and Wordshack to PROD is af=
+fecting EAS QA.</div><div>&nbsp;&nbsp;</div><div>EAS QA is currently pointi=
+ng to the &nbsp;Wordshack &quot;PROD&quot; instance and will need to be cha=
+nged back to point to the QA instance of Wordshack.</div><div><br></div><di=
+v>Once we know when the snapshot of the Wordshack &quot;PROD&quot; database=
+ is to take place, we will need to notify the users not to use EAS QA from =
+that point until further notice (otherwise the two systems will be out of s=
+ynch).</div><div><br></div><div>Thanks,</div><div>Grainne.</div><div><br></=
+div><span id=3D"OLK_SRC_BODY_SECTION"><div style=3D"font-family:Calibri; fo=
+nt-size:11pt; text-align:left; color:black; BORDER-BOTTOM: medium none; BOR=
+DER-LEFT: medium none; PADDING-BOTTOM: 0in; PADDING-LEFT: 0in; PADDING-RIGH=
+T: 0in; BORDER-TOP: #b5c4df 1pt solid; BORDER-RIGHT: medium none; PADDING-T=
+OP: 3pt"><span style=3D"font-weight:bold">From: </span> &quot;Stern, Randal=
+l&quot; &lt;<a href=3D"mailto:randy_stern@harvard.edu">randy_stern@harvard.=
+edu</a>&gt;<br><span style=3D"font-weight:bold">Date: </span> Fri, 2 Aug 20=
+13 13:11:47 -0400<br><span style=3D"font-weight:bold">To: </span> &quot;Rei=
+lly, Grainne&quot; &lt;<a href=3D"mailto:grainne_reilly@harvard.edu">grainn=
+e_reilly@harvard.edu</a>&gt;<br><span style=3D"font-weight:bold">Cc: </span=
+> &quot;Fox, Bobbi&quot; &lt;<a href=3D"mailto:bobbi_fox@harvard.edu">bobbi=
+_fox@harvard.edu</a>&gt;, &quot;Bayer, Sharon Boland&quot; &lt;<a href=3D"m=
+ailto:sharon_bayer@harvard.edu">sharon_bayer@harvard.edu</a>&gt;<br><span s=
+tyle=3D"font-weight:bold">Subject: </span> RE: Prod releases of DRS2 compat=
+ible applications<br></div><div><br></div><div xmlns:v=3D"urn:schemas-micro=
+soft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:w=
+=3D"urn:schemas-microsoft-com:office:word" xmlns:m=3D"http://schemas.micros=
+oft.com/office/2004/12/omml" xmlns=3D"http://www.w3.org/TR/REC-html40"><met=
+a name=3D"Generator" content=3D"Microsoft Word 12 (filtered medium)"><style=
+><!--
+/* Font Definitions */
+@font-face
+=09{font-family:"Cambria Math";
+=09panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+=09{font-family:Calibri;
+=09panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+=09{font-family:Tahoma;
+=09panose-1:2 11 6 4 3 5 4 4 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+=09{margin:0in;
+=09margin-bottom:.0001pt;
+=09font-size:11.0pt;
+=09font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+=09{mso-style-priority:99;
+=09color:blue;
+=09text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+=09{mso-style-priority:99;
+=09color:purple;
+=09text-decoration:underline;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+=09{mso-style-priority:99;
+=09mso-style-link:"Balloon Text Char";
+=09margin:0in;
+=09margin-bottom:.0001pt;
+=09font-size:8.0pt;
+=09font-family:"Tahoma","sans-serif";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+=09{mso-style-priority:34;
+=09margin-top:0in;
+=09margin-right:0in;
+=09margin-bottom:0in;
+=09margin-left:.5in;
+=09margin-bottom:.0001pt;
+=09font-size:11.0pt;
+=09font-family:"Calibri","sans-serif";}
+span.BalloonTextChar
+=09{mso-style-name:"Balloon Text Char";
+=09mso-style-priority:99;
+=09mso-style-link:"Balloon Text";
+=09font-family:"Tahoma","sans-serif";}
+span.EmailStyle20
+=09{mso-style-type:personal;
+=09font-family:"Calibri","sans-serif";
+=09color:windowtext;}
+span.EmailStyle21
+=09{mso-style-type:personal;
+=09font-family:"Calibri","sans-serif";
+=09color:#1F497D;}
+span.EmailStyle22
+=09{mso-style-type:personal-reply;
+=09font-family:"Calibri","sans-serif";
+=09color:#1F497D;}
+.MsoChpDefault
+=09{mso-style-type:export-only;
+=09font-size:10.0pt;}
+@page WordSection1
+=09{size:8.5in 11.0in;
+=09margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+=09{page:WordSection1;}
+/* List Definitions */
+@list l0
+=09{mso-list-id:176620507;
+=09mso-list-type:hybrid;
+=09mso-list-template-ids:-129074144 -1613734204 67698691 67698693 67698689 =
+67698691 67698693 67698689 67698691 67698693;}
+@list l0:level1
+=09{mso-level-start-at:617;
+=09mso-level-number-format:bullet;
+=09mso-level-text:-;
+=09mso-level-tab-stop:none;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;
+=09font-family:"Calibri","sans-serif";
+=09mso-fareast-font-family:Calibri;}
+@list l0:level2
+=09{mso-level-tab-stop:1.0in;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l0:level3
+=09{mso-level-tab-stop:1.5in;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l0:level4
+=09{mso-level-tab-stop:2.0in;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l0:level5
+=09{mso-level-tab-stop:2.5in;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l0:level6
+=09{mso-level-tab-stop:3.0in;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l0:level7
+=09{mso-level-tab-stop:3.5in;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l0:level8
+=09{mso-level-tab-stop:4.0in;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l0:level9
+=09{mso-level-tab-stop:4.5in;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l1
+=09{mso-list-id:870991594;
+=09mso-list-type:hybrid;
+=09mso-list-template-ids:861571020 586206892 67698691 67698693 67698689 676=
+98691 67698693 67698689 67698691 67698693;}
+@list l1:level1
+=09{mso-level-start-at:2;
+=09mso-level-number-format:bullet;
+=09mso-level-text:-;
+=09mso-level-tab-stop:none;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;
+=09font-family:"Calibri","sans-serif";
+=09mso-fareast-font-family:Calibri;}
+@list l1:level2
+=09{mso-level-tab-stop:1.0in;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l1:level3
+=09{mso-level-tab-stop:1.5in;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l1:level4
+=09{mso-level-tab-stop:2.0in;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l1:level5
+=09{mso-level-tab-stop:2.5in;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l1:level6
+=09{mso-level-tab-stop:3.0in;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l1:level7
+=09{mso-level-tab-stop:3.5in;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l1:level8
+=09{mso-level-tab-stop:4.0in;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l1:level9
+=09{mso-level-tab-stop:4.5in;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+ol
+=09{margin-bottom:0in;}
+ul
+=09{margin-bottom:0in;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]--><div lang=3D"EN-US" link=3D"blue" vlink=
+=3D"purple"><div class=3D"WordSection1"><p class=3D"MsoNormal"><span style=
+=3D"color:#1F497D">I believe that some time on the week of August 12, the D=
+ev/Ops group will copy the data from the Wordshack prod database to the Wor=
+dshack QA database, and then clear the Wordshack prod database. We=E2=80=99=
+ll keep you
+ posted as the schedule firms up.<o:p></o:p></span></p><p class=3D"MsoNorma=
+l"><span style=3D"color:#1F497D"><o:p>&nbsp;</o:p></span></p><p class=3D"Ms=
+oNormal"><span style=3D"color:#1F497D">Randy<o:p></o:p></span></p><p class=
+=3D"MsoNormal"><span style=3D"color:#1F497D"><o:p>&nbsp;</o:p></span></p><d=
+iv><div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0=
+in 0in 0in"><p class=3D"MsoNormal"><b><span style=3D"font-size: 10pt; font-=
+family: Tahoma, sans-serif; ">From:</span></b><span style=3D"font-size: 10p=
+t; font-family: Tahoma, sans-serif; "> Reilly, Grainne
+<br><b>Sent:</b> Friday, August 02, 2013 12:49 PM<br><b>To:</b> Stern, Rand=
+all<br><b>Cc:</b> Fox, Bobbi; Bayer, Sharon Boland<br><b>Subject:</b> Re: P=
+rod releases of DRS2 compatible applications<o:p></o:p></span></p></div></d=
+iv><p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p><div><p class=3D"MsoNormal">=
+<span style=3D"font-size:10.5pt;color:black"><o:p>&nbsp;</o:p></span></p></=
+div><div><p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;color:black=
+">Hi Randy,&nbsp;<o:p></o:p></span></p></div><div><p class=3D"MsoNormal"><s=
+pan style=3D"font-size:10.5pt;color:black"><o:p>&nbsp;</o:p></span></p></di=
+v><div><p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;color:black">=
+EAS beta testers are currently testing EAS which accesses Wordshack &quot;P=
+rod&quot;. &nbsp;Email addresses are being populated into Wordshack &quot;P=
+rod&quot; by EAS and terms are being pulled from Wordshack &quot;Prod&quot;=
+ and
+ stored locally for use in EAS.<o:p></o:p></span></p></div><div><p class=3D=
+"MsoNormal"><span style=3D"font-size:10.5pt;color:black"><o:p>&nbsp;</o:p><=
+/span></p></div><div><p class=3D"MsoNormal"><span style=3D"font-size:10.5pt=
+;color:black">To avoid inconsistencies between what is stored in EAS QA and=
+ what exists in Wordshack QA I need to know when the Wordshack &quot;Prod&q=
+uot; and &quot;QA&quot; instances split and request users not to use the sy=
+stem
+ from that time until I point EAS QA to Wordshack QA and release that versi=
+on of EAS to QA.<o:p></o:p></span></p></div><div><p class=3D"MsoNormal"><sp=
+an style=3D"font-size:10.5pt;color:black"><o:p>&nbsp;</o:p></span></p></div=
+><div><p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;color:black">D=
+o you have any idea of when this split is to take place?<o:p></o:p></span><=
+/p></div><div><p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;color:=
+black"><o:p>&nbsp;</o:p></span></p></div><div><p class=3D"MsoNormal"><span =
+style=3D"font-size:10.5pt;color:black">Thanks,<o:p></o:p></span></p></div><=
+div><p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;color:black">Gra=
+inne.<o:p></o:p></span></p></div><div><p class=3D"MsoNormal"><span style=3D=
+"font-size:10.5pt;color:black"><o:p>&nbsp;</o:p></span></p></div><div><p cl=
+ass=3D"MsoNormal"><span style=3D"font-size:10.5pt;color:black"><o:p>&nbsp;<=
+/o:p></span></p></div><div style=3D"border:none;border-top:solid #B5C4DF 1.=
+0pt;padding:3.0pt 0in 0in 0in"><p class=3D"MsoNormal"><b><span style=3D"col=
+or:black">From: </span></b><span style=3D"color:black">&quot;Stern, Randall=
+&quot; &lt;<a href=3D"mailto:randy_stern@harvard.edu">randy_stern@harvard.e=
+du</a>&gt;<br><b>Date: </b>Thu, 1 Aug 2013 15:23:12 -0400<br><b>To: </b>&qu=
+ot;McEwen, Spencer&quot; &lt;<a href=3D"mailto:spencer_mcewen@harvard.edu">=
+spencer_mcewen@harvard.edu</a>&gt;, &quot;Vicary, Chris&quot; &lt;<a href=
+=3D"mailto:chris_vicary@harvard.edu">chris_vicary@harvard.edu</a>&gt;, &quo=
+t;Fox, Bobbi&quot; &lt;<a href=3D"mailto:bobbi_fox@harvard.edu">bobbi_fox@h=
+arvard.edu</a>&gt;,
+ &quot;Vandermillen, Michael&quot; &lt;<a href=3D"mailto:michael_vandermill=
+en@harvard.edu">michael_vandermillen@harvard.edu</a>&gt;, &quot;Goines, Chi=
+p&quot; &lt;<a href=3D"mailto:chip_goines@harvard.edu">chip_goines@harvard.=
+edu</a>&gt;, &quot;Crema, Valdeva&quot; &lt;<a href=3D"mailto:valdeva_crema=
+@harvard.edu">valdeva_crema@harvard.edu</a>&gt;<br><b>Cc: </b>&quot;Siegel,=
+ David E.&quot; &lt;<a href=3D"mailto:dave_siegel@harvard.edu">dave_siegel@=
+harvard.edu</a>&gt;, &quot;Reilly, Grainne&quot; &lt;<a href=3D"mailto:grai=
+nne_reilly@harvard.edu">grainne_reilly@harvard.edu</a>&gt;, &quot;Bayer, Sh=
+aron Boland&quot; &lt;<a href=3D"mailto:sharon_bayer@harvard.edu">sharon_ba=
+yer@harvard.edu</a>&gt;<br><b>Subject: </b>RE: Prod releases of DRS2 compat=
+ible applications<o:p></o:p></span></p></div><div><p class=3D"MsoNormal"><s=
+pan style=3D"font-size:10.5pt;color:black"><o:p>&nbsp;</o:p></span></p></di=
+v><div><div><p class=3D"MsoNormal"><span style=3D"color:#1F497D">Just a rem=
+inder to all that you need to release the non-DRS2 apps below to prod with =
+DRS2 compatibility before 8/12, if they are not already in prod with DRS2 s=
+upport. Please check your apps and make sure the
+ prod version is DRS2 compatible. And please schedule a mov2prod</span><spa=
+n style=3D"color:black"><o:p></o:p></span></p><p class=3D"MsoNormal"><span =
+style=3D"color:#1F497D">&nbsp;</span><span style=3D"color:black"><o:p></o:p=
+></span></p><p class=3D"MsoNormal"><span style=3D"color:#1F497D">Spencer, i=
+s the prod DRS2 services URL of =E2=80=9C<u>drs2-services.lib.harvard.edu</=
+u>=E2=80=9D already in the global config-prod.properties files so people ca=
+n build and deploy at their convenience?</span><span style=3D"color:black">=
+<o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"color:#1F497D">=
+&nbsp;</span><span style=3D"color:black"><o:p></o:p></span></p><p class=3D"=
+MsoListParagraph" style=3D"text-indent:-.25in;mso-list:l0 level1 lfo2"><!--=
+[if !supportLists]--><span style=3D"color:black"><span style=3D"mso-list:Ig=
+nore">-<span style=3D"font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style=3D"color:#1F497D">Randy</spa=
+n><span style=3D"color:black"><o:p></o:p></span></p><p class=3D"MsoNormal">=
+<span style=3D"font-size:10.5pt;color:black">&nbsp;</span><span style=3D"co=
+lor:black"><o:p></o:p></span></p><p class=3D"MsoNormal" style=3D"text-autos=
+pace:none"><span style=3D"font-size: 8pt; color: black; font-family: Arial,=
+ sans-serif; ">Chip - Release PDS to prod</span><span style=3D"color:black"=
+><o:p></o:p></span></p><p class=3D"MsoNormal" style=3D"text-autospace:none"=
+><span style=3D"font-size: 8pt; color: black; font-family: Arial, sans-seri=
+f; ">Chip - Release IDS to prod</span><span style=3D"color:black"><o:p></o:=
+p></span></p><p class=3D"MsoNormal" style=3D"text-autospace:none"><span sty=
+le=3D"font-size: 8pt; color: black; font-family: Arial, sans-serif; ">Bobbi=
+ - Release SDS to prod</span><span style=3D"color:black"><o:p></o:p></span>=
+</p><p class=3D"MsoNormal" style=3D"text-autospace:none"><span style=3D"fon=
+t-size: 8pt; color: black; font-family: Arial, sans-serif; ">Spencer - Rele=
+ase FTS to prod</span><span style=3D"color:black"><o:p></o:p></span></p><p =
+class=3D"MsoNormal" style=3D"text-autospace:none"><span style=3D"font-size:=
+ 8pt; color: black; font-family: Arial, sans-serif; ">Chris - Release OLIVI=
+A servlet to prod</span><span style=3D"color:black"><o:p></o:p></span></p><=
+p class=3D"MsoNormal" style=3D"text-autospace:none"><span style=3D"font-siz=
+e: 8pt; color: black; font-family: Arial, sans-serif; ">Michael - Release V=
+IA to prod</span><span style=3D"color:black"><o:p></o:p></span></p><p class=
+=3D"MsoNormal" style=3D"text-autospace:none"><span style=3D"font-size: 8pt;=
+ color: black; font-family: Arial, sans-serif; ">Dee Dee - Release ACORN to=
+ prod</span><span style=3D"color:black"><o:p></o:p></span></p><p class=3D"M=
+soNormal" style=3D"text-autospace:none"><span style=3D"font-size: 8pt; colo=
+r: black; font-family: Arial, sans-serif; ">Michael - Release id.lib to pro=
+d</span><span style=3D"color:black"><o:p></o:p></span></p><p class=3D"MsoNo=
+rmal" style=3D"text-autospace:none"><span style=3D"font-size: 8pt; color: b=
+lack; font-family: Arial, sans-serif; ">Spencer - Release BatchBuilder with=
+ prod wordshack and prod PRESTO default</span><span style=3D"color:black"><=
+o:p></o:p></span></p><p class=3D"MsoNormal" style=3D"text-autospace:none"><=
+span style=3D"font-size: 8pt; color: black; font-family: Arial, sans-serif;=
+ ">Spencer - Release prod configured DRS loader</span><span style=3D"color:=
+black"><o:p></o:p></span></p><p class=3D"MsoNormal" style=3D"text-autospace=
+:none"><span style=3D"font-size: 8pt; color: black; font-family: Arial, san=
+s-serif; ">Bobbi - Release prod configured Wordshack</span><span style=3D"c=
+olor:black"><o:p></o:p></span></p><p class=3D"MsoNormal" style=3D"text-auto=
+space:none"><span style=3D"font-size: 8pt; color: black; font-family: Arial=
+, sans-serif; ">Spencer - Release prod configured DRS Web Admin</span><span=
+ style=3D"color:black"><o:p></o:p></span></p><p class=3D"MsoNormal" style=
+=3D"text-autospace:none"><span style=3D"font-size: 8pt; color: black; font-=
+family: Arial, sans-serif; ">Spencer - Release prod configured DRS Services=
+</span><span style=3D"color:black"><o:p></o:p></span></p><p class=3D"MsoNor=
+mal" style=3D"text-autospace:none"><span style=3D"font-size: 8pt; color: bl=
+ack; font-family: Arial, sans-serif; ">Grainne - Release&nbsp; EASi QA poin=
+ting back to QA Wordshack and QA DRS Services</span><span style=3D"color:bl=
+ack"><o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"color:#1F4=
+97D">&nbsp;</span><span style=3D"color:black"><o:p></o:p></span></p><p clas=
+s=3D"MsoNormal"><span style=3D"color:#1F497D">&nbsp;</span><span style=3D"c=
+olor:black"><o:p></o:p></span></p><div><div style=3D"border:none;border-top=
+:solid #B5C4DF 1.0pt;padding:3.0pt 0in 0in 0in"><p class=3D"MsoNormal"><b><=
+span style=3D"font-size: 10pt; color: black; font-family: Tahoma, sans-seri=
+f; ">From:</span></b><span style=3D"font-size: 10pt; color: black; font-fam=
+ily: Tahoma, sans-serif; "> McEwen, Spencer
+<br><b>Sent:</b> Tuesday, July 16, 2013 10:23 AM<br><b>To:</b> Stern, Randa=
+ll; Vicary, Chris; Fox, Bobbi; Vandermillen, Michael; Goines, Chip; Crema, =
+Valdeva<br><b>Cc:</b> Siegel, David E.; Reilly, Grainne; Bayer, Sharon Bola=
+nd<br><b>Subject:</b> Re: Prod releases of DRS2 compatible applications</sp=
+an><span style=3D"color:black"><o:p></o:p></span></p></div></div><p class=
+=3D"MsoNormal"><span style=3D"color:black">&nbsp;<o:p></o:p></span></p><div=
+><p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;color:black">The de=
+cision for the starting sequence for DRS2 is independent of all delivery ap=
+plications. &nbsp;All delivery apps have been compatible with DRS2 for year=
+s at this point. &nbsp;Versions that support DRS2
+ are already in production and have been for quite some time. &nbsp;They sh=
+ould all already be first checking for file IDs in DRS1 and if not found ch=
+eck DRS2. &nbsp;Once migration is designed and planned another change will =
+likely need to be made so that if an ID is
+ found in DRS1 but that has been migrated, look to DRS2 for metadata instea=
+d.</span><span style=3D"color:black"><o:p></o:p></span></p></div><div><p cl=
+ass=3D"MsoNormal"><span style=3D"font-size:10.5pt;color:black">&nbsp;</span=
+><span style=3D"color:black"><o:p></o:p></span></p></div><div><p class=3D"M=
+soNormal"><span style=3D"font-size:10.5pt;color:black">For the initial prod=
+uction rollout all you should need to do is configure the application to po=
+int to the prod DRS2 services URL. &nbsp;This property will be in the globa=
+l config-prod.properties files,
+ so all that will need to be done done is to invoke 'ant config' and releas=
+e the app. &nbsp;This can be done ahead of time, after we configure the PRO=
+D DRS2 environment but before we start accepting real content from deposito=
+rs.</span><span style=3D"color:black"><o:p></o:p></span></p></div><div><p c=
+lass=3D"MsoNormal"><span style=3D"font-size:10.5pt;color:black">&nbsp;</spa=
+n><span style=3D"color:black"><o:p></o:p></span></p></div><div><p class=3D"=
+MsoNormal"><span style=3D"font-size:10.5pt;color:black">Spencer</span><span=
+ style=3D"color:black"><o:p></o:p></span></p></div><div><p class=3D"MsoNorm=
+al"><span style=3D"font-size:10.5pt;color:black">&nbsp;</span><span style=
+=3D"color:black"><o:p></o:p></span></p></div><div style=3D"border:none;bord=
+er-top:solid #B5C4DF 1.0pt;padding:3.0pt 0in 0in 0in"><p class=3D"MsoNormal=
+"><b><span style=3D"color:black">From: </span></b><span style=3D"color:blac=
+k">&lt;Stern&gt;, Randall &lt;<a href=3D"mailto:randy_stern@harvard.edu">ra=
+ndy_stern@harvard.edu</a>&gt;<br><b>Date: </b>Monday, July 15, 2013 6:25 PM=
+<br><b>To: </b>&quot;McEwen, Spencer&quot; &lt;<a href=3D"mailto:spencer_mc=
+ewen@harvard.edu">spencer_mcewen@harvard.edu</a>&gt;, &quot;Vicary, Chris&q=
+uot; &lt;<a href=3D"mailto:chris_vicary@harvard.edu">chris_vicary@harvard.e=
+du</a>&gt;, &quot;Fox, Bobbi&quot; &lt;<a href=3D"mailto:bobbi_fox@harvard.=
+edu">bobbi_fox@harvard.edu</a>&gt;,
+ &quot;Vandermillen, Michael&quot; &lt;<a href=3D"mailto:michael_vandermill=
+en@harvard.edu">michael_vandermillen@harvard.edu</a>&gt;, &quot;Goines, Chi=
+p&quot; &lt;<a href=3D"mailto:chip_goines@harvard.edu">chip_goines@harvard.=
+edu</a>&gt;, &quot;Crema, Valdeva&quot; &lt;<a href=3D"mailto:valdeva_crema=
+@harvard.edu">valdeva_crema@harvard.edu</a>&gt;<br><b>Cc: </b>&quot;Siegel,=
+ David E.&quot; &lt;<a href=3D"mailto:dave_siegel@harvard.edu">dave_siegel@=
+harvard.edu</a>&gt;, &quot;Reilly, Grainne&quot; &lt;<a href=3D"mailto:grai=
+nne_reilly@harvard.edu">grainne_reilly@harvard.edu</a>&gt;, &quot;Bayer, Sh=
+aron Boland&quot; &lt;<a href=3D"mailto:sharon_bayer@harvard.edu">sharon_ba=
+yer@harvard.edu</a>&gt;<br><b>Subject: </b>Prod releases of DRS2 compatible=
+ applications<o:p></o:p></span></p></div><div><p class=3D"MsoNormal"><span =
+style=3D"font-size:10.5pt;color:black">&nbsp;</span><span style=3D"color:bl=
+ack"><o:p></o:p></span></p></div><div><div><p class=3D"MsoNormal"><span sty=
+le=3D"color:black">Hi all,<o:p></o:p></span></p><p class=3D"MsoNormal"><spa=
+n style=3D"color:black">&nbsp;<o:p></o:p></span></p><p class=3D"MsoNormal">=
+<span style=3D"color:black">For planning purposes =E2=80=93 and a reminder =
+if you are making any experimental code changes =E2=80=93 in order to relea=
+se DRS2 to production by the end of August, we are going to also have to re=
+lease DRS2 compatible versions
+ of a number of other applications in early August. The list of apps I have=
+ is shown below. This will probably be planned no later than sprint 19 (sta=
+rting 8/5/13). At some point in the future we=E2=80=99ll need to add HGL an=
+d WAX too (and EASi of course).<o:p></o:p></span></p><p class=3D"MsoNormal"=
+><span style=3D"color:black">&nbsp;<o:p></o:p></span></p><p class=3D"MsoNor=
+mal"><span style=3D"color:black">Before you can release, Spencer will need =
+to make some decisions about the threshold for identifying DRS1 vs DRS2 fil=
+es, and possibly specify other configuration settings. Here is the list I h=
+ave, and who would
+ nominally be responsible for each app:<o:p></o:p></span></p><p class=3D"Ms=
+oNormal"><span style=3D"color:black">&nbsp;<o:p></o:p></span></p><p class=
+=3D"MsoNormal" style=3D"text-autospace:none"><span style=3D"font-size: 8pt;=
+ color: black; font-family: Arial, sans-serif; ">Chip - Release PDS to prod=
+</span><span style=3D"color:black"><o:p></o:p></span></p><p class=3D"MsoNor=
+mal" style=3D"text-autospace:none"><span style=3D"font-size: 8pt; color: bl=
+ack; font-family: Arial, sans-serif; ">Chip - Release IDS to prod</span><sp=
+an style=3D"color:black"><o:p></o:p></span></p><p class=3D"MsoNormal" style=
+=3D"text-autospace:none"><span style=3D"font-size: 8pt; color: black; font-=
+family: Arial, sans-serif; ">Bobbi - Release SDS to prod</span><span style=
+=3D"color:black"><o:p></o:p></span></p><p class=3D"MsoNormal" style=3D"text=
+-autospace:none"><span style=3D"font-size: 8pt; color: black; font-family: =
+Arial, sans-serif; ">Spencer - Release FTS to prod</span><span style=3D"col=
+or:black"><o:p></o:p></span></p><p class=3D"MsoNormal" style=3D"text-autosp=
+ace:none"><span style=3D"font-size: 8pt; color: black; font-family: Arial, =
+sans-serif; ">Chris - Release OLIVIA servlet to prod</span><span style=3D"c=
+olor:black"><o:p></o:p></span></p><p class=3D"MsoNormal" style=3D"text-auto=
+space:none"><span style=3D"font-size: 8pt; color: black; font-family: Arial=
+, sans-serif; ">Michael - Release VIA to prod</span><span style=3D"color:bl=
+ack"><o:p></o:p></span></p><p class=3D"MsoNormal" style=3D"text-autospace:n=
+one"><span style=3D"font-size: 8pt; color: black; font-family: Arial, sans-=
+serif; ">Dee Dee - Release ACORN to prod</span><span style=3D"color:black">=
+<o:p></o:p></span></p><p class=3D"MsoNormal" style=3D"text-autospace:none">=
+<span style=3D"font-size: 8pt; color: black; font-family: Arial, sans-serif=
+; ">Michael - Release id.lib to prod</span><span style=3D"color:black"><o:p=
+></o:p></span></p><p class=3D"MsoNormal" style=3D"text-autospace:none"><spa=
+n style=3D"font-size: 8pt; color: black; font-family: Arial, sans-serif; ">=
+Spencer - Release BatchBuilder with prod wordshack and prod PRESTO default<=
+/span><span style=3D"color:black"><o:p></o:p></span></p><p class=3D"MsoNorm=
+al" style=3D"text-autospace:none"><span style=3D"font-size: 8pt; color: bla=
+ck; font-family: Arial, sans-serif; ">Spencer - Release prod configured DRS=
+ loader</span><span style=3D"color:black"><o:p></o:p></span></p><p class=3D=
+"MsoNormal" style=3D"text-autospace:none"><span style=3D"font-size: 8pt; co=
+lor: black; font-family: Arial, sans-serif; ">Bobbi - Release prod configur=
+ed Wordshack</span><span style=3D"color:black"><o:p></o:p></span></p><p cla=
+ss=3D"MsoNormal" style=3D"text-autospace:none"><span style=3D"font-size: 8p=
+t; color: black; font-family: Arial, sans-serif; ">Spencer - Release prod c=
+onfigured DRS Web Admin</span><span style=3D"color:black"><o:p></o:p></span=
+></p><p class=3D"MsoNormal" style=3D"text-autospace:none"><span style=3D"fo=
+nt-size: 8pt; color: black; font-family: Arial, sans-serif; ">Spencer - Rel=
+ease prod configured DRS Services</span><span style=3D"color:black"><o:p></=
+o:p></span></p><p class=3D"MsoNormal" style=3D"text-autospace:none"><span s=
+tyle=3D"font-size: 8pt; color: black; font-family: Arial, sans-serif; ">Gra=
+inne - Release&nbsp; EASi QA pointing back to QA Wordshack and QA DRS Servi=
+ces</span><span style=3D"color:black"><o:p></o:p></span></p><p class=3D"Mso=
+Normal" style=3D"text-autospace:none"><span style=3D"font-size: 8pt; color:=
+ black; font-family: Arial, sans-serif; ">&nbsp;</span><span style=3D"color=
+:black"><o:p></o:p></span></p><p class=3D"MsoNormal"><span style=3D"color:b=
+lack">Please let me know if anything is missing=E2=80=A6<o:p></o:p></span><=
+/p><p class=3D"MsoNormal"><span style=3D"color:black">&nbsp;<o:p></o:p></sp=
+an></p><p class=3D"MsoNormal"><span style=3D"color:black">And Spencer =E2=
+=80=93 what guidelines will you need to provide?<o:p></o:p></span></p><p cl=
+ass=3D"MsoNormal"><span style=3D"color:black">&nbsp;<o:p></o:p></span></p><=
+p class=3D"MsoListParagraph" style=3D"text-indent:-.25in;mso-list:l1 level1=
+ lfo4"><!--[if !supportLists]--><span style=3D"color:black"><span style=3D"=
+mso-list:Ignore">-<span style=3D"font:7.0pt &quot;Times New Roman&quot;">&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style=3D"color:black">Randy<o:p></=
+o:p></span></p></div></div></div></div></div></div></div></span></body></ht=
+ml>
+
+------=_NextPart_000_006A_01D8856F.B2C07110--
+
+

@@ -1,0 +1,112 @@
+Subject: Please Purchase Emailchemy
+From: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Sender: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Date: Thu, 30 Apr 2015 12:05:15 -0400
+To: "Wetherill, Julie M." <julie_wetherill@harvard.edu>
+Message-ID: <D167CAF7.1A588%grainne_reilly@harvard.edu>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_NextPart_000_00B0_01D8856F.B31EE4C0"
+X-ePADD-Folder: C:\Users\jmw922\Documents\ePADD-related\JWEASFolderMBOX\mbox-DRSintegration\DRSintegration.mbox
+X-ePADD-Labels: 
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQHQg19yj9F1arfyZkKsJryJ4OdAoQ==
+Content-Language: en-us
+x-ms-exchange-organization-authas: Internal
+x-ms-exchange-organization-authsource: SN2PR07MB064.namprd07.prod.outlook.com
+acceptlanguage: en-US
+x-originating-ip: [128.103.224.79]
+x-ms-exchange-organization-authmechanism: 04
+
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_00B0_01D8856F.B31EE4C0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Julie,
+
+Here is some information on the QA EAS "Push packet events to DRS2"
+process.
+
+The only packet level events in EAS are those created when an item is
+deleted from EAS.  The generated event has a "DELETE_COMPONENT" event
+type and is associated with the EAS Packet.  They may be viewed in EAS
+at https://easi-qa.lib.harvard.edu:9035/easi/packets.action?tab=3Devents .
+
+These events are only pushed to DRS2 if the corresponding EAS Packet has
+already been pushed to DRS2, which occurs when an item from the packet
+is pushed to DRS2.  By delaying the timing of the push of EAS Packet
+delete events in this way it permits the users to delete all items from
+a packet as they work on it and ultimately decide that they do not want
+to preserve the packet.  In this way the DRS2 will not be cluttered with
+delete events which the user does not want to preserve.
+
+The "Push packet events to DRS" runs as a cron job each evening at
+20:30pm.
+The EAS DRS prearchiver runs every 5 minutes between 8am and 8pm Monday
+through Saturday.
+
+In order to test the "Push packet events to DRS" functionality you will
+need to find a packet which exists in both EAS and DRS2 and which has
+associated items in EAS.  I'm not sure of the most efficient way of
+determining this. You could have two tests, one which depends upon the
+other
+
+1.=09Push items from EAS to the DRS2 =C2=96 taking note of the packet id
+in EAS and the resulting packet object id in DRS2.
+2.=09Wait 5 minutes to be sure the EAS prearchiver has run and then
+delete items from the same packet in EAS.
+3.=09Request that I enable the "Push packet events to DRS2" jobs in
+QA
+4.=09Verify results in DRS2 once the DRS2 index update has run (you
+won't see the events until that happens)
+
+I hope that this helps?
+
+Thanks,
+Grainne
+
+
+------=_NextPart_000_00B0_01D8856F.B31EE4C0
+Content-Type: text/html;charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1"></head><body style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; -=
+webkit-line-break: after-white-space; color: rgb(0, 0, 0); font-size: 14px;=
+ font-family: Calibri, sans-serif; "><div>Hi Julie,</div><div><br></div><di=
+v>Here is some information on the QA EAS &quot;Push packet events to DRS2&q=
+uot; process.</div><div><br></div><div>The only packet level events in EAS =
+are those created when an item is deleted from EAS. &nbsp;The generated eve=
+nt has a &quot;DELETE_COMPONENT&quot; event type and is associated with the=
+ EAS Packet. &nbsp;They may be viewed in EAS at&nbsp;<a href=3D"https://eas=
+i-qa.lib.harvard.edu:9035/easi/packets.action?tab=3Devents">https://easi-qa=
+.lib.harvard.edu:9035/easi/packets.action?tab=3Devents</a>&nbsp;.</div><div=
+><br></div><div>These events are only pushed to DRS2 if the corresponding E=
+AS Packet has already been pushed to DRS2, which occurs when an item from t=
+he packet is pushed to DRS2. &nbsp;By delaying the timing of the push of EA=
+S Packet delete events in this way it permits the users to delete all items=
+ from a packet as they work on it and ultimately decide that they do not wa=
+nt to preserve the packet. &nbsp;In this way the DRS2 will not be cluttered=
+ with delete events which the user does not want to preserve.</div><div><br=
+></div><div>The &quot;Push packet events to DRS&quot; runs as a cron job ea=
+ch evening at 20:30pm.</div><div>The EAS DRS prearchiver runs every 5 minut=
+es between 8am and 8pm Monday through Saturday.</div><div><br></div><div>In=
+ order to test the &quot;Push packet events to DRS&quot; functionality you =
+will need to find a packet which exists in both EAS and DRS2 and which has =
+associated items in EAS. &nbsp;I'm not sure of the most efficient way of de=
+termining this. You could have two tests, one which depends upon the other<=
+/div><ol><li>Push items from EAS to the DRS2 &#8211; taking note of the pac=
+ket id in EAS and the resulting packet object id in DRS2.</li><li>Wait 5 mi=
+nutes to be sure the EAS prearchiver has run and then delete items from the=
+ same packet in EAS.</li><li>Request that I enable the &quot;Push packet ev=
+ents to DRS2&quot; jobs in QA</li><li>Verify results in DRS2 once the DRS2 =
+index update has run (you won't see the events until that happens)</li></ol=
+>I hope that this helps?<div><br></div><div>Thanks,</div><div>Grainne</div>=
+</body></html>
+
+------=_NextPart_000_00B0_01D8856F.B31EE4C0--
+
+

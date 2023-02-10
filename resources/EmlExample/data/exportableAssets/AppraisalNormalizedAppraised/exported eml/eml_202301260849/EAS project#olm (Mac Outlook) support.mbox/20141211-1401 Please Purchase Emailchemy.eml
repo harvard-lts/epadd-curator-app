@@ -1,0 +1,140 @@
+Subject: Please Purchase Emailchemy
+From: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Sender: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Date: Thu, 11 Dec 2014 14:01:17 -0500
+To: "Swierczek, Julie" <julie_swierczek@harvard.edu>,
+   "Kendall, Skip" <skip_kendall@harvard.edu>
+CC: "Wetherill, Julie M." <julie_wetherill@harvard.edu>,
+   "Reilly, Grainne" <grainne_reilly@harvard.edu>
+Message-ID: <BLUPR0701MB769EFD087A2D09A08AB25D38A360@BLUPR0701MB769.namprd07.prod.outlook.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_NextPart_000_00BC_01D8856F.B3379CE0"
+X-ePADD-Folder: C:\Users\jmw922\Documents\ePADD-related\JWEASFolderMBOX\EAS project#olm (Mac Outlook) support.mbox
+X-ePADD-Labels: 
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQHRAS63X7EPshw4ykmEW6vh6XFJUQ==
+Content-Language: en-us
+x-ms-exchange-organization-authas: Internal
+x-ms-exchange-organization-authsource: BLUPR0701MB769.namprd07.prod.outlook.com
+acceptlanguage: en-US
+x-originating-ip: [128.103.24.79]
+x-ms-exchange-organization-authmechanism: 04
+
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_00BC_01D8856F.B3379CE0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Julie and Skip,
+
+
+
+
+It appears that LTS and the Library have decided to fast-track
+development on .olm support in EAS. Since your units have asked about
+Outlook Mac support, I have a few questions for you (to help get this
+effort started).
+
+
+
+
+#1 What version of Outlook Mac are the files you want to process?
+
+#2 Can you provide a *clean* sample of .olm data for LTS testing?
+
+#3 Do you know a way to export to .olm selectively by mail folder?
+
+
+
+
+The task in question #3 (how to selectively archive to .olm format)
+might be harder than it looks. I know you can archive an entire mail
+account to .olm, but there is no evidence you can limit archiving to a
+single folder. You can filter archiving by "category" so I suppose an
+Outlook Mac user could define a fake category and assign it to a subset
+of messages, then archive on the category.
+
+
+
+
+We need *clean* data only, so ability to cherry-pick out any sensitive
+data is important.
+
+
+
+
+Thanks for your help. --julie
+
+
+
+
+Julie Wetherill
+
+Library Technology Services
+
+
+
+
+=20
+
+
+
+------=_NextPart_000_00BC_01D8856F.B3379CE0
+Content-Type: text/html;charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style type=3D"text/css" style=3D"display:none;"><!-- P {margin-top:0;margi=
+n-bottom:0;} --></style>
+</head>
+<body dir=3D"ltr">
+<div id=3D"divtagdefaultwrapper" style=3D"font-size:12pt;color:#000000;back=
+ground-color:#FFFFFF;font-family:Calibri,Arial,Helvetica,sans-serif;">
+<p>Hi Julie and Skip,</p>
+<p><br>
+</p>
+<p>It appears that LTS and the Library have decided to&nbsp;fast-track deve=
+lopment on .olm support in EAS. Since your units have asked about Outlook M=
+ac support, I have a few questions for you (to help get this effort started=
+).</p>
+<p><br>
+</p>
+<p>#1 What version of Outlook Mac are the files you want to process?</p>
+<p>#2 Can&nbsp;you provide a *clean* sample of .olm&nbsp;data for LTS testi=
+ng?</p>
+<p>#3 Do you know a way to export to .olm&nbsp;selectively by mail folder?<=
+/p>
+<p><br>
+</p>
+<p>The task in question #3 (how to selectively archive to .olm format) migh=
+t be harder than it looks. I know you can archive an entire mail account to=
+ .olm, but there is no evidence you can limit&nbsp;archiving to a single fo=
+lder. You can filter archiving by &quot;category&quot;
+ so I suppose an Outlook Mac user could define a fake category and assign i=
+t to a subset of messages, then archive on the category.</p>
+<p><br>
+</p>
+<p>We need *clean* data only, so ability to&nbsp;cherry-pick out&nbsp;any s=
+ensitive data is important.</p>
+<p><br>
+</p>
+<p>Thanks for your help. --julie</p>
+<p><br>
+</p>
+<p>Julie Wetherill</p>
+<p>Library Technology Services</p>
+<p><br>
+</p>
+<p>&nbsp;</p>
+</div>
+</body>
+</html>
+
+------=_NextPart_000_00BC_01D8856F.B3379CE0--
+
+

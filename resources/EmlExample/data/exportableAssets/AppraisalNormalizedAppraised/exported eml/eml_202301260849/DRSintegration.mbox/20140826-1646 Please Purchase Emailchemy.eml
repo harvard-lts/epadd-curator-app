@@ -1,0 +1,402 @@
+Subject: Please Purchase Emailchemy
+From: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Sender: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Date: Tue, 26 Aug 2014 16:46:09 -0400
+To: "Reilly, Grainne" <grainne_reilly@harvard.edu>,
+   "Vicary, Chris" <chris_vicary@harvard.edu>
+CC: "Gogel, Wendy M." <wendy_gogel@harvard.edu>,
+   "Goethals, Andrea" <andrea_goethals@harvard.edu>,
+   "Wetherill, Julie M." <julie_wetherill@harvard.edu>
+Message-ID: <fc5d4b2931c446e1b82164a338ca74ad@BY2PR07MB922.namprd07.prod.outlook.com>
+In-Reply-To: <D0223AF0.112B1%grainne_reilly@harvard.edu>
+References: <D020E22A.110A7%grainne_reilly@harvard.edu> <D0223AF0.112B1%grainne_reilly@harvard.edu>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_NextPart_000_0090_01D8856F.B2F6EA60"
+X-ePADD-Folder: C:\Users\jmw922\Documents\ePADD-related\JWEASFolderMBOX\mbox-DRSintegration\DRSintegration.mbox
+X-ePADD-Labels: 
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQHPwIUI/c3cdj+oZUW6BM5bb+FqkZvi4iIAgAB50fA=
+Content-Language: en-us
+x-ms-exchange-organization-authas: Internal
+x-ms-exchange-organization-authsource: BY2PR07MB922.namprd07.prod.outlook.com
+acceptlanguage: en-US
+x-originating-ip: [128.103.151.59]
+x-ms-exchange-organization-authmechanism: 03
+
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0090_01D8856F.B2F6EA60
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Chris - a heads up- for planning purposes I moved the release to QA of
+DRS 2.6 up one sprint into the next sprint (starting after labor day) so
+we can support the EAS QA and Beta release schedule. I guess this story
+may be needed also.
+
+=20
+
+From: Reilly, Grainne=20
+Sent: Tuesday, August 26, 2014 1:28 PM
+To: Vicary, Chris
+Cc: Gogel, Wendy M.; Goethals, Andrea; Stern, Randy; Wetherill, Julie M.
+Subject: FW: EAS dependencies on DRS2
+
+=20
+
+=20
+
+Hi Chris,
+
+=20
+
+I forgot one other jira issue which affects EAS and which is still in
+the backlog:
+
+=20
+
+5. Object created via Object Ingest Service call not available during
+subsequent Batch upload
+
+https://jira.huit.harvard.edu/browse/LIBDRS-1223
+
+This issue caused EAS batches to fail initially, but they could be
+loaded by later renaming batch.xml.failed to batch.xml and recreating
+the loading file.
+
+=20
+
+Thanks,
+
+Grainne
+
+=20
+
+=20
+
+=20
+
+=20
+
+From: <Reilly>, "Reilly, Grainne" <grainne_reilly@harvard.edu
+<mailto:grainne_reilly@harvard.edu> >
+Date: Monday, August 25, 2014 12:52 PM
+To: "Vicary, Chris" <chris_vicary@harvard.edu
+<mailto:chris_vicary@harvard.edu> >
+Cc: "Gogel, Wendy M." <wendy_gogel@harvard.edu
+<mailto:wendy_gogel@harvard.edu> >, "Goethals, Andrea"
+<andrea_goethals@harvard.edu <mailto:andrea_goethals@harvard.edu> >,
+"Stern, Randy" <randy_stern@harvard.edu <mailto:randy_stern@harvard.edu>
+>, "Wetherill, Julie M." <julie_wetherill@harvard.edu
+<mailto:julie_wetherill@harvard.edu> >
+Subject: EAS dependencies on DRS2
+
+=20
+
+Hi Chris,
+
+=20
+
+We  are currently planning on having a meeting with the EAS stakeholders
+on the morning of Monday September 15th - where we normally have a demo
+of EAS in QA which should have been well tested in QA previously.
+Unfortunately during testing of EAS we uncovered various issues, some of
+which need to be included in DRS in order for the EAS push to DRS to
+work.  These issues have either been fixed and tested in DRS2 DEV or
+soon will be.
+
+=20
+
+We are hoping that you can do a QA release of DRS before September 15th
+so that EAS QA can be properly tested and released to the EAS users on
+September 15th.
+
+=20
+
+Here are the current known issues which EAS needs to be released to DRS2
+QA and PROD before EAS can be released to the users in either of those
+environments:=20
+
+=20
+
+1. Ingested Review Date/Note overwritten in DRS2 Web Admin
+
+https://jira.huit.harvard.edu/browse/LIBDRS-1203
+
+Without this change review dates are not stored correctly in DRS and
+will be overwritten if a review date is added via DRS Web Admin.
+
+=20
+
+2. OTS needs to accept a wildcard for mime subtype
+
+https://jira.huit.harvard.edu/browse/LIBDRS-1266
+
+Without this change items from eudora and outlook mailboxes will be
+rejected by DRS when pushed from EAS to DRS
+
+=20
+
+3. OTS: allow objects to have multiple rights blocks with a secure
+storage restriction
+
+https://jira.huit.harvard.edu/browse/LIBDRS-1191
+
+Without this change items with multiple rights blocks with a secure
+storage restriction will be rejected by DRS when pushed from EAS to DRS
+
+This version of OTS is due to to "released" by end of day tomorrow
+(Tuesday)
+
+=20
+
+4. Update FITS code in Github
+
+https://jira.huit.harvard.edu/browse/LIBDRS-1189
+
+Note that EAS will use FITS 0.8.2 when generating the descriptors for
+pushing to DRS.  This version of FITS contains a fix to a threading
+issue which affects EAS.  It also includes some other changes used in
+DRS migration. This version of FITS is due to be officially released by
+end of day tomorrow (Tuesday).
+
+=20
+
+Will it be possible to do a release of DRS2 to QA earlier than you had
+scheduled?
+
+=20
+
+Thanks,
+
+Grainne
+
+=20
+
+=20
+
+=20
+
+
+
+------=_NextPart_000_0090_01D8856F.B2F6EA60
+Content-Type: text/html;charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40"><head><META HTTP-EQUIV=3D"Content-Type" CONTENT=
+=3D"text/html; charset=3Dus-ascii"><meta name=3DGenerator content=3D"Micros=
+oft Word 14 (filtered medium)"><style><!--
+/* Font Definitions */
+@font-face
+=09{font-family:Calibri;
+=09panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+=09{font-family:Tahoma;
+=09panose-1:2 11 6 4 3 5 4 4 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+=09{margin:0in;
+=09margin-bottom:.0001pt;
+=09font-size:12.0pt;
+=09font-family:"Times New Roman","serif";}
+a:link, span.MsoHyperlink
+=09{mso-style-priority:99;
+=09color:blue;
+=09text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+=09{mso-style-priority:99;
+=09color:purple;
+=09text-decoration:underline;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+=09{mso-style-priority:99;
+=09mso-style-link:"Balloon Text Char";
+=09margin:0in;
+=09margin-bottom:.0001pt;
+=09font-size:8.0pt;
+=09font-family:"Tahoma","sans-serif";}
+span.BalloonTextChar
+=09{mso-style-name:"Balloon Text Char";
+=09mso-style-priority:99;
+=09mso-style-link:"Balloon Text";
+=09font-family:"Tahoma","sans-serif";}
+span.EmailStyle19
+=09{mso-style-type:personal-reply;
+=09font-family:"Calibri","sans-serif";
+=09color:#1F497D;}
+.MsoChpDefault
+=09{mso-style-type:export-only;
+=09font-size:10.0pt;}
+@page WordSection1
+=09{size:8.5in 11.0in;
+=09margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+=09{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]--></head><body lang=3DEN-US link=3Dblue vli=
+nk=3Dpurple><div class=3DWordSection1><p class=3DMsoNormal><span style=3D'f=
+ont-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'>Chris - a=
+ heads up&#8211; for planning purposes I moved the release to QA of DRS 2.6=
+ up one sprint into the next sprint (starting after labor day) so we can su=
+pport the EAS QA and Beta release schedule. I guess this story may be neede=
+d also&#8230;<o:p></o:p></span></p><p class=3DMsoNormal><span style=3D'font=
+-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'><o:p>&nbsp;<=
+/o:p></span></p><div><div style=3D'border:none;border-top:solid #B5C4DF 1.0=
+pt;padding:3.0pt 0in 0in 0in'><p class=3DMsoNormal><b><span style=3D'font-s=
+ize:10.0pt;font-family:"Tahoma","sans-serif"'>From:</span></b><span style=
+=3D'font-size:10.0pt;font-family:"Tahoma","sans-serif"'> Reilly, Grainne <b=
+r><b>Sent:</b> Tuesday, August 26, 2014 1:28 PM<br><b>To:</b> Vicary, Chris=
+<br><b>Cc:</b> Gogel, Wendy M.; Goethals, Andrea; Stern, Randy; Wetherill, =
+Julie M.<br><b>Subject:</b> FW: EAS dependencies on DRS2<o:p></o:p></span><=
+/p></div></div><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><div><p class=3DMs=
+oNormal><span style=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";=
+color:black'><o:p>&nbsp;</o:p></span></p></div><div><p class=3DMsoNormal><s=
+pan style=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color:blac=
+k'>Hi Chris,<o:p></o:p></span></p></div><div><p class=3DMsoNormal><span sty=
+le=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color:black'><o:p=
+>&nbsp;</o:p></span></p></div><div><p class=3DMsoNormal><span style=3D'font=
+-size:10.5pt;font-family:"Calibri","sans-serif";color:black'>I forgot one o=
+ther jira issue which affects EAS and which is still in the backlog:<o:p></=
+o:p></span></p></div><div><p class=3DMsoNormal><span style=3D'font-size:10.=
+5pt;font-family:"Calibri","sans-serif";color:black'><o:p>&nbsp;</o:p></span=
+></p></div><div><p class=3DMsoNormal><span style=3D'font-size:10.5pt;font-f=
+amily:"Calibri","sans-serif";color:black'>5.&nbsp;Object created via Object=
+ Ingest Service call not available during subsequent Batch upload<o:p></o:p=
+></span></p></div><div><p class=3DMsoNormal><span style=3D'font-size:10.5pt=
+;font-family:"Calibri","sans-serif";color:black'><a href=3D"https://jira.hu=
+it.harvard.edu/browse/LIBDRS-1223">https://jira.huit.harvard.edu/browse/LIB=
+DRS-1223</a><o:p></o:p></span></p></div><div><p class=3DMsoNormal><span sty=
+le=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color:black'>This=
+ issue caused EAS batches to fail initially, but they could be loaded by la=
+ter renaming batch.xml.failed to batch.xml and recreating the loading file.=
+<o:p></o:p></span></p></div><div><p class=3DMsoNormal><span style=3D'font-s=
+ize:10.5pt;font-family:"Calibri","sans-serif";color:black'><o:p>&nbsp;</o:p=
+></span></p></div><div><p class=3DMsoNormal><span style=3D'font-size:10.5pt=
+;font-family:"Calibri","sans-serif";color:black'>Thanks,<o:p></o:p></span><=
+/p></div><div><p class=3DMsoNormal><span style=3D'font-size:10.5pt;font-fam=
+ily:"Calibri","sans-serif";color:black'>Grainne<o:p></o:p></span></p></div>=
+<div><p class=3DMsoNormal><span style=3D'font-size:10.5pt;font-family:"Cali=
+bri","sans-serif";color:black'><o:p>&nbsp;</o:p></span></p></div><div><p cl=
+ass=3DMsoNormal><span style=3D'font-size:10.5pt;font-family:"Calibri","sans=
+-serif";color:black'><o:p>&nbsp;</o:p></span></p></div><div><p class=3DMsoN=
+ormal><span style=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";co=
+lor:black'><o:p>&nbsp;</o:p></span></p></div><div><p class=3DMsoNormal><spa=
+n style=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color:black'=
+><o:p>&nbsp;</o:p></span></p></div><div style=3D'border:none;border-top:sol=
+id #B5C4DF 1.0pt;padding:3.0pt 0in 0in 0in'><p class=3DMsoNormal><b><span s=
+tyle=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:black'>Fr=
+om: </span></b><span style=3D'font-size:11.0pt;font-family:"Calibri","sans-=
+serif";color:black'>&lt;Reilly&gt;, &quot;Reilly, Grainne&quot; &lt;<a href=
+=3D"mailto:grainne_reilly@harvard.edu">grainne_reilly@harvard.edu</a>&gt;<b=
+r><b>Date: </b>Monday, August 25, 2014 12:52 PM<br><b>To: </b>&quot;Vicary,=
+ Chris&quot; &lt;<a href=3D"mailto:chris_vicary@harvard.edu">chris_vicary@h=
+arvard.edu</a>&gt;<br><b>Cc: </b>&quot;Gogel, Wendy M.&quot; &lt;<a href=3D=
+"mailto:wendy_gogel@harvard.edu">wendy_gogel@harvard.edu</a>&gt;, &quot;Goe=
+thals, Andrea&quot; &lt;<a href=3D"mailto:andrea_goethals@harvard.edu">andr=
+ea_goethals@harvard.edu</a>&gt;, &quot;Stern, Randy&quot; &lt;<a href=3D"ma=
+ilto:randy_stern@harvard.edu">randy_stern@harvard.edu</a>&gt;, &quot;Wether=
+ill, Julie M.&quot; &lt;<a href=3D"mailto:julie_wetherill@harvard.edu">juli=
+e_wetherill@harvard.edu</a>&gt;<br><b>Subject: </b>EAS dependencies on DRS2=
+<o:p></o:p></span></p></div><div><p class=3DMsoNormal><span style=3D'font-s=
+ize:10.5pt;font-family:"Calibri","sans-serif";color:black'><o:p>&nbsp;</o:p=
+></span></p></div><div><div><div><p class=3DMsoNormal><span style=3D'font-s=
+ize:10.5pt;font-family:"Calibri","sans-serif";color:black'>Hi Chris,<o:p></=
+o:p></span></p></div><div><p class=3DMsoNormal><span style=3D'font-size:10.=
+5pt;font-family:"Calibri","sans-serif";color:black'><o:p>&nbsp;</o:p></span=
+></p></div><div><p class=3DMsoNormal><span style=3D'font-size:10.5pt;font-f=
+amily:"Calibri","sans-serif";color:black'>We &nbsp;are currently planning o=
+n having a meeting with the EAS stakeholders on the morning of Monday Septe=
+mber 15th &#8211; where we normally have a demo of EAS in QA which should h=
+ave been well tested in QA previously. &nbsp;Unfortunately during testing o=
+f EAS we uncovered various issues, some of which need to be included in DRS=
+ in order for the EAS push to DRS to work. &nbsp;These issues have either b=
+een fixed and tested in DRS2 DEV or soon will be.<o:p></o:p></span></p></di=
+v><div><p class=3DMsoNormal><span style=3D'font-size:10.5pt;font-family:"Ca=
+libri","sans-serif";color:black'><o:p>&nbsp;</o:p></span></p></div><div><p =
+class=3DMsoNormal><span style=3D'font-size:10.5pt;font-family:"Calibri","sa=
+ns-serif";color:black'>We are hoping that you can do a QA release of DRS be=
+fore September 15th so that EAS QA can be properly tested and released to t=
+he EAS users on September 15th.<o:p></o:p></span></p></div><div><p class=3D=
+MsoNormal><span style=3D'font-size:10.5pt;font-family:"Calibri","sans-serif=
+";color:black'><o:p>&nbsp;</o:p></span></p></div><div><p class=3DMsoNormal>=
+<span style=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color:bl=
+ack'>Here are the current known issues which EAS needs to be released to DR=
+S2 QA and PROD before EAS can be released to the users in either of those e=
+nvironments:&nbsp;<o:p></o:p></span></p></div><div><p class=3DMsoNormal><sp=
+an style=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color:black=
+'><o:p>&nbsp;</o:p></span></p></div><div><p class=3DMsoNormal><span style=
+=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color:black'>1. Ing=
+ested Review Date/Note overwritten in DRS2 Web Admin<o:p></o:p></span></p><=
+/div><div><p class=3DMsoNormal><span style=3D'font-size:10.5pt;font-family:=
+"Calibri","sans-serif";color:black'><a href=3D"https://jira.huit.harvard.ed=
+u/browse/LIBDRS-1203">https://jira.huit.harvard.edu/browse/LIBDRS-1203</a><=
+o:p></o:p></span></p></div><div><p class=3DMsoNormal><span style=3D'font-si=
+ze:10.5pt;font-family:"Calibri","sans-serif";color:black'>Without this chan=
+ge review dates are not stored correctly in DRS and will be overwritten if =
+a review date is added via DRS Web Admin.<o:p></o:p></span></p></div><div><=
+p class=3DMsoNormal><span style=3D'font-size:10.5pt;font-family:"Calibri","=
+sans-serif";color:black'><o:p>&nbsp;</o:p></span></p></div><div><p class=3D=
+MsoNormal><span style=3D'font-size:10.5pt;font-family:"Calibri","sans-serif=
+";color:black'>2. OTS needs to accept a wildcard for mime subtype<o:p></o:p=
+></span></p></div><div><p class=3DMsoNormal><span style=3D'font-size:10.5pt=
+;font-family:"Calibri","sans-serif";color:black'><a href=3D"https://jira.hu=
+it.harvard.edu/browse/LIBDRS-1266">https://jira.huit.harvard.edu/browse/LIB=
+DRS-1266</a><o:p></o:p></span></p></div><div><p class=3DMsoNormal><span sty=
+le=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color:black'>With=
+out this change items from eudora and outlook mailboxes will be rejected by=
+ DRS when pushed from EAS to DRS<o:p></o:p></span></p></div><div><p class=
+=3DMsoNormal><span style=3D'font-size:10.5pt;font-family:"Calibri","sans-se=
+rif";color:black'><o:p>&nbsp;</o:p></span></p></div><div><p class=3DMsoNorm=
+al><span style=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color=
+:black'>3. OTS: allow objects to have multiple rights blocks with a secure =
+storage restriction<o:p></o:p></span></p></div><div><p class=3DMsoNormal><s=
+pan style=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color:blac=
+k'><a href=3D"https://jira.huit.harvard.edu/browse/LIBDRS-1191">https://jir=
+a.huit.harvard.edu/browse/LIBDRS-1191</a><o:p></o:p></span></p></div><div><=
+p class=3DMsoNormal><span style=3D'font-size:10.5pt;font-family:"Calibri","=
+sans-serif";color:black'>Without this change items with multiple rights blo=
+cks with a secure storage restriction will be rejected by DRS when pushed f=
+rom EAS to DRS<o:p></o:p></span></p></div><div><p class=3DMsoNormal><span s=
+tyle=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color:black'>Th=
+is version of OTS is due to to &quot;released&quot; by end of day tomorrow =
+(Tuesday)<o:p></o:p></span></p></div><div><p class=3DMsoNormal><span style=
+=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color:black'><o:p>&=
+nbsp;</o:p></span></p></div><div><p class=3DMsoNormal><span style=3D'font-s=
+ize:10.5pt;font-family:"Calibri","sans-serif";color:black'>4. Update FITS c=
+ode in Github<o:p></o:p></span></p></div><div><p class=3DMsoNormal><span st=
+yle=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color:black'><a =
+href=3D"https://jira.huit.harvard.edu/browse/LIBDRS-1189">https://jira.huit=
+.harvard.edu/browse/LIBDRS-1189</a><o:p></o:p></span></p></div><div><p clas=
+s=3DMsoNormal><span style=3D'font-size:10.5pt;font-family:"Calibri","sans-s=
+erif";color:black'>Note that EAS will use FITS 0.8.2 when generating the de=
+scriptors for pushing to DRS. &nbsp;This version of FITS contains a fix to =
+a threading issue which affects EAS. &nbsp;It also includes some other chan=
+ges used in DRS migration. This version of FITS is due to be officially rel=
+eased by end of day tomorrow (Tuesday).<o:p></o:p></span></p></div><div><p =
+class=3DMsoNormal><span style=3D'font-size:10.5pt;font-family:"Calibri","sa=
+ns-serif";color:black'><o:p>&nbsp;</o:p></span></p></div><div><p class=3DMs=
+oNormal><span style=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";=
+color:black'>Will it be possible to do a release of DRS2 to QA earlier than=
+ you had scheduled?<o:p></o:p></span></p></div><div><p class=3DMsoNormal><s=
+pan style=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color:blac=
+k'><o:p>&nbsp;</o:p></span></p></div><div><p class=3DMsoNormal><span style=
+=3D'font-size:10.5pt;font-family:"Calibri","sans-serif";color:black'>Thanks=
+,<o:p></o:p></span></p></div><div><p class=3DMsoNormal><span style=3D'font-=
+size:10.5pt;font-family:"Calibri","sans-serif";color:black'>Grainne<o:p></o=
+:p></span></p></div><div><p class=3DMsoNormal><span style=3D'font-size:10.5=
+pt;font-family:"Calibri","sans-serif";color:black'><o:p>&nbsp;</o:p></span>=
+</p></div><div><p class=3DMsoNormal><span style=3D'font-size:10.5pt;font-fa=
+mily:"Calibri","sans-serif";color:black'><o:p>&nbsp;</o:p></span></p></div>=
+<div><p class=3DMsoNormal><span style=3D'font-size:10.5pt;font-family:"Cali=
+bri","sans-serif";color:black'><o:p>&nbsp;</o:p></span></p></div></div></di=
+v></div></body></html>
+------=_NextPart_000_0090_01D8856F.B2F6EA60--
+
+

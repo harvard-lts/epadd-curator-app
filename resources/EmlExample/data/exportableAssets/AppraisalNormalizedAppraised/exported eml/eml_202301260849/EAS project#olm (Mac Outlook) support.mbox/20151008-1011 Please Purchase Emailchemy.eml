@@ -1,0 +1,347 @@
+Subject: Please Purchase Emailchemy
+From: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Sender: "Weird Kid Software" <emailchemydemo@weirdkid.com>
+Date: Thu, 08 Oct 2015 10:11:36 -0400
+To: "Wetherill, Julie M." <julie_wetherill@harvard.edu>,
+   "Kendall, Skip" <skip_kendall@harvard.edu>
+CC: "Reilly, Grainne" <grainne_reilly@harvard.edu>
+Message-ID: <DM2PR0701MB779554092D1511C6A4371F397350@DM2PR0701MB779.namprd07.prod.outlook.com>
+In-Reply-To: <BLUPR0701MB769EFD087A2D09A08AB25D38A360@BLUPR0701MB769.namprd07.prod.outlook.com>
+References: <BLUPR0701MB769EFD087A2D09A08AB25D38A360@BLUPR0701MB769.namprd07.prod.outlook.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_NextPart_000_00C4_01D8856F.B34139D0"
+X-ePADD-Folder: C:\Users\jmw922\Documents\ePADD-related\JWEASFolderMBOX\EAS project#olm (Mac Outlook) support.mbox
+X-ePADD-Labels: 
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQHRAS63X7EPshw4ykmEW6vh6XFJUZ5hm/lw
+Content-Language: en-us
+x-ms-exchange-organization-authas: Internal
+x-ms-exchange-organization-authsource: DM2PR0701MB779.namprd07.prod.outlook.com
+acceptlanguage: en-US
+x-originating-ip: [140.247.85.103]
+x-ms-exchange-organization-authmechanism: 04
+
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_00C4_01D8856F.B34139D0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Julie, Grainne, and Skip,
+
+=20
+
+We are currently using Outlook 2011 on Mac.  I don't think that there
+are any .olm files floating around the museums from previous Outlook
+versions.=20
+
+=20
+
+I will attempt to provide a clean sample.  It will take me a few hours
+to make one.
+
+=20
+
+As for exporting selectively, I currently take the approach - and this
+is possibly not the best approach, but it's better than nothing - of
+creating a copy of the email, opening it in an empty Outlook 2011
+client, removing all the content we don't want, and then re-exporting
+the .olm file.  (I hang on to the original for a little while in case I
+think of something else I should change, or if I have second thoughts
+about what I've done, for whatever reason.) We also note in the related
+metadata that this 'cleaning' occurred.  This is not 100% in line with
+best practices for archiving email, but sometimes we want to remove
+certain content before it even goes to EASi.  We have users who mark a
+folder 'personal', for example, or who tell us about certain sensitive
+(non-business) content that should be removed.  Sometimes we do not have
+the opportunity to remove that content before capture. If I were
+receiving .olm files from an external source (like from a famous
+author), I would not use this approach, since it changes metadata and
+qualities of the .olm file besides the obvious removal of content.  I
+would probably instead consider adding the entire account to EASi and
+then flagging the sensitive material. However, the accounts we are
+handling are current business records, so I feel that my approach is a
+bit more acceptable because it is not much different than receiving a
+box of files from an office and removing extraneous content before
+adding it to the archives. I'd love to hear what other people are
+thinking on this topic.=20
+
+=20
+
+Julie
+
+=20
+
+=20
+
+From: Wetherill, Julie M.=20
+Sent: Wednesday, October 07, 2015 2:49 PM
+To: Swierczek, Julie; Kendall, Skip
+Cc: Wetherill, Julie M.; Reilly, Grainne
+Subject: EAS: support of .olm (Exported Outlook for Mac files)
+
+=20
+
+Hi Julie and Skip,
+
+=20
+
+It appears that LTS and the Library have decided to fast-track
+development on .olm support in EAS. Since your units have asked about
+Outlook Mac support, I have a few questions for you (to help get this
+effort started).
+
+=20
+
+#1 What version of Outlook Mac are the files you want to process?
+
+#2 Can you provide a *clean* sample of .olm data for LTS testing?
+
+#3 Do you know a way to export to .olm selectively by mail folder?
+
+=20
+
+The task in question #3 (how to selectively archive to .olm format)
+might be harder than it looks. I know you can archive an entire mail
+account to .olm, but there is no evidence you can limit archiving to a
+single folder. You can filter archiving by "category" so I suppose an
+Outlook Mac user could define a fake category and assign it to a subset
+of messages, then archive on the category.
+
+=20
+
+We need *clean* data only, so ability to cherry-pick out any sensitive
+data is important.
+
+=20
+
+Thanks for your help. --julie
+
+=20
+
+Julie Wetherill
+
+Library Technology Services
+
+=20
+
+=20
+
+
+
+------=_NextPart_000_00C4_01D8856F.B34139D0
+Content-Type: text/html;charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40"><head><meta http-equiv=3DContent-Type content=
+=3D"text/html; charset=3Dus-ascii"><meta name=3DGenerator content=3D"Micros=
+oft Word 14 (filtered medium)"><style><!--
+/* Font Definitions */
+@font-face
+=09{font-family:Calibri;
+=09panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+=09{font-family:Tahoma;
+=09panose-1:2 11 6 4 3 5 4 4 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+=09{margin:0in;
+=09margin-bottom:.0001pt;
+=09font-size:12.0pt;
+=09font-family:"Times New Roman","serif";}
+a:link, span.MsoHyperlink
+=09{mso-style-priority:99;
+=09color:blue;
+=09text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+=09{mso-style-priority:99;
+=09color:purple;
+=09text-decoration:underline;}
+p
+=09{mso-style-priority:99;
+=09margin:0in;
+=09margin-bottom:.0001pt;
+=09font-size:12.0pt;
+=09font-family:"Times New Roman","serif";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+=09{mso-style-priority:34;
+=09margin-top:0in;
+=09margin-right:0in;
+=09margin-bottom:0in;
+=09margin-left:.5in;
+=09margin-bottom:.0001pt;
+=09font-size:12.0pt;
+=09font-family:"Times New Roman","serif";}
+span.EmailStyle18
+=09{mso-style-type:personal-reply;
+=09font-family:"Calibri","sans-serif";
+=09color:#1F497D;}
+.MsoChpDefault
+=09{mso-style-type:export-only;
+=09font-size:10.0pt;}
+@page WordSection1
+=09{size:8.5in 11.0in;
+=09margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+=09{page:WordSection1;}
+/* List Definitions */
+@list l0
+=09{mso-list-id:1552427073;
+=09mso-list-type:hybrid;
+=09mso-list-template-ids:-582431576 67698703 67698713 67698715 67698703 676=
+98713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+=09{mso-level-tab-stop:none;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l0:level2
+=09{mso-level-number-format:alpha-lower;
+=09mso-level-tab-stop:none;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l0:level3
+=09{mso-level-number-format:roman-lower;
+=09mso-level-tab-stop:none;
+=09mso-level-number-position:right;
+=09text-indent:-9.0pt;}
+@list l0:level4
+=09{mso-level-tab-stop:none;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l0:level5
+=09{mso-level-number-format:alpha-lower;
+=09mso-level-tab-stop:none;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l0:level6
+=09{mso-level-number-format:roman-lower;
+=09mso-level-tab-stop:none;
+=09mso-level-number-position:right;
+=09text-indent:-9.0pt;}
+@list l0:level7
+=09{mso-level-tab-stop:none;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l0:level8
+=09{mso-level-number-format:alpha-lower;
+=09mso-level-tab-stop:none;
+=09mso-level-number-position:left;
+=09text-indent:-.25in;}
+@list l0:level9
+=09{mso-level-number-format:roman-lower;
+=09mso-level-tab-stop:none;
+=09mso-level-number-position:right;
+=09text-indent:-9.0pt;}
+ol
+=09{margin-bottom:0in;}
+ul
+=09{margin-bottom:0in;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]--></head><body lang=3DEN-US link=3Dblue vli=
+nk=3Dpurple><div class=3DWordSection1><p class=3DMsoNormal><span style=3D'f=
+ont-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'>Julie, Gr=
+ainne, and Skip,<o:p></o:p></span></p><p class=3DMsoNormal><span style=3D'f=
+ont-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'><o:p>&nbs=
+p;</o:p></span></p><p class=3DMsoNormal><span style=3D'font-size:11.0pt;fon=
+t-family:"Calibri","sans-serif";color:#1F497D'>We are currently using Outlo=
+ok 2011 on Mac.&nbsp; I don&#8217;t think that there are any .olm files flo=
+ating around the museums from previous Outlook versions. <o:p></o:p></span>=
+</p><p class=3DMsoNormal><span style=3D'font-size:11.0pt;font-family:"Calib=
+ri","sans-serif";color:#1F497D'><o:p>&nbsp;</o:p></span></p><p class=3DMsoN=
+ormal><span style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";co=
+lor:#1F497D'>I will attempt to provide a clean sample. &nbsp;It will take m=
+e a few hours to make one.<o:p></o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'=
+><o:p>&nbsp;</o:p></span></p><p class=3DMsoNormal><span style=3D'font-size:=
+11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'>As for exporting s=
+electively, I currently take the approach &#8211; and this is possibly not =
+the best approach, but it&#8217;s better than nothing &#8211; of creating a=
+ copy of the email, opening it in an empty Outlook 2011 client, removing al=
+l the content we don&#8217;t want, and then re-exporting the .olm file.&nbs=
+p; (I hang on to the original for a little while in case I think of somethi=
+ng else I should change, or if I have second thoughts about what I&#8217;ve=
+ done, for whatever reason.) We also note in the related metadata that this=
+ &#8216;cleaning&#8217; occurred.&nbsp; This is not 100% in line with best =
+practices for archiving email, but sometimes we want to remove certain cont=
+ent before it even goes to EASi.&nbsp; We have users who mark a folder &#82=
+16;personal&#8217;, for example, or who tell us about certain sensitive (no=
+n-business) content that should be removed.&nbsp; Sometimes we do not have =
+the opportunity to remove that content before capture. If I were receiving =
+.olm files from an external source (like from a famous author), I would not=
+ use this approach, since it changes metadata and qualities of the .olm fil=
+e besides the obvious removal of content.&nbsp; I would probably instead co=
+nsider adding the entire account to EASi and then flagging the sensitive ma=
+terial. However, the accounts we are handling are current business records,=
+ so I feel that my approach is a bit more acceptable because it is not much=
+ different than receiving a box of files from an office and removing extran=
+eous content before adding it to the archives. I&#8217;d love to hear what =
+other people are thinking on this topic. <o:p></o:p></span></p><p class=3DM=
+soNormal><span style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif"=
+;color:#1F497D'><o:p>&nbsp;</o:p></span></p><p class=3DMsoNormal><span styl=
+e=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'>Jul=
+ie<o:p></o:p></span></p><p class=3DMsoNormal><span style=3D'font-size:11.0p=
+t;font-family:"Calibri","sans-serif";color:#1F497D'><o:p>&nbsp;</o:p></span=
+></p><p class=3DMsoNormal><span style=3D'font-size:11.0pt;font-family:"Cali=
+bri","sans-serif";color:#1F497D'><o:p>&nbsp;</o:p></span></p><div><div styl=
+e=3D'border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0in 0in 0in'>=
+<p class=3DMsoNormal><b><span style=3D'font-size:10.0pt;font-family:"Tahoma=
+","sans-serif"'>From:</span></b><span style=3D'font-size:10.0pt;font-family=
+:"Tahoma","sans-serif"'> Wetherill, Julie M. <br><b>Sent:</b> Wednesday, Oc=
+tober 07, 2015 2:49 PM<br><b>To:</b> Swierczek, Julie; Kendall, Skip<br><b>=
+Cc:</b> Wetherill, Julie M.; Reilly, Grainne<br><b>Subject:</b> EAS: suppor=
+t of .olm (Exported Outlook for Mac files)<o:p></o:p></span></p></div></div=
+><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><div id=3Ddivtagdefaultwrapper><=
+p style=3D'background:white'><span style=3D'font-family:"Calibri","sans-ser=
+if";color:black'>Hi Julie and Skip,<o:p></o:p></span></p><p style=3D'backgr=
+ound:white'><span style=3D'font-family:"Calibri","sans-serif";color:black'>=
+<o:p>&nbsp;</o:p></span></p><p style=3D'background:white'><span style=3D'fo=
+nt-family:"Calibri","sans-serif";color:black'>It appears that LTS and the L=
+ibrary have decided to&nbsp;fast-track development on .olm support in EAS. =
+Since your units have asked about Outlook Mac support, I have a few questio=
+ns for you (to help get this effort started).<o:p></o:p></span></p><p style=
+=3D'background:white'><span style=3D'font-family:"Calibri","sans-serif";col=
+or:black'><o:p>&nbsp;</o:p></span></p><p style=3D'background:white'><span s=
+tyle=3D'font-family:"Calibri","sans-serif";color:black'>#1 What version of =
+Outlook Mac are the files you want to process?<o:p></o:p></span></p><p styl=
+e=3D'background:white'><span style=3D'font-family:"Calibri","sans-serif";co=
+lor:black'>#2 Can&nbsp;you provide a *clean* sample of .olm&nbsp;data for L=
+TS testing?<o:p></o:p></span></p><p style=3D'background:white'><span style=
+=3D'font-family:"Calibri","sans-serif";color:black'>#3 Do you know a way to=
+ export to .olm&nbsp;selectively by mail folder?<o:p></o:p></span></p><p st=
+yle=3D'background:white'><span style=3D'font-family:"Calibri","sans-serif";=
+color:black'><o:p>&nbsp;</o:p></span></p><p style=3D'background:white'><spa=
+n style=3D'font-family:"Calibri","sans-serif";color:black'>The task in ques=
+tion #3 (how to selectively archive to .olm format) might be harder than it=
+ looks. I know you can archive an entire mail account to .olm, but there is=
+ no evidence you can limit&nbsp;archiving to a single folder. You can filte=
+r archiving by &quot;category&quot; so I suppose an Outlook Mac user could =
+define a fake category and assign it to a subset of messages, then archive =
+on the category.<o:p></o:p></span></p><p style=3D'background:white'><span s=
+tyle=3D'font-family:"Calibri","sans-serif";color:black'><o:p>&nbsp;</o:p></=
+span></p><p style=3D'background:white'><span style=3D'font-family:"Calibri"=
+,"sans-serif";color:black'>We need *clean* data only, so ability to&nbsp;ch=
+erry-pick out&nbsp;any sensitive data is important.<o:p></o:p></span></p><p=
+ style=3D'background:white'><span style=3D'font-family:"Calibri","sans-seri=
+f";color:black'><o:p>&nbsp;</o:p></span></p><p style=3D'background:white'><=
+span style=3D'font-family:"Calibri","sans-serif";color:black'>Thanks for yo=
+ur help. --julie<o:p></o:p></span></p><p style=3D'background:white'><span s=
+tyle=3D'font-family:"Calibri","sans-serif";color:black'><o:p>&nbsp;</o:p></=
+span></p><p style=3D'background:white'><span style=3D'font-family:"Calibri"=
+,"sans-serif";color:black'>Julie Wetherill<o:p></o:p></span></p><p style=3D=
+'background:white'><span style=3D'font-family:"Calibri","sans-serif";color:=
+black'>Library Technology Services<o:p></o:p></span></p><p style=3D'backgro=
+und:white'><span style=3D'font-family:"Calibri","sans-serif";color:black'><=
+o:p>&nbsp;</o:p></span></p><p style=3D'background:white'><span style=3D'fon=
+t-family:"Calibri","sans-serif";color:black'>&nbsp;<o:p></o:p></span></p></=
+div></div></body></html>
+------=_NextPart_000_00C4_01D8856F.B34139D0--
+
+
