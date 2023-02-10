@@ -5,5 +5,5 @@ boto3==1.24.55
 PyJWT==2.4.0
 py7zr==0.20.2
 python-dotenv==0.19.2
-cryptography==37.0.2
+cryptography==39.0.1
 jcs==0.2.0
