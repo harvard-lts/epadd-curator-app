@@ -112,6 +112,9 @@ class TestZipUnitCases(unittest.TestCase):
 
 class TestConstructPayload(unittest.TestCase):
 
+    @mock.patch("monitor_exports.s3_resource", MockS3Resource() )
+    @mock.patch("monitor_exports.epadd_bucket_name", "test_bucket" )
+    @mock.patch("monitor_exports.epadd_bucket", MockEpaddBucket() )
     def test_construct_payload(self):
         payload = monitor_epadd_exports.construct_payload_body("/home/appuser/epadd-curator-app/resources/EmlExample")
         self.assertTrue(payload, "Payload returned was empty")
