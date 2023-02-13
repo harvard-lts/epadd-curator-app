@@ -76,3 +76,21 @@ docker exec -it epadd-curator-app bash
 ```
 python3 -m unittest scripts/unit_tests.py 
 ```
+
+## Running System Tests
+
+### 1: Setup Local Environment using instructions from above or deploy to dev
+
+### 2: Call the following endpoint to kick off test - replace host with 'localhost' when running locally
+
+#### To provide an OSN, execute the following
+
+```
+curl http://ltsds-cloud-dev-1.lib.harvard.edu:10586/testExport?osn={yourTestOSN}
+```
+
+#### To provide use the default OSN i.e. osn_{timestamp}, execute the following
+
+```
+curl http://ltsds-cloud-dev-1.lib.harvard.edu:10586/testExport
+```
