@@ -1,9 +1,9 @@
-ownerSuppliedName=test123
+ownerSuppliedName=
 accessFlag=N
 contentModel=opaque container
 depositingSystem=ePADD
 firstGenerationInDrs=unspecified
-objectRole=CG:EMAIL
+objectRole=CG_EMAIL
 usageClass=LOWUSE
 storageClass=SE
 ownerCode=HUL.TEST

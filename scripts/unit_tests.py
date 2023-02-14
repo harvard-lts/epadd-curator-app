@@ -8,6 +8,7 @@ load_dotenv()
 sys.path.insert(0, '/home/appuser/epadd-curator-app/app')
 
 import monitor_exports as monitor_epadd_exports
+import run_tests
 
 class MockS3Resource:
     def __init__(self):
@@ -47,6 +48,59 @@ class MockEpaddBucketObjects:
 class MockEpaddBucket:
     def __init__(self):
         self.objects = MockEpaddBucketObjects()
+        
+class MockEpaddPerformanceTestingSourceBucketObjects:
+    def __init__(self):
+        self.files = []
+        self.files.append( MockEpaddBucketObject("emltest1/data/somedata.txt") )
+        self.files.append( MockEpaddBucketObject("emltest1/data/index.html") )
+        self.files.append( MockEpaddBucketObject("emltest1/readme.txt") )
+        self.files.append( MockEpaddBucketObject("emltest2/data/data2.txt") )   
+        self.files.append( MockEpaddBucketObject("emltest2/readme2.txt") )
+    
+    def filter(self, **kwargs):
+        filtered_list = []
+        if 'Prefix' not in kwargs:
+            return self.files
+        
+        for file in self.files:
+            if file.key.startswith(kwargs['Prefix']):
+                filtered_list.append(file)
+        return filtered_list
+            
+    def all(self):
+        return self.files
+
+class MockEpaddPerformanceTestingSourceBucket:
+    def __init__(self):
+        self.objects = MockEpaddPerformanceTestingSourceBucketObjects()
+        
+class MockEpaddPerformanceTestingDesinationBucketObjects:
+    def __init__(self):
+        self.files = []
+    
+    def filter(self, **kwargs):
+        filtered_list = []
+        if 'Prefix' not in kwargs:
+            return self.files
+        
+        for file in self.files:
+            if file.key.startswith(kwargs['Prefix']):
+                filtered_list.append(file)
+        return filtered_list
+            
+    def all(self):
+        return self.files
+    
+    def append(self, key):
+        self.files.append( MockEpaddBucketObject(key))
+                
+class MockEpaddPerformanceTestingDestinationBucket:
+    def __init__(self):
+        self.objects = MockEpaddPerformanceTestingDesinationBucketObjects()
+    
+    def Object(self, key):
+        self.objects.append(key)
 
 
 class TestMonitorUnitCases(unittest.TestCase):
@@ -147,6 +201,19 @@ class TestZipEpaddExports(unittest.TestCase):
         success = monitor_epadd_exports.zip_export(zip_export_path, eml_path)
         self.assertTrue(success, "Eml zip failed")
         self.assertTrue(os.path.isfile(zip_path))
+
+class TestCopyExport(unittest.TestCase):
+
+    @mock.patch("run_tests.s3_resource", MockS3Resource() )
+    @mock.patch("run_tests.epadd_source_bucket_name", "source_bucket" )
+    @mock.patch("run_tests.epadd_test_bucket_name", "test_bucket" )
+    @mock.patch("run_tests.epadd_source_bucket", MockEpaddPerformanceTestingSourceBucket() )
+    @mock.patch("run_tests.epadd_test_bucket", MockEpaddPerformanceTestingDestinationBucket() )
+    def test_copy_one(self):
+        run_tests.copy_export('emltest1')
+        filelist = run_tests.epadd_test_bucket.all()
+        correctlist = ["emltest1/data/somedata.txt", "emltest1/data/index.html", "emltest1/readme.txt", "emltest1/drsConfig.txt"]
+        self.assertEqual(filelist, correctlist)
 
 if __name__ == '__main__':
     unittest.main()
