@@ -12,8 +12,8 @@ def main(argv):
     run_tests.connect_to_buckets()
 
     # Run single export
-    if argv[0] != "":
-        run_tests.copy_export(str(argv))
+    if len(argv) > 0 and argv[0] != "":
+        run_tests.copy_export(str(argv[0]))
     #Run all exports
     else:
         run_tests.copy_all_exports()

@@ -31,6 +31,9 @@ class MockS3ResourceObject:
 class MockEpaddBucketObject:
     def __init__(self, keyname):
         self.key = keyname
+        
+    def copy(self, source):
+        pass
 
 class MockEpaddBucketObjects:
     def __init__(self):
@@ -93,18 +96,25 @@ class MockEpaddPerformanceTestingDesinationBucketObjects:
         return self.files
     
     def append(self, key):
-        self.files.append( MockEpaddBucketObject(key))
+        obj = MockEpaddBucketObject(key)
+        self.files.append(obj)
+        return obj
                 
 class MockEpaddPerformanceTestingDestinationBucket:
     def __init__(self):
         self.objects = MockEpaddPerformanceTestingDesinationBucketObjects()
+        
+    def upload_file(self, source, destination):
+        obj = self.objects.append(destination)
+        return obj
     
     def Object(self, key):
-        self.objects.append(key)
+        obj = self.objects.append(key)
+        return obj
 
 
 class TestMonitorUnitCases(unittest.TestCase):
-
+  
     @mock.patch("monitor_exports.s3_resource", MockS3Resource() )
     @mock.patch("monitor_exports.epadd_bucket_name", "test_bucket" )
     @mock.patch("monitor_exports.epadd_bucket", MockEpaddBucket() )
@@ -112,10 +122,10 @@ class TestMonitorUnitCases(unittest.TestCase):
         filelist = monitor_epadd_exports.collect_exports()
         correctlist = ["test/manifest-sha256.txt/msdos.txt", "test/manifest-md5.txt/index.html"]
         self.assertEqual(filelist, correctlist)
-
+  
 class TestZipUnitCases(unittest.TestCase):
-
-        
+  
+          
     def setUpClass():
         # create download and zip dirs if they don't exist
         download_export_path = "/home/appuser/epadd-curator-app/download_exports"
@@ -124,7 +134,7 @@ class TestZipUnitCases(unittest.TestCase):
             os.makedirs(download_export_path, exist_ok = True)
         if (not os.path.exists(zip_export_path)):
             os.makedirs(zip_export_path, exist_ok = True)
-            
+              
     def tearDownClass():
         download_export_path = "/home/appuser/epadd-curator-app/download_exports"
         zip_export_path = "/home/appuser/epadd-curator-app/zip_exports"
@@ -134,7 +144,7 @@ class TestZipUnitCases(unittest.TestCase):
         os.remove(loading_file)
         download_path = os.path.join(download_export_path, "integration_test")
         shutil.rmtree(download_path)
-
+  
     def test_retrieve_export_1(self): #test download from S3
         try:
             download_export_path = "/home/appuser/epadd-curator-app/download_exports"
@@ -150,70 +160,83 @@ class TestZipUnitCases(unittest.TestCase):
             traceback.print_stack()
         self.assertEqual(True, file_exists)
         self.assertEqual(True, dir_has_items)
-
+  
     def test_retrieve_export_2(self): #test zip of export
         download_export_path = "/home/appuser/epadd-curator-app/download_exports/integration_test"
         zip_export_path = "/home/appuser/epadd-curator-app/zip_exports"
         file_path = monitor_epadd_exports.zip_export(zip_export_path, download_export_path)
         file_exists = os.path.exists(file_path)
         self.assertEqual(True, file_exists)
-    
+      
     def test_retrieve_export_3(self): #test upload of export
         zip_path = "/home/appuser/epadd-curator-app/zip_exports/integration_test.7z"
         manifest_parent_prefix = "integration_test"
         success = monitor_epadd_exports.upload_zip_export(zip_path, manifest_parent_prefix)
         self.assertEqual(True, success)
-
+  
 class TestConstructPayload(unittest.TestCase):
-
+  
     @mock.patch("monitor_exports.s3_resource", MockS3Resource() )
     @mock.patch("monitor_exports.epadd_bucket_name", "test_bucket" )
     @mock.patch("monitor_exports.epadd_bucket", MockEpaddBucket() )
     def test_construct_payload(self):
         payload = monitor_epadd_exports.construct_payload_body("/home/appuser/epadd-curator-app/resources/EmlExample")
         self.assertTrue(payload, "Payload returned was empty")
-        
+          
 class TestZipEpaddExports(unittest.TestCase):
-
-        
+  
+          
     def setUpClass():
         resources_path = os.getenv("DATA_PATH", "/home/appuser/epadd-curator-app/resources")
         zip_export_path = os.getenv("ZIPPED_EXPORT_PATH", "/home/appuser/epadd-curator-app/zip_exports")
-    
+      
         # create download and zip dirs if they don't exist
         if (not os.path.exists(resources_path)):
             os.makedirs(resources_path, exist_ok = True)
         if (not os.path.exists(zip_export_path)):
             os.makedirs(zip_export_path, exist_ok = True)
-            
+              
     def tearDownClass():
         zip_export_path = os.getenv("ZIPPED_EXPORT_PATH", "/home/appuser/epadd-curator-app/zip_exports")
         zip_file = os.path.join(zip_export_path, "EmlExample.7z")
         os.remove(zip_file)
-
+  
     def test_zip_eml(self): #zip an eml export
         resources_path = os.getenv("DATA_PATH", "/home/appuser/epadd-curator-app/resources")
         zip_export_path = os.getenv("ZIPPED_EXPORT_PATH", "/home/appuser/epadd-curator-app/zip_exports")
         zip_path = os.path.join(zip_export_path, "EmlExample.7z")
         eml_path = os.path.join(resources_path, "EmlExample")
-        print("Zip path: " + zip_path)
-        print("Eml path: " + eml_path)
         success = monitor_epadd_exports.zip_export(zip_export_path, eml_path)
         self.assertTrue(success, "Eml zip failed")
         self.assertTrue(os.path.isfile(zip_path))
 
-class TestCopyExport(unittest.TestCase):
+class TestCopySingleExportS3(unittest.TestCase):
 
     @mock.patch("run_tests.s3_resource", MockS3Resource() )
-    @mock.patch("run_tests.epadd_source_bucket_name", "source_bucket" )
+    @mock.patch("run_tests.test_prefix", "" )
+    @mock.patch("run_tests.epadd_source_type", "S3" )
+    @mock.patch("run_tests.epadd_source_name", "source_bucket" )
     @mock.patch("run_tests.epadd_test_bucket_name", "test_bucket" )
     @mock.patch("run_tests.epadd_source_bucket", MockEpaddPerformanceTestingSourceBucket() )
     @mock.patch("run_tests.epadd_test_bucket", MockEpaddPerformanceTestingDestinationBucket() )
     def test_copy_one(self):
-        run_tests.copy_export('emltest1')
-        filelist = run_tests.epadd_test_bucket.all()
-        correctlist = ["emltest1/data/somedata.txt", "emltest1/data/index.html", "emltest1/readme.txt", "emltest1/drsConfig.txt"]
-        self.assertEqual(filelist, correctlist)
+        run_tests.copy_from_source_to_test('emltest1')
+        filelist = run_tests.epadd_test_bucket.objects.all()
+        self.assertEqual(len(filelist), 4)
+        
+class TestCopySingleExportFS(unittest.TestCase):
+
+    @mock.patch("run_tests.s3_resource", MockS3Resource() )
+    @mock.patch("run_tests.test_prefix", "" )
+    @mock.patch("run_tests.epadd_source_type", "FS" )
+    @mock.patch("run_tests.epadd_source_name", "/home/appuser/epadd-curator-app/resources" )
+    @mock.patch("run_tests.epadd_test_bucket_name", "test_bucket" )
+    @mock.patch("run_tests.epadd_test_bucket", MockEpaddPerformanceTestingDestinationBucket() )
+    def test_copy_one(self):
+        run_tests.copy_from_source_to_test('EmlExample')
+        filelist = run_tests.epadd_test_bucket.objects.all()
+        self.assertTrue(len(filelist)>100)
+    
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,6 +1,7 @@
 # Environment 'development', 'test', or 'production'
 ENV=development
 
+LOG_LEVEL=DEBUG
 LOG_DIR=/home/appuser/epadd-curator-app/logs
 
 # Cron Interval Settings
@@ -28,6 +29,20 @@ EPADD_BUCKET_NAME=epadd-export-dev
 NEXTCLOUD_AWS_ACCESS_KEY=
 NEXTCLOUD_AWS_SECRET_KEY=
 
+#For testing
+#Where is the testing data stored (S3 or FS for filesystem)
+#Dev: FS
+#QA: S3
+EPADD_SOURCE_TYPE=S3
+#Bucket that contains the stored data for testing
+#Dev:
+#QA: epadd-int-test-data-store
+EPADD_SOURCE_NAME=epadd-int-test-data-store
+#Bucket being used for integration tests 
+#Dev: epadd-export-dev
+#QA: epadd-lts-test)
+EPADD_TEST_BUCKET_NAME=epadd-lts-test
+
 # BatchBuilder Admin Category
 BB_ADMIN_CATEGORY=http://idtest.lib.harvard.edu:10020/wordshack/adminCategory/27186
 
@@ -40,4 +55,4 @@ DOWNLOAD_EXPORT_PATH=/home/appuser/epadd-curator-app/download_exports/
 DATA_PATH=/home/appuser/epadd-curator-app/resources
 
 # Set to True if DIMS should not be called, False otherwise
-TESTING=True
+TESTING=False
