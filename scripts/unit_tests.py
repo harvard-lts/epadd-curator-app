@@ -114,7 +114,6 @@ class MockEpaddPerformanceTestingDestinationBucket:
 
 
 class TestMonitorUnitCases(unittest.TestCase):
-  
     @mock.patch("monitor_exports.s3_resource", MockS3Resource() )
     @mock.patch("monitor_exports.epadd_bucket_name", "test_bucket" )
     @mock.patch("monitor_exports.epadd_bucket", MockEpaddBucket() )
@@ -134,7 +133,8 @@ class TestZipUnitCases(unittest.TestCase):
             os.makedirs(download_export_path, exist_ok = True)
         if (not os.path.exists(zip_export_path)):
             os.makedirs(zip_export_path, exist_ok = True)
-              
+
+      
     def tearDownClass():
         download_export_path = "/home/appuser/epadd-curator-app/download_exports"
         zip_export_path = "/home/appuser/epadd-curator-app/zip_exports"
@@ -237,6 +237,39 @@ class TestCopySingleExportFS(unittest.TestCase):
         filelist = run_tests.epadd_test_bucket.objects.all()
         self.assertTrue(len(filelist)>100)
     
+
+    def test_construct_payload(self):
+        payload = monitor_epadd_exports.construct_payload_body("/home/appuser/epadd-curator-app/resources/EmlExample")
+        self.assertTrue(payload, "Payload returned was empty")
+        
+class TestZipEpaddExports(unittest.TestCase):
+
+        
+    def setUpClass():
+        resources_path = os.getenv("DATA_PATH", "/home/appuser/epadd-curator-app/resources")
+        zip_export_path = os.getenv("ZIPPED_EXPORT_PATH", "/home/appuser/epadd-curator-app/zip_exports")
+    
+        # create download and zip dirs if they don't exist
+        if (not os.path.exists(resources_path)):
+            os.makedirs(resources_path, exist_ok = True)
+        if (not os.path.exists(zip_export_path)):
+            os.makedirs(zip_export_path, exist_ok = True)
+            
+    def tearDownClass():
+        zip_export_path = os.getenv("ZIPPED_EXPORT_PATH", "/home/appuser/epadd-curator-app/zip_exports")
+        zip_file = os.path.join(zip_export_path, "EmlExample.7z")
+        os.remove(zip_file)
+
+    def test_zip_eml(self): #zip an eml export
+        resources_path = os.getenv("DATA_PATH", "/home/appuser/epadd-curator-app/resources")
+        zip_export_path = os.getenv("ZIPPED_EXPORT_PATH", "/home/appuser/epadd-curator-app/zip_exports")
+        zip_path = os.path.join(zip_export_path, "EmlExample.7z")
+        eml_path = os.path.join(resources_path, "EmlExample")
+        print("Zip path: " + zip_path)
+        print("Eml path: " + eml_path)
+        success = monitor_epadd_exports.zip_export(zip_export_path, eml_path)
+        self.assertTrue(success, "Eml zip failed")
+        self.assertTrue(os.path.isfile(zip_path))
 
 if __name__ == '__main__':
     unittest.main()

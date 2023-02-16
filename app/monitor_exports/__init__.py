@@ -272,7 +272,7 @@ def retrieve_export(download_path, manifest_parent_prefix):
         return download_local_dir
     except Exception as err:
         logging.error(traceback.format_exc())
-        return False
+        raise err
 
 
 def zip_export(zip_path, directory_to_zip):

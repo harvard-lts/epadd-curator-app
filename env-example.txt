@@ -33,15 +33,15 @@ NEXTCLOUD_AWS_SECRET_KEY=
 #Where is the testing data stored (S3 or FS for filesystem)
 #Dev: FS
 #QA: S3
-EPADD_SOURCE_TYPE=S3
+EPADD_SOURCE_TYPE=FS
 #Bucket that contains the stored data for testing
-#Dev:
+#Dev: /home/appuser/epadd-curator-app/test_files
 #QA: epadd-int-test-data-store
-EPADD_SOURCE_NAME=epadd-int-test-data-store
+EPADD_SOURCE_NAME=/home/appuser/epadd-curator-app/test_files
 #Bucket being used for integration tests 
 #Dev: epadd-export-dev
-#QA: epadd-lts-test)
-EPADD_TEST_BUCKET_NAME=epadd-lts-test
+#QA: epadd-lts-test
+EPADD_TEST_BUCKET_NAME=epadd-export-dev
 
 # BatchBuilder Admin Category
 BB_ADMIN_CATEGORY=http://idtest.lib.harvard.edu:10020/wordshack/adminCategory/27186
@@ -56,3 +56,4 @@ DATA_PATH=/home/appuser/epadd-curator-app/resources
 
 # Set to True if DIMS should not be called, False otherwise
 TESTING=False
+

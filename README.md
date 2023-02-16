@@ -31,6 +31,9 @@ Docker Compose
 
 - Make a copy resources/drsConfig.txt.template to the resources directory and name it drsConfig.txt
 
+- Copy drsConfig.txt.template to the resources directory and name it drsConfig.txt
+
+
 ### 4: Start
 
 ##### START
@@ -77,6 +80,7 @@ docker exec -it epadd-curator-app bash
 python3 -m unittest scripts/unit_tests.py 
 ```
 
+
 ## Running System Tests
 
 ### 1: Setup Local Environment using instructions from above or deploy to dev
@@ -94,3 +98,5 @@ curl http://ltsds-cloud-dev-1.lib.harvard.edu:10586/testExport?osn={yourTestOSN}
 ```
 curl http://ltsds-cloud-dev-1.lib.harvard.edu:10586/testExport
 ```
+
+
