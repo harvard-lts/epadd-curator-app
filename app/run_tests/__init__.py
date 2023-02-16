@@ -5,6 +5,7 @@ import sys
 import traceback
 from datetime import datetime, timedelta
 import shutil
+from botocore.errorfactory import ClientError
 
 import boto3
 
@@ -31,7 +32,6 @@ epadd_source_type = os.getenv("EPADD_SOURCE_TYPE")
 epadd_source_name = os.getenv('EPADD_SOURCE_NAME')
 #The bucket that is being monitored for the tests
 epadd_test_bucket_name = os.getenv('EPADD_TEST_BUCKET_NAME')
-test_prefix = os.getenv('TEST_PREFIX', "")
 
 logging.debug("Executing test_export.py")
 
@@ -89,22 +89,37 @@ def copy_export(dirName):
     '''Copies the given export from the source to the test bucket'''
     logging.debug("Copying export "+dirName + " from " + epadd_source_name)
     if epadd_source_type == "S3":
+        
+        s3 = boto3.client('s3')
+        try:
+            s3_resource.meta.client.head_object(Bucket=epadd_source_bucket, Key=dirName)
+        except botocore.exceptions.ClientError as e:
+            if e.response['Error']['Code'] == "404":
+                # The key does not exist.
+                logging.error("{} does not exist in {}.".format(dirName, epadd_source_name))
+                raise Exception("{} does not exist in {}.".format(dirName, epadd_source_name))
+            else:
+              # Something else has gone wrong.
+              raise e
+          
         #Copy the dir
         for obj in epadd_source_bucket.objects.filter(Prefix=dirName):
             source = { 'Bucket': epadd_source_bucket,
                        'Key': obj.key}
             # replace the prefix
-            new_obj = epadd_test_bucket.Object(os.path.join(test_prefix, obj.key))
+            new_obj = epadd_test_bucket.Object(obj.key)
             new_obj.copy(source)
     else:
+        if not os.path.exists(os.path.join(epadd_source_name, dirName)):
+            logging.error("{} does not exist in {}.".format(dirName, epadd_source_name))
+            raise Exception("{} does not exist in {}.".format(dirName, epadd_source_name))
+            
         for root,dirs,files in os.walk(os.path.join(epadd_source_name, dirName)):
             for file in files:
                 path = root.replace(epadd_source_name, "")
                 path = path.lstrip("/")
-                logging.debug("path: " + path)
-                logging.debug("Uploading {} to {}".format(os.path.join(root, file), os.path.join(test_prefix, path, file)))
-                epadd_test_bucket.upload_file(os.path.join(root,file),os.path.join(test_prefix,path,file))
+                epadd_test_bucket.upload_file(os.path.join(root,file),os.path.join(path,file))
         
     #Place the testing drsConfig.txt in the root of the export so it gets picked up first
-    epadd_test_bucket.upload_file(os.path.join(resource_dir, "drsConfig.txt.template"), os.path.join(test_prefix, dirName, "drsConfig.txt"))
+    epadd_test_bucket.upload_file(os.path.join(resource_dir, "drsConfig.txt.template"), os.path.join(dirName, "drsConfig.txt"))
     
