@@ -55,7 +55,7 @@ def call_dims_ingest(manifest_object_key):
     """
     logging.debug("Preparing to call DIMS")
     # get parent prefix of manifest file
-    manifest_parent_prefix = os.path.basename(os.path.dirname(manifest_object_key))
+    manifest_parent_prefix = os.path.dirname(manifest_object_key)
 
     try:
         with open(jwt_private_key_path) as jwt_private_key_file:
