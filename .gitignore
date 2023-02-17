@@ -124,6 +124,7 @@ pdfstorerdaemon.pid
 keys/
 .DS_Store
 .project
+
 .pydevproject
 
 drsConfig.txt

@@ -10,16 +10,24 @@ import hashlib
 import jcs
 
 import boto3
+
 import requests
 from requests import exceptions, HTTPError
 import py7zr
 
 DATEFORMAT = '%Y-%m-%d %H:%M:%S'
 log_dir = os.getenv("LOG_DIR", "/home/appuser/epadd-curator-app/logs")
+log_level = os.getenv("LOG_LEVEL", "WARNING")
 logname_template = os.path.join(log_dir, "monitor_epadd_exports_{}.log")
 logging.basicConfig(filename=logname_template.format(datetime.today().strftime("%Y%m%d")),
                     format='%(asctime)-2s --%(filename)s-- %(levelname)-8s %(message)s', datefmt=DATEFORMAT,
-                    level=logging.DEBUG)
+                    level=log_level)
+
+#Prevents S3 gem from logging too much
+logging.getLogger('boto3').setLevel(logging.CRITICAL)
+logging.getLogger('botocore').setLevel(logging.CRITICAL)
+logging.getLogger('s3transfer').setLevel(logging.CRITICAL)
+logging.getLogger('urllib3').setLevel(logging.CRITICAL)
 
 dims_endpoint = os.getenv('DIMS_ENDPOINT')
 aws_access_key = os.getenv('NEXTCLOUD_AWS_ACCESS_KEY')
@@ -265,7 +273,7 @@ def retrieve_export(download_path, manifest_parent_prefix):
         return download_local_dir
     except Exception as err:
         logging.error(traceback.format_exc())
-        return False
+        raise err
 
 
 def zip_export(zip_path, directory_to_zip):

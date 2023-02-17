@@ -29,7 +29,10 @@ Docker Compose
 
 ### 3: Create drsConfig.txt
 
+- Make a copy resources/drsConfig.txt.template to the resources directory and name it drsConfig.txt
+
 - Copy drsConfig.txt.template to the resources directory and name it drsConfig.txt
+
 
 ### 4: Start
 
