@@ -104,7 +104,7 @@ def copy_export(dirName):
                     CopySource=os.path.join(epadd_bucket_name, obj.key), 
                     Bucket=epadd_bucket_name,                      
                     Key=os.path.join( epadd_int_test_prefix_name, destkey),
-                    Metadata="REPLACE"                   
+                    MetadataDirective="REPLACE"                   
                 )
             
         # Remove loading file
