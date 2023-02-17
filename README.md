@@ -80,7 +80,6 @@ docker exec -it epadd-curator-app bash
 python3 -m unittest scripts/unit_tests.py 
 ```
 
-
 ## Running System Tests
 
 ### 1: Setup Local Environment using instructions from above or deploy to dev
