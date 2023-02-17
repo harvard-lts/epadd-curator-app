@@ -33,6 +33,7 @@ dims_endpoint = os.getenv('DIMS_ENDPOINT')
 aws_access_key = os.getenv('NEXTCLOUD_AWS_ACCESS_KEY')
 aws_secret_key = os.getenv('NEXTCLOUD_AWS_SECRET_KEY')
 epadd_bucket_name = os.getenv('EPADD_BUCKET_NAME')
+epadd_dropbox_prefix_name = os.getenv("EPADD_DROPBOX_PREFIX_NAME", "")
 jwt_private_key_path = os.getenv('JWT_PRIVATE_KEY_PATH')
 jwt_expiration = int(os.getenv('JWT_EXPIRATION'))
 zip_path = os.getenv('ZIPPED_EXPORT_PATH')
@@ -236,15 +237,20 @@ def collect_exports():
     """
     manifest_object_keys = []
 
-    logging.debug("Search for manifest-<algorithm>.txt file in bucket: " + epadd_bucket_name)
+    logging.debug("Search for manifest-<algorithm>.txt file in bucket/prefix: " + os.path.join(epadd_bucket_name, epadd_dropbox_prefix_name))
 
-    epadd_bucket_objects = epadd_bucket.objects.all()
+    if epadd_dropbox_prefix_name:
+        epadd_bucket_objects = epadd_bucket.objects.filter(Prefix=epadd_dropbox_prefix_name)
+    else:   
+        epadd_bucket_objects = epadd_bucket.objects.all()
     for epadd_bucket_object in epadd_bucket_objects:
         #skip user dir
         if re.search('user[/]?', epadd_bucket_object.key, re.IGNORECASE):
+            logging.debug("Skipping user dir: {}".format(epadd_bucket_object.key))
             pass
         elif re.search('manifest(-md5|-sha256)?.txt', epadd_bucket_object.key, re.IGNORECASE):
-            manifest_parent_prefix = os.path.basename(os.path.dirname(epadd_bucket_object.key))
+            logging.debug("Manifest found: {}".format(epadd_bucket_object.key))
+            manifest_parent_prefix = os.path.dirname(epadd_bucket_object.key)
             if not (key_exists(os.path.join(manifest_parent_prefix, "ingest.txt"))
                     or key_exists(os.path.join(manifest_parent_prefix, "ingest.txt.failed"))
                     or key_exists(os.path.join(manifest_parent_prefix,"LOADING"))):
@@ -261,7 +267,9 @@ def retrieve_export(download_path, manifest_parent_prefix):
         pull down the export to local storage prior to zip (7zip)
     """
     try:
+        logging.debug("Downloading {}".format(manifest_parent_prefix))
         for obj in epadd_bucket.objects.filter(Prefix=manifest_parent_prefix):
+            logging.debug("Moving {}".format(obj.key))
             local_file = os.path.join(download_path, obj.key)
             if not os.path.exists(os.path.dirname(local_file)):
                 os.makedirs(os.path.dirname(local_file))

@@ -26,6 +26,8 @@ JWT_EXPIRATION=1800
 
 # Nextcloud
 EPADD_BUCKET_NAME=epadd-export-dev
+#blank for dev
+EPADD_DROPBOX_PREFIX_NAME=dropboxes
 NEXTCLOUD_AWS_ACCESS_KEY=
 NEXTCLOUD_AWS_SECRET_KEY=
 
@@ -35,12 +37,8 @@ NEXTCLOUD_AWS_SECRET_KEY=
 #QA: S3 (prefix)
 EPADD_SOURCE_TYPE=FS
 #prefix or directory that contains the stored data for testing
-#Dev: /home/appuser/epadd-curator-app/test_files
-#QA: epadd-int-test-data-store
 EPADD_SOURCE_NAME=/home/appuser/epadd-curator-app/test_files
 #Prefix being used for integration tests 
-#Dev: Leave blank
-#QA: dropboxes
 EPADD_TEST_PREFIX_NAME=
 
 # BatchBuilder Admin Category
