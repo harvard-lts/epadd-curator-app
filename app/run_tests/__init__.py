@@ -71,7 +71,7 @@ def copy_from_source_to_test(dirName = None):
 def copy_all_exports():
     '''Copies all exports from the source to the test bucket'''
     if epadd_source_type == "S3":
-        result = s3_resource.meta.client.list_objects(Bucket=epadd_source_bucket, Delimiter='/', Prefix=epadd_source_name)
+        result = s3_resource.meta.client.list_objects(Bucket=epadd_bucket_name, Delimiter='/', Prefix=epadd_source_name)
         for obj in result.get('CommonPrefixes'):
             copy_export(obj.get('Prefix'))
     else:
