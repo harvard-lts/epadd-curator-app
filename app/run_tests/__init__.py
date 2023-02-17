@@ -26,20 +26,20 @@ logging.getLogger('urllib3').setLevel(logging.CRITICAL)
 aws_access_key = os.getenv('NEXTCLOUD_AWS_ACCESS_KEY')
 aws_secret_key = os.getenv('NEXTCLOUD_AWS_SECRET_KEY')
 resource_dir = os.getenv("DATA_PATH")
+epadd_bucket_name = os.getenv("EPADD_BUCKET_NAME")
 #What location type is the data stored in (S3 or FS (file system))
 epadd_source_type = os.getenv("EPADD_SOURCE_TYPE")
-#The location of where the data is stored prior to testing
+#The prefix or directory of where the data is stored prior to testing
 epadd_source_name = os.getenv('EPADD_SOURCE_NAME')
-#The bucket that is being monitored for the tests
-epadd_test_bucket_name = os.getenv('EPADD_TEST_BUCKET_NAME')
+#The prefix that is being monitored for the tests
+epadd_int_test_prefix_name = os.getenv('EPADD_INT_TEST_PREFIX_NAME', "")
 
 logging.debug("Executing test_export.py")
 
 # s3 connection
 boto_session = None
 s3_resource = None
-epadd_source_bucket = None
-epadd_test_bucket = None
+epadd_bucket = None
 
 
 def connect_to_buckets():
@@ -48,9 +48,8 @@ def connect_to_buckets():
     '''
     global boto_session
     global s3_resource
-    global epadd_source_bucket
-    global epadd_test_bucket
-
+    global epadd_bucket
+    
     boto_session = boto3.Session(
         aws_access_key_id=aws_access_key,
         aws_secret_access_key=aws_secret_key)
@@ -58,12 +57,9 @@ def connect_to_buckets():
     # Then use the session to get the resource
     s3_resource = boto_session.resource('s3')
 
-    if epadd_source_type == "S3":
-        epadd_source_bucket = s3_resource.Bucket(epadd_source_name)
-        logging.debug("Connected to S3 source bucket: " + epadd_source_name)
-    
-    epadd_test_bucket = s3_resource.Bucket(epadd_test_bucket_name)
-    logging.debug("Connected to S3 test bucket: " + epadd_test_bucket_name)
+    epadd_bucket = s3_resource.Bucket(epadd_bucket_name)
+    logging.debug("Connected to S3 bucket: " + epadd_bucket_name)
+
 
 def copy_from_source_to_test(dirName = None):
     if dirName is None:
@@ -75,7 +71,7 @@ def copy_from_source_to_test(dirName = None):
 def copy_all_exports():
     '''Copies all exports from the source to the test bucket'''
     if epadd_source_type == "S3":
-        result = s3_resource.meta.client.list_objects(Bucket=epadd_source_bucket, Delimiter='/')
+        result = s3_resource.meta.client.list_objects(Bucket=epadd_source_bucket, Delimiter='/', Prefix=epadd_source_name)
         for obj in result.get('CommonPrefixes'):
             copy_export(obj.get('Prefix'))
     else:
@@ -87,15 +83,28 @@ def copy_all_exports():
 
 def copy_export(dirName):
     '''Copies the given export from the source to the test bucket'''
+    
+    epadd_int_test_prefix_dest = os.path.join(epadd_int_test_prefix_name, dirName)
     if epadd_source_type == "S3":
-          
+        prefix_path = os.path.join(epadd_source_name, dirName)
+        try:
+            s3_resource.meta.client.head_object(epadd_bucket, prefix_path).load()
+        except botocore.exceptions.ClientError as e:
+            if e.response['Error']['Code'] == "404":
+                # The key does not exist.
+                logging.error("{} does not exist in {}.".format(prefix_path, epadd_bucket_name))
+                raise Exception("{} does not exist in {}.".format(prefix_path, epadd_bucket_name))
+            else:
+              # Something else has gone wrong.
+              raise e  
         #Copy the dir
-        for obj in epadd_source_bucket.objects.filter(Prefix=dirName):
-            source = { 'Bucket': epadd_source_name,
-                       'Key': obj.key}
-            # replace the prefix
-            new_obj = epadd_test_bucket.Object(obj.key)
-            new_obj.copy(source)
+        for obj in epadd_bucket.objects.filter(Prefix=prefix_path):
+            s3_resource.meta.client.copy_object(
+                CopySource=os.path.join(epadd_bucket_name, obj.key), 
+                Bucket=epadd_bucket_name,                      
+                Key=os.path.join( epadd_int_test_prefix_name, obj.key)                   
+            )
+
     else:
         if not os.path.exists(os.path.join(epadd_source_name, dirName)):
             logging.error("{} does not exist in {}.".format(dirName, epadd_source_name))
@@ -105,8 +114,9 @@ def copy_export(dirName):
             for file in files:
                 path = root.replace(epadd_source_name, "")
                 path = path.lstrip("/")
-                epadd_test_bucket.upload_file(os.path.join(root,file),os.path.join(path,file))
+                path = os.path.join(epadd_int_test_prefix_dest, path)
+                epadd_bucket.upload_file(os.path.join(root,file),os.path.join(path,file))
         
     #Place the testing drsConfig.txt in the root of the export so it gets picked up first
-    epadd_test_bucket.upload_file(os.path.join(resource_dir, "drsConfig.txt"), os.path.join(dirName, "drsConfig.txt"))
+    epadd_bucket.upload_file(os.path.join(resource_dir, "drsConfig.txt"), os.path.join(epadd_int_test_prefix_dest, "drsConfig.txt"))
     
