@@ -98,5 +98,3 @@ curl http://ltsds-cloud-dev-1.lib.harvard.edu:10586/testExport?osn={yourTestOSN}
 ```
 curl http://ltsds-cloud-dev-1.lib.harvard.edu:10586/testExport
 ```
-
-

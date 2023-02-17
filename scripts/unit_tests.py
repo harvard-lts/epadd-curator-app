@@ -133,6 +133,17 @@ class TestZipUnitCases(unittest.TestCase):
             os.makedirs(download_export_path, exist_ok = True)
         if (not os.path.exists(zip_export_path)):
             os.makedirs(zip_export_path, exist_ok = True)
+      
+    def tearDownClass():
+        download_export_path = "/home/appuser/epadd-curator-app/download_exports"
+        zip_export_path = "/home/appuser/epadd-curator-app/zip_exports"
+        zip_file = os.path.join(zip_export_path, "integration_test.7z")
+        loading_file = os.path.join(download_export_path, "integration_testLOADING")
+        os.remove(zip_file)
+        os.remove(loading_file)
+        download_path = os.path.join(download_export_path, "integration_test")
+        shutil.rmtree(download_path)
+  
 
       
     def tearDownClass():

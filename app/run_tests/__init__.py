@@ -87,23 +87,28 @@ def copy_export(dirName):
     epadd_int_test_prefix_dest = os.path.join(epadd_int_test_prefix_name, dirName)
     if epadd_source_type == "S3":
         prefix_path = os.path.join(epadd_source_name, dirName)
-        try:
-            s3_resource.meta.client.head_object(epadd_bucket, prefix_path).load()
-        except botocore.exceptions.ClientError as e:
-            if e.response['Error']['Code'] == "404":
-                # The key does not exist.
-                logging.error("{} does not exist in {}.".format(prefix_path, epadd_bucket_name))
-                raise Exception("{} does not exist in {}.".format(prefix_path, epadd_bucket_name))
-            else:
-              # Something else has gone wrong.
-              raise e  
+        destprefix = os.path.join(epadd_int_test_prefix_name, dirName)
+        #Place loading file while being copied
+        s3_resource.Object(epadd_bucket_name, os.path.join(destprefix, "LOADING")).put(Body="")
+                
         #Copy the dir
         for obj in epadd_bucket.objects.filter(Prefix=prefix_path):
-            s3_resource.meta.client.copy_object(
-                CopySource=os.path.join(epadd_bucket_name, obj.key), 
-                Bucket=epadd_bucket_name,                      
-                Key=os.path.join( epadd_int_test_prefix_name, obj.key)                   
-            )
+            if epadd_source_name:
+                destkey = os.path.relpath(obj.key, epadd_source_name)
+            else:
+                destkey = obj.key
+            
+            #If this is an actual file
+            if obj.size > 0:    
+                s3_resource.meta.client.copy_object(
+                    CopySource=os.path.join(epadd_bucket_name, obj.key), 
+                    Bucket=epadd_bucket_name,                      
+                    Key=os.path.join( epadd_int_test_prefix_name, destkey),
+                    Metadata="REPLACE"                   
+                )
+            
+        # Remove loading file
+        s3_resource.Object(epadd_bucket_name, os.path.join(destprefix, "LOADING")).delete()
 
     else:
         if not os.path.exists(os.path.join(epadd_source_name, dirName)):
