@@ -269,15 +269,27 @@ def retrieve_export(download_path, manifest_parent_prefix):
     try:
         logging.debug("Downloading {}".format(manifest_parent_prefix))
         for obj in epadd_bucket.objects.filter(Prefix=manifest_parent_prefix):
-            logging.debug("Moving {}".format(obj.key))
-            local_file = os.path.join(download_path, obj.key)
+            
+            #Remove dropbox
+            keywithoutdropboxprefix = obj.key[len(epadd_dropbox_prefix_name)+1:]
+            logging.debug("without dropbox: {}".format(keywithoutdropboxprefix))
+            userbucket = keywithoutdropboxprefix[0:keywithoutdropboxprefix.find("/")]
+            logging.debug("user bucket: {}".format(userbucket))
+            key = keywithoutdropboxprefix[len(userbucket)+1:]
+            logging.debug("Moving {}".format(key))
+
+            local_file = os.path.join(download_path, key)
             if not os.path.exists(os.path.dirname(local_file)):
                 os.makedirs(os.path.dirname(local_file))
             elif (obj.key[-1] == "/"):
                 continue
             epadd_bucket.download_file(obj.key, local_file)
 
-        download_local_dir = os.path.join(download_path, manifest_parent_prefix)
+        pathwithoutdropboxprefix = manifest_parent_prefix[len(epadd_dropbox_prefix_name)+1:]
+        logging.debug("without dropbox: {}".format(pathwithoutdropboxprefix))
+        userbucket = pathwithoutdropboxprefix[0:pathwithoutdropboxprefix.find("/")]    
+        download_dir = pathwithoutdropboxprefix[len(userbucket)+1:]
+        download_local_dir = os.path.join(download_path, download_dir)
         return download_local_dir
     except Exception as err:
         logging.error(traceback.format_exc())
