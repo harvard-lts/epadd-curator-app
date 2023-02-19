@@ -38,6 +38,7 @@ jwt_private_key_path = os.getenv('JWT_PRIVATE_KEY_PATH')
 jwt_expiration = int(os.getenv('JWT_EXPIRATION'))
 zip_path = os.getenv('ZIPPED_EXPORT_PATH')
 download_export_path = os.getenv('DOWNLOAD_EXPORT_PATH')
+environment = os.getenv("ENV")
 
 logging.debug("Executing monitor_epadd_exports.py")
 
@@ -279,13 +280,14 @@ def retrieve_export(download_path, manifest_parent_prefix):
             keywithoutdropboxprefix = obj.key[len(epadd_dropbox_prefix_name):]
             keywithoutdropboxprefix = keywithoutdropboxprefix.lstrip("/")
             logging.debug("without dropbox: {}".format(keywithoutdropboxprefix))
-            if "/" in keywithoutdropboxprefix:
+            if environment == "development":
+                key = obj.key
+            else:
                 userbucket = keywithoutdropboxprefix[0:keywithoutdropboxprefix.find("/")]
                 logging.debug("user bucket: {}".format(userbucket))
                 key = keywithoutdropboxprefix[len(userbucket):]
                 key = key.lstrip("/")
-            else:
-                key = keywithoutdropboxprefix
+
             logging.debug("Moving {}".format(key))
 
             local_file = os.path.join(download_path, key)
@@ -298,12 +300,13 @@ def retrieve_export(download_path, manifest_parent_prefix):
         pathwithoutdropboxprefix = manifest_parent_prefix[len(epadd_dropbox_prefix_name):]
         pathwithoutdropboxprefix = pathwithoutdropboxprefix.lstrip("/")
         logging.debug("without dropbox: {}".format(pathwithoutdropboxprefix))
-        if "/" in pathwithoutdropboxprefix:
+        if environment == "development":
+            download_dir = manifest_parent_prefix
+        else:
             userbucket = pathwithoutdropboxprefix[0:pathwithoutdropboxprefix.find("/")]    
             download_dir = pathwithoutdropboxprefix[len(userbucket):]
             download_dir = download_dir.lstrip("/")
-        else:
-            download_dir = pathwithoutdropboxprefix
+
         download_local_dir = os.path.join(download_path, download_dir)
         return download_local_dir
     except Exception as err:
