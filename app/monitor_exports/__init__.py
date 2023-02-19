@@ -279,7 +279,7 @@ def retrieve_export(download_path, manifest_parent_prefix):
             keywithoutdropboxprefix = obj.key[len(epadd_dropbox_prefix_name):]
             keywithoutdropboxprefix = keywithoutdropboxprefix.lstrip("/")
             logging.debug("without dropbox: {}".format(keywithoutdropboxprefix))
-            if "/" in pathwithoutdropboxprefix:
+            if "/" in keywithoutdropboxprefix:
                 userbucket = keywithoutdropboxprefix[0:keywithoutdropboxprefix.find("/")]
                 logging.debug("user bucket: {}".format(userbucket))
                 key = keywithoutdropboxprefix[len(userbucket):]
