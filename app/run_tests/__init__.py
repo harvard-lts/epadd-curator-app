@@ -34,7 +34,7 @@ epadd_source_name = os.getenv('EPADD_SOURCE_NAME')
 #The prefix that is being monitored for the tests
 epadd_int_test_prefix_name = os.getenv('EPADD_TEST_PREFIX_NAME', "")
 
-logging.debug("Executing test_export.py")
+logging.debug("Executing run_tests.py")
 
 # s3 connection
 boto_session = None
@@ -56,6 +56,9 @@ def connect_to_buckets():
 
     # Then use the session to get the resource
     s3_resource = boto_session.resource('s3')
+    
+    epadd_bucket = s3_resource.Bucket(epadd_bucket_name)
+    logging.debug("Connected to S3 bucket: " + epadd_bucket_name)
                                                                                 
                                                                                 
 

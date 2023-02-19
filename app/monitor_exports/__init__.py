@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import logging
-import os, os.path, glob
+import os, os.path, glob, shutil
 import re
 import sys
 import traceback
@@ -66,7 +66,7 @@ def call_dims_ingest(manifest_object_key):
     
     download_dir = retrieve_export(download_export_path, manifest_parent_prefix)
     
-    payload_data = construct_payload_body(download_dir)
+    payload_data = construct_payload_body(download_dir, manifest_parent_prefix)
 
     logging.debug("Payload data extracted for {}".format(manifest_object_key))
 
@@ -77,6 +77,7 @@ def call_dims_ingest(manifest_object_key):
 
     # delete contents of s3 export folder
     try:
+        logging.debug("Deleting s3 export folder {}".format(manifest_parent_prefix))
         epadd_bucket.objects.filter(Prefix=manifest_parent_prefix).delete()
     except:
         logging.error("Error while deleting original export from S3 folder: " + manifest_parent_prefix)
@@ -84,12 +85,16 @@ def call_dims_ingest(manifest_object_key):
     # upload zip file back to manifest directory (manifest_parent_prefix)
     upload_zip_export(zip_file, manifest_parent_prefix)
 
-    # delete downloaded export
+    # delete downloaded export and zip export
     try:
         os.remove(zip_file)
     except:
         logging.error("Error while deleting zipped export: " + zip_file)
-
+    try:
+        shutil.rmtree(download_dir)
+    except:
+        logging.error("Error while deleting zipped export: " + zip_file)
+        
     # calculate iat and exp values
     current_datetime = datetime.now()
     current_epoch = int(current_datetime.timestamp())
@@ -141,7 +146,7 @@ def call_dims_ingest(manifest_object_key):
     s3_resource.Object(epadd_bucket_name, os.path.join(manifest_parent_prefix, "LOADING")).delete()
 
 
-def construct_payload_body(download_dir):
+def construct_payload_body(download_dir, full_prefix):
     """
         Construct the request body with appropriate metadata. A "testing" field is added
         if a TESTTRIGGER file exists in the export
@@ -174,7 +179,7 @@ def construct_payload_body(download_dir):
         unique_osn = metadata_dict["ownerSuppliedName"].strip()
 
     payload_data = {"package_id": unique_osn,
-                    "s3_path": os.path.basename(download_dir),
+                    "s3_path": full_prefix,
                     "s3_bucket_name": epadd_bucket_name,
                     "admin_metadata": {
                         "accessFlag": metadata_dict["accessFlag"],
