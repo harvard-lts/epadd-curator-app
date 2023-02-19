@@ -295,9 +295,12 @@ def retrieve_export(download_path, manifest_parent_prefix):
         pathwithoutdropboxprefix = manifest_parent_prefix[len(epadd_dropbox_prefix_name):]
         pathwithoutdropboxprefix = pathwithoutdropboxprefix.lstrip("/")
         logging.debug("without dropbox: {}".format(pathwithoutdropboxprefix))
-        userbucket = pathwithoutdropboxprefix[0:pathwithoutdropboxprefix.find("/")]    
-        download_dir = pathwithoutdropboxprefix[len(userbucket):]
-        download_dir = download_dir.lstrip("/")
+        if "?" in pathwithoutdropboxprefix:
+            userbucket = pathwithoutdropboxprefix[0:pathwithoutdropboxprefix.find("/")]    
+            download_dir = pathwithoutdropboxprefix[len(userbucket):]
+            download_dir = download_dir.lstrip("/")
+        else:
+            download_dir = pathwithoutdropboxprefix
         download_local_dir = os.path.join(download_path, download_dir)
         return download_local_dir
     except Exception as err:
