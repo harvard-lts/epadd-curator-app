@@ -94,7 +94,7 @@ def call_dims_ingest(manifest_object_key):
     try:
         shutil.rmtree(download_dir)
     except:
-        logging.error("Error while deleting zipped export: " + zip_file)
+        logging.error("Error while deleting download directory: " + download_dir)
         
     # calculate iat and exp values
     current_datetime = datetime.now()
