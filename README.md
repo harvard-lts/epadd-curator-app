@@ -111,7 +111,7 @@ Performance tests write their own drsConfig.txt and will ignore any drsConfig.tx
 
 ### 2: From a browser, make a call to:
 ```
-http://ltsds-cloud-dev-1.lib.harvard.edu:10586/runTest/<name of directory>
+http://ltsds-cloud-qa-1.lib.harvard.edu:10586/runTest/<name of directory>
 ```
 ### 3: Verify that the batch report comes through 
 This can be done in two ways:
