@@ -97,3 +97,23 @@ curl http://ltsds-cloud-dev-1.lib.harvard.edu:10586/testExport?osn={yourTestOSN}
 ```
 curl http://ltsds-cloud-dev-1.lib.harvard.edu:10586/testExport
 ```
+
+## Running Performance Tests in QA
+
+Performance tests write their own drsConfig.txt and will ignore any drsConfig.txt files that are provided with the directory.  The provided drsConfig.txt generates a random OSN of the form osn_<timestamp> and sends emails to DTS@HU.onmicrosoft.com
+
+## Prerequisites
+
+- NextCloud account that allows access to the directory int-test-data-store (This looks like epadd-int-test-data-store in the NC directory)
+
+
+### 1: Upload desired directory to epadd-int-test-data-store (see Prerequisites) or utilize the existing data
+
+### 2: From a browser, make a call to:
+```
+http://ltsds-cloud-qa-1.lib.harvard.edu:10586/runTest/<name of directory>
+```
+### 3: Verify that the batch report comes through 
+This can be done in two ways:
+1. Receiving an email to DTS@HU.onmicrosoft.com if you are part of that group
+2. Manually checking the dropbox for a load report.  In QA, the ePADD dropbox is located on ldi3 under epaddqa_secure in the drs QA dropboxes directories.  Load reports will show up under the batch name (osn_<timestamp>-batch)

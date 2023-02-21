@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import logging
-import os, os.path, glob
+import os, os.path, glob, shutil
 import re
 import sys
 import traceback
@@ -33,10 +33,12 @@ dims_endpoint = os.getenv('DIMS_ENDPOINT')
 aws_access_key = os.getenv('NEXTCLOUD_AWS_ACCESS_KEY')
 aws_secret_key = os.getenv('NEXTCLOUD_AWS_SECRET_KEY')
 epadd_bucket_name = os.getenv('EPADD_BUCKET_NAME')
+epadd_dropbox_prefix_name = os.getenv("EPADD_DROPBOX_PREFIX_NAME", "")
 jwt_private_key_path = os.getenv('JWT_PRIVATE_KEY_PATH')
 jwt_expiration = int(os.getenv('JWT_EXPIRATION'))
 zip_path = os.getenv('ZIPPED_EXPORT_PATH')
 download_export_path = os.getenv('DOWNLOAD_EXPORT_PATH')
+environment = os.getenv("ENV")
 
 logging.debug("Executing monitor_epadd_exports.py")
 
@@ -54,7 +56,7 @@ def call_dims_ingest(manifest_object_key):
     """
     logging.debug("Preparing to call DIMS")
     # get parent prefix of manifest file
-    manifest_parent_prefix = os.path.basename(os.path.dirname(manifest_object_key))
+    manifest_parent_prefix = os.path.dirname(manifest_object_key)
 
     try:
         with open(jwt_private_key_path) as jwt_private_key_file:
@@ -65,7 +67,7 @@ def call_dims_ingest(manifest_object_key):
     
     download_dir = retrieve_export(download_export_path, manifest_parent_prefix)
     
-    payload_data = construct_payload_body(download_dir)
+    payload_data = construct_payload_body(download_dir, manifest_parent_prefix)
 
     logging.debug("Payload data extracted for {}".format(manifest_object_key))
 
@@ -76,6 +78,7 @@ def call_dims_ingest(manifest_object_key):
 
     # delete contents of s3 export folder
     try:
+        logging.debug("Deleting s3 export folder {}".format(manifest_parent_prefix))
         epadd_bucket.objects.filter(Prefix=manifest_parent_prefix).delete()
     except:
         logging.error("Error while deleting original export from S3 folder: " + manifest_parent_prefix)
@@ -83,12 +86,16 @@ def call_dims_ingest(manifest_object_key):
     # upload zip file back to manifest directory (manifest_parent_prefix)
     upload_zip_export(zip_file, manifest_parent_prefix)
 
-    # delete downloaded export
+    # delete downloaded export and zip export
     try:
         os.remove(zip_file)
     except:
         logging.error("Error while deleting zipped export: " + zip_file)
-
+    try:
+        shutil.rmtree(download_dir)
+    except:
+        logging.error("Error while deleting download directory: " + download_dir)
+        
     # calculate iat and exp values
     current_datetime = datetime.now()
     current_epoch = int(current_datetime.timestamp())
@@ -140,7 +147,7 @@ def call_dims_ingest(manifest_object_key):
     s3_resource.Object(epadd_bucket_name, os.path.join(manifest_parent_prefix, "LOADING")).delete()
 
 
-def construct_payload_body(download_dir):
+def construct_payload_body(download_dir, full_prefix):
     """
         Construct the request body with appropriate metadata. A "testing" field is added
         if a TESTTRIGGER file exists in the export
@@ -173,7 +180,7 @@ def construct_payload_body(download_dir):
         unique_osn = metadata_dict["ownerSuppliedName"].strip()
 
     payload_data = {"package_id": unique_osn,
-                    "s3_path": os.path.basename(download_dir),
+                    "s3_path": full_prefix,
                     "s3_bucket_name": epadd_bucket_name,
                     "admin_metadata": {
                         "accessFlag": metadata_dict["accessFlag"],
@@ -236,15 +243,20 @@ def collect_exports():
     """
     manifest_object_keys = []
 
-    logging.debug("Search for manifest-<algorithm>.txt file in bucket: " + epadd_bucket_name)
+    logging.debug("Search for manifest-<algorithm>.txt file in bucket/prefix: " + os.path.join(epadd_bucket_name, epadd_dropbox_prefix_name))
 
-    epadd_bucket_objects = epadd_bucket.objects.all()
+    if epadd_dropbox_prefix_name:
+        epadd_bucket_objects = epadd_bucket.objects.filter(Prefix=epadd_dropbox_prefix_name)
+    else:   
+        epadd_bucket_objects = epadd_bucket.objects.all()
     for epadd_bucket_object in epadd_bucket_objects:
         #skip user dir
         if re.search('user[/]?', epadd_bucket_object.key, re.IGNORECASE):
+            logging.debug("Skipping user dir: {}".format(epadd_bucket_object.key))
             pass
         elif re.search('manifest(-md5|-sha256)?.txt', epadd_bucket_object.key, re.IGNORECASE):
-            manifest_parent_prefix = os.path.basename(os.path.dirname(epadd_bucket_object.key))
+            logging.debug("Manifest found: {}".format(epadd_bucket_object.key))
+            manifest_parent_prefix = os.path.dirname(epadd_bucket_object.key)
             if not (key_exists(os.path.join(manifest_parent_prefix, "ingest.txt"))
                     or key_exists(os.path.join(manifest_parent_prefix, "ingest.txt.failed"))
                     or key_exists(os.path.join(manifest_parent_prefix,"LOADING"))):
@@ -261,15 +273,41 @@ def retrieve_export(download_path, manifest_parent_prefix):
         pull down the export to local storage prior to zip (7zip)
     """
     try:
+        logging.debug("Downloading {}".format(manifest_parent_prefix))
         for obj in epadd_bucket.objects.filter(Prefix=manifest_parent_prefix):
-            local_file = os.path.join(download_path, obj.key)
+            
+            #Remove dropbox
+            keywithoutdropboxprefix = obj.key[len(epadd_dropbox_prefix_name):]
+            keywithoutdropboxprefix = keywithoutdropboxprefix.lstrip("/")
+            logging.debug("without dropbox: {}".format(keywithoutdropboxprefix))
+            if environment == "development":
+                key = obj.key
+            else:
+                userbucket = keywithoutdropboxprefix[0:keywithoutdropboxprefix.find("/")]
+                logging.debug("user bucket: {}".format(userbucket))
+                key = keywithoutdropboxprefix[len(userbucket):]
+                key = key.lstrip("/")
+
+            logging.debug("Moving {}".format(key))
+
+            local_file = os.path.join(download_path, key)
             if not os.path.exists(os.path.dirname(local_file)):
                 os.makedirs(os.path.dirname(local_file))
             elif (obj.key[-1] == "/"):
                 continue
             epadd_bucket.download_file(obj.key, local_file)
 
-        download_local_dir = os.path.join(download_path, manifest_parent_prefix)
+        pathwithoutdropboxprefix = manifest_parent_prefix[len(epadd_dropbox_prefix_name):]
+        pathwithoutdropboxprefix = pathwithoutdropboxprefix.lstrip("/")
+        logging.debug("without dropbox: {}".format(pathwithoutdropboxprefix))
+        if environment == "development":
+            download_dir = manifest_parent_prefix
+        else:
+            userbucket = pathwithoutdropboxprefix[0:pathwithoutdropboxprefix.find("/")]    
+            download_dir = pathwithoutdropboxprefix[len(userbucket):]
+            download_dir = download_dir.lstrip("/")
+
+        download_local_dir = os.path.join(download_path, download_dir)
         return download_local_dir
     except Exception as err:
         logging.error(traceback.format_exc())
