@@ -191,7 +191,7 @@ class TestConstructPayload(unittest.TestCase):
     @mock.patch("monitor_exports.epadd_bucket_name", "test_bucket" )
     @mock.patch("monitor_exports.epadd_bucket", MockEpaddBucket() )
     def test_construct_payload(self):
-        payload = monitor_epadd_exports.construct_payload_body("/home/appuser/epadd-curator-app/resources/EmlExample")
+        payload = monitor_epadd_exports.construct_payload_body("/home/appuser/epadd-curator-app/resources/EmlExample", "")
         self.assertTrue(payload, "Payload returned was empty")
           
 class TestZipEpaddExports(unittest.TestCase):
@@ -242,6 +242,7 @@ class TestCopySingleExportFS(unittest.TestCase):
     @mock.patch("run_tests.epadd_source_type", "FS" )
     @mock.patch("run_tests.epadd_source_name", "/home/appuser/epadd-curator-app/resources" )
     @mock.patch("run_tests.epadd_test_bucket_name", "test_bucket" )
+    @mock.patch("run_tests.epadd_source_bucket", MockEpaddPerformanceTestingSourceBucket())
     @mock.patch("run_tests.epadd_test_bucket", MockEpaddPerformanceTestingDestinationBucket() )
     def test_copy_one(self):
         run_tests.copy_from_source_to_test('EmlExample')
@@ -250,7 +251,7 @@ class TestCopySingleExportFS(unittest.TestCase):
     
 
     def test_construct_payload(self):
-        payload = monitor_epadd_exports.construct_payload_body("/home/appuser/epadd-curator-app/resources/EmlExample")
+        payload = monitor_epadd_exports.construct_payload_body("/home/appuser/epadd-curator-app/resources/EmlExample", "")
         self.assertTrue(payload, "Payload returned was empty")
         
 class TestZipEpaddExports(unittest.TestCase):
