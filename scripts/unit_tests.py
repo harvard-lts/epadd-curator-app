@@ -138,7 +138,7 @@ class TestZipUnitCases(unittest.TestCase):
         download_export_path = "/home/appuser/epadd-curator-app/download_exports"
         zip_export_path = "/home/appuser/epadd-curator-app/zip_exports"
         zip_file = os.path.join(zip_export_path, "integration_test.7z")
-        loading_file = os.path.join(download_export_path, "integration_testLOADING")
+        loading_file = os.path.join(download_export_path, "integration_test/LOADING")
         os.remove(zip_file)
         os.remove(loading_file)
         download_path = os.path.join(download_export_path, "integration_test")
@@ -150,7 +150,7 @@ class TestZipUnitCases(unittest.TestCase):
         download_export_path = "/home/appuser/epadd-curator-app/download_exports"
         zip_export_path = "/home/appuser/epadd-curator-app/zip_exports"
         zip_file = os.path.join(zip_export_path, "integration_test.7z")
-        loading_file = os.path.join(download_export_path, "integration_testLOADING")
+        loading_file = os.path.join(download_export_path, "integration_test/LOADING")
         os.remove(zip_file)
         os.remove(loading_file)
         download_path = os.path.join(download_export_path, "integration_test")
