@@ -116,6 +116,10 @@ pdftmp/*pdf
 #pickle file
 pickle
 
+# VIM files
+*.swp
+*~
+
 **/node_modules
 
 pdfstorerdaemon.pid
