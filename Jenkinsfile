@@ -6,7 +6,5 @@
 // intTestEndpoints: List of integration test endpoints i.e. ['healthcheck/', 'another/example/']
 // default values: slackChannel = "lts-jenkins-notifications"
 
-def endpoints = []
-def excludeIntTestDev = []
-def excludeIntTestQA = []
-ltsBasicPipeline.call("epadd-curator-app", "DAIS", "hdc3a", "10582", endpoints, excludeIntTestDev, excludeIntTestQA, "lts-epadd")
+def endpoints = ["curatorApp/testbatch/ePADD-eml-export", "curatorApp/testbatch/ePADD-mbox-export"]
+ltsBasicPipeline.call("epadd-curator-app", "DAIS", "hdc3a", "10582", endpoints, "lts-epadd")
