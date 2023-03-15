@@ -323,7 +323,7 @@ def zip_export(zip_path, directory_to_zip):
         zip_filename = os.path.join(zip_path, manifest_parent_prefix + ".7z")
         logging.debug("Zipping directory {} into {} ".format(directory_to_zip, zip_filename))
         with py7zr.SevenZipFile(zip_filename, 'w') as archive:
-            archive.writeall(directory_to_zip)
+            archive.writeall(directory_to_zip, manifest_parent_prefix)
         return zip_filename
     except Exception as err:
         logging.error(traceback.format_exc())

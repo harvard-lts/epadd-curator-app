@@ -3,6 +3,7 @@
 import unittest, os, os.path
 import unittest.mock as mock
 import sys, traceback, shutil
+import py7zr
 from dotenv import load_dotenv
 load_dotenv()
 sys.path.insert(0, '/home/appuser/epadd-curator-app/app')
@@ -196,32 +197,6 @@ class TestConstructPayload(unittest.TestCase):
         payload = monitor_epadd_exports.construct_payload_body("/home/appuser/epadd-curator-app/resources/EmlExample", "")
         self.assertTrue(payload, "Payload returned was empty")
           
-class TestZipEpaddExports(unittest.TestCase):
-  
-          
-    def setUpClass():
-        resources_path = os.getenv("DATA_PATH", "/home/appuser/epadd-curator-app/resources")
-        zip_export_path = os.getenv("ZIPPED_EXPORT_PATH", "/home/appuser/epadd-curator-app/zip_exports")
-      
-        # create download and zip dirs if they don't exist
-        if (not os.path.exists(resources_path)):
-            os.makedirs(resources_path, exist_ok = True)
-        if (not os.path.exists(zip_export_path)):
-            os.makedirs(zip_export_path, exist_ok = True)
-              
-    def tearDownClass():
-        zip_export_path = os.getenv("ZIPPED_EXPORT_PATH", "/home/appuser/epadd-curator-app/zip_exports")
-        zip_file = os.path.join(zip_export_path, "EmlExample.7z")
-        os.remove(zip_file)
-  
-    def test_zip_eml(self): #zip an eml export
-        resources_path = os.getenv("DATA_PATH", "/home/appuser/epadd-curator-app/resources")
-        zip_export_path = os.getenv("ZIPPED_EXPORT_PATH", "/home/appuser/epadd-curator-app/zip_exports")
-        zip_path = os.path.join(zip_export_path, "EmlExample.7z")
-        eml_path = os.path.join(resources_path, "EmlExample")
-        success = monitor_epadd_exports.zip_export(zip_export_path, eml_path)
-        self.assertTrue(success, "Eml zip failed")
-        self.assertTrue(os.path.isfile(zip_path))
 
 # class TestCopySingleExportS3(unittest.TestCase):
 #  
@@ -285,6 +260,14 @@ class TestZipEpaddExports(unittest.TestCase):
         success = monitor_epadd_exports.zip_export(zip_export_path, eml_path)
         self.assertTrue(success, "Eml zip failed")
         self.assertTrue(os.path.isfile(zip_path))
+
+        with py7zr.SevenZipFile(zip_path) as zip:
+          files = zip.getnames()
+          # 174 is number of files in test fixture: 'eml_path'
+          self.assertTrue(len(files) == 174)
+          for file in files:
+            self.assertTrue(file.startswith("EmlExample"),
+                            "File expected to start with 'EmlExample': {}".format(file))
 
 if __name__ == '__main__':
     unittest.main()
