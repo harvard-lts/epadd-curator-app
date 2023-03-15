@@ -7,4 +7,6 @@
 // default values: slackChannel = "lts-jenkins-notifications"
 
 def endpoints = ["curatorApp/testbatch/ePADD-eml-export", "curatorApp/testbatch/ePADD-mbox-export"]
-ltsBasicPipeline.call("epadd-curator-app", "DAIS", "hdc3a", "10582", endpoints, "lts-epadd")
+def excludeIntTestDev = ["curatorApp/testbatch/ePADD-eml-export", "curatorApp/testbatch/ePADD-mbox-export"]
+def excludeIntTestQA = []
+ltsBasicPipeline.call("epadd-curator-app", "DAIS", "hdc3a", "10582", endpoints, excludeIntTestDev, excludeIntTestQA, "lts-epadd")
