@@ -293,7 +293,9 @@ def retrieve_export(download_path, manifest_parent_prefix):
             local_file = os.path.join(download_path, key)
             if not os.path.exists(os.path.dirname(local_file)):
                 os.makedirs(os.path.dirname(local_file))
+                logging.debug("Created dir {}".format(os.path.dirname(local_file)))
             elif (obj.key[-1] == "/"):
+                logging.debug("Not creating dir for {}".format(obj.key))
                 continue
             epadd_bucket.download_file(obj.key, local_file)
 
