@@ -291,11 +291,15 @@ def retrieve_export(download_path, manifest_parent_prefix):
             logging.debug("Moving {}".format(key))
 
             local_file = os.path.join(download_path, key)
+            # If the obj.key is a path, and the corresponding download dir doesn't exist
+            # then create the dir and don't attempt to download a file
             if (obj.key[-1] == "/"):
                 if not os.path.exists(local_file):
                     os.makedirs(local_file)
                     logging.debug("Created dir {}".format(local_file))
                 continue
+            # Else if obj.key is a file, create the dir if the download dir doesn't already
+            # exist. Then attempt to download the file.
             elif not os.path.exists(os.path.dirname(local_file)):
                 os.makedirs(os.path.dirname(local_file))
                 logging.debug("Created dir for file {}".format(local_file))
