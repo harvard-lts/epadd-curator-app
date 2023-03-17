@@ -292,7 +292,8 @@ def retrieve_export(download_path, manifest_parent_prefix):
 
             local_file = os.path.join(download_path, key)
             # If the obj.key is a path, and the corresponding download dir doesn't exist
-            # then create the dir and don't attempt to download a file
+            # then create the dir and don't attempt to download a file.
+            # Hidden files also have obj.key ending in '/' and will be excluded from download.
             if (obj.key[-1] == "/"):
                 if not os.path.exists(local_file):
                     os.makedirs(local_file)
