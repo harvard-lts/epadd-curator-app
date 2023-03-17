@@ -295,10 +295,11 @@ def retrieve_export(download_path, manifest_parent_prefix):
                 if not os.path.exists(local_file):
                     os.makedirs(local_file)
                     logging.debug("Created dir {}".format(local_file))
+                continue
             elif not os.path.exists(os.path.dirname(local_file)):
                 os.makedirs(os.path.dirname(local_file))
                 logging.debug("Created dir for file {}".format(local_file))
-                epadd_bucket.download_file(obj.key, local_file)
+            epadd_bucket.download_file(obj.key, local_file)
 
         pathwithoutdropboxprefix = manifest_parent_prefix[len(epadd_dropbox_prefix_name):]
         pathwithoutdropboxprefix = pathwithoutdropboxprefix.lstrip("/")
