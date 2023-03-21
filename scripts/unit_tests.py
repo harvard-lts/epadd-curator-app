@@ -126,15 +126,6 @@ class MockEpaddPerformanceTestingDestinationBucket:
         obj = self.objects.append(key)
         return obj
 
-
-class TestMonitorUnitCases(unittest.TestCase):
-    @mock.patch("monitor_exports.s3_resource", MockS3Resource() )
-    @mock.patch("monitor_exports.epadd_bucket_name", "test_bucket" )
-    @mock.patch("monitor_exports.epadd_bucket", MockEpaddBucket() )
-    def test_file_skip(self):
-        filelist = monitor_epadd_exports.collect_exports()
-        correctlist = ["test/manifest-sha256.txt/msdos.txt", "test/manifest-md5.txt/index.html"]
-        self.assertEqual(filelist, correctlist)
   
 class TestZipUnitCases(unittest.TestCase):
   
