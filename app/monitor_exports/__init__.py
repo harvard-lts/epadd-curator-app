@@ -274,16 +274,20 @@ def collect_exports():
         if re.search('^user[/]?', epadd_bucket_object, re.IGNORECASE):
             logging.debug("Skipping user dir: {}".format(epadd_bucket_object))
             pass
-        elif re.search('manifest(-md5|-sha256)?.txt', epadd_bucket_object, re.IGNORECASE):
-            logging.debug("Manifest found: {}".format(epadd_bucket_object))
-            manifest_parent_prefix = os.path.dirname(epadd_bucket_object)
-            if not (key_exists(os.path.join(manifest_parent_prefix, "ingest.txt"))
-                    or key_exists(os.path.join(manifest_parent_prefix, "ingest.txt.failed"))
-                    or key_exists(os.path.join(manifest_parent_prefix,"LOADING"))):
-                logging.debug("Putting LOADING file at prefix: " + manifest_parent_prefix)
-                s3_resource.Object(epadd_bucket_name, os.path.join(manifest_parent_prefix, "LOADING")).put(Body="")
-                manifest_object_keys.append(epadd_bucket_object)
-                logging.debug("Object key added: " + epadd_bucket_object)
+        else:
+            objects = epadd_bucket.objects.filter(Prefix=epadd_bucket_object)
+            for obj in objects:
+                if re.search('manifest(-md5|-sha256)?.txt', obj.key, re.IGNORECASE):
+                    logging.debug("Manifest found: {}".format(obj.key))
+                    manifest_parent_prefix = os.path.dirname(obj.key)
+                    if not (key_exists(os.path.join(manifest_parent_prefix, "ingest.txt"))
+                            or key_exists(os.path.join(manifest_parent_prefix, "ingest.txt.failed"))
+                            or key_exists(os.path.join(manifest_parent_prefix,"LOADING"))):
+                        logging.debug("Putting LOADING file at prefix: " + manifest_parent_prefix)
+                        s3_resource.Object(epadd_bucket_name, os.path.join(manifest_parent_prefix, "LOADING")).put(Body="")
+                        manifest_object_keys.append(obj.key)
+                        logging.debug("Object key added: " + obj.key)
+                    break
 
     return manifest_object_keys
 
