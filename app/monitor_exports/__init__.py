@@ -200,6 +200,7 @@ def construct_payload_body(download_dir, full_prefix):
                         "failureEmail": metadata_dict["failureEmail"],
                         "successMethod": metadata_dict["successMethod"],
                         "adminCategory": metadata_dict["adminCategory"],
+                        "embargoBasis": metadata_dict["embargoBasis"],
                         "original_queue": "/queue/transfer_ready",
                         "retry_count": 1
                     }

@@ -16,3 +16,4 @@ successEmail=julie_wetherill@harvard.edu
 failureEmail=julie_wetherill@harvard.edu
 successMethod=email
 adminCategory=http://idtest.lib.harvard.edu:9020/wordshack/adminCategory/81144
+embargoBasis=Harvard policy
