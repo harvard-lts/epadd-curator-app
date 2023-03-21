@@ -245,25 +245,49 @@ def collect_exports():
 
     logging.debug("Search for manifest-<algorithm>.txt file in bucket/prefix: " + os.path.join(epadd_bucket_name, epadd_dropbox_prefix_name))
 
+    epadd_bucket_objects = []
+    #Format is <prefix>/<user 'dropbox' name>/<export name>/<data>
+    #Example dropboxes/lts-test/ePADD-eml-export/....
     if epadd_dropbox_prefix_name:
-        epadd_bucket_objects = epadd_bucket.objects.filter(Prefix=epadd_dropbox_prefix_name)
+        dropbox_name = epadd_dropbox_prefix_name
+        if "/" not in dropbox_name:
+            dropbox_name += "/" 
+        #This helps retrieve the user dropboxes
+        user_dropboxes = s3_resource.meta.client.list_objects_v2(Bucket=epadd_bucket_name, Prefix=dropbox_name, Delimiter="/")
+        
+        for user_dropbox in user_dropboxes.get('CommonPrefixes'):
+            user_dropbox_path = user_dropbox.get('Prefix')
+            #This gets the list of the exported names under the user 'dropbox'
+            export_names = s3_resource.meta.client.list_objects_v2(Bucket=epadd_bucket_name, Prefix=user_dropbox_path, Delimiter="/")
+            for export_dir in export_names.get('CommonPrefixes'):
+                epadd_bucket_objects.append(export_dir.get('Prefix'))
+    #Format is just <export name>/<data>
+    #Example ePADD-eml-export/<data>
     else:   
-        epadd_bucket_objects = epadd_bucket.objects.all()
+        #This gets the list of the exported names under the bucket
+        export_names = s3_resource.meta.client.list_objects_v2(Bucket=epadd_bucket_name, Delimiter="/")
+        for export_dir in export_names.get('CommonPrefixes'):
+            epadd_bucket_objects.append(export_dir.get('Prefix'))
+
     for epadd_bucket_object in epadd_bucket_objects:
         #skip user dir
-        if re.search('^user[/]?', epadd_bucket_object.key, re.IGNORECASE):
-            logging.debug("Skipping user dir: {}".format(epadd_bucket_object.key))
+        if re.search('^user[/]?', epadd_bucket_object, re.IGNORECASE):
+            logging.debug("Skipping user dir: {}".format(epadd_bucket_object))
             pass
-        elif re.search('manifest(-md5|-sha256)?.txt', epadd_bucket_object.key, re.IGNORECASE):
-            logging.debug("Manifest found: {}".format(epadd_bucket_object.key))
-            manifest_parent_prefix = os.path.dirname(epadd_bucket_object.key)
-            if not (key_exists(os.path.join(manifest_parent_prefix, "ingest.txt"))
-                    or key_exists(os.path.join(manifest_parent_prefix, "ingest.txt.failed"))
-                    or key_exists(os.path.join(manifest_parent_prefix,"LOADING"))):
-                logging.debug("Putting LOADING file at prefix: " + manifest_parent_prefix)
-                s3_resource.Object(epadd_bucket_name, os.path.join(manifest_parent_prefix, "LOADING")).put(Body="")
-                manifest_object_keys.append(epadd_bucket_object.key)
-                logging.debug("Object key added: " + epadd_bucket_object.key)
+        else:
+            objects = epadd_bucket.objects.filter(Prefix=epadd_bucket_object)
+            for obj in objects:
+                if re.search('manifest(-md5|-sha256)?.txt', obj.key, re.IGNORECASE):
+                    logging.debug("Manifest found: {}".format(obj.key))
+                    manifest_parent_prefix = os.path.dirname(obj.key)
+                    if not (key_exists(os.path.join(manifest_parent_prefix, "ingest.txt"))
+                            or key_exists(os.path.join(manifest_parent_prefix, "ingest.txt.failed"))
+                            or key_exists(os.path.join(manifest_parent_prefix,"LOADING"))):
+                        logging.debug("Putting LOADING file at prefix: " + manifest_parent_prefix)
+                        s3_resource.Object(epadd_bucket_name, os.path.join(manifest_parent_prefix, "LOADING")).put(Body="")
+                        manifest_object_keys.append(obj.key)
+                        logging.debug("Object key added: " + obj.key)
+                    break
 
     return manifest_object_keys
 
@@ -299,6 +323,7 @@ def retrieve_export(download_path, manifest_parent_prefix):
                     os.makedirs(local_file)
                     logging.debug("Created dir {}".format(local_file))
                 continue
+            
             # Else if obj.key is a file, create the dir if the download dir doesn't already
             # exist. Then attempt to download the file.
             elif not os.path.exists(os.path.dirname(local_file)):
