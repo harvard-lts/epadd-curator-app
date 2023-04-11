@@ -168,6 +168,10 @@ def construct_payload_body(download_dir, full_prefix):
     metadata_dict = {}
     with open(drsconfig) as drs_config_file:
         for line in drs_config_file:
+            #Remove whitespace
+            line = line.strip()
+            #Remove unicode
+            line = line.encode("ascii", "ignore").decode()
             if len(line) > 0:
                 split_val = line.split('=')
                 metadata_dict[split_val[0]] = split_val[1]
@@ -200,6 +204,7 @@ def construct_payload_body(download_dir, full_prefix):
                         "failureEmail": metadata_dict["failureEmail"],
                         "successMethod": metadata_dict["successMethod"],
                         "adminCategory": metadata_dict["adminCategory"],
+                        "embargoBasis": metadata_dict["embargoBasis"],
                         "original_queue": "/queue/transfer_ready",
                         "retry_count": 1
                     }
