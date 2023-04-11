@@ -168,6 +168,8 @@ def construct_payload_body(download_dir, full_prefix):
     metadata_dict = {}
     with open(drsconfig) as drs_config_file:
         for line in drs_config_file:
+            #Remove unicode and whitespace
+            line = strip_unicode_and_whitespace(line)
             if len(line) > 0:
                 split_val = line.split('=')
                 metadata_dict[split_val[0]] = split_val[1]
@@ -208,6 +210,15 @@ def construct_payload_body(download_dir, full_prefix):
 
     return payload_data
 
+def strip_unicode_and_whitespace(line):
+    #Remove whitespace
+    line = line.strip()
+    #Remove hex bytes
+    line = line.replace("\x00",'') 
+    #Remove unicode
+    line = line.encode("ascii", "ignore").decode()
+    return line
+            
 
 def key_exists(key):
     """
