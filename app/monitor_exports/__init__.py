@@ -213,7 +213,7 @@ def construct_payload_body(download_dir, full_prefix):
 def strip_unicode_and_whitespace(line):
     #Remove whitespace
     line = line.strip()
-    #Remove hex bytes
+    #Remove null bytes
     line = line.replace("\x00",'') 
     #Remove unicode
     line = line.encode("ascii", "ignore").decode()
