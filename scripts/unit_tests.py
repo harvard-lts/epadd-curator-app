@@ -187,6 +187,11 @@ class TestConstructPayload(unittest.TestCase):
     def test_construct_payload(self):
         payload = monitor_epadd_exports.construct_payload_body("/home/appuser/epadd-curator-app/resources/EmlExample", "")
         self.assertTrue(payload, "Payload returned was empty")
+        
+    def test_strip_unicode_tabs_and_blank_lines(self):
+        mystring="LOWUSE\x00\x00\x00\x00\x00\x00"
+        retval = monitor_epadd_exports.strip_unicode_and_whitespace(mystring)
+        self.assertEqual(retval,"LOWUSE")
           
 
 # class TestCopySingleExportS3(unittest.TestCase):
