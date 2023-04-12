@@ -2,8 +2,10 @@ requests~=2.27.1
 pytest==6.2.2
 botocore==1.27.55
 boto3==1.24.55
+lts-mqemailnotifier
 PyJWT==2.4.0
 py7zr==0.20.2
 python-dotenv==0.19.2
 cryptography==37.0.2
 jcs==0.2.0
+stomp.py==8.0.1
