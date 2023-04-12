@@ -13,6 +13,7 @@ import boto3
 
 import requests
 from requests import exceptions, HTTPError
+import mqresources.mqutils as mqutils
 import py7zr
 
 DATEFORMAT = '%Y-%m-%d %H:%M:%S'
@@ -63,6 +64,7 @@ def call_dims_ingest(manifest_object_key):
             jwt_private_key = jwt_private_key_file.read()
     except:
         logging.error("Error opening private jwt token at path: " + jwt_private_key_path)
+        
 
     
     download_dir = retrieve_export(download_export_path, manifest_parent_prefix)
@@ -391,4 +393,7 @@ def upload_zip_export(zip_path, manifest_parent_prefix):
         logging.error("Error uploading zip archive: " + zip_path)
         return False
 
-
+def send_notification(subject, body, recipients=None, exception: Exception=None, queue=None):
+    if not queue:
+       queue = os.getenv("EMAIL_QUEUE_NAME")
+    return mqutils.notify_email_message(subject, body, recipients, exception, queue)
