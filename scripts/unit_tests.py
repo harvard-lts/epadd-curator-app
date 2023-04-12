@@ -9,6 +9,7 @@ load_dotenv()
 sys.path.insert(0, '/home/appuser/epadd-curator-app/app')
 
 import monitor_exports as monitor_epadd_exports
+from monitor_exports.monitor_exception import MonitoringException
 import run_tests
 
 class MockS3Resource:
@@ -197,9 +198,14 @@ class TestConstructPayload(unittest.TestCase):
 class TestSendNotification(unittest.TestCase):
   
     def test_notify(self):
-        message = monitor_epadd_exports.send_notification("Test Subject from Curator App", "Test Body from Curator App", "dts@hu.onmicrosoft.com")
+        message = monitor_epadd_exports.send_error_notification("Test Subject from Curator App", "Test Body from Curator App", "dts@hu.onmicrosoft.com")
         json_message = json.loads(message)
         self.assertTrue(type(json_message) is dict)
+        
+    def test_monitoring_exception(self):
+        e = MonitoringException("Message", "test@test.com")
+        self.assertEqual(e.emailaddress, "test@test.com")
+        
          
 class TestCopySingleExportFS(unittest.TestCase):
   

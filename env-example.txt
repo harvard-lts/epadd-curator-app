@@ -61,4 +61,4 @@ MQ_PORT=61614
 MQ_USER=ims
 MQ_PASSWORD=XXX
 QUEUE_NAME=/queue/dais-notify
-
+DEFAULT_EMAIL_RECIPIENT=dts@hu.onmicrosoft.com

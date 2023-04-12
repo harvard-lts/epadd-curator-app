@@ -14,6 +14,7 @@ import boto3
 import requests
 from requests import exceptions, HTTPError
 import mqresources.mqutils as mqutils
+from monitor_exports.monitor_exception import MonitoringException
 import py7zr
 
 DATEFORMAT = '%Y-%m-%d %H:%M:%S'
@@ -40,6 +41,7 @@ jwt_expiration = int(os.getenv('JWT_EXPIRATION'))
 zip_path = os.getenv('ZIPPED_EXPORT_PATH')
 download_export_path = os.getenv('DOWNLOAD_EXPORT_PATH')
 environment = os.getenv("ENV")
+default_email_recipient = os.getenv("DEFAULT_EMAIL_RECIPIENT")
 
 logging.debug("Executing monitor_epadd_exports.py")
 
@@ -62,41 +64,50 @@ def call_dims_ingest(manifest_object_key):
     try:
         with open(jwt_private_key_path) as jwt_private_key_file:
             jwt_private_key = jwt_private_key_file.read()
-    except:
-        logging.error("Error opening private jwt token at path: " + jwt_private_key_path)
-        
-
+    except Exception as e:
+        exception_msg = traceback.format_exc()
+        msg = "Error opening private jwt token.\n" + exception_msg
+        send_error_notification("Error opening private jwt token", msg)
+        logging.error("Expected path: " + jwt_private_key_path)
     
     download_dir = retrieve_export(download_export_path, manifest_parent_prefix)
     
     payload_data = construct_payload_body(download_dir, manifest_parent_prefix)
-
+    notify_emails = get_notify_emails(payload_data)
+    
     logging.debug("Payload data extracted for {}".format(manifest_object_key))
 
     # 7zip up directory
-    zip_file = zip_export(zip_path, download_dir)
+    zip_file = zip_export(zip_path, download_dir, notify_emails)
     if not zip_file:
-        raise Exception("{} did not zip properly to {}".format(download_dir, zip_path))
+        raise MonitoringException("{} did not zip properly to {}".format(download_dir, zip_path), notify_emails)
 
     # delete contents of s3 export folder
     try:
         logging.debug("Deleting s3 export folder {}".format(manifest_parent_prefix))
         epadd_bucket.objects.filter(Prefix=manifest_parent_prefix).delete()
     except:
-        logging.error("Error while deleting original export from S3 folder: " + manifest_parent_prefix)
+        exception_msg = traceback.format_exc()
+        msg = "Error while deleting original export from S3 folder: " + manifest_parent_prefix +"\n" + exception_msg
+        send_error_notification("Error while deleting original export from S3 folder: " + manifest_parent_prefix, msg, notify_emails)
 
     # upload zip file back to manifest directory (manifest_parent_prefix)
-    upload_zip_export(zip_file, manifest_parent_prefix)
+    upload_zip_export(zip_file, manifest_parent_prefix, notify_emails)
 
     # delete downloaded export and zip export
     try:
         os.remove(zip_file)
     except:
-        logging.error("Error while deleting zipped export: " + zip_file)
+        exception_msg = traceback.format_exc()
+        msg = "Error while deleting zipped export: " + zip_file +"\n" + exception_msg
+        send_error_notification("Error while deleting zipped export: " + zip_file, msg, notify_emails)
+
     try:
         shutil.rmtree(download_dir)
     except:
-        logging.error("Error while deleting download directory: " + download_dir)
+        exception_msg = traceback.format_exc()
+        msg = "Error while deleting download directory: " + download_dir +"\n" + exception_msg
+        send_error_notification("Error while deleting download directory: " + download_dir, msg, notify_emails)
         
     # calculate iat and exp values
     current_datetime = datetime.now()
@@ -130,7 +141,9 @@ def call_dims_ingest(manifest_object_key):
             json=payload_data,
             verify=False)
     except (exceptions.ConnectionError, HTTPError) as e:
-        logging.error("Error when calling DIMS /ingest: " + str(e))
+        exception_msg = traceback.format_exc()
+        msg = "Error when calling DIMS /ingest\n" + exception_msg
+        send_error_notification("Error when calling DIMS /ingest", msg, notify_emails)
 
     json_ingest_response = ingest_epadd_export.json()
     logging.debug(json_ingest_response)
@@ -148,6 +161,16 @@ def call_dims_ingest(manifest_object_key):
     # Remove loading file
     s3_resource.Object(epadd_bucket_name, os.path.join(manifest_parent_prefix, "LOADING")).delete()
 
+def get_notify_emails(payload_data):
+    admin_md = payload_data['admin_metadata']
+    delmiter = ""
+    notify_emails = None
+    if "depositAgentEmail" in admin_md:
+        notify_emails = admin_md["depositAgentEmail"]
+        delimiter = ","
+    if "failureEmail" in admin_md and admin_md["failureEmail"] != notify_emails:
+        notify_emails += delimiter + admin_md["failureEmail"]
+    return notify_emails
 
 def construct_payload_body(download_dir, full_prefix):
     """
@@ -162,7 +185,7 @@ def construct_payload_body(download_dir, full_prefix):
     if drsconfig_list:
         drsconfig = drsconfig_list[0]
     else:
-        raise Exception("drsConfig.txt not found in export {}".format(download_dir))
+        raise MonitoringException("drsConfig.txt not found in export {}".format(download_dir), None)
         
         
     logging.debug("Retrieved sidecar metadata from " + drsconfig)
@@ -203,8 +226,8 @@ def construct_payload_body(download_dir, full_prefix):
                         "successEmail": metadata_dict["successEmail"],
                         "failureEmail": metadata_dict["failureEmail"],
                         "successMethod": metadata_dict["successMethod"],
-                        "adminCategory": metadata_dict["adminCategory"],
-                        "embargoBasis": metadata_dict["embargoBasis"],
+                        "adminCategory": metadata_dict.get("adminCategory"),
+                        "embargoBasis": metadata_dict.get("embargoBasis"),
                         "original_queue": "/queue/transfer_ready",
                         "retry_count": 1
                     }
@@ -359,10 +382,10 @@ def retrieve_export(download_path, manifest_parent_prefix):
         return download_local_dir
     except Exception as err:
         logging.error(traceback.format_exc())
-        raise err
+        raise MonitoringException(err, None)
 
 
-def zip_export(zip_path, directory_to_zip):
+def zip_export(zip_path, directory_to_zip, notify_emails=None):
     """
         zip up export in 7zip format
     """
@@ -374,13 +397,13 @@ def zip_export(zip_path, directory_to_zip):
             archive.writeall(directory_to_zip, manifest_parent_prefix)
         return zip_filename
     except Exception as err:
-        logging.error(traceback.format_exc())
-        logging.error("Error zipping up export: " + manifest_parent_prefix)
-        logging.error(err)
+        exception_msg = traceback.format_exc()
+        msg = "Error zipping up export: " + manifest_parent_prefix + "\n" + exception_msg
+        send_error_notification("Error zipping up export: " + manifest_parent_prefix, msg, notify_emails)
         return False
 
 
-def upload_zip_export(zip_path, manifest_parent_prefix):
+def upload_zip_export(zip_path, manifest_parent_prefix, notify_emails=None):
     """
         upload zipped export back to s3
     """
@@ -389,11 +412,17 @@ def upload_zip_export(zip_path, manifest_parent_prefix):
         epadd_bucket.upload_file(zip_path, os.path.join(manifest_parent_prefix, zip_file))
         return True
     except:
-        logging.error(traceback.format_exc())
-        logging.error("Error uploading zip archive: " + zip_path)
+        exception_msg = traceback.format_exc()
+        msg = "Error uploading zip archive: " + zip_path + "\n" + exception_msg
+        send_error_notification("Error uploading zip archive: " + zip_path, msg, notify_emails)
         return False
 
-def send_notification(subject, body, recipients=None, exception: Exception=None, queue=None):
-    if not queue:
-       queue = os.getenv("EMAIL_QUEUE_NAME")
-    return mqutils.notify_email_message(subject, body, recipients, exception, queue)
+def send_error_notification(subject, body, recipients=None):
+    logging.error(body)
+    queue = os.getenv("EMAIL_QUEUE_NAME")
+    subject = "ePADD Curator App: " + subject   
+    if recipients is None:
+        recipients = default_email_recipient
+    else:
+        recipients += "," + default_email_recipient
+    return mqutils.notify_email_message(subject, body, recipients, queue)
