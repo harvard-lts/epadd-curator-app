@@ -197,7 +197,7 @@ class TestConstructPayload(unittest.TestCase):
 class TestSendNotification(unittest.TestCase):
   
     def test_notify(self):
-        message = monitor_epadd_exports.send_notification("Test Subject from Curator App", "Test Body from Curator App", "valdeva_crema@harvard.edu")
+        message = monitor_epadd_exports.send_notification("Test Subject from Curator App", "Test Body from Curator App", "dts@hu.onmicrosoft.com")
         json_message = json.loads(message)
         self.assertTrue(type(json_message) is dict)
          
