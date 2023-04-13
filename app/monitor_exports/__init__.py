@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import logging
+from logging.handlers import TimedRotatingFileHandler
 import os, os.path, glob, shutil
 import re
 import sys
@@ -15,15 +16,25 @@ import requests
 from requests import exceptions, HTTPError
 import mqresources.mqutils as mqutils
 from monitor_exports.monitor_exception import MonitoringException
+
 import py7zr
 
-DATEFORMAT = '%Y-%m-%d %H:%M:%S'
-log_dir = os.getenv("LOG_DIR", "/home/appuser/epadd-curator-app/logs")
+
+LOG_FILE_BACKUP_COUNT = 1
+LOG_ROTATION = "midnight"
 log_level = os.getenv("LOG_LEVEL", "WARNING")
-logname_template = os.path.join(log_dir, "monitor_epadd_exports_{}.log")
-logging.basicConfig(filename=logname_template.format(datetime.today().strftime("%Y%m%d")),
-                    format='%(asctime)-2s --%(filename)s-- %(levelname)-8s %(message)s', datefmt=DATEFORMAT,
-                    level=log_level)
+log_file_path = os.path.join(log_dir, "monitor_epadd_exports.log")
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    
+file_handler = TimedRotatingFileHandler(
+    filename=log_file_path,
+    when=LOG_ROTATION,
+    backupCount=LOG_FILE_BACKUP_COUNT
+)
+logger.addHandler(file_handler)
+file_handler.setFormatter(formatter)
+logger.setLevel(log_level)
+logger = logging.getLogger('monitor_epadd_exports')
 
 #Prevents S3 gem from logging too much
 logging.getLogger('boto3').setLevel(logging.CRITICAL)
@@ -57,7 +68,7 @@ def call_dims_ingest(manifest_object_key):
         called, an ingest.txt is placed in the export dir. If the ingest call fails, an ingest.txt.failed
         file is placed in the export dir.
     """
-    logging.debug("Preparing to call DIMS")
+    logger.debug("Preparing to call DIMS")
     # get parent prefix of manifest file
     manifest_parent_prefix = os.path.dirname(manifest_object_key)
 
@@ -68,14 +79,14 @@ def call_dims_ingest(manifest_object_key):
         exception_msg = traceback.format_exc()
         msg = "Error opening private jwt token.\n" + exception_msg
         send_error_notification("Error opening private jwt token", msg)
-        logging.error("Expected path: " + jwt_private_key_path)
+        logger.error("Expected path: " + jwt_private_key_path)
     
     download_dir = retrieve_export(download_export_path, manifest_parent_prefix)
     
     payload_data = construct_payload_body(download_dir, manifest_parent_prefix)
     notify_emails = get_notify_emails(payload_data)
     
-    logging.debug("Payload data extracted for {}".format(manifest_object_key))
+    logger.debug("Payload data extracted for {}".format(manifest_object_key))
 
     # 7zip up directory
     zip_file = zip_export(zip_path, download_dir, notify_emails)
@@ -84,7 +95,7 @@ def call_dims_ingest(manifest_object_key):
 
     # delete contents of s3 export folder
     try:
-        logging.debug("Deleting s3 export folder {}".format(manifest_parent_prefix))
+        logger.debug("Deleting s3 export folder {}".format(manifest_parent_prefix))
         epadd_bucket.objects.filter(Prefix=manifest_parent_prefix).delete()
     except:
         exception_msg = traceback.format_exc()
@@ -118,7 +129,7 @@ def call_dims_ingest(manifest_object_key):
     request_body = jcs.canonicalize(payload_data).decode()
     bodySHA256Hash = hashlib.sha256(request_body.encode()).hexdigest()
 
-    logging.debug("Generating JWT Token")
+    logger.debug("Generating JWT Token")
     # generate JWT token
     jwt_token = jwt.encode(
         payload={'iss': 'ePADD', 'iat': current_epoch, 'exp': int(expiration.timestamp()),
@@ -130,7 +141,7 @@ def call_dims_ingest(manifest_object_key):
 
     headers = {"Authorization": "Bearer " + jwt_token}
 
-    logging.debug("Calling ingest at: " + dims_endpoint + "/ingest " + "with request body: " + str(payload_data))
+    logger.debug("Calling ingest at: " + dims_endpoint + "/ingest " + "with request body: " + str(payload_data))
 
     # Call DIMS ingest
     ingest_epadd_export = None
@@ -146,15 +157,15 @@ def call_dims_ingest(manifest_object_key):
         send_error_notification("Error when calling DIMS /ingest", msg, notify_emails)
 
     json_ingest_response = ingest_epadd_export.json()
-    logging.debug(json_ingest_response)
+    logger.debug(json_ingest_response)
 
     # Put file to indicate ingest status of export
     if json_ingest_response["status"] == "failure":
-        logging.debug("Putting ingest.txt.failed at prefix: " + manifest_parent_prefix)
+        logger.debug("Putting ingest.txt.failed at prefix: " + manifest_parent_prefix)
         content = ""
         s3_resource.Object(epadd_bucket_name, os.path.join(manifest_parent_prefix, "ingest.txt.failed")).put(Body=content)
     else:
-        logging.debug("Putting ingest.txt at prefix: " + manifest_parent_prefix)
+        logger.debug("Putting ingest.txt at prefix: " + manifest_parent_prefix)
         content = "Pending ingest.."
         s3_resource.Object(epadd_bucket_name, os.path.join(manifest_parent_prefix, "ingest.txt")).put(Body=content)
 
@@ -177,7 +188,7 @@ def construct_payload_body(download_dir, full_prefix):
         Construct the request body with appropriate metadata. A "testing" field is added
         if a TESTTRIGGER file exists in the export
     """
-    logging.debug("Constructing request body")
+    logger.debug("Constructing request body")
     
     drsconfig = None
     drsconfig_list = glob.glob(os.path.join(download_dir, "**", "drsConfig.txt") ,recursive = True)
@@ -188,7 +199,7 @@ def construct_payload_body(download_dir, full_prefix):
         raise MonitoringException("drsConfig.txt not found in export {}".format(download_dir), None)
         
         
-    logging.debug("Retrieved sidecar metadata from " + drsconfig)
+    logger.debug("Retrieved sidecar metadata from " + drsconfig)
 
     metadata_dict = {}
     with open(drsconfig) as drs_config_file:
@@ -198,10 +209,10 @@ def construct_payload_body(download_dir, full_prefix):
             if len(line) > 0:
                 split_val = line.split('=')
                 metadata_dict[split_val[0]] = split_val[1]
-    logging.debug("Metadata dictionary: " + str(metadata_dict))
+    logger.debug("Metadata dictionary: " + str(metadata_dict))
 
     if metadata_dict["ownerSuppliedName"].strip() == "":
-        logging.warn("ownerSuppliedName was not provided in drsConfig.txt for {}".format(os.path.basename(download_dir)))
+        logger.warn("ownerSuppliedName was not provided in drsConfig.txt for {}".format(os.path.basename(download_dir)))
         unique_osn = "osn_" + str(int(datetime.now().timestamp()))
     else:
         unique_osn = metadata_dict["ownerSuppliedName"].strip()
@@ -269,7 +280,7 @@ def connect_to_bucket():
     s3_resource = boto_session.resource('s3')
 
     epadd_bucket = s3_resource.Bucket(epadd_bucket_name)
-    logging.debug("Connected to S3 bucket: " + epadd_bucket_name)
+    logger.debug("Connected to S3 bucket: " + epadd_bucket_name)
 
 
 def collect_exports():
@@ -280,7 +291,7 @@ def collect_exports():
     """
     manifest_object_keys = []
 
-    logging.debug("Search for manifest-<algorithm>.txt file in bucket/prefix: " + os.path.join(epadd_bucket_name, epadd_dropbox_prefix_name))
+    logger.debug("Search for manifest-<algorithm>.txt file in bucket/prefix: " + os.path.join(epadd_bucket_name, epadd_dropbox_prefix_name))
 
     epadd_bucket_objects = []
     #Format is <prefix>/<user 'dropbox' name>/<export name>/<data>
@@ -309,21 +320,21 @@ def collect_exports():
     for epadd_bucket_object in epadd_bucket_objects:
         #skip user dir
         if re.search('^user[/]?', epadd_bucket_object, re.IGNORECASE):
-            logging.debug("Skipping user dir: {}".format(epadd_bucket_object))
+            logger.debug("Skipping user dir: {}".format(epadd_bucket_object))
             pass
         else:
             objects = epadd_bucket.objects.filter(Prefix=epadd_bucket_object)
             for obj in objects:
                 if re.search('manifest(-md5|-sha256)?.txt', obj.key, re.IGNORECASE):
-                    logging.debug("Manifest found: {}".format(obj.key))
+                    logger.debug("Manifest found: {}".format(obj.key))
                     manifest_parent_prefix = os.path.dirname(obj.key)
                     if not (key_exists(os.path.join(manifest_parent_prefix, "ingest.txt"))
                             or key_exists(os.path.join(manifest_parent_prefix, "ingest.txt.failed"))
                             or key_exists(os.path.join(manifest_parent_prefix,"LOADING"))):
-                        logging.debug("Putting LOADING file at prefix: " + manifest_parent_prefix)
+                        logger.debug("Putting LOADING file at prefix: " + manifest_parent_prefix)
                         s3_resource.Object(epadd_bucket_name, os.path.join(manifest_parent_prefix, "LOADING")).put(Body="")
                         manifest_object_keys.append(obj.key)
-                        logging.debug("Object key added: " + obj.key)
+                        logger.debug("Object key added: " + obj.key)
                     break
 
     return manifest_object_keys
@@ -334,22 +345,22 @@ def retrieve_export(download_path, manifest_parent_prefix):
         pull down the export to local storage prior to zip (7zip)
     """
     try:
-        logging.debug("Downloading {}".format(manifest_parent_prefix))
+        logger.debug("Downloading {}".format(manifest_parent_prefix))
         for obj in epadd_bucket.objects.filter(Prefix=manifest_parent_prefix):
             
             #Remove dropbox
             keywithoutdropboxprefix = obj.key[len(epadd_dropbox_prefix_name):]
             keywithoutdropboxprefix = keywithoutdropboxprefix.lstrip("/")
-            logging.debug("without dropbox: {}".format(keywithoutdropboxprefix))
+            logger.debug("without dropbox: {}".format(keywithoutdropboxprefix))
             if environment == "development":
                 key = obj.key
             else:
                 userbucket = keywithoutdropboxprefix[0:keywithoutdropboxprefix.find("/")]
-                logging.debug("user bucket: {}".format(userbucket))
+                logger.debug("user bucket: {}".format(userbucket))
                 key = keywithoutdropboxprefix[len(userbucket):]
                 key = key.lstrip("/")
 
-            logging.debug("Moving {}".format(key))
+            logger.debug("Moving {}".format(key))
 
             local_file = os.path.join(download_path, key)
             # If the obj.key is a path, and the corresponding download dir doesn't exist
@@ -358,19 +369,19 @@ def retrieve_export(download_path, manifest_parent_prefix):
             if (obj.key[-1] == "/"):
                 if not os.path.exists(local_file):
                     os.makedirs(local_file)
-                    logging.debug("Created dir {}".format(local_file))
+                    logger.debug("Created dir {}".format(local_file))
                 continue
             
             # Else if obj.key is a file, create the dir if the download dir doesn't already
             # exist. Then attempt to download the file.
             elif not os.path.exists(os.path.dirname(local_file)):
                 os.makedirs(os.path.dirname(local_file))
-                logging.debug("Created dir for file {}".format(local_file))
+                logger.debug("Created dir for file {}".format(local_file))
             epadd_bucket.download_file(obj.key, local_file)
 
         pathwithoutdropboxprefix = manifest_parent_prefix[len(epadd_dropbox_prefix_name):]
         pathwithoutdropboxprefix = pathwithoutdropboxprefix.lstrip("/")
-        logging.debug("without dropbox: {}".format(pathwithoutdropboxprefix))
+        logger.debug("without dropbox: {}".format(pathwithoutdropboxprefix))
         if environment == "development":
             download_dir = manifest_parent_prefix
         else:
@@ -381,7 +392,7 @@ def retrieve_export(download_path, manifest_parent_prefix):
         download_local_dir = os.path.join(download_path, download_dir)
         return download_local_dir
     except Exception as err:
-        logging.error(traceback.format_exc())
+        logger.error(traceback.format_exc())
         raise MonitoringException(err, None)
 
 
@@ -392,7 +403,7 @@ def zip_export(zip_path, directory_to_zip, notify_emails=None):
     try:
         manifest_parent_prefix = os.path.basename(directory_to_zip)
         zip_filename = os.path.join(zip_path, manifest_parent_prefix + ".7z")
-        logging.debug("Zipping directory {} into {} ".format(directory_to_zip, zip_filename))
+        logger.debug("Zipping directory {} into {} ".format(directory_to_zip, zip_filename))
         with py7zr.SevenZipFile(zip_filename, 'w') as archive:
             archive.writeall(directory_to_zip, manifest_parent_prefix)
         return zip_filename
@@ -418,7 +429,7 @@ def upload_zip_export(zip_path, manifest_parent_prefix, notify_emails=None):
         return False
 
 def send_error_notification(subject, body, recipients=None):
-    logging.error(body)
+    logger.error(body)
     queue = os.getenv("EMAIL_QUEUE_NAME")
     subject = "ePADD Curator App: " + subject   
     if recipients is None:
