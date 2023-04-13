@@ -23,6 +23,7 @@ import py7zr
 LOG_FILE_BACKUP_COUNT = 1
 LOG_ROTATION = "midnight"
 log_level = os.getenv("LOG_LEVEL", "WARNING")
+log_dir = os.getenv("LOG_DIR", "/home/appuser/epadd-curator-app/logs")
 log_file_path = os.path.join(log_dir, "monitor_epadd_exports.log")
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     
