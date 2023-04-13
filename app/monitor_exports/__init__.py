@@ -309,8 +309,9 @@ def collect_exports():
             user_dropbox_path = user_dropbox.get('Prefix')
             #This gets the list of the exported names under the user 'dropbox'
             export_names = s3_resource.meta.client.list_objects_v2(Bucket=epadd_bucket_name, Prefix=user_dropbox_path, Delimiter="/")
-            for "CommonPrefixes" in export_names and export_dir in export_names.get('CommonPrefixes'):
-                epadd_bucket_objects.append(export_dir.get('Prefix'))
+            if "CommonPrefixes" in export_names:
+                for export_dir in export_names.get('CommonPrefixes'):
+                    epadd_bucket_objects.append(export_dir.get('Prefix'))
     #Format is just <export name>/<data>
     #Example ePADD-eml-export/<data>
     else:   
