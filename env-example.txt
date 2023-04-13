@@ -55,3 +55,5 @@ DATA_PATH=/home/appuser/epadd-curator-app/resources
 # Set to True if DIMS should not be called, False otherwise
 TESTING=False
 
+#Marker file
+MONITOR_MARKER=/home/appuser/epadd-curator-app/markers/MONITOR_RUNNING

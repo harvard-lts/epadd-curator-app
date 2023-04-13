@@ -18,3 +18,4 @@ services:
       - ./resources:/home/appuser/epadd-curator-app/resources
       - ./app:/home/appuser/epadd-curator-app/app
       - ./scripts/unit_tests.py:/home/appuser/epadd-curator-app/scripts/unit_tests.py
+      - ./markers:/home/appuser/epadd-curator-app/markers
