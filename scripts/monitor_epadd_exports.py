@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 sys.path.insert(0, '/home/appuser/epadd-curator-app/app')
 
 import monitor_exports
-from monitor_exception import MonitoringException
+from monitor_exports.monitor_exception import MonitoringException
 
 is_testing = os.getenv("TESTING", "False")
 
@@ -39,11 +39,11 @@ def main():
             except MonitoringException as m:
                 message = traceback.format_exc()
                 logging.error(message)
-                monitor_exports.send_error_notification(m, message, m.emailaddress)
+                monitor_exports.send_error_notification(str(m), message, m.emailaddress)
             except Exception as e:  
                 message = traceback.format_exc()
                 logging.error(message)
-                monitor_exports.send_error_notification(e, message) 
+                monitor_exports.send_error_notification(str(e), message) 
             
 if __name__ == '__main__':
     try:
