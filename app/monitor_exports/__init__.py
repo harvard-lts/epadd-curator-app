@@ -32,10 +32,11 @@ file_handler = TimedRotatingFileHandler(
     when=LOG_ROTATION,
     backupCount=LOG_FILE_BACKUP_COUNT
 )
+logger = logging.getLogger('monitor_epadd_exports')
+
 logger.addHandler(file_handler)
 file_handler.setFormatter(formatter)
 logger.setLevel(log_level)
-logger = logging.getLogger('monitor_epadd_exports')
 
 #Prevents S3 gem from logging too much
 logging.getLogger('boto3').setLevel(logging.CRITICAL)
