@@ -23,6 +23,7 @@ import py7zr
 LOG_FILE_BACKUP_COUNT = 1
 LOG_ROTATION = "midnight"
 log_level = os.getenv("LOG_LEVEL", "WARNING")
+log_dir = os.getenv("LOG_DIR", "/home/appuser/epadd-curator-app/logs")
 log_file_path = os.path.join(log_dir, "monitor_epadd_exports.log")
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     
@@ -31,10 +32,11 @@ file_handler = TimedRotatingFileHandler(
     when=LOG_ROTATION,
     backupCount=LOG_FILE_BACKUP_COUNT
 )
+logger = logging.getLogger('monitor_epadd_exports')
+
 logger.addHandler(file_handler)
 file_handler.setFormatter(formatter)
 logger.setLevel(log_level)
-logger = logging.getLogger('monitor_epadd_exports')
 
 #Prevents S3 gem from logging too much
 logging.getLogger('boto3').setLevel(logging.CRITICAL)
@@ -249,7 +251,7 @@ def construct_payload_body(download_dir, full_prefix):
 def strip_unicode_and_whitespace(line):
     #Remove whitespace
     line = line.strip()
-    #Remove hex bytes
+    #Remove null bytes
     line = line.replace("\x00",'') 
     #Remove unicode
     line = line.encode("ascii", "ignore").decode()
