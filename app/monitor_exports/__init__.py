@@ -176,7 +176,7 @@ def call_dims_ingest(manifest_object_key):
 
 def get_notify_emails(payload_data):
     admin_md = payload_data['admin_metadata']
-    delmiter = ""
+    delimiter = ""
     notify_emails = None
     if "depositAgentEmail" in admin_md:
         notify_emails = admin_md["depositAgentEmail"]
