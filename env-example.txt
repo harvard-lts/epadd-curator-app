@@ -55,3 +55,10 @@ DATA_PATH=/home/appuser/epadd-curator-app/resources
 # Set to True if DIMS should not be called, False otherwise
 TESTING=False
 
+#Notify queuing
+MQ_HOST=b-cfb7f4c2-9140-4b5b-a551-1ccaf8c61d4e-1.mq.us-east-1.amazonaws.com
+MQ_PORT=61614
+MQ_USER=ims
+MQ_PASSWORD=XXX
+QUEUE_NAME=/queue/dais-notify
+DEFAULT_EMAIL_RECIPIENT=dts@hu.onmicrosoft.com

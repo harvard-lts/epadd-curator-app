@@ -3,12 +3,13 @@
 import unittest, os, os.path
 import unittest.mock as mock
 import sys, traceback, shutil
-import py7zr
+import py7zr, json
 from dotenv import load_dotenv
 load_dotenv()
 sys.path.insert(0, '/home/appuser/epadd-curator-app/app')
 
 import monitor_exports as monitor_epadd_exports
+from monitor_exports.monitor_exception import MonitoringException
 import run_tests
 
 class MockS3Resource:
@@ -200,21 +201,17 @@ class TestConstructPayload(unittest.TestCase):
         self.assertEqual(retval3,"VALUE")
           
 
-# class TestCopySingleExportS3(unittest.TestCase):
-#  
-#     @mock.patch("run_tests.s3_resource", MockS3Resource() )
-#     @mock.patch("run_tests.epadd_int_test_prefix_name", "" )
-#     @mock.patch("run_tests.epadd_source_type", "S3" )
-#     @mock.patch("run_tests.epadd_source_name", "source_bucket" )
-#     @mock.patch("run_tests.epadd_bucket_name", "test_bucket" )
-#     @mock.patch("run_tests.epadd_bucket", MockEpaddPerformanceTestingDestinationBucket() )
-#     def test_copy_one(self):
-#         run_tests.copy_from_source_to_test('emltest1')
-#         filelist = run_tests.epadd_bucket.objects.all()
-#         print("FILE LIST")
-#         for file in filelist:
-#             print(file.key)
-#         self.assertEqual(len(filelist), 4)
+class TestSendNotification(unittest.TestCase):
+  
+    def test_notify(self):
+        message = monitor_epadd_exports.send_error_notification("Test Subject from Curator App", "Test Body from Curator App", "dts@hu.onmicrosoft.com")
+        json_message = json.loads(message)
+        self.assertTrue(type(json_message) is dict)
+        
+    def test_monitoring_exception(self):
+        e = MonitoringException("Message", "test@test.com")
+        self.assertEqual(e.emailaddress, "test@test.com")
+        
          
 class TestCopySingleExportFS(unittest.TestCase):
   
