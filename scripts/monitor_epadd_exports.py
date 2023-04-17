@@ -6,6 +6,7 @@ from pathlib import Path
 sys.path.insert(0, '/home/appuser/epadd-curator-app/app')
 
 import monitor_exports
+from monitor_exports.monitor_exception import MonitoringException
 
 is_testing = os.getenv("TESTING", "False")
 marker = os.getenv("MONITOR_MARKER", "/home/appuser/markers/epadd-curator-app/MONITOR_RUNNING")
@@ -48,12 +49,17 @@ def main():
         for key in export_object_keys:
             try:
                 monitor_exports.call_dims_ingest(key)
-            except Exception:
-                logging.error(traceback.format_exc())
+            except MonitoringException as m:
+                message = traceback.format_exc()
+                logging.error(message)
+                monitor_exports.send_error_notification(str(m), message, m.emailaddress)
+            except Exception as e:  
+                message = traceback.format_exc()
+                logging.error(message)
+                monitor_exports.send_error_notification(str(e), message) 
     #Remove the marker
     os.remove(marker)
-                 
-
+            
 if __name__ == '__main__':
     try:
         main()
