@@ -32,6 +32,7 @@ def main():
         logging.debug("Connect to S3 bucket")
     monitor_exports.connect_to_bucket()
 
+    export_object_keys = []
     try: 
         # Collect exports
         export_object_keys = monitor_exports.collect_exports()
