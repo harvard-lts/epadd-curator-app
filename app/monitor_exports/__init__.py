@@ -330,7 +330,7 @@ def collect_exports():
         else:
             objects = epadd_bucket.objects.filter(Prefix=epadd_bucket_object)
             for obj in objects:
-                if re.search('manifest(-md5|-sha256)?.txt', obj.key, re.IGNORECASE):
+                if re.search('manifest(-md5|-sha256)?.txt$', obj.key, re.IGNORECASE):
                     logger.debug("Manifest found: {}".format(obj.key))
                     manifest_parent_prefix = os.path.dirname(obj.key)
                     
@@ -338,8 +338,8 @@ def collect_exports():
                             or key_exists(os.path.join(manifest_parent_prefix, "ingest.txt.failed"))
                             or key_exists(os.path.join(manifest_parent_prefix,"LOADING"))):
                         manifest = 'manifest-md5.txt'
-                        if re.search('manifest-sha256.txt', obj.key, re.IGNORECASE):
-                            manifest = 'manifest-sha256.txt'
+                        if re.search('manifest-sha256.txt$', obj.key, re.IGNORECASE):
+                            manifest = 'manifest-sha256.txt$'
                     
                         manifest_prefix = os.path.join(manifest_parent_prefix, manifest)
                         local_prefix_file = os.path.join(download_export_path, manifest_prefix)
