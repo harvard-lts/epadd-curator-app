@@ -9,7 +9,7 @@ import monitor_exports
 from monitor_exports.monitor_exception import MonitoringException
 
 is_testing = os.getenv("TESTING", "False")
-marker = os.getenv("MONITOR_MARKER", "/home/appuser/markers/epadd-curator-app/MONITOR_RUNNING")
+marker = os.getenv("MONITOR_MARKER", "/home/appuser/epadd-curator-app/markers/MONITOR_RUNNING")
 
 DATEFORMAT = '%Y-%m-%d %H:%M:%S'
 log_dir = os.getenv("LOG_DIR", "/home/appuser/epadd-curator-app/logs")
@@ -57,10 +57,9 @@ def main():
                 message = traceback.format_exc()
                 logging.error(message)
                 monitor_exports.send_error_notification(str(e), message) 
-
     #Remove the marker
     os.remove(marker)
-                 
+            
 if __name__ == '__main__':
     try:
         main()
