@@ -16,7 +16,7 @@ class DataValidator:
                         raise ValidationException("Manifest file {} improperly formatted.".format(local_manifest_file_location))
                     path_to_object = os.path.join(prefix_path, split_values[1].strip())
                     if not self.__object_exists(s3_resource, bucket_name, path_to_object):
-                        logger.debug("{} does not exist in {}".format(path_to_object, bucket_name))
+                        logger.error("{} does not exist in {}".format(path_to_object, bucket_name))
                         return False
         #If it doesn't fail, then it is ready
         return True
