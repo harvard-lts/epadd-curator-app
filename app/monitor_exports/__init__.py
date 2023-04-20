@@ -343,7 +343,10 @@ def collect_exports():
                     
                         manifest_prefix = os.path.join(manifest_parent_prefix, manifest)
                         local_prefix_file = os.path.join(download_export_path, manifest_prefix)
+                        logger.debug("Downloading manifest from {} to {}".format(manifest_prefix, local_prefix_file))
                         #Download the manifest
+                        if not os.path.exists(os.path.dirname(local_prefix_file)):
+                            os.makedirs(os.path.dirname(local_prefix_file))
                         epadd_bucket.download_file(manifest_prefix, local_prefix_file)
                         #make sure the data is uploaded completely before processing
                         if data_validator.check_export_ready(epadd_bucket_name, manifest_parent_prefix, local_prefix_file, s3_resource):
