@@ -39,6 +39,7 @@ def main():
         logging.error(traceback.format_exc())
         #Remove the marker
         os.remove(marker)
+        raise
 
     #This wil pollute the logs if we are only testing.
     if is_testing != "True":
