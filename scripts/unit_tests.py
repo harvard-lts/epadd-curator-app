@@ -3,13 +3,14 @@
 import unittest, os, os.path
 import unittest.mock as mock
 import sys, traceback, shutil
-import py7zr, json
+import py7zr, json, boto3
 from dotenv import load_dotenv
 load_dotenv()
 sys.path.insert(0, '/home/appuser/epadd-curator-app/app')
 
 import monitor_exports as monitor_epadd_exports
 from monitor_exports.monitor_exception import MonitoringException
+from monitor_exports.data_validator import DataValidator
 import run_tests
 
 class MockS3Resource:
@@ -267,6 +268,55 @@ class TestZipEpaddExports(unittest.TestCase):
           for file in files:
             self.assertTrue(file.startswith("EmlExample"),
                             "File expected to start with 'EmlExample': {}".format(file))
+            
+class TestValidation(unittest.TestCase):
+
+        
+    def setUpClass():
+        connect_to_bucket()
+        download_export_path = os.getenv("DOWNLOAD_EXPORT_PATH", "/home/appuser/epadd-curator-app/download_exports")
+        prefix = "user/ePADD-eml-export"
+        destination_path = os.path.join(download_export_path, prefix)
+        
+        # create download dirs if they don't exist
+        if (not os.path.exists(destination_path)):
+            os.makedirs(destination_path, exist_ok = True)
+        epadd_bucket.download_file(os.path.join(prefix, "manifest-sha256.txt"), os.path.join(destination_path, "manifest-sha256.txt"))
+        
+            
+    def tearDownClass():
+        download_export_path = os.getenv("DOWNLOAD_EXPORT_PATH", "/home/appuser/epadd-curator-app/download_exports")
+        shutil.rmtree(os.path.join(download_export_path, "user"))
+        
+    def test_validation(self): 
+        download_export_path = os.getenv("DOWNLOAD_EXPORT_PATH", "/home/appuser/epadd-curator-app/download_exports")
+        prefix = "user/ePADD-eml-export"
+        destination_path = os.path.join(download_export_path, prefix)
+        manifest_file = os.path.join(destination_path, "manifest-sha256.txt")
+        data_validator = DataValidator()
+        self.assertTrue(data_validator.check_export_ready("epadd-export-dev", "user/ePADD-eml-export", manifest_file, s3_resource))
+        
+
+   
+def connect_to_bucket():
+    """
+        Connect to the ePADD nextcloud s3 bucket
+    """
+    global s3_resource
+    global epadd_bucket
+    
+    aws_access_key = os.getenv('NEXTCLOUD_AWS_ACCESS_KEY')
+    aws_secret_key = os.getenv('NEXTCLOUD_AWS_SECRET_KEY')
+    epadd_bucket_name = "epadd-export-dev"
+    
+    boto_session = boto3.Session(
+        aws_access_key_id=aws_access_key,
+        aws_secret_access_key=aws_secret_key)
+
+    # Then use the session to get the resource
+    s3_resource = boto_session.resource('s3')
+
+    epadd_bucket = s3_resource.Bucket(epadd_bucket_name)
 
 if __name__ == '__main__':
     unittest.main()
