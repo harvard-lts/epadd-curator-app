@@ -9,7 +9,7 @@ import monitor_exports
 from monitor_exports.monitor_exception import MonitoringException
 
 is_testing = os.getenv("TESTING", "False")
-marker = os.getenv("MONITOR_MARKER", "/home/appuser/markers/epadd-curator-app/MONITOR_RUNNING")
+marker = os.getenv("MONITOR_MARKER", "/home/appuser/epadd-curator-app/markers/MONITOR_RUNNING")
 
 DATEFORMAT = '%Y-%m-%d %H:%M:%S'
 log_dir = os.getenv("LOG_DIR", "/home/appuser/epadd-curator-app/logs")
@@ -32,6 +32,7 @@ def main():
         logging.debug("Connect to S3 bucket")
     monitor_exports.connect_to_bucket()
 
+    export_object_keys = []
     try: 
         # Collect exports
         export_object_keys = monitor_exports.collect_exports()
@@ -39,6 +40,7 @@ def main():
         logging.error(traceback.format_exc())
         #Remove the marker
         os.remove(marker)
+        raise
 
     #This wil pollute the logs if we are only testing.
     if is_testing != "True":

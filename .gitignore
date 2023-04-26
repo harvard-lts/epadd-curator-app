@@ -108,7 +108,7 @@ pdf_store.yml
 s3.yml
 
 # log files
-*.log
+*.log.*
 
 # pdftmp files
 pdftmp/*pdf

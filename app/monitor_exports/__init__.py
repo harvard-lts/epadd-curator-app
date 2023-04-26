@@ -16,6 +16,7 @@ import requests
 from requests import exceptions, HTTPError
 import mqresources.mqutils as mqutils
 from monitor_exports.monitor_exception import MonitoringException
+from monitor_exports.data_validator import DataValidator
 
 import py7zr
 
@@ -63,6 +64,7 @@ boto_session = None
 s3_resource = None
 epadd_bucket = None
 
+data_validator = DataValidator()
 
 def call_dims_ingest(manifest_object_key):
     """
@@ -328,16 +330,30 @@ def collect_exports():
         else:
             objects = epadd_bucket.objects.filter(Prefix=epadd_bucket_object)
             for obj in objects:
-                if re.search('manifest(-md5|-sha256)?.txt', obj.key, re.IGNORECASE):
+                if re.search('manifest(-md5|-sha256)?.txt$', obj.key, re.IGNORECASE):
                     logger.debug("Manifest found: {}".format(obj.key))
                     manifest_parent_prefix = os.path.dirname(obj.key)
+                    
                     if not (key_exists(os.path.join(manifest_parent_prefix, "ingest.txt"))
                             or key_exists(os.path.join(manifest_parent_prefix, "ingest.txt.failed"))
                             or key_exists(os.path.join(manifest_parent_prefix,"LOADING"))):
-                        logger.debug("Putting LOADING file at prefix: " + manifest_parent_prefix)
-                        s3_resource.Object(epadd_bucket_name, os.path.join(manifest_parent_prefix, "LOADING")).put(Body="")
-                        manifest_object_keys.append(obj.key)
-                        logger.debug("Object key added: " + obj.key)
+                        manifest = 'manifest-md5.txt'
+                        if re.search('manifest-sha256.txt$', obj.key, re.IGNORECASE):
+                            manifest = 'manifest-sha256.txt'
+                    
+                        manifest_prefix = os.path.join(manifest_parent_prefix, manifest)
+                        local_prefix_file = os.path.join(download_export_path, manifest_prefix)
+                        logger.debug("Downloading manifest from {} to {}".format(manifest_prefix, local_prefix_file))
+                        #Download the manifest
+                        if not os.path.exists(os.path.dirname(local_prefix_file)):
+                            os.makedirs(os.path.dirname(local_prefix_file))
+                        epadd_bucket.download_file(manifest_prefix, local_prefix_file)
+                        #make sure the data is uploaded completely before processing
+                        if data_validator.check_export_ready(epadd_bucket_name, manifest_parent_prefix, local_prefix_file, s3_resource):
+                            logger.debug("Putting LOADING file at prefix: " + manifest_parent_prefix)
+                            s3_resource.Object(epadd_bucket_name, os.path.join(manifest_parent_prefix, "LOADING")).put(Body="")
+                            manifest_object_keys.append(obj.key)
+                            logger.debug("Object key added: " + obj.key)
                     break
 
     return manifest_object_keys
