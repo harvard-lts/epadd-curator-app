@@ -339,7 +339,7 @@ def collect_exports():
                             or key_exists(os.path.join(manifest_parent_prefix,"LOADING"))):
                         manifest = 'manifest-md5.txt'
                         if re.search('manifest-sha256.txt$', obj.key, re.IGNORECASE):
-                            manifest = 'manifest-sha256.txt$'
+                            manifest = 'manifest-sha256.txt'
                     
                         manifest_prefix = os.path.join(manifest_parent_prefix, manifest)
                         local_prefix_file = os.path.join(download_export_path, manifest_prefix)
