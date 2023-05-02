@@ -65,3 +65,8 @@ MQ_USER=ims
 MQ_PASSWORD=XXX
 QUEUE_NAME=/queue/dais-notify
 DEFAULT_EMAIL_RECIPIENT=dts@hu.onmicrosoft.com
+
+RELATIVE_DRS_CONFIG_PATH=data/blobs/sidecarfiles/drsConfig.txt
+
+INVALID_CHARACTERS_MESSAGE="Invalid characters were found in the export.  Please see documentation (forthcoming) on what to do when this occurs."
+

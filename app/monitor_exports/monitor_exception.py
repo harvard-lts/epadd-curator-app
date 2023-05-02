@@ -6,3 +6,6 @@ class MonitoringException(Exception):
         
 class ValidationException(Exception):
         pass
+    
+class InvalidCharacterException(ValidationException):
+        pass
