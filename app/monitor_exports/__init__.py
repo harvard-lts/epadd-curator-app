@@ -16,6 +16,7 @@ import requests
 from requests import exceptions, HTTPError
 import mqresources.mqutils as mqutils
 from monitor_exports.monitor_exception import MonitoringException
+from monitor_exports.monitor_exception import InvalidCharacterException
 from monitor_exports.data_validator import DataValidator
 
 import py7zr
@@ -56,6 +57,8 @@ zip_path = os.getenv('ZIPPED_EXPORT_PATH')
 download_export_path = os.getenv('DOWNLOAD_EXPORT_PATH')
 environment = os.getenv("ENV")
 default_email_recipient = os.getenv("DEFAULT_EMAIL_RECIPIENT")
+
+relative_drs_config_path = os.getenv("RELATIVE_DRS_CONFIG_PATH", "data/blobs/sidecarfiles/drsConfig.txt")
 
 logging.debug("Executing monitor_epadd_exports.py")
 
@@ -339,7 +342,7 @@ def collect_exports():
                             or key_exists(os.path.join(manifest_parent_prefix,"LOADING"))):
                         manifest = 'manifest-md5.txt'
                         if re.search('manifest-sha256.txt$', obj.key, re.IGNORECASE):
-                            manifest = 'manifest-sha256.txt$'
+                            manifest = 'manifest-sha256.txt'
                     
                         manifest_prefix = os.path.join(manifest_parent_prefix, manifest)
                         local_prefix_file = os.path.join(download_export_path, manifest_prefix)
@@ -348,16 +351,43 @@ def collect_exports():
                         if not os.path.exists(os.path.dirname(local_prefix_file)):
                             os.makedirs(os.path.dirname(local_prefix_file))
                         epadd_bucket.download_file(manifest_prefix, local_prefix_file)
-                        #make sure the data is uploaded completely before processing
-                        if data_validator.check_export_ready(epadd_bucket_name, manifest_parent_prefix, local_prefix_file, s3_resource):
-                            logger.debug("Putting LOADING file at prefix: " + manifest_parent_prefix)
-                            s3_resource.Object(epadd_bucket_name, os.path.join(manifest_parent_prefix, "LOADING")).put(Body="")
-                            manifest_object_keys.append(obj.key)
-                            logger.debug("Object key added: " + obj.key)
+                        
+                        try:
+                            #make sure the data is uploaded completely before processing
+                            if data_validator.check_export_ready(epadd_bucket_name, manifest_parent_prefix, local_prefix_file, s3_resource):
+                                logger.debug("Putting LOADING file at prefix: " + manifest_parent_prefix)
+                                s3_resource.Object(epadd_bucket_name, os.path.join(manifest_parent_prefix, "LOADING")).put(Body="")
+                                manifest_object_keys.append(obj.key)
+                                logger.debug("Object key added: " + obj.key)
+                        except InvalidCharacterException as e:
+                            #Get the failure email
+                            message = traceback.format_exc()
+                            logger.error(message)
+                            email = send_invalid_character_email(manifest_parent_prefix)
+                            break
                     break
 
     return manifest_object_keys
 
+def prepare_and_send_invalid_character_email(manifest_parent_prefix):
+    drs_config_loc = os.path.join(manifest_parent_prefix, relative_drs_config_path)
+    local_drs_config_loc = os.path.join(download_export_path, drs_config_loc)
+    if not os.path.exists(os.path.dirname(local_drs_config_loc)):
+        os.makedirs(os.path.dirname(local_drs_config_loc))
+    #Download the drsConfig.txt
+    epadd_bucket.download_file(drs_config_loc, local_drs_config_loc)
+    
+def send_invalid_character_email(manifest_parent_prefix):
+    #Get the failure email from drsConfig.txt
+    payload_data = construct_payload_body(download_export_path, manifest_parent_prefix)
+    emails = get_notify_emails(payload_data)
+    
+    #Generate the message
+    message = os.getenv("INVALID_CHARACTERS_MESSAGE", "Invalid characters were found in the export.")
+    message += "\nExport directory name: {}".format(manifest_parent_prefix)
+
+    #Send the email
+    return send_error_notification("Invalid characters ", message, emails) 
 
 def retrieve_export(download_path, manifest_parent_prefix):
     """
