@@ -272,8 +272,6 @@ class TestZipEpaddExports(unittest.TestCase):
         zip_export_path = os.getenv("ZIPPED_EXPORT_PATH", "/home/appuser/epadd-curator-app/zip_exports")
         zip_path = os.path.join(zip_export_path, "EmlExample.7z")
         eml_path = os.path.join(resources_path, "EmlExample")
-        print("Zip path: " + zip_path)
-        print("Eml path: " + eml_path)
         success = monitor_epadd_exports.zip_export(zip_export_path, eml_path)
         self.assertTrue(success, "Eml zip failed")
         self.assertTrue(os.path.isfile(zip_path))

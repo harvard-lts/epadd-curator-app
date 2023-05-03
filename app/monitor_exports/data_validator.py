@@ -31,7 +31,6 @@ class DataValidator:
                         raise ValidationException("Manifest file {} improperly formatted.".format(local_manifest_file_location))
                     
                     base_file_name = os.path.basename(split_values[1].strip())
-                    print(base_file_name)
                     if (re.search("<|>|:|\?|~|\"|\/|\\|\||\*", base_file_name)):
                         raise InvalidCharacterException("Attempting to upload a file that is not supported by NextCloud {}.".format(split_values[1]))
                         
