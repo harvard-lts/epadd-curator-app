@@ -131,4 +131,5 @@ keys/
 
 .pydevproject
 
-drsConfig.txt
+resources/drsConfig.txt
+

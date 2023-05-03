@@ -36,10 +36,12 @@ def main():
     try: 
         # Collect exports
         export_object_keys = monitor_exports.collect_exports()
-    except:
-        logging.error(traceback.format_exc())
+    except Exception as e:
+        message = traceback.format_exc()
+        logging.error(message)
         #Remove the marker
         os.remove(marker)
+        monitor_exports.send_error_notification(str(e), message)
         raise
 
     #This wil pollute the logs if we are only testing.

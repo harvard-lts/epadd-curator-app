@@ -10,6 +10,7 @@ sys.path.insert(0, '/home/appuser/epadd-curator-app/app')
 
 import monitor_exports as monitor_epadd_exports
 from monitor_exports.monitor_exception import MonitoringException
+from monitor_exports.monitor_exception import InvalidCharacterException
 from monitor_exports.data_validator import DataValidator
 import run_tests
 
@@ -204,6 +205,16 @@ class TestConstructPayload(unittest.TestCase):
 
 class TestSendNotification(unittest.TestCase):
   
+    def setUpClass():
+        source = "/home/appuser/epadd-curator-app/resources/InvalidCharactersExample"
+        dest = "/home/appuser/epadd-curator-app/download_exports/InvalidCharactersExample"
+        #Copy InvalidCharactersExample from resources
+        shutil.copytree(source,dest)
+    
+    def tearDownClass():
+        #Remove the InvalidCharactersExample from download_exports
+        shutil.rmtree("/home/appuser/epadd-curator-app/download_exports/InvalidCharactersExample")
+            
     def test_notify(self):
         message = monitor_epadd_exports.send_error_notification("Test Subject from Curator App", "Test Body from Curator App", "dts@hu.onmicrosoft.com")
         json_message = json.loads(message)
@@ -212,6 +223,12 @@ class TestSendNotification(unittest.TestCase):
     def test_monitoring_exception(self):
         e = MonitoringException("Message", "test@test.com")
         self.assertEqual(e.emailaddress, "test@test.com")
+        
+    def test_invalid_character_email(self):
+        local_directory = "InvalidCharactersExample"
+        message = monitor_epadd_exports.send_invalid_character_email(local_directory)
+        json_message = json.loads(message)
+        self.assertTrue(type(json_message) is dict)
         
          
 class TestCopySingleExportFS(unittest.TestCase):
@@ -255,8 +272,6 @@ class TestZipEpaddExports(unittest.TestCase):
         zip_export_path = os.getenv("ZIPPED_EXPORT_PATH", "/home/appuser/epadd-curator-app/zip_exports")
         zip_path = os.path.join(zip_export_path, "EmlExample.7z")
         eml_path = os.path.join(resources_path, "EmlExample")
-        print("Zip path: " + zip_path)
-        print("Eml path: " + eml_path)
         success = monitor_epadd_exports.zip_export(zip_export_path, eml_path)
         self.assertTrue(success, "Eml zip failed")
         self.assertTrue(os.path.isfile(zip_path))
@@ -296,7 +311,12 @@ class TestValidation(unittest.TestCase):
         data_validator = DataValidator()
         self.assertTrue(data_validator.check_export_ready("epadd-export-dev", "user/ePADD-eml-export", manifest_file, s3_resource))
         
-
+    def test_validation_invalid_characters(self): 
+        manifest_file = "/home/appuser/epadd-curator-app/resources/InvalidCharactersExample/manifest-md5.txt"
+        data_validator = DataValidator()
+        with self.assertRaises(InvalidCharacterException):
+            data_validator.check_export_ready("epadd-export-dev", "", manifest_file, s3_resource)
+    
    
 def connect_to_bucket():
     """
