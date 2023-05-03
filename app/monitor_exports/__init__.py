@@ -363,7 +363,7 @@ def collect_exports():
                             #Get the failure email
                             message = traceback.format_exc()
                             logger.error(message)
-                            email = send_invalid_character_email(manifest_parent_prefix)
+                            email = prepare_and_send_invalid_character_email(manifest_parent_prefix)
                             break
                     break
 
