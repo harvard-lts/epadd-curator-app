@@ -376,6 +376,7 @@ def prepare_and_send_invalid_character_email(manifest_parent_prefix):
         os.makedirs(os.path.dirname(local_drs_config_loc))
     #Download the drsConfig.txt
     epadd_bucket.download_file(drs_config_loc, local_drs_config_loc)
+    send_invalid_character_email(manifest_parent_prefix)
     
 def send_invalid_character_email(manifest_parent_prefix):
     #Get the failure email from drsConfig.txt
