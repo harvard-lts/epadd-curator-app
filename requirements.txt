@@ -6,6 +6,6 @@ lts-mqemailnotifier==0.0.2
 PyJWT==2.4.0
 py7zr==0.20.2
 python-dotenv==0.19.2
-cryptography==37.0.2
+cryptography==41.0.2
 jcs==0.2.0
 stomp.py==8.0.1
