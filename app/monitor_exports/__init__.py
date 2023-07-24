@@ -246,7 +246,8 @@ def construct_payload_body(download_dir, full_prefix):
                         "successMethod": metadata_dict["successMethod"],
                         "adminCategory": metadata_dict.get("adminCategory"),
                         "embargoBasis": metadata_dict.get("embargoBasis"),
-                        "original_queue": "/queue/transfer_ready",
+                        "original_queue": os.getenv('TRANSFER_READY_QUEUE_NAME'),
+                        'task_name': os.getenv('TRANSFER_READY_TASK_NAME'),
                         "retry_count": 1
                     }
                     }

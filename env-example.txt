@@ -70,3 +70,5 @@ RELATIVE_DRS_CONFIG_PATH=data/blobs/sidecarfiles/drsConfig.txt
 
 INVALID_CHARACTERS_MESSAGE="Invalid characters were found in the export.  Please see documentation (forthcoming) on what to do when this occurs."
 
+TRANSFER_READY_TASK_NAME=transfer_service.tasks.transfer_data
+TRANSFER_READY_QUEUE_NAME=transfer-ready
