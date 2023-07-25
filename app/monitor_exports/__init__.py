@@ -246,7 +246,8 @@ def construct_payload_body(download_dir, full_prefix):
                         "successMethod": metadata_dict["successMethod"],
                         "adminCategory": metadata_dict.get("adminCategory"),
                         "embargoBasis": metadata_dict.get("embargoBasis"),
-                        "original_queue": "/queue/transfer_ready",
+                        "original_queue": os.getenv('TRANSFER_READY_QUEUE_NAME'),
+                        'task_name': os.getenv('TRANSFER_READY_TASK_NAME'),
                         "retry_count": 1
                     }
                     }
@@ -363,7 +364,7 @@ def collect_exports():
                             #Get the failure email
                             message = traceback.format_exc()
                             logger.error(message)
-                            email = send_invalid_character_email(manifest_parent_prefix)
+                            email = prepare_and_send_invalid_character_email(manifest_parent_prefix)
                             break
                     break
 
@@ -376,6 +377,7 @@ def prepare_and_send_invalid_character_email(manifest_parent_prefix):
         os.makedirs(os.path.dirname(local_drs_config_loc))
     #Download the drsConfig.txt
     epadd_bucket.download_file(drs_config_loc, local_drs_config_loc)
+    send_invalid_character_email(manifest_parent_prefix)
     
 def send_invalid_character_email(manifest_parent_prefix):
     #Get the failure email from drsConfig.txt
