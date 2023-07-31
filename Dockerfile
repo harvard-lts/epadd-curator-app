@@ -26,8 +26,8 @@ RUN mkdir -p /home/appuser/ssl/certs && \
     openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 -subj "/C=US/ST=Massachusetts/L=Cambridge/O=Library Technology Services/CN=*.lib.harvard.edu" -extensions SAN -reqexts SAN -config /home/appuser/ssl/openssl.cnf -keyout /home/appuser/ssl/certs/server.key -out /home/appuser/ssl/certs/server.crt
 
 RUN npm install && \
-    python3 -m pip install -U pip && \
-    python3 -m pip install -r requirements.txt -i https://pypi.org/simple/ --extra-index-url https://test.pypi.org/simple/ && \
+    python3 -m pip install -U pip --break-system-packages && \
+    python3 -m pip install -r requirements.txt -i https://pypi.org/simple/ --extra-index-url https://test.pypi.org/simple/ --break-system-packages && \
     chmod +x /home/appuser/epadd-curator-app/scripts/monitor_epadd_exports.py && \
     chmod +x /home/appuser/epadd-curator-app/scripts/test_export.py
 
