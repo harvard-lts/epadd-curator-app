@@ -32,11 +32,7 @@ NEXTCLOUD_AWS_ACCESS_KEY=
 NEXTCLOUD_AWS_SECRET_KEY=
 
 #For testing
-#Where is the testing data stored (S3 or FS for filesystem)
-#Dev: FS
-#QA: S3 (prefix)
-EPADD_SOURCE_TYPE=FS
-#prefix or directory that contains the stored data for testing
+#directory that contains the stored data for testing
 EPADD_SOURCE_NAME=/home/appuser/epadd-curator-app/test_files
 #Prefix being used for integration tests 
 EPADD_TEST_PREFIX_NAME=
