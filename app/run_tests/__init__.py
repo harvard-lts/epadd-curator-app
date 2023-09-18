@@ -71,57 +71,27 @@ def copy_from_source_to_test(dirName = None):
             
 def copy_all_exports():
     '''Copies all exports from the source to the test bucket'''
-    if epadd_source_type == "S3":
-        result = s3_resource.meta.client.list_objects(Bucket=epadd_bucket_name, Delimiter='/', Prefix=epadd_source_name)
-        for obj in result.get('CommonPrefixes'):
-            copy_export(obj.get('Prefix'))
-    else:
-        for root,dirs,files in os.walk(epadd_source_name):
-            for subdir in dirs:
-                copy_export(subdir)
+    for root,dirs,files in os.walk(epadd_source_name):
+        for subdir in dirs:
+            copy_export(subdir)
             
 
 
 def copy_export(dirName):
     '''Copies the given export from the source to the test bucket'''
     
-    epadd_int_test_prefix_dest = os.path.join(epadd_int_test_prefix_name, dirName)
-    if epadd_source_type == "S3":
-        prefix_path = os.path.join(epadd_source_name, dirName)
-        destprefix = os.path.join(epadd_int_test_prefix_name, dirName)
-        #Place loading file while being copied
-        s3_resource.Object(epadd_bucket_name, os.path.join(destprefix, "LOADING")).put(Body="")
-                
-        #Copy the dir
-        for obj in epadd_bucket.objects.filter(Prefix=prefix_path):
-            if epadd_source_name:
-                destkey = os.path.relpath(obj.key, epadd_source_name)
-            else:
-                destkey = obj.key
+    if not os.path.exists(os.path.join(epadd_source_name, dirName)):
+        logging.error("{} does not exist in {}.".format(dirName, epadd_source_name))
+        raise Exception("{} does not exist in {}.".format(dirName, epadd_source_name))
             
-            #If this is an actual file
-            if obj.size > 0:    
-                s3_resource.meta.client.copy_object(
-                    CopySource=os.path.join(epadd_bucket_name, obj.key), 
-                    Bucket=epadd_bucket_name,                      
-                    Key=os.path.join( epadd_int_test_prefix_name, destkey),
-                    MetadataDirective="REPLACE"                   
-                )
-            
-        # Remove loading file
-        s3_resource.Object(epadd_bucket_name, os.path.join(destprefix, "LOADING")).delete()
-
-    else:
-        if not os.path.exists(os.path.join(epadd_source_name, dirName)):
-            logging.error("{} does not exist in {}.".format(dirName, epadd_source_name))
-            raise Exception("{} does not exist in {}.".format(dirName, epadd_source_name))
-            
-        for root,dirs,files in os.walk(os.path.join(epadd_source_name, dirName)):
-            for file in files:
-                path = root.replace(epadd_source_name, "")
-                path = path.lstrip("/")
-                path = os.path.join(epadd_int_test_prefix_dest, path)
-                epadd_bucket.upload_file(os.path.join(root,file),os.path.join(path,file))
+    for root,dirs,files in os.walk(os.path.join(epadd_source_name, dirName)):
+        for file in files:
+            path = root.replace(epadd_source_name, "")
+            path = path.lstrip("/")
+            path = os.path.join(epadd_int_test_prefix_name, path)
+            logging.debug("From: "+os.path.join(root,file))
+            logging.debug("To:"+os.path.join(path,file))
+            epadd_bucket.upload_file(os.path.join(root,file),os.path.join(path,file))
         
     #Place the testing drsConfig.txt in the root of the export so it gets picked up first
     epadd_bucket.upload_file(os.path.join(resource_dir, "drsConfig.txt"), os.path.join(epadd_int_test_prefix_dest, "drsConfig.txt"))
