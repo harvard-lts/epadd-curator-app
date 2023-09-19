@@ -94,5 +94,5 @@ def copy_export(dirName):
             epadd_bucket.upload_file(os.path.join(root,file),os.path.join(path,file))
         
     #Place the testing drsConfig.txt in the root of the export so it gets picked up first
-    epadd_bucket.upload_file(os.path.join(resource_dir, "drsConfig.txt"), os.path.join(epadd_int_test_prefix_dest, "drsConfig.txt"))
+    epadd_bucket.upload_file(os.path.join(resource_dir, "drsConfig.txt"), os.path.join(epadd_int_test_prefix_name, "drsConfig.txt"))
     
