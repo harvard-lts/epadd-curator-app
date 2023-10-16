@@ -227,6 +227,8 @@ def construct_payload_body(download_dir, full_prefix):
     payload_data = {"package_id": unique_osn,
                     "s3_path": full_prefix,
                     "s3_bucket_name": epadd_bucket_name,
+                    "depositing_application": "ePADD",
+                    "fs_source_path": "",
                     "admin_metadata": {
                         "accessFlag": metadata_dict["accessFlag"],
                         "contentModel": metadata_dict["contentModel"],
